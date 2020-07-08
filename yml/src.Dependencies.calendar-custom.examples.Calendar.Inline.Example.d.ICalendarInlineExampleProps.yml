@@ -1,0 +1,322 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+    fullName: ICalendarInlineExampleProps
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.autoNavigateOnSelection
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.dateRangeType
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.firstDayOfWeek
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.highlightCurrentMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.highlightSelectedMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.isDayPickerVisible
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.isMonthPickerVisible
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.maxDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.minDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.restrictedDates
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showGoToToday
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showMonthPickerAsOverlay
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showNavigateButtons
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showSixWeeksByDefault
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showWeekNumbers
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.workWeekDays
+    langs:
+      - typeScript
+    type: interface
+    summary: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.autoNavigateOnSelection
+    name: autoNavigateOnSelection
+    fullName: autoNavigateOnSelection
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'autoNavigateOnSelection: boolean'
+      return:
+        type:
+          - boolean
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.dateRangeType
+    name: dateRangeType
+    fullName: dateRangeType
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'dateRangeType: DateRangeType'
+      return:
+        type:
+          - DateRangeType
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.firstDayOfWeek
+    name: firstDayOfWeek
+    fullName: firstDayOfWeek
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'firstDayOfWeek?: DayOfWeek'
+      return:
+        type:
+          - DayOfWeek
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.highlightCurrentMonth
+    name: highlightCurrentMonth
+    fullName: highlightCurrentMonth
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'highlightCurrentMonth?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.highlightSelectedMonth
+    name: highlightSelectedMonth
+    fullName: highlightSelectedMonth
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'highlightSelectedMonth?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.isDayPickerVisible
+    name: isDayPickerVisible
+    fullName: isDayPickerVisible
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'isDayPickerVisible?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.isMonthPickerVisible
+    name: isMonthPickerVisible
+    fullName: isMonthPickerVisible
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'isMonthPickerVisible?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.maxDate
+    name: maxDate
+    fullName: maxDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'maxDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.minDate
+    name: minDate
+    fullName: minDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'minDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.restrictedDates
+    name: restrictedDates
+    fullName: restrictedDates
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'restrictedDates?: Date[]'
+      return:
+        type:
+          - 'Date[]'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showGoToToday
+    name: showGoToToday
+    fullName: showGoToToday
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'showGoToToday: boolean'
+      return:
+        type:
+          - boolean
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showMonthPickerAsOverlay
+    name: showMonthPickerAsOverlay
+    fullName: showMonthPickerAsOverlay
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'showMonthPickerAsOverlay?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showNavigateButtons
+    name: showNavigateButtons
+    fullName: showNavigateButtons
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'showNavigateButtons?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showSixWeeksByDefault
+    name: showSixWeeksByDefault
+    fullName: showSixWeeksByDefault
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'showSixWeeksByDefault?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.showWeekNumbers
+    name: showWeekNumbers
+    fullName: showWeekNumbers
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'showWeekNumbers?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.workWeekDays
+    name: workWeekDays
+    fullName: workWeekDays
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'workWeekDays?: DayOfWeek[]'
+      return:
+        type:
+          - 'DayOfWeek[]'
+        description: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+    spec.typeScript:
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps

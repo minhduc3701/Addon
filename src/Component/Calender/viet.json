@@ -1,0 +1,49 @@
+{
+  "months": [
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một",
+    "Tháng Một"
+  ],
+  "shortMonths": [
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm",
+    "Năm"
+  ],
+  "days": [
+    "Thứ Hai",
+    "Thứ Hai",
+    "Thứ Hai",
+    "Thứ Hai",
+    "Thứ Hai",
+    "Thứ Hai",
+    "Thứ Hai"
+  ],
+  "shortDays": ["S", "M", "T", "W", "T", "F", "S"],
+  "goToToday": "Go to today",
+  "weekNumberFormatString": "Week number {0}",
+  "prevMonthAriaLabel": "Previous month",
+  "nextMonthAriaLabel": "Next month",
+  "prevYearAriaLabel": "Previous year",
+  "nextYearAriaLabel": "Next year",
+  "prevYearRangeAriaLabel": "Previous year range",
+  "nextYearRangeAriaLabel": "Next year range",
+  "closeButtonAriaLabel": "Close"
+}

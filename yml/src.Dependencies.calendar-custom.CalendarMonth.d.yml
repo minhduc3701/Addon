@@ -1,0 +1,168 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d
+    name: src.Dependencies.calendar-custom.CalendarMonth.d
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.CalendarMonth.d
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+    type: module
+    summary: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps,
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState>
+    name: ICalendarMonthState>
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarMonthProps
+        fullName: ICalendarMonthProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+      - name: ', '
+        fullName: ', '
+      - name: ICalendarMonthState
+        fullName: ICalendarMonthState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+    name: ICalendarMonthProps
+    spec.typeScript:
+      - name: ICalendarMonthProps
+        fullName: ICalendarMonthProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps>
+      & Readonly<Object>
+    name: ICalendarMonthProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarMonthProps
+        fullName: ICalendarMonthProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState>
+    name: ICalendarMonthState>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarMonthState
+        fullName: ICalendarMonthState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps>
+    name: ICalendarMonthProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarMonthProps
+        fullName: ICalendarMonthProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+    name: CalendarMonth
+    spec.typeScript:
+      - name: CalendarMonth
+        fullName: CalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+    name: ICalendarMonth
+    spec.typeScript:
+      - name: ICalendarMonth
+        fullName: ICalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+  - uid: >-
+      ClassAttributes<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth>
+    name: CalendarMonth>
+    spec.typeScript:
+      - name: ClassAttributes<
+        fullName: ClassAttributes<
+      - name: CalendarMonth
+        fullName: CalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      IRefObject<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth>
+    name: ICalendarMonth>
+    spec.typeScript:
+      - name: IRefObject<
+        fullName: IRefObject<
+      - name: ICalendarMonth
+        fullName: ICalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+    spec.typeScript:
+      - name: ICalendarFormatDateCallbacks
+        fullName: ICalendarFormatDateCallbacks
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      LegacyRef<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth>
+    name: CalendarMonth>
+    spec.typeScript:
+      - name: LegacyRef<
+        fullName: LegacyRef<
+      - name: CalendarMonth
+        fullName: CalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+    name: ICalendarMonthState
+    spec.typeScript:
+      - name: ICalendarMonthState
+        fullName: ICalendarMonthState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState

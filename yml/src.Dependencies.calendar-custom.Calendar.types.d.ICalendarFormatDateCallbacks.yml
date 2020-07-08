@@ -1,0 +1,158 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+    fullName: ICalendarFormatDateCallbacks
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.formatDay
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.formatMonthDayYear
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.formatMonthYear
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.formatYear
+    langs:
+      - typeScript
+    type: interface
+    summary: '{@docCategory Calendar}'
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.formatDay
+    name: formatDay
+    fullName: formatDay
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Callback to apply formatting to the days in the Day Picker calendar
+    syntax:
+      content: 'formatDay: (date: Date) => string'
+      return:
+        type:
+          - '(date: Date) => string'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.formatMonthDayYear
+    name: formatMonthDayYear
+    fullName: formatMonthDayYear
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'Callback to apply formatting to mmmm d, yyyy formated dates'
+    syntax:
+      content: 'formatMonthDayYear: (date: Date, strings?: ICalendarStrings) => string'
+      return:
+        type:
+          - '(date: Date, strings?: ICalendarStrings) => string'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.formatMonthYear
+    name: formatMonthYear
+    fullName: formatMonthYear
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Callback to apply formatting to the month and year in the Day Picker
+      header
+    syntax:
+      content: 'formatMonthYear: (date: Date, strings?: ICalendarStrings) => string'
+      return:
+        type:
+          - '(date: Date, strings?: ICalendarStrings) => string'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.formatYear
+    name: formatYear
+    fullName: formatYear
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Callback to apply formatting to the year in the Month Picker header
+    syntax:
+      content: 'formatYear: (date: Date) => string'
+      return:
+        type:
+          - '(date: Date) => string'
+        description: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+    name: ICalendar
+    spec.typeScript:
+      - name: ICalendar
+        fullName: ICalendar
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+    spec.typeScript:
+      - name: ICalendarFormatDateCallbacks
+        fullName: ICalendarFormatDateCallbacks
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+    spec.typeScript:
+      - name: ICalendarPropsFixed
+        fullName: ICalendarPropsFixed
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+  - uid: >-
+      IRefObject<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar>
+    name: ICalendar>
+    spec.typeScript:
+      - name: IRefObject<
+        fullName: IRefObject<
+      - name: ICalendar
+        fullName: ICalendar
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+      | null
+    name: ICalendarStrings | null
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+      - name: ' | null'
+        fullName: ' | null'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+    name: ICalendarProps
+    spec.typeScript:
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings

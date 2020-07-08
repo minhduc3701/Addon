@@ -1,0 +1,12 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.index
+    name: src.index
+    langs:
+      - typeScript
+    fullName: src.index
+    children: []
+    type: module
+    summary: ''
+    package: calendar-custom
+references: []

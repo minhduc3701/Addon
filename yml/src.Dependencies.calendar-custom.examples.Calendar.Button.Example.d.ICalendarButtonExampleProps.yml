@@ -1,0 +1,154 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps
+    name: ICalendarButtonExampleProps
+    fullName: ICalendarButtonExampleProps
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.buttonString
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.highlightCurrentMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.highlightSelectedMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.isDayPickerVisible
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.isMonthPickerVisible
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.showGoToToday
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.showMonthPickerAsOverlay
+    langs:
+      - typeScript
+    type: interface
+    summary: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.buttonString
+    name: buttonString
+    fullName: buttonString
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'buttonString?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.highlightCurrentMonth
+    name: highlightCurrentMonth
+    fullName: highlightCurrentMonth
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'highlightCurrentMonth?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.highlightSelectedMonth
+    name: highlightSelectedMonth
+    fullName: highlightSelectedMonth
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'highlightSelectedMonth?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.isDayPickerVisible
+    name: isDayPickerVisible
+    fullName: isDayPickerVisible
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'isDayPickerVisible?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.isMonthPickerVisible
+    name: isMonthPickerVisible
+    fullName: isMonthPickerVisible
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'isMonthPickerVisible?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.showGoToToday
+    name: showGoToToday
+    fullName: showGoToToday
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'showGoToToday?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.showMonthPickerAsOverlay
+    name: showMonthPickerAsOverlay
+    fullName: showMonthPickerAsOverlay
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'showMonthPickerAsOverlay?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps
+    name: ICalendarButtonExampleProps
+    spec.typeScript:
+      - name: ICalendarButtonExampleProps
+        fullName: ICalendarButtonExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps

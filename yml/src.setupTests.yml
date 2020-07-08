@@ -1,0 +1,12 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.setupTests
+    name: src.setupTests
+    langs:
+      - typeScript
+    fullName: src.setupTests
+    children: []
+    type: module
+    summary: ''
+    package: calendar-custom
+references: []

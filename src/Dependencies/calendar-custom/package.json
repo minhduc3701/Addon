@@ -1,0 +1,14 @@
+{
+  "name": "calendar-custom",
+  "version": "1.1.0",
+  "description": "the calendar custom for fluent ui",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

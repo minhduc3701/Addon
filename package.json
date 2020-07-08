@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fluentui/react": "^7.121.2",
+    "@fluentui/react-northstar": "0.50.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -10,10 +12,19 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/styled-components": "^5.1.0",
+    "calendar-custom": "file:src/Dependencies/calendar-custom",
+    "docfx": "^1.0.5",
+    "office-ui-fabric-core": "^11.0.0",
+    "office-ui-fabric-react": "^7.121.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "styled-components": "^5.1.1",
+    "type2docfx": "^0.10.5",
+    "typedoc": "^0.17.8",
+    "typescript": "^3.9.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^3.9.6"
   }
 }

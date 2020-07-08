@@ -1,0 +1,88 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalenderInline
+    name: src.Dependencies.calendar-custom.CalenderInline
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.CalenderInline
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+    type: module
+    summary: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps,
+      any>
+    name: 'ICalendarInlineExampleProps, any>'
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+      - name: ', any>'
+        fullName: ', any>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+    spec.typeScript:
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+      & Readonly<Object>
+    name: ICalendarInlineExampleProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+    name: ICalendarInlineExampleProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline
+    name: CalendarInline
+    spec.typeScript:
+      - name: CalendarInline
+        fullName: CalendarInline
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+    spec.typeScript:
+      - name: ICalendarPropsFixed
+        fullName: ICalendarPropsFixed
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed

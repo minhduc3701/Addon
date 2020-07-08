@@ -1,0 +1,92 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d
+    name: src.Dependencies.calendar-custom.Calendar.d
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.Calendar.d
+    children:
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+    type: module
+    summary: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps,
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState>
+    name: ICalendarState>
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+      - name: ', '
+        fullName: ', '
+      - name: ICalendarState
+        fullName: ICalendarState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+    name: ICalendarProps
+    spec.typeScript:
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps>
+      & Readonly<Object>
+    name: ICalendarProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState>
+    name: ICalendarState>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarState
+        fullName: ICalendarState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps>
+    name: ICalendarProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+      - name: '>'
+        fullName: '>'
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar
+    name: Calendar
+    spec.typeScript:
+      - name: Calendar
+        fullName: Calendar
+        uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+    name: ICalendarState
+    spec.typeScript:
+      - name: ICalendarState
+        fullName: ICalendarState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState

@@ -1,0 +1,216 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+    name: ICalendarDayState
+    fullName: ICalendarDayState
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState.activeDescendantId
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState.weeks
+    langs:
+      - typeScript
+    type: interface
+    summary: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState.activeDescendantId
+    name: activeDescendantId
+    fullName: activeDescendantId
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'activeDescendantId?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState.weeks
+    name: weeks
+    fullName: weeks
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'weeks?: IDayInfo[][]'
+      return:
+        type:
+          - >-
+            calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo[][]
+        description: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps,
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+    name: ICalendarDayState>
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarDayProps
+        fullName: ICalendarDayProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+      - name: ', '
+        fullName: ', '
+      - name: ICalendarDayState
+        fullName: ICalendarDayState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+    name: ICalendarDayProps
+    spec.typeScript:
+      - name: ICalendarDayProps
+        fullName: ICalendarDayProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+      & Readonly<Object>
+    name: ICalendarDayProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarDayProps
+        fullName: ICalendarDayProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+    name: ICalendarDayState>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarDayState
+        fullName: ICalendarDayState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+    name: ICalendarDayProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarDayProps
+        fullName: ICalendarDayProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+      - name: '>'
+        fullName: '>'
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+    name: CalendarDay
+    spec.typeScript:
+      - name: CalendarDay
+        fullName: CalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay
+    name: ICalendarDay
+    spec.typeScript:
+      - name: ICalendarDay
+        fullName: ICalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay
+  - uid: >-
+      ClassAttributes<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay>
+    name: CalendarDay>
+    spec.typeScript:
+      - name: ClassAttributes<
+        fullName: ClassAttributes<
+      - name: CalendarDay
+        fullName: CalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      IRefObject<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay>
+    name: ICalendarDay>
+    spec.typeScript:
+      - name: IRefObject<
+        fullName: IRefObject<
+      - name: ICalendarDay
+        fullName: ICalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+    spec.typeScript:
+      - name: ICalendarFormatDateCallbacks
+        fullName: ICalendarFormatDateCallbacks
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      LegacyRef<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay>
+    name: CalendarDay>
+    spec.typeScript:
+      - name: LegacyRef<
+        fullName: LegacyRef<
+      - name: CalendarDay
+        fullName: CalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo[][]
+    name: 'IDayInfo[][]'
+    spec.typeScript:
+      - name: IDayInfo
+        fullName: IDayInfo
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo
+      - name: '[][]'
+        fullName: '[][]'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+    name: ICalendarDayState
+    spec.typeScript:
+      - name: ICalendarDayState
+        fullName: ICalendarDayState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo
+    name: IDayInfo
+    spec.typeScript:
+      - name: IDayInfo
+        fullName: IDayInfo
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo

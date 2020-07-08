@@ -1,0 +1,12 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.react-app-env.d
+    name: src.react-app-env.d
+    langs:
+      - typeScript
+    fullName: src.react-app-env.d
+    children: []
+    type: module
+    summary: ''
+    package: calendar-custom
+references: []

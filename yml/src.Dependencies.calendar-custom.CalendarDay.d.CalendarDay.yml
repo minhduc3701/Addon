@@ -1,0 +1,796 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+    name: CalendarDay
+    fullName: CalendarDay<SS>
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.constructor
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentDidCatch
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentDidMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentDidUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentWillMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentWillReceiveProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentWillUnmount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentWillUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.context
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.contextType
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.focus
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.forceUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.getSnapshotBeforeUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.props
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.refs
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.render
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.setState
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.shouldComponentUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.state
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.UNSAFE_componentWillMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.UNSAFE_componentWillReceiveProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.UNSAFE_componentWillUpdate
+    langs:
+      - typeScript
+    type: class
+    summary: ''
+    extends:
+      name: >-
+        Component<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps,
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.constructor
+    name: CalendarDay(ICalendarDayProps)
+    children: []
+    type: constructor
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'new CalendarDay(props: ICalendarDayProps)'
+      parameters:
+        - id: props
+          type:
+            - >-
+              calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+          description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentDidCatch
+    name: 'componentDidCatch(Error, ErrorInfo)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Catches exceptions generated in descendant components. Unhandled
+      exceptions will cause
+
+      the entire component tree to unmount.
+    syntax:
+      content: 'function componentDidCatch(error: Error, errorInfo: ErrorInfo)'
+      parameters:
+        - id: error
+          type:
+            - Error
+          description: ''
+        - id: errorInfo
+          type:
+            - ErrorInfo
+          description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentDidMount
+    name: componentDidMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Called immediately after a component is mounted. Setting state here will
+      trigger re-rendering.
+    syntax:
+      content: function componentDidMount()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentDidUpdate
+    name: >-
+      componentDidUpdate(Readonly<ICalendarDayProps>,
+      Readonly<ICalendarDayState>, SS)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately after updating occurs. Not called for the initial
+      render.
+
+      The snapshot is only present if getSnapshotBeforeUpdate is present and
+      returns non-null.
+    syntax:
+      content: >-
+        function componentDidUpdate(prevProps: Readonly<ICalendarDayProps>,
+        prevState: Readonly<ICalendarDayState>, snapshot?: SS)
+      parameters:
+        - id: prevProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+          description: ''
+        - id: prevState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+          description: ''
+        - id: snapshot
+          type:
+            - SS
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentWillMount
+    name: componentWillMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: |
+      Called immediately before mounting occurs, and before `Component#render`.
+      Avoid introducing any side-effects or subscriptions in this method.
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+      prevents this from being invoked.
+    syntax:
+      content: function componentWillMount()
+      parameters: []
+    package: calendar-custom
+    deprecated:
+      content: >-
+        16.3, use componentDidMount or the constructor instead; will stop
+        working in React 17
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentWillReceiveProps
+    name: 'componentWillReceiveProps(Readonly<ICalendarDayProps>, any)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called when the component may be receiving new props.
+
+      React may call this even if props have not changed, so be sure to compare
+      new and existing
+
+      props if you only want to handle changes.
+
+      Calling `Component#setState` generally does not trigger this method.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function componentWillReceiveProps(nextProps:
+        Readonly<ICalendarDayProps>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: >-
+        16.3, use static getDerivedStateFromProps instead; will stop working in
+        React 17
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentWillUnmount
+    name: componentWillUnmount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Called immediately before a component is destroyed. Perform any necessary
+      cleanup in this method, such as
+
+      cancelled network requests, or cleaning up any DOM elements created in
+      `componentDidMount`.
+    syntax:
+      content: function componentWillUnmount()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.componentWillUpdate
+    name: >-
+      componentWillUpdate(Readonly<ICalendarDayProps>,
+      Readonly<ICalendarDayState>, any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately before rendering when new props or state is received.
+      Not called for the initial render.
+
+      Note: You cannot call `Component#setState` here.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function componentWillUpdate(nextProps: Readonly<ICalendarDayProps>,
+        nextState: Readonly<ICalendarDayState>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+          description: ''
+        - id: nextState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.context
+    name: context
+    fullName: context
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: |
+      If using the new style context, re-declare this in your class to be the
+      `React.ContextType` of your `static contextType`.
+      Should be used with type annotation or static contextType.
+      ```ts
+      static contextType = MyContext
+      // For TS pre-3.7:
+      context!: React.ContextType<typeof MyContext>
+      // For TS 3.7 and above:
+      declare context: React.ContextType<typeof MyContext>
+      ```
+    syntax:
+      content: 'context: any'
+      return:
+        type:
+          - any
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.contextType
+    name: contextType
+    fullName: contextType
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >
+      If set, `this.context` will be set at runtime to the current value of the
+      given Context.
+
+      Usage:
+
+
+      ```ts
+
+      type MyContext = number
+
+      const Ctx = React.createContext<MyContext>(0)
+
+
+      class Foo extends React.Component {
+        static contextType = Ctx
+        context!: React.ContextType<typeof Ctx>
+        render () {
+          return <>My context's value: {this.context}</>;
+        }
+      }
+
+      ```
+    optional: true
+    syntax:
+      content: 'static contextType?: Context<any>'
+      return:
+        type:
+          - Context<any>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.focus
+    name: focus()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function focus()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.forceUpdate
+    name: forceUpdate(undefined | () => void)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function forceUpdate(callback?: undefined | () => void)'
+      parameters:
+        - id: callback
+          type:
+            - undefined | () => void
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.getSnapshotBeforeUpdate
+    name: >-
+      getSnapshotBeforeUpdate(Readonly<ICalendarDayProps>,
+      Readonly<ICalendarDayState>)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Runs before React applies the result of `render` to the document, and
+
+      returns an object to be given to componentDidUpdate. Useful for saving
+
+      things such as scroll position before `render` causes changes to it.
+
+      Note: the presence of getSnapshotBeforeUpdate prevents any of the
+      deprecated
+
+      lifecycle events from running.
+    syntax:
+      content: >-
+        function getSnapshotBeforeUpdate(prevProps: Readonly<ICalendarDayProps>,
+        prevState: Readonly<ICalendarDayState>)
+      parameters:
+        - id: prevProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+          description: ''
+        - id: prevState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+          description: ''
+      return:
+        type:
+          - SS | null
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.props
+    name: props
+    fullName: props
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'props: Readonly<ICalendarDayProps> & Readonly<Object>'
+      return:
+        type:
+          - >-
+            Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+            & Readonly<Object>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.refs
+    name: refs
+    fullName: refs
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'refs: [key: string]: ReactInstance'
+      return:
+        type:
+          - '[key: string]: ReactInstance'
+        description: ''
+    package: calendar-custom
+    deprecated:
+      content: 'https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.render
+    name: render()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function render()
+      parameters: []
+      return:
+        type:
+          - Element
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.setState
+    name: >-
+      setState((prevState: Readonly<ICalendarDayState>, props:
+      Readonly<ICalendarDayProps>) => null | S | Object | null | S | Object,
+      undefined | () => void)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: >-
+        function setState<K>(state: (prevState: Readonly<ICalendarDayState>,
+        props: Readonly<ICalendarDayProps>) => null | S | Object | null | S |
+        Object, callback?: undefined | () => void)
+      parameters:
+        - id: state
+          type:
+            - >-
+              (prevState: Readonly<ICalendarDayState>, props:
+              Readonly<ICalendarDayProps>) => null | S | Object | null | S |
+              Object
+          description: ''
+        - id: callback
+          type:
+            - undefined | () => void
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.shouldComponentUpdate
+    name: >-
+      shouldComponentUpdate(Readonly<ICalendarDayProps>,
+      Readonly<ICalendarDayState>, any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called to determine whether the change in props and state should trigger a
+      re-render.
+
+      `Component` always returns true.
+
+      `PureComponent` implements a shallow comparison on props and state and
+      returns true if any
+
+      props or states have changed.
+
+
+      If false is returned, `Component#render`, `componentWillUpdate`
+
+      and `componentDidUpdate` will not be called.
+    syntax:
+      content: >-
+        function shouldComponentUpdate(nextProps: Readonly<ICalendarDayProps>,
+        nextState: Readonly<ICalendarDayState>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+          description: ''
+        - id: nextState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+      return:
+        type:
+          - boolean
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.state
+    name: state
+    fullName: state
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'state: Readonly<ICalendarDayState>'
+      return:
+        type:
+          - >-
+            Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.UNSAFE_componentWillMount
+    name: UNSAFE_componentWillMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: |
+      Called immediately before mounting occurs, and before `Component#render`.
+      Avoid introducing any side-effects or subscriptions in this method.
+      This method will not stop working in React 17.
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+      prevents this from being invoked.
+    syntax:
+      content: function UNSAFE_componentWillMount()
+      parameters: []
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use componentDidMount or the constructor instead'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.UNSAFE_componentWillReceiveProps
+    name: UNSAFE_componentWillReceiveProps(ICalendarDayProps)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function UNSAFE_componentWillReceiveProps(nextProps: ICalendarDayProps)'
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+          description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.UNSAFE_componentWillUpdate
+    name: >-
+      UNSAFE_componentWillUpdate(Readonly<ICalendarDayProps>,
+      Readonly<ICalendarDayState>, any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately before rendering when new props or state is received.
+      Not called for the initial render.
+
+      Note: You cannot call `Component#setState` here.
+
+
+      This method will not stop working in React 17.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function UNSAFE_componentWillUpdate(nextProps:
+        Readonly<ICalendarDayProps>, nextState: Readonly<ICalendarDayState>,
+        nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+          description: ''
+        - id: nextState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use getSnapshotBeforeUpdate instead'
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps,
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+    name: ICalendarDayState>
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarDayProps
+        fullName: ICalendarDayProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+      - name: ', '
+        fullName: ', '
+      - name: ICalendarDayState
+        fullName: ICalendarDayState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+    name: ICalendarDayProps
+    spec.typeScript:
+      - name: ICalendarDayProps
+        fullName: ICalendarDayProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+      & Readonly<Object>
+    name: ICalendarDayProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarDayProps
+        fullName: ICalendarDayProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState>
+    name: ICalendarDayState>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarDayState
+        fullName: ICalendarDayState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps>
+    name: ICalendarDayProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarDayProps
+        fullName: ICalendarDayProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+      - name: '>'
+        fullName: '>'
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+    name: CalendarDay
+    spec.typeScript:
+      - name: CalendarDay
+        fullName: CalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay
+    name: ICalendarDay
+    spec.typeScript:
+      - name: ICalendarDay
+        fullName: ICalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay
+  - uid: >-
+      ClassAttributes<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay>
+    name: CalendarDay>
+    spec.typeScript:
+      - name: ClassAttributes<
+        fullName: ClassAttributes<
+      - name: CalendarDay
+        fullName: CalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      IRefObject<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay>
+    name: ICalendarDay>
+    spec.typeScript:
+      - name: IRefObject<
+        fullName: IRefObject<
+      - name: ICalendarDay
+        fullName: ICalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+    spec.typeScript:
+      - name: ICalendarFormatDateCallbacks
+        fullName: ICalendarFormatDateCallbacks
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      LegacyRef<calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay>
+    name: CalendarDay>
+    spec.typeScript:
+      - name: LegacyRef<
+        fullName: LegacyRef<
+      - name: CalendarDay
+        fullName: CalendarDay
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo[][]
+    name: 'IDayInfo[][]'
+    spec.typeScript:
+      - name: IDayInfo
+        fullName: IDayInfo
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo
+      - name: '[][]'
+        fullName: '[][]'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+    name: ICalendarDayState
+    spec.typeScript:
+      - name: ICalendarDayState
+        fullName: ICalendarDayState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo
+    name: IDayInfo
+    spec.typeScript:
+      - name: IDayInfo
+        fullName: IDayInfo
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo

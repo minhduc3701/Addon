@@ -1,0 +1,39 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Component.Calender.CalenderInline
+    name: src.Component.Calender.CalenderInline
+    langs:
+      - typeScript
+    fullName: src.Component.Calender.CalenderInline
+    children:
+      - >-
+        calendar-custom.src.Component.Calender.CalenderInline.ICalendarInlineExampleProps
+      - >-
+        calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed
+    type: module
+    summary: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+  - uid: >-
+      calendar-custom.src.Component.Calender.CalenderInline.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+    spec.typeScript:
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Component.Calender.CalenderInline.ICalendarInlineExampleProps
+  - uid: calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+    spec.typeScript:
+      - name: ICalendarPropsFixed
+        fullName: ICalendarPropsFixed
+        uid: >-
+          calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed

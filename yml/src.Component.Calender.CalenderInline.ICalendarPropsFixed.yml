@@ -1,0 +1,75 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+    fullName: ICalendarPropsFixed
+    children:
+      - >-
+        calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed.calendarData
+      - >-
+        calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed.onHighLight
+    langs:
+      - typeScript
+    type: interface
+    summary: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed.calendarData
+    name: calendarData
+    fullName: calendarData
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'calendarData?: any'
+      return:
+        type:
+          - any
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed.onHighLight
+    name: onHighLight
+    fullName: onHighLight
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: >-
+        onHighLight?: undefined | (day: IDayInfo, rangeDate: rangeDateExample)
+        => string[]
+      return:
+        type:
+          - 'undefined | (day: IDayInfo, rangeDate: rangeDateExample) => string[]'
+        description: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+  - uid: >-
+      calendar-custom.src.Component.Calender.CalenderInline.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+    spec.typeScript:
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Component.Calender.CalenderInline.ICalendarInlineExampleProps
+  - uid: calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+    spec.typeScript:
+      - name: ICalendarPropsFixed
+        fullName: ICalendarPropsFixed
+        uid: >-
+          calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed

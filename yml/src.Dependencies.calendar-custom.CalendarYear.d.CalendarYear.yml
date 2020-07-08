@@ -1,0 +1,796 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear
+    name: CalendarYear
+    fullName: CalendarYear<SS>
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.constructor
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentDidCatch
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentDidMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentDidUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentWillMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentWillReceiveProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentWillUnmount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentWillUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.context
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.contextType
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.focus
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.forceUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.getSnapshotBeforeUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.props
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.refs
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.render
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.setState
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.shouldComponentUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.state
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.UNSAFE_componentWillMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.UNSAFE_componentWillReceiveProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.UNSAFE_componentWillUpdate
+    langs:
+      - typeScript
+    type: class
+    summary: ''
+    extends:
+      name: >-
+        Component<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps,
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.constructor
+    name: CalendarYear(ICalendarYearProps)
+    children: []
+    type: constructor
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'new CalendarYear(props: ICalendarYearProps)'
+      parameters:
+        - id: props
+          type:
+            - >-
+              calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+          description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentDidCatch
+    name: 'componentDidCatch(Error, ErrorInfo)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Catches exceptions generated in descendant components. Unhandled
+      exceptions will cause
+
+      the entire component tree to unmount.
+    syntax:
+      content: 'function componentDidCatch(error: Error, errorInfo: ErrorInfo)'
+      parameters:
+        - id: error
+          type:
+            - Error
+          description: ''
+        - id: errorInfo
+          type:
+            - ErrorInfo
+          description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentDidMount
+    name: componentDidMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Called immediately after a component is mounted. Setting state here will
+      trigger re-rendering.
+    syntax:
+      content: function componentDidMount()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentDidUpdate
+    name: >-
+      componentDidUpdate(Readonly<ICalendarYearProps>,
+      Readonly<ICalendarYearState>, SS)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately after updating occurs. Not called for the initial
+      render.
+
+      The snapshot is only present if getSnapshotBeforeUpdate is present and
+      returns non-null.
+    syntax:
+      content: >-
+        function componentDidUpdate(prevProps: Readonly<ICalendarYearProps>,
+        prevState: Readonly<ICalendarYearState>, snapshot?: SS)
+      parameters:
+        - id: prevProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+          description: ''
+        - id: prevState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+          description: ''
+        - id: snapshot
+          type:
+            - SS
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentWillMount
+    name: componentWillMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: |
+      Called immediately before mounting occurs, and before `Component#render`.
+      Avoid introducing any side-effects or subscriptions in this method.
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+      prevents this from being invoked.
+    syntax:
+      content: function componentWillMount()
+      parameters: []
+    package: calendar-custom
+    deprecated:
+      content: >-
+        16.3, use componentDidMount or the constructor instead; will stop
+        working in React 17
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentWillReceiveProps
+    name: 'componentWillReceiveProps(Readonly<ICalendarYearProps>, any)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called when the component may be receiving new props.
+
+      React may call this even if props have not changed, so be sure to compare
+      new and existing
+
+      props if you only want to handle changes.
+
+      Calling `Component#setState` generally does not trigger this method.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function componentWillReceiveProps(nextProps:
+        Readonly<ICalendarYearProps>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: >-
+        16.3, use static getDerivedStateFromProps instead; will stop working in
+        React 17
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentWillUnmount
+    name: componentWillUnmount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Called immediately before a component is destroyed. Perform any necessary
+      cleanup in this method, such as
+
+      cancelled network requests, or cleaning up any DOM elements created in
+      `componentDidMount`.
+    syntax:
+      content: function componentWillUnmount()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.componentWillUpdate
+    name: >-
+      componentWillUpdate(Readonly<ICalendarYearProps>,
+      Readonly<ICalendarYearState>, any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately before rendering when new props or state is received.
+      Not called for the initial render.
+
+      Note: You cannot call `Component#setState` here.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function componentWillUpdate(nextProps: Readonly<ICalendarYearProps>,
+        nextState: Readonly<ICalendarYearState>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+          description: ''
+        - id: nextState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.context
+    name: context
+    fullName: context
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: |
+      If using the new style context, re-declare this in your class to be the
+      `React.ContextType` of your `static contextType`.
+      Should be used with type annotation or static contextType.
+      ```ts
+      static contextType = MyContext
+      // For TS pre-3.7:
+      context!: React.ContextType<typeof MyContext>
+      // For TS 3.7 and above:
+      declare context: React.ContextType<typeof MyContext>
+      ```
+    syntax:
+      content: 'context: any'
+      return:
+        type:
+          - any
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.contextType
+    name: contextType
+    fullName: contextType
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >
+      If set, `this.context` will be set at runtime to the current value of the
+      given Context.
+
+      Usage:
+
+
+      ```ts
+
+      type MyContext = number
+
+      const Ctx = React.createContext<MyContext>(0)
+
+
+      class Foo extends React.Component {
+        static contextType = Ctx
+        context!: React.ContextType<typeof Ctx>
+        render () {
+          return <>My context's value: {this.context}</>;
+        }
+      }
+
+      ```
+    optional: true
+    syntax:
+      content: 'static contextType?: Context<any>'
+      return:
+        type:
+          - Context<any>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.focus
+    name: focus()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function focus()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.forceUpdate
+    name: forceUpdate(undefined | () => void)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function forceUpdate(callback?: undefined | () => void)'
+      parameters:
+        - id: callback
+          type:
+            - undefined | () => void
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.getSnapshotBeforeUpdate
+    name: >-
+      getSnapshotBeforeUpdate(Readonly<ICalendarYearProps>,
+      Readonly<ICalendarYearState>)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Runs before React applies the result of `render` to the document, and
+
+      returns an object to be given to componentDidUpdate. Useful for saving
+
+      things such as scroll position before `render` causes changes to it.
+
+      Note: the presence of getSnapshotBeforeUpdate prevents any of the
+      deprecated
+
+      lifecycle events from running.
+    syntax:
+      content: >-
+        function getSnapshotBeforeUpdate(prevProps:
+        Readonly<ICalendarYearProps>, prevState: Readonly<ICalendarYearState>)
+      parameters:
+        - id: prevProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+          description: ''
+        - id: prevState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+          description: ''
+      return:
+        type:
+          - SS | null
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.props
+    name: props
+    fullName: props
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'props: Readonly<ICalendarYearProps> & Readonly<Object>'
+      return:
+        type:
+          - >-
+            Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+            & Readonly<Object>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.refs
+    name: refs
+    fullName: refs
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'refs: [key: string]: ReactInstance'
+      return:
+        type:
+          - '[key: string]: ReactInstance'
+        description: ''
+    package: calendar-custom
+    deprecated:
+      content: 'https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.render
+    name: render()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function render()
+      parameters: []
+      return:
+        type:
+          - Element
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.setState
+    name: >-
+      setState((prevState: Readonly<ICalendarYearState>, props:
+      Readonly<ICalendarYearProps>) => null | S | Object | null | S | Object,
+      undefined | () => void)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: >-
+        function setState<K>(state: (prevState: Readonly<ICalendarYearState>,
+        props: Readonly<ICalendarYearProps>) => null | S | Object | null | S |
+        Object, callback?: undefined | () => void)
+      parameters:
+        - id: state
+          type:
+            - >-
+              (prevState: Readonly<ICalendarYearState>, props:
+              Readonly<ICalendarYearProps>) => null | S | Object | null | S |
+              Object
+          description: ''
+        - id: callback
+          type:
+            - undefined | () => void
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.shouldComponentUpdate
+    name: >-
+      shouldComponentUpdate(Readonly<ICalendarYearProps>,
+      Readonly<ICalendarYearState>, any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called to determine whether the change in props and state should trigger a
+      re-render.
+
+      `Component` always returns true.
+
+      `PureComponent` implements a shallow comparison on props and state and
+      returns true if any
+
+      props or states have changed.
+
+
+      If false is returned, `Component#render`, `componentWillUpdate`
+
+      and `componentDidUpdate` will not be called.
+    syntax:
+      content: >-
+        function shouldComponentUpdate(nextProps: Readonly<ICalendarYearProps>,
+        nextState: Readonly<ICalendarYearState>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+          description: ''
+        - id: nextState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+      return:
+        type:
+          - boolean
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.state
+    name: state
+    fullName: state
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'state: Readonly<ICalendarYearState>'
+      return:
+        type:
+          - >-
+            Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.UNSAFE_componentWillMount
+    name: UNSAFE_componentWillMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: |
+      Called immediately before mounting occurs, and before `Component#render`.
+      Avoid introducing any side-effects or subscriptions in this method.
+      This method will not stop working in React 17.
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+      prevents this from being invoked.
+    syntax:
+      content: function UNSAFE_componentWillMount()
+      parameters: []
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use componentDidMount or the constructor instead'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.UNSAFE_componentWillReceiveProps
+    name: 'UNSAFE_componentWillReceiveProps(Readonly<ICalendarYearProps>, any)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called when the component may be receiving new props.
+
+      React may call this even if props have not changed, so be sure to compare
+      new and existing
+
+      props if you only want to handle changes.
+
+      Calling `Component#setState` generally does not trigger this method.
+
+
+      This method will not stop working in React 17.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function UNSAFE_componentWillReceiveProps(nextProps:
+        Readonly<ICalendarYearProps>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use static getDerivedStateFromProps instead'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.UNSAFE_componentWillUpdate
+    name: >-
+      UNSAFE_componentWillUpdate(Readonly<ICalendarYearProps>,
+      Readonly<ICalendarYearState>, any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately before rendering when new props or state is received.
+      Not called for the initial render.
+
+      Note: You cannot call `Component#setState` here.
+
+
+      This method will not stop working in React 17.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function UNSAFE_componentWillUpdate(nextProps:
+        Readonly<ICalendarYearProps>, nextState: Readonly<ICalendarYearState>,
+        nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+          description: ''
+        - id: nextState
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use getSnapshotBeforeUpdate instead'
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps,
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+    name: ICalendarYearState>
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarYearProps
+        fullName: ICalendarYearProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+      - name: ', '
+        fullName: ', '
+      - name: ICalendarYearState
+        fullName: ICalendarYearState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+    name: ICalendarYearProps
+    spec.typeScript:
+      - name: ICalendarYearProps
+        fullName: ICalendarYearProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+      & Readonly<Object>
+    name: ICalendarYearProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarYearProps
+        fullName: ICalendarYearProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+    name: ICalendarYearState>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarYearState
+        fullName: ICalendarYearState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+    name: ICalendarYearProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarYearProps
+        fullName: ICalendarYearProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear
+    name: CalendarYear
+    spec.typeScript:
+      - name: CalendarYear
+        fullName: CalendarYear
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYear
+    name: ICalendarYear
+    spec.typeScript:
+      - name: ICalendarYear
+        fullName: ICalendarYear
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYear
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearStrings
+    name: ICalendarYearStrings
+    spec.typeScript:
+      - name: ICalendarYearStrings
+        fullName: ICalendarYearStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearHeaderProps
+    name: ICalendarYearHeaderProps
+    spec.typeScript:
+      - name: ICalendarYearHeaderProps
+        fullName: ICalendarYearHeaderProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearHeaderProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRange
+    name: ICalendarYearRange
+    spec.typeScript:
+      - name: ICalendarYearRange
+        fullName: ICalendarYearRange
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRange
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+    name: ICalendarYearRangeToString
+    spec.typeScript:
+      - name: ICalendarYearRangeToString
+        fullName: ICalendarYearRangeToString
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+    name: ICalendarYearState
+    spec.typeScript:
+      - name: ICalendarYearState
+        fullName: ICalendarYearState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+  - uid: >-
+      string |
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+    name: ICalendarYearRangeToString
+    spec.typeScript:
+      - name: 'string | '
+        fullName: 'string | '
+      - name: ICalendarYearRangeToString
+        fullName: ICalendarYearRangeToString
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString

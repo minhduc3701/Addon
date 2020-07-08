@@ -1,0 +1,23 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d
+    name: src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps
+    type: module
+    summary: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps
+    name: ICalendarButtonExampleProps
+    spec.typeScript:
+      - name: ICalendarButtonExampleProps
+        fullName: ICalendarButtonExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps

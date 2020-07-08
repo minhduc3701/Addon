@@ -1,0 +1,35 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example
+    name: src.Dependencies.calendar-custom.examples.Calendar.Button.Example
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.examples.Calendar.Button.Example
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.CalendarButtonExample
+    type: module
+    summary: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.CalendarButtonExample
+    name: CalendarButtonExample(any)
+    children: []
+    type: function
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function CalendarButtonExample(props: any)'
+      parameters:
+        - id: props
+          type:
+            - any
+          description: ''
+      return:
+        type:
+          - 'DetailedReactHTMLElement<HTMLAttributes<HTMLElement>, HTMLElement>'
+        description: ''
+    package: calendar-custom
+references: []

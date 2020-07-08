@@ -1,0 +1,900 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline
+    name: CalendarInline
+    fullName: CalendarInline<SS>
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.constructor
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentDidCatch
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentDidMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentDidUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentWillMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentWillReceiveProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentWillUnmount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentWillUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.context
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.contextType
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.forceUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.getMoreDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.getSnapshotBeforeUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.goNext
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.goPrevious
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onDismiss
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onGetMode
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onHighLightClass
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onSelectDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onSelectSingleDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.props
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.refs
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.render
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.sentDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.setState
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.shouldComponentUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.state
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.UNSAFE_componentWillMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.UNSAFE_componentWillReceiveProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.UNSAFE_componentWillUpdate
+    langs:
+      - typeScript
+    type: class
+    summary: ''
+    extends:
+      name: >-
+        Component<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps,
+        any>
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.constructor
+    name: CalendarInline(ICalendarInlineExampleProps)
+    children: []
+    type: constructor
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'new CalendarInline(props: ICalendarInlineExampleProps)'
+      parameters:
+        - id: props
+          type:
+            - >-
+              calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+          description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentDidCatch
+    name: 'componentDidCatch(Error, ErrorInfo)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Catches exceptions generated in descendant components. Unhandled
+      exceptions will cause
+
+      the entire component tree to unmount.
+    syntax:
+      content: 'function componentDidCatch(error: Error, errorInfo: ErrorInfo)'
+      parameters:
+        - id: error
+          type:
+            - Error
+          description: ''
+        - id: errorInfo
+          type:
+            - ErrorInfo
+          description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentDidMount
+    name: componentDidMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Called immediately after a component is mounted. Setting state here will
+      trigger re-rendering.
+    syntax:
+      content: function componentDidMount()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentDidUpdate
+    name: >-
+      componentDidUpdate(Readonly<ICalendarInlineExampleProps>, Readonly<any>,
+      SS)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately after updating occurs. Not called for the initial
+      render.
+
+      The snapshot is only present if getSnapshotBeforeUpdate is present and
+      returns non-null.
+    syntax:
+      content: >-
+        function componentDidUpdate(prevProps:
+        Readonly<ICalendarInlineExampleProps>, prevState: Readonly<any>,
+        snapshot?: SS)
+      parameters:
+        - id: prevProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+          description: ''
+        - id: prevState
+          type:
+            - Readonly<any>
+          description: ''
+        - id: snapshot
+          type:
+            - SS
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentWillMount
+    name: componentWillMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: |
+      Called immediately before mounting occurs, and before `Component#render`.
+      Avoid introducing any side-effects or subscriptions in this method.
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+      prevents this from being invoked.
+    syntax:
+      content: function componentWillMount()
+      parameters: []
+    package: calendar-custom
+    deprecated:
+      content: >-
+        16.3, use componentDidMount or the constructor instead; will stop
+        working in React 17
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentWillReceiveProps
+    name: 'componentWillReceiveProps(Readonly<ICalendarInlineExampleProps>, any)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called when the component may be receiving new props.
+
+      React may call this even if props have not changed, so be sure to compare
+      new and existing
+
+      props if you only want to handle changes.
+
+      Calling `Component#setState` generally does not trigger this method.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function componentWillReceiveProps(nextProps:
+        Readonly<ICalendarInlineExampleProps>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: >-
+        16.3, use static getDerivedStateFromProps instead; will stop working in
+        React 17
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentWillUnmount
+    name: componentWillUnmount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >-
+      Called immediately before a component is destroyed. Perform any necessary
+      cleanup in this method, such as
+
+      cancelled network requests, or cleaning up any DOM elements created in
+      `componentDidMount`.
+    syntax:
+      content: function componentWillUnmount()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.componentWillUpdate
+    name: >-
+      componentWillUpdate(Readonly<ICalendarInlineExampleProps>, Readonly<any>,
+      any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately before rendering when new props or state is received.
+      Not called for the initial render.
+
+      Note: You cannot call `Component#setState` here.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function componentWillUpdate(nextProps:
+        Readonly<ICalendarInlineExampleProps>, nextState: Readonly<any>,
+        nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+          description: ''
+        - id: nextState
+          type:
+            - Readonly<any>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.context
+    name: context
+    fullName: context
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: |
+      If using the new style context, re-declare this in your class to be the
+      `React.ContextType` of your `static contextType`.
+      Should be used with type annotation or static contextType.
+      ```ts
+      static contextType = MyContext
+      // For TS pre-3.7:
+      context!: React.ContextType<typeof MyContext>
+      // For TS 3.7 and above:
+      declare context: React.ContextType<typeof MyContext>
+      ```
+    syntax:
+      content: 'context: any'
+      return:
+        type:
+          - any
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.contextType
+    name: contextType
+    fullName: contextType
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >
+      If set, `this.context` will be set at runtime to the current value of the
+      given Context.
+
+      Usage:
+
+
+      ```ts
+
+      type MyContext = number
+
+      const Ctx = React.createContext<MyContext>(0)
+
+
+      class Foo extends React.Component {
+        static contextType = Ctx
+        context!: React.ContextType<typeof Ctx>
+        render () {
+          return <>My context's value: {this.context}</>;
+        }
+      }
+
+      ```
+    optional: true
+    syntax:
+      content: 'static contextType?: Context<any>'
+      return:
+        type:
+          - Context<any>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.forceUpdate
+    name: forceUpdate(undefined | () => void)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function forceUpdate(callback?: undefined | () => void)'
+      parameters:
+        - id: callback
+          type:
+            - undefined | () => void
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.getMoreDate
+    name: 'getMoreDate(Date, Date)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function getMoreDate(start: Date, end: Date)'
+      parameters:
+        - id: start
+          type:
+            - Date
+          description: ''
+        - id: end
+          type:
+            - Date
+          description: ''
+      return:
+        type:
+          - 'Object[]'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.getSnapshotBeforeUpdate
+    name: >-
+      getSnapshotBeforeUpdate(Readonly<ICalendarInlineExampleProps>,
+      Readonly<any>)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Runs before React applies the result of `render` to the document, and
+
+      returns an object to be given to componentDidUpdate. Useful for saving
+
+      things such as scroll position before `render` causes changes to it.
+
+      Note: the presence of getSnapshotBeforeUpdate prevents any of the
+      deprecated
+
+      lifecycle events from running.
+    syntax:
+      content: >-
+        function getSnapshotBeforeUpdate(prevProps:
+        Readonly<ICalendarInlineExampleProps>, prevState: Readonly<any>)
+      parameters:
+        - id: prevProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+          description: ''
+        - id: prevState
+          type:
+            - Readonly<any>
+          description: ''
+      return:
+        type:
+          - SS | null
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.goNext
+    name: goNext()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function goNext()
+      parameters: []
+      return:
+        type:
+          - Object
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.goPrevious
+    name: goPrevious()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function goPrevious()
+      parameters: []
+      return:
+        type:
+          - Object
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onDismiss
+    name: onDismiss()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function onDismiss()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onGetMode
+    name: onGetMode()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function onGetMode()
+      parameters: []
+      return:
+        type:
+          - Promise<void>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onHighLightClass
+    name: 'onHighLightClass(IDayInfo, rangeDateExample)'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function onHighLightClass(day: IDayInfo, rangeDate: rangeDateExample)'
+      parameters:
+        - id: day
+          type:
+            - IDayInfo
+          description: ''
+        - id: rangeDate
+          type:
+            - rangeDateExample
+          description: ''
+      return:
+        type:
+          - 'string[]'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onSelectDate
+    name: 'onSelectDate(Date, Date[])'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function onSelectDate(date: Date, dateRangeArray?: Date[])'
+      parameters:
+        - id: date
+          type:
+            - Date
+          description: ''
+        - id: dateRangeArray
+          type:
+            - 'Date[]'
+          description: ''
+          optional: true
+      return:
+        type:
+          - Promise<void>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.onSelectSingleDate
+    name: 'onSelectSingleDate(Date, Date[])'
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function onSelectSingleDate(date: Date, dateRangeArray?: Date[])'
+      parameters:
+        - id: date
+          type:
+            - Date
+          description: ''
+        - id: dateRangeArray
+          type:
+            - 'Date[]'
+          description: ''
+          optional: true
+      return:
+        type:
+          - Promise<void>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.props
+    name: props
+    fullName: props
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'props: Readonly<ICalendarInlineExampleProps> & Readonly<Object>'
+      return:
+        type:
+          - >-
+            Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+            & Readonly<Object>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.refs
+    name: refs
+    fullName: refs
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'refs: [key: string]: ReactInstance'
+      return:
+        type:
+          - '[key: string]: ReactInstance'
+        description: ''
+    package: calendar-custom
+    deprecated:
+      content: 'https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.render
+    name: render()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function render()
+      parameters: []
+      return:
+        type:
+          - Element
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.sentDate
+    name: sentDate()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function sentDate()
+      parameters: []
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.setState
+    name: >-
+      setState((prevState: Readonly<any>, props:
+      Readonly<ICalendarInlineExampleProps>) => null | S | Object | null | S |
+      Object, undefined | () => void)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: >-
+        function setState<K>(state: (prevState: Readonly<any>, props:
+        Readonly<ICalendarInlineExampleProps>) => null | S | Object | null | S |
+        Object, callback?: undefined | () => void)
+      parameters:
+        - id: state
+          type:
+            - >-
+              (prevState: Readonly<any>, props:
+              Readonly<ICalendarInlineExampleProps>) => null | S | Object | null
+              | S | Object
+          description: ''
+        - id: callback
+          type:
+            - undefined | () => void
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.shouldComponentUpdate
+    name: >-
+      shouldComponentUpdate(Readonly<ICalendarInlineExampleProps>,
+      Readonly<any>, any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called to determine whether the change in props and state should trigger a
+      re-render.
+
+      `Component` always returns true.
+
+      `PureComponent` implements a shallow comparison on props and state and
+      returns true if any
+
+      props or states have changed.
+
+
+      If false is returned, `Component#render`, `componentWillUpdate`
+
+      and `componentDidUpdate` will not be called.
+    syntax:
+      content: >-
+        function shouldComponentUpdate(nextProps:
+        Readonly<ICalendarInlineExampleProps>, nextState: Readonly<any>,
+        nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+          description: ''
+        - id: nextState
+          type:
+            - Readonly<any>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+      return:
+        type:
+          - boolean
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.state
+    name: state
+    fullName: state
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'state: Readonly<any>'
+      return:
+        type:
+          - Readonly<any>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.UNSAFE_componentWillMount
+    name: UNSAFE_componentWillMount()
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: |
+      Called immediately before mounting occurs, and before `Component#render`.
+      Avoid introducing any side-effects or subscriptions in this method.
+      This method will not stop working in React 17.
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+      prevents this from being invoked.
+    syntax:
+      content: function UNSAFE_componentWillMount()
+      parameters: []
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use componentDidMount or the constructor instead'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.UNSAFE_componentWillReceiveProps
+    name: >-
+      UNSAFE_componentWillReceiveProps(Readonly<ICalendarInlineExampleProps>,
+      any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called when the component may be receiving new props.
+
+      React may call this even if props have not changed, so be sure to compare
+      new and existing
+
+      props if you only want to handle changes.
+
+      Calling `Component#setState` generally does not trigger this method.
+
+
+      This method will not stop working in React 17.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function UNSAFE_componentWillReceiveProps(nextProps:
+        Readonly<ICalendarInlineExampleProps>, nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use static getDerivedStateFromProps instead'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline.UNSAFE_componentWillUpdate
+    name: >-
+      UNSAFE_componentWillUpdate(Readonly<ICalendarInlineExampleProps>,
+      Readonly<any>, any)
+    children: []
+    type: method
+    langs:
+      - typeScript
+    summary: >
+      Called immediately before rendering when new props or state is received.
+      Not called for the initial render.
+
+      Note: You cannot call `Component#setState` here.
+
+
+      This method will not stop working in React 17.
+
+
+      Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+
+      prevents this from being invoked.
+    syntax:
+      content: >-
+        function UNSAFE_componentWillUpdate(nextProps:
+        Readonly<ICalendarInlineExampleProps>, nextState: Readonly<any>,
+        nextContext: any)
+      parameters:
+        - id: nextProps
+          type:
+            - >-
+              Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+          description: ''
+        - id: nextState
+          type:
+            - Readonly<any>
+          description: ''
+        - id: nextContext
+          type:
+            - any
+          description: ''
+    package: calendar-custom
+    deprecated:
+      content: '16.3, use getSnapshotBeforeUpdate instead'
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps,
+      any>
+    name: 'ICalendarInlineExampleProps, any>'
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+      - name: ', any>'
+        fullName: ', any>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+    spec.typeScript:
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+      & Readonly<Object>
+    name: ICalendarInlineExampleProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps>
+    name: ICalendarInlineExampleProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline
+    name: CalendarInline
+    spec.typeScript:
+      - name: CalendarInline
+        fullName: CalendarInline
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+    spec.typeScript:
+      - name: ICalendarPropsFixed
+        fullName: ICalendarPropsFixed
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed

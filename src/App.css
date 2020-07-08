@@ -1,5 +1,10 @@
+body {
+  background-color: rgb(27, 26, 25);
+}
 .App {
-  text-align: center;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {

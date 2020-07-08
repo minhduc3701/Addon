@@ -1,0 +1,114 @@
+/**
+ * Compares a to b and b to a.
+ *
+ * @public
+ */
+// tslint:disable-next-line:no-any
+export function shallowCompare(a, b) {
+  for (let propName in a) {
+    if (a.hasOwnProperty(propName)) {
+      if (!b.hasOwnProperty(propName) || b[propName] !== a[propName]) {
+        return false;
+      }
+    }
+  }
+  for (let propName in b) {
+    if (b.hasOwnProperty(propName)) {
+      if (!a.hasOwnProperty(propName)) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+/**
+ * Makes a resulting merge of a bunch of objects. Pass in the target object followed by 1 or more
+ * objects as arguments and they will be merged sequentially into the target. Note that this will
+ * shallow merge; it will not create new cloned values for target members.
+ *
+ * @public
+ * @param target - Target object to merge following object arguments into.
+ * @param args - One or more objects that will be mixed into the target in the order they are provided.
+ * @returns Resulting merged target.
+ */
+// tslint:disable-next-line:no-any
+export function assign(target) {
+  var args = [];
+  for (var _i = 1; _i < arguments.length; _i++) {
+    args[_i - 1] = arguments[_i];
+  }
+  return filteredAssign.apply(this, [null, target].concat(args));
+}
+/**
+ * Makes a resulting merge of a bunch of objects, but allows a filter function to be passed in to filter
+ * the resulting merges. This allows for scenarios where you want to merge "everything except that one thing"
+ * or "properties that start with data-". Note that this will shallow merge; it will not create new cloned
+ * values for target members.
+ *
+ * @public
+ * @param isAllowed - Callback to determine if the given propName is allowed in the result.
+ * @param target - Target object to merge following object arguments into.
+ * @param args - One or more objects that will be mixed into the target in the order they are provided.
+ * @returns Resulting merged target.
+ */
+// tslint:disable-next-line:no-any
+export function filteredAssign(isAllowed, target) {
+  var args = [];
+  for (var _i = 2; _i < arguments.length; _i++) {
+    args[_i - 2] = arguments[_i];
+  }
+  target = target || {};
+  for (var _a = 0, args_1 = args; _a < args_1.length; _a++) {
+    var sourceObject = args_1[_a];
+    if (sourceObject) {
+      for (var propName in sourceObject) {
+        if (
+          sourceObject.hasOwnProperty(propName) &&
+          (!isAllowed || isAllowed(propName))
+        ) {
+          target[propName] = sourceObject[propName];
+        }
+      }
+    }
+  }
+  return target;
+}
+/**
+ * Takes an enum and iterates over each value of the enum (as a string), running the callback on each,
+ * returning a mapped array.
+ * @param theEnum - Enum to iterate over
+ * @param callback - The first parameter the name of the entry, and the second parameter is the value
+ * of that entry, which is the value you'd normally use when using the enum (usually a number).
+ */
+export function mapEnumByName(
+  // tslint:disable-next-line:no-any
+  theEnum,
+  callback
+) {
+  // map<any> to satisfy compiler since it doesn't realize we strip out undefineds in the .filter() call
+  return Object.keys(theEnum)
+    .map(function (p) {
+      // map on each property name as a string
+      if (String(Number(p)) !== p) {
+        // if the property is not just a number (because enums in TypeScript will map both ways)
+        return callback(p, theEnum[p]);
+      }
+      return undefined;
+    })
+    .filter(function (v) {
+      return !!v;
+    }); // only return elements with values
+}
+/**
+ * Get all values in an object dictionary
+ *
+ * @param obj - The dictionary to get values for
+ */
+// tslint:disable-next-line:no-any
+export function values(obj) {
+  return Object.keys(obj).reduce(function (arr, key) {
+    arr.push(obj[key]);
+    return arr;
+  }, []);
+}
+//# sourceMappingURL=object.js.map

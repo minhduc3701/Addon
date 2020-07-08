@@ -1,0 +1,23 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d
+    name: src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps
+    type: module
+    summary: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+    spec.typeScript:
+      - name: ICalendarInlineExampleProps
+        fullName: ICalendarInlineExampleProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps

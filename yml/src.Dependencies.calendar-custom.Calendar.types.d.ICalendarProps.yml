@@ -1,0 +1,5631 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+    name: ICalendarProps
+    fullName: ICalendarProps
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.about
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.accessKey
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.allFocusable
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-activedescendant
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-atomic
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-autocomplete
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-busy
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-checked
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-colcount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-colindex
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-colspan
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-controls
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-current
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-describedby
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-details
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-disabled
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-dropeffect
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-errormessage
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-expanded
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-flowto
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-grabbed
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-haspopup
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-hidden
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-invalid
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-keyshortcuts
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-label
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-labelledby
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-level
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-live
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-modal
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-multiline
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-multiselectable
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-orientation
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-owns
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-placeholder
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-posinset
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-pressed
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-readonly
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-relevant
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-required
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-roledescription
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-rowcount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-rowindex
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-rowspan
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-selected
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-setsize
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-sort
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-valuemax
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-valuemin
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-valuenow
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-valuetext
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.autoCapitalize
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.autoCorrect
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.autoNavigateOnSelection
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.autoSave
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.calendarData
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.children
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.className
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.color
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.componentRef
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.contentEditable
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.contextMenu
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.dangerouslySetInnerHTML
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.datatype
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.dateRangeType
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.dateTimeFormatter
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.defaultChecked
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.defaultValue
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.dir
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.draggable
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.firstDayOfWeek
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.firstWeekOfYear
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.hidden
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.highlightCurrentMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.highlightSelectedMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.id
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.inlist
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.inputMode
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.is
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.isDayPickerVisible
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.isMonthPickerVisible
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemID
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemProp
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemRef
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemScope
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemType
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.lang
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.maxDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.minDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.navigationIcons
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAbort
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAbortCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationEnd
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationEndCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationIteration
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationIterationCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationStart
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationStartCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAuxClick
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAuxClickCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onBeforeInput
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onBeforeInputCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onBlur
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onBlurCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCanPlay
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCanPlayCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCanPlayThrough
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCanPlayThroughCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onChange
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onChangeCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onClick
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onClickCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionEnd
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionEndCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionStart
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionStartCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionUpdateCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onContextMenu
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onContextMenuCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCopy
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCopyCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCut
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCutCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDismiss
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDoubleClick
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDoubleClickCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDrag
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragEnd
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragEndCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragEnter
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragEnterCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragExit
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragExitCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragLeave
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragLeaveCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragOver
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragOverCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragStart
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragStartCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDrop
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDropCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDurationChange
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDurationChangeCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEmptied
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEmptiedCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEncrypted
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEncryptedCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEnded
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEndedCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onError
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onErrorCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onFocus
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onFocusCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onGotPointerCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onGotPointerCaptureCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onHighLight
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onInput
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onInputCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onInvalid
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onInvalidCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyDown
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyDownCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyPress
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyPressCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyUp
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyUpCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoad
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadedData
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadedDataCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadedMetadata
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadedMetadataCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadStart
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadStartCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLostPointerCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLostPointerCaptureCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseDown
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseDownCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseEnter
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseLeave
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseMove
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseMoveCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseOut
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseOutCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseOver
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseOverCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseUp
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseUpCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPaste
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPasteCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPause
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPauseCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPlay
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPlayCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPlaying
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPlayingCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerCancel
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerCancelCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerDown
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerDownCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerEnter
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerEnterCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerLeave
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerLeaveCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerMove
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerMoveCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerOut
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerOutCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerOver
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerOverCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerUp
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerUpCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onProgress
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onProgressCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onRateChange
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onRateChangeCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onReset
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onResetCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onScroll
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onScrollCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSeeked
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSeekedCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSeeking
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSeekingCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSelect
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSelectCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSelectDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onStalled
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onStalledCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSubmit
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSubmitCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSuspend
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSuspendCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTimeUpdate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTimeUpdateCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchCancel
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchCancelCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchEnd
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchEndCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchMove
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchMoveCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchStart
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchStartCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTransitionEnd
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTransitionEndCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onVolumeChange
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onVolumeChangeCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onWaiting
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onWaitingCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onWheel
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onWheelCapture
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.placeholder
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.prefix
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.property
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.radioGroup
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.resource
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.restrictedDates
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.results
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.role
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.security
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.selectDateOnClick
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.shouldFocusOnMount
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showCloseButton
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showGoToToday
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showMonthPickerAsOverlay
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showSixWeeksByDefault
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showWeekNumbers
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.slot
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.spellCheck
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.strings
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.style
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.suppressContentEditableWarning
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.suppressHydrationWarning
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.tabIndex
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.title
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.today
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.translate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.typeof
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.unselectable
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.value
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.vocab
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.workWeekDays
+    langs:
+      - typeScript
+    type: interface
+    summary: '{@docCategory Calendar}'
+    extends:
+      name: >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.about
+    name: about
+    fullName: about
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'about?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.accessKey
+    name: accessKey
+    fullName: accessKey
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'accessKey?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.allFocusable
+    name: allFocusable
+    fullName: allFocusable
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'Allows all dates and buttons to be focused, including disabled ones'
+    optional: true
+    syntax:
+      content: 'allFocusable?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-activedescendant
+    name: aria-activedescendant
+    fullName: aria-activedescendant
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Identifies the currently active element when DOM focus is on a composite
+      widget, textbox, group, or application.
+    optional: true
+    syntax:
+      content: 'aria-activedescendant?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-atomic
+    name: aria-atomic
+    fullName: aria-atomic
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates whether assistive technologies will present all, or only parts
+      of, the changed region based on the change notifications defined by the
+      aria-relevant attribute.
+    optional: true
+    syntax:
+      content: 'aria-atomic?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-autocomplete
+    name: aria-autocomplete
+    fullName: aria-autocomplete
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates whether inputting text could trigger display of one or more
+      predictions of the user's intended value for an input and specifies how
+      predictions would be
+
+      presented if they are made.
+    optional: true
+    syntax:
+      content: 'aria-autocomplete?: "none" | "inline" | "list" | "both"'
+      return:
+        type:
+          - '"none" | "inline" | "list" | "both"'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-busy
+    name: aria-busy
+    fullName: aria-busy
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates an element is being modified and that assistive technologies MAY
+      want to wait until the modifications are complete before exposing them to
+      the user.
+    optional: true
+    syntax:
+      content: 'aria-busy?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-checked
+    name: aria-checked
+    fullName: aria-checked
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates the current "checked" state of checkboxes, radio buttons, and
+      other widgets.
+    optional: true
+    syntax:
+      content: 'aria-checked?: boolean | "false" | "mixed" | "true"'
+      return:
+        type:
+          - boolean | "false" | "mixed" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-colcount
+    name: aria-colcount
+    fullName: aria-colcount
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'Defines the total number of columns in a table, grid, or treegrid.'
+    optional: true
+    syntax:
+      content: 'aria-colcount?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-colindex
+    name: aria-colindex
+    fullName: aria-colindex
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines an element's column index or position with respect to the total
+      number of columns within a table, grid, or treegrid.
+    optional: true
+    syntax:
+      content: 'aria-colindex?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-colspan
+    name: aria-colspan
+    fullName: aria-colspan
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines the number of columns spanned by a cell or gridcell within a
+      table, grid, or treegrid.
+    optional: true
+    syntax:
+      content: 'aria-colspan?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-controls
+    name: aria-controls
+    fullName: aria-controls
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Identifies the element (or elements) whose contents or presence are
+      controlled by the current element.
+    optional: true
+    syntax:
+      content: 'aria-controls?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-current
+    name: aria-current
+    fullName: aria-current
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates the element that represents the current item within a container
+      or set of related elements.
+    optional: true
+    syntax:
+      content: >-
+        aria-current?: boolean | "false" | "true" | "page" | "step" | "location"
+        | "date" | "time"
+      return:
+        type:
+          - >-
+            boolean | "false" | "true" | "page" | "step" | "location" | "date" |
+            "time"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-describedby
+    name: aria-describedby
+    fullName: aria-describedby
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Identifies the element (or elements) that describes the object.
+    optional: true
+    syntax:
+      content: 'aria-describedby?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-details
+    name: aria-details
+    fullName: aria-details
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Identifies the element that provides a detailed, extended description for
+      the object.
+    optional: true
+    syntax:
+      content: 'aria-details?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-disabled
+    name: aria-disabled
+    fullName: aria-disabled
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates that the element is perceivable but disabled, so it is not
+      editable or otherwise operable.
+    optional: true
+    syntax:
+      content: 'aria-disabled?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-dropeffect
+    name: aria-dropeffect
+    fullName: aria-dropeffect
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates what functions can be performed when a dragged object is
+      released on the drop target.
+    optional: true
+    syntax:
+      content: >-
+        aria-dropeffect?: "none" | "copy" | "execute" | "link" | "move" |
+        "popup"
+      return:
+        type:
+          - '"none" | "copy" | "execute" | "link" | "move" | "popup"'
+        description: ''
+    package: calendar-custom
+    deprecated:
+      content: in ARIA 1.1
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-errormessage
+    name: aria-errormessage
+    fullName: aria-errormessage
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Identifies the element that provides an error message for the object.
+    optional: true
+    syntax:
+      content: 'aria-errormessage?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-expanded
+    name: aria-expanded
+    fullName: aria-expanded
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates whether the element, or another grouping element it controls, is
+      currently expanded or collapsed.
+    optional: true
+    syntax:
+      content: 'aria-expanded?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-flowto
+    name: aria-flowto
+    fullName: aria-flowto
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Identifies the next element (or elements) in an alternate reading order of
+      content which, at the user's discretion,
+
+      allows assistive technology to override the general default of reading in
+      document source order.
+    optional: true
+    syntax:
+      content: 'aria-flowto?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-grabbed
+    name: aria-grabbed
+    fullName: aria-grabbed
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Indicates an element's "grabbed" state in a drag-and-drop operation.
+    optional: true
+    syntax:
+      content: 'aria-grabbed?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+    deprecated:
+      content: in ARIA 1.1
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-haspopup
+    name: aria-haspopup
+    fullName: aria-haspopup
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates the availability and type of interactive popup element, such as
+      menu or dialog, that can be triggered by an element.
+    optional: true
+    syntax:
+      content: >-
+        aria-haspopup?: boolean | "false" | "true" | "menu" | "listbox" | "tree"
+        | "grid" | "dialog"
+      return:
+        type:
+          - >-
+            boolean | "false" | "true" | "menu" | "listbox" | "tree" | "grid" |
+            "dialog"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-hidden
+    name: aria-hidden
+    fullName: aria-hidden
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Indicates whether the element is exposed to an accessibility API.
+    optional: true
+    syntax:
+      content: 'aria-hidden?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-invalid
+    name: aria-invalid
+    fullName: aria-invalid
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates the entered value does not conform to the format expected by the
+      application.
+    optional: true
+    syntax:
+      content: 'aria-invalid?: boolean | "false" | "true" | "grammar" | "spelling"'
+      return:
+        type:
+          - boolean | "false" | "true" | "grammar" | "spelling"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-keyshortcuts
+    name: aria-keyshortcuts
+    fullName: aria-keyshortcuts
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates keyboard shortcuts that an author has implemented to activate or
+      give focus to an element.
+    optional: true
+    syntax:
+      content: 'aria-keyshortcuts?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-label
+    name: aria-label
+    fullName: aria-label
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Defines a string value that labels the current element.
+    optional: true
+    syntax:
+      content: 'aria-label?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-labelledby
+    name: aria-labelledby
+    fullName: aria-labelledby
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Identifies the element (or elements) that labels the current element.
+    optional: true
+    syntax:
+      content: 'aria-labelledby?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-level
+    name: aria-level
+    fullName: aria-level
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Defines the hierarchical level of an element within a structure.
+    optional: true
+    syntax:
+      content: 'aria-level?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-live
+    name: aria-live
+    fullName: aria-live
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates that an element will be updated, and describes the types of
+      updates the user agents, assistive technologies, and user can expect from
+      the live region.
+    optional: true
+    syntax:
+      content: 'aria-live?: "off" | "assertive" | "polite"'
+      return:
+        type:
+          - '"off" | "assertive" | "polite"'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-modal
+    name: aria-modal
+    fullName: aria-modal
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Indicates whether an element is modal when displayed.
+    optional: true
+    syntax:
+      content: 'aria-modal?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-multiline
+    name: aria-multiline
+    fullName: aria-multiline
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates whether a text box accepts multiple lines of input or only a
+      single line.
+    optional: true
+    syntax:
+      content: 'aria-multiline?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-multiselectable
+    name: aria-multiselectable
+    fullName: aria-multiselectable
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates that the user may select more than one item from the current
+      selectable descendants.
+    optional: true
+    syntax:
+      content: 'aria-multiselectable?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-orientation
+    name: aria-orientation
+    fullName: aria-orientation
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates whether the element's orientation is horizontal, vertical, or
+      unknown/ambiguous.
+    optional: true
+    syntax:
+      content: 'aria-orientation?: "horizontal" | "vertical"'
+      return:
+        type:
+          - '"horizontal" | "vertical"'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-owns
+    name: aria-owns
+    fullName: aria-owns
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Identifies an element (or elements) in order to define a visual,
+      functional, or contextual parent/child relationship
+
+      between DOM elements where the DOM hierarchy cannot be used to represent
+      the relationship.
+    optional: true
+    syntax:
+      content: 'aria-owns?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-placeholder
+    name: aria-placeholder
+    fullName: aria-placeholder
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines a short hint (a word or short phrase) intended to aid the user
+      with data entry when the control has no value.
+
+      A hint could be a sample value or a brief description of the expected
+      format.
+    optional: true
+    syntax:
+      content: 'aria-placeholder?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-posinset
+    name: aria-posinset
+    fullName: aria-posinset
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines an element's number or position in the current set of listitems or
+      treeitems. Not required if all elements in the set are present in the DOM.
+    optional: true
+    syntax:
+      content: 'aria-posinset?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-pressed
+    name: aria-pressed
+    fullName: aria-pressed
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Indicates the current "pressed" state of toggle buttons.
+    optional: true
+    syntax:
+      content: 'aria-pressed?: boolean | "false" | "mixed" | "true"'
+      return:
+        type:
+          - boolean | "false" | "mixed" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-readonly
+    name: aria-readonly
+    fullName: aria-readonly
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'Indicates that the element is not editable, but is otherwise operable.'
+    optional: true
+    syntax:
+      content: 'aria-readonly?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-relevant
+    name: aria-relevant
+    fullName: aria-relevant
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates what notifications the user agent will trigger when the
+      accessibility tree within a live region is modified.
+    optional: true
+    syntax:
+      content: >-
+        aria-relevant?: "additions" | "additions text" | "all" | "removals" |
+        "text"
+      return:
+        type:
+          - '"additions" | "additions text" | "all" | "removals" | "text"'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-required
+    name: aria-required
+    fullName: aria-required
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates that user input is required on the element before a form may be
+      submitted.
+    optional: true
+    syntax:
+      content: 'aria-required?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-roledescription
+    name: aria-roledescription
+    fullName: aria-roledescription
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines a human-readable, author-localized description for the role of an
+      element.
+    optional: true
+    syntax:
+      content: 'aria-roledescription?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-rowcount
+    name: aria-rowcount
+    fullName: aria-rowcount
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'Defines the total number of rows in a table, grid, or treegrid.'
+    optional: true
+    syntax:
+      content: 'aria-rowcount?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-rowindex
+    name: aria-rowindex
+    fullName: aria-rowindex
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines an element's row index or position with respect to the total
+      number of rows within a table, grid, or treegrid.
+    optional: true
+    syntax:
+      content: 'aria-rowindex?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-rowspan
+    name: aria-rowspan
+    fullName: aria-rowspan
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines the number of rows spanned by a cell or gridcell within a table,
+      grid, or treegrid.
+    optional: true
+    syntax:
+      content: 'aria-rowspan?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-selected
+    name: aria-selected
+    fullName: aria-selected
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Indicates the current "selected" state of various widgets.
+    optional: true
+    syntax:
+      content: 'aria-selected?: boolean | "false" | "true"'
+      return:
+        type:
+          - boolean | "false" | "true"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-setsize
+    name: aria-setsize
+    fullName: aria-setsize
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines the number of items in the current set of listitems or treeitems.
+      Not required if all elements in the set are present in the DOM.
+    optional: true
+    syntax:
+      content: 'aria-setsize?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-sort
+    name: aria-sort
+    fullName: aria-sort
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Indicates if items in a table or grid are sorted in ascending or
+      descending order.
+    optional: true
+    syntax:
+      content: 'aria-sort?: "none" | "ascending" | "descending" | "other"'
+      return:
+        type:
+          - '"none" | "ascending" | "descending" | "other"'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-valuemax
+    name: aria-valuemax
+    fullName: aria-valuemax
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Defines the maximum allowed value for a range widget.
+    optional: true
+    syntax:
+      content: 'aria-valuemax?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-valuemin
+    name: aria-valuemin
+    fullName: aria-valuemin
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Defines the minimum allowed value for a range widget.
+    optional: true
+    syntax:
+      content: 'aria-valuemin?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-valuenow
+    name: aria-valuenow
+    fullName: aria-valuenow
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Defines the current value for a range widget.
+    optional: true
+    syntax:
+      content: 'aria-valuenow?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.aria-valuetext
+    name: aria-valuetext
+    fullName: aria-valuetext
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines the human readable text alternative of aria-valuenow for a range
+      widget.
+    optional: true
+    syntax:
+      content: 'aria-valuetext?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.autoCapitalize
+    name: autoCapitalize
+    fullName: autoCapitalize
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'autoCapitalize?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.autoCorrect
+    name: autoCorrect
+    fullName: autoCorrect
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'autoCorrect?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.autoNavigateOnSelection
+    name: autoNavigateOnSelection
+    fullName: autoNavigateOnSelection
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Whether the month view should automatically navigate to the next or
+      previous date range
+
+      depending on the selected date. If this property is set to true and the
+      currently displayed
+
+      month is March 2017, if the user clicks on a day outside the month, i.e.,
+      April 1st, the
+
+      picker will automatically navigate to the month of April.
+    optional: true
+    syntax:
+      content: 'autoNavigateOnSelection?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.autoSave
+    name: autoSave
+    fullName: autoSave
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'autoSave?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.calendarData
+    name: calendarData
+    fullName: calendarData
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'calendarData?: any'
+      return:
+        type:
+          - any
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.children
+    name: children
+    fullName: children
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'children?: ReactNode'
+      return:
+        type:
+          - ReactNode
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.className
+    name: className
+    fullName: className
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Optional class name to add to the root element.
+    optional: true
+    syntax:
+      content: 'className?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.color
+    name: color
+    fullName: color
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'color?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.componentRef
+    name: componentRef
+    fullName: componentRef
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Optional callback to access the ICalendar interface. Use this instead of
+      ref for accessing
+
+      the public methods and properties of the component.
+    optional: true
+    syntax:
+      content: 'componentRef?: IRefObject<ICalendar>'
+      return:
+        type:
+          - >-
+            IRefObject<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.contentEditable
+    name: contentEditable
+    fullName: contentEditable
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'contentEditable?: Booleanish | "inherit"'
+      return:
+        type:
+          - Booleanish | "inherit"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.contextMenu
+    name: contextMenu
+    fullName: contextMenu
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'contextMenu?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.dangerouslySetInnerHTML
+    name: dangerouslySetInnerHTML
+    fullName: dangerouslySetInnerHTML
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'dangerouslySetInnerHTML?: undefined | Object'
+      return:
+        type:
+          - undefined | Object
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.datatype
+    name: datatype
+    fullName: datatype
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'datatype?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.dateRangeType
+    name: dateRangeType
+    fullName: dateRangeType
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      The date range type indicating how  many days should be selected as the
+      user
+
+      selects days
+    optional: true
+    syntax:
+      content: 'dateRangeType?: DateRangeType'
+      return:
+        type:
+          - DateRangeType
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.dateTimeFormatter
+    name: dateTimeFormatter
+    fullName: dateTimeFormatter
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Apply additional formating to dates, for example localized date
+      formatting.
+    optional: true
+    syntax:
+      content: 'dateTimeFormatter?: ICalendarFormatDateCallbacks'
+      return:
+        type:
+          - >-
+            calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.defaultChecked
+    name: defaultChecked
+    fullName: defaultChecked
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'defaultChecked?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.defaultValue
+    name: defaultValue
+    fullName: defaultValue
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'defaultValue?: string | number | ReadonlyArray<string>'
+      return:
+        type:
+          - string | number | ReadonlyArray<string>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.dir
+    name: dir
+    fullName: dir
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'dir?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.draggable
+    name: draggable
+    fullName: draggable
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'draggable?: Booleanish'
+      return:
+        type:
+          - Booleanish
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.firstDayOfWeek
+    name: firstDayOfWeek
+    fullName: firstDayOfWeek
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: The first day of the week for your locale.
+    optional: true
+    syntax:
+      content: 'firstDayOfWeek?: DayOfWeek'
+      return:
+        type:
+          - DayOfWeek
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.firstWeekOfYear
+    name: firstWeekOfYear
+    fullName: firstWeekOfYear
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Defines when the first week of the year should start,
+      FirstWeekOfYear.FirstDay,
+
+      FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the
+      possible values
+    optional: true
+    syntax:
+      content: 'firstWeekOfYear?: FirstWeekOfYear'
+      return:
+        type:
+          - FirstWeekOfYear
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.hidden
+    name: hidden
+    fullName: hidden
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'hidden?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.highlightCurrentMonth
+    name: highlightCurrentMonth
+    fullName: highlightCurrentMonth
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Whether the month picker should highlight the current month
+    optional: true
+    syntax:
+      content: 'highlightCurrentMonth?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.highlightSelectedMonth
+    name: highlightSelectedMonth
+    fullName: highlightSelectedMonth
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Whether the month picker should highlight the selected month
+    optional: true
+    syntax:
+      content: 'highlightSelectedMonth?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.id
+    name: id
+    fullName: id
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'id?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.inlist
+    name: inlist
+    fullName: inlist
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'inlist?: any'
+      return:
+        type:
+          - any
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.inputMode
+    name: inputMode
+    fullName: inputMode
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Hints at the type of data that might be entered by the user while editing
+      the element or its contents
+    optional: true
+    syntax:
+      content: >-
+        inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" |
+        "decimal" | "search"
+      return:
+        type:
+          - >-
+            "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" |
+            "search"
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.is
+    name: is
+    fullName: is
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Specify that a standard HTML element should behave like a defined custom
+      built-in element
+    optional: true
+    syntax:
+      content: 'is?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.isDayPickerVisible
+    name: isDayPickerVisible
+    fullName: isDayPickerVisible
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Whether the day picker is shown beside the month picker or hidden.
+    optional: true
+    syntax:
+      content: 'isDayPickerVisible?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.isMonthPickerVisible
+    name: isMonthPickerVisible
+    fullName: isMonthPickerVisible
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Whether the month picker is shown beside the day picker or hidden.
+    optional: true
+    syntax:
+      content: 'isMonthPickerVisible?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemID
+    name: itemID
+    fullName: itemID
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'itemID?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemProp
+    name: itemProp
+    fullName: itemProp
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'itemProp?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemRef
+    name: itemRef
+    fullName: itemRef
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'itemRef?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemScope
+    name: itemScope
+    fullName: itemScope
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'itemScope?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.itemType
+    name: itemType
+    fullName: itemType
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'itemType?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.lang
+    name: lang
+    fullName: lang
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'lang?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.maxDate
+    name: maxDate
+    fullName: maxDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      If set the Calendar will not allow navigation to or selection of a date
+      later than this value.
+    optional: true
+    syntax:
+      content: 'maxDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.minDate
+    name: minDate
+    fullName: minDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      If set the Calendar will not allow navigation to or selection of a date
+      earlier than this value.
+    optional: true
+    syntax:
+      content: 'minDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.navigationIcons
+    name: navigationIcons
+    fullName: navigationIcons
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Customize navigation icons using ICalendarIconStrings
+    optional: true
+    syntax:
+      content: 'navigationIcons?: ICalendarIconStrings'
+      return:
+        type:
+          - >-
+            calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAbort
+    name: onAbort
+    fullName: onAbort
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAbort?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAbortCapture
+    name: onAbortCapture
+    fullName: onAbortCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAbortCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationEnd
+    name: onAnimationEnd
+    fullName: onAnimationEnd
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAnimationEnd?: AnimationEventHandler<HTMLElement>'
+      return:
+        type:
+          - AnimationEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationEndCapture
+    name: onAnimationEndCapture
+    fullName: onAnimationEndCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAnimationEndCapture?: AnimationEventHandler<HTMLElement>'
+      return:
+        type:
+          - AnimationEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationIteration
+    name: onAnimationIteration
+    fullName: onAnimationIteration
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAnimationIteration?: AnimationEventHandler<HTMLElement>'
+      return:
+        type:
+          - AnimationEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationIterationCapture
+    name: onAnimationIterationCapture
+    fullName: onAnimationIterationCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAnimationIterationCapture?: AnimationEventHandler<HTMLElement>'
+      return:
+        type:
+          - AnimationEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationStart
+    name: onAnimationStart
+    fullName: onAnimationStart
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAnimationStart?: AnimationEventHandler<HTMLElement>'
+      return:
+        type:
+          - AnimationEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAnimationStartCapture
+    name: onAnimationStartCapture
+    fullName: onAnimationStartCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAnimationStartCapture?: AnimationEventHandler<HTMLElement>'
+      return:
+        type:
+          - AnimationEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAuxClick
+    name: onAuxClick
+    fullName: onAuxClick
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAuxClick?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onAuxClickCapture
+    name: onAuxClickCapture
+    fullName: onAuxClickCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onAuxClickCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onBeforeInput
+    name: onBeforeInput
+    fullName: onBeforeInput
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onBeforeInput?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onBeforeInputCapture
+    name: onBeforeInputCapture
+    fullName: onBeforeInputCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onBeforeInputCapture?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onBlur
+    name: onBlur
+    fullName: onBlur
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onBlur?: FocusEventHandler<HTMLElement>'
+      return:
+        type:
+          - FocusEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onBlurCapture
+    name: onBlurCapture
+    fullName: onBlurCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onBlurCapture?: FocusEventHandler<HTMLElement>'
+      return:
+        type:
+          - FocusEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCanPlay
+    name: onCanPlay
+    fullName: onCanPlay
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCanPlay?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCanPlayCapture
+    name: onCanPlayCapture
+    fullName: onCanPlayCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCanPlayCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCanPlayThrough
+    name: onCanPlayThrough
+    fullName: onCanPlayThrough
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCanPlayThrough?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCanPlayThroughCapture
+    name: onCanPlayThroughCapture
+    fullName: onCanPlayThroughCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCanPlayThroughCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onChange
+    name: onChange
+    fullName: onChange
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onChange?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onChangeCapture
+    name: onChangeCapture
+    fullName: onChangeCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onChangeCapture?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onClick
+    name: onClick
+    fullName: onClick
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onClick?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onClickCapture
+    name: onClickCapture
+    fullName: onClickCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onClickCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionEnd
+    name: onCompositionEnd
+    fullName: onCompositionEnd
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCompositionEnd?: CompositionEventHandler<HTMLElement>'
+      return:
+        type:
+          - CompositionEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionEndCapture
+    name: onCompositionEndCapture
+    fullName: onCompositionEndCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCompositionEndCapture?: CompositionEventHandler<HTMLElement>'
+      return:
+        type:
+          - CompositionEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionStart
+    name: onCompositionStart
+    fullName: onCompositionStart
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCompositionStart?: CompositionEventHandler<HTMLElement>'
+      return:
+        type:
+          - CompositionEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionStartCapture
+    name: onCompositionStartCapture
+    fullName: onCompositionStartCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCompositionStartCapture?: CompositionEventHandler<HTMLElement>'
+      return:
+        type:
+          - CompositionEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionUpdate
+    name: onCompositionUpdate
+    fullName: onCompositionUpdate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCompositionUpdate?: CompositionEventHandler<HTMLElement>'
+      return:
+        type:
+          - CompositionEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCompositionUpdateCapture
+    name: onCompositionUpdateCapture
+    fullName: onCompositionUpdateCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCompositionUpdateCapture?: CompositionEventHandler<HTMLElement>'
+      return:
+        type:
+          - CompositionEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onContextMenu
+    name: onContextMenu
+    fullName: onContextMenu
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onContextMenu?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onContextMenuCapture
+    name: onContextMenuCapture
+    fullName: onContextMenuCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onContextMenuCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCopy
+    name: onCopy
+    fullName: onCopy
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCopy?: ClipboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - ClipboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCopyCapture
+    name: onCopyCapture
+    fullName: onCopyCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCopyCapture?: ClipboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - ClipboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCut
+    name: onCut
+    fullName: onCut
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCut?: ClipboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - ClipboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onCutCapture
+    name: onCutCapture
+    fullName: onCutCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onCutCapture?: ClipboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - ClipboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDismiss
+    name: onDismiss
+    fullName: onDismiss
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Callback issued when calendar is closed
+    optional: true
+    syntax:
+      content: 'onDismiss?: undefined | () => void'
+      return:
+        type:
+          - undefined | () => void
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDoubleClick
+    name: onDoubleClick
+    fullName: onDoubleClick
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDoubleClick?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDoubleClickCapture
+    name: onDoubleClickCapture
+    fullName: onDoubleClickCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDoubleClickCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDrag
+    name: onDrag
+    fullName: onDrag
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDrag?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragCapture
+    name: onDragCapture
+    fullName: onDragCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragCapture?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragEnd
+    name: onDragEnd
+    fullName: onDragEnd
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragEnd?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragEndCapture
+    name: onDragEndCapture
+    fullName: onDragEndCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragEndCapture?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragEnter
+    name: onDragEnter
+    fullName: onDragEnter
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragEnter?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragEnterCapture
+    name: onDragEnterCapture
+    fullName: onDragEnterCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragEnterCapture?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragExit
+    name: onDragExit
+    fullName: onDragExit
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragExit?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragExitCapture
+    name: onDragExitCapture
+    fullName: onDragExitCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragExitCapture?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragLeave
+    name: onDragLeave
+    fullName: onDragLeave
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragLeave?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragLeaveCapture
+    name: onDragLeaveCapture
+    fullName: onDragLeaveCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragLeaveCapture?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragOver
+    name: onDragOver
+    fullName: onDragOver
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragOver?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragOverCapture
+    name: onDragOverCapture
+    fullName: onDragOverCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragOverCapture?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragStart
+    name: onDragStart
+    fullName: onDragStart
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragStart?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDragStartCapture
+    name: onDragStartCapture
+    fullName: onDragStartCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDragStartCapture?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDrop
+    name: onDrop
+    fullName: onDrop
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDrop?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDropCapture
+    name: onDropCapture
+    fullName: onDropCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDropCapture?: DragEventHandler<HTMLElement>'
+      return:
+        type:
+          - DragEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDurationChange
+    name: onDurationChange
+    fullName: onDurationChange
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDurationChange?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onDurationChangeCapture
+    name: onDurationChangeCapture
+    fullName: onDurationChangeCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onDurationChangeCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEmptied
+    name: onEmptied
+    fullName: onEmptied
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onEmptied?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEmptiedCapture
+    name: onEmptiedCapture
+    fullName: onEmptiedCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onEmptiedCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEncrypted
+    name: onEncrypted
+    fullName: onEncrypted
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onEncrypted?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEncryptedCapture
+    name: onEncryptedCapture
+    fullName: onEncryptedCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onEncryptedCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEnded
+    name: onEnded
+    fullName: onEnded
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onEnded?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onEndedCapture
+    name: onEndedCapture
+    fullName: onEndedCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onEndedCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onError
+    name: onError
+    fullName: onError
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onError?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onErrorCapture
+    name: onErrorCapture
+    fullName: onErrorCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onErrorCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onFocus
+    name: onFocus
+    fullName: onFocus
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onFocus?: FocusEventHandler<HTMLElement>'
+      return:
+        type:
+          - FocusEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onFocusCapture
+    name: onFocusCapture
+    fullName: onFocusCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onFocusCapture?: FocusEventHandler<HTMLElement>'
+      return:
+        type:
+          - FocusEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onGotPointerCapture
+    name: onGotPointerCapture
+    fullName: onGotPointerCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onGotPointerCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onGotPointerCaptureCapture
+    name: onGotPointerCaptureCapture
+    fullName: onGotPointerCaptureCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onGotPointerCaptureCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onHighLight
+    name: onHighLight
+    fullName: onHighLight
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: >-
+        onHighLight?: undefined | (day: IDayInfo, rangeDate: rangeDateExample)
+        => string[]
+      return:
+        type:
+          - 'undefined | (day: IDayInfo, rangeDate: rangeDateExample) => string[]'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onInput
+    name: onInput
+    fullName: onInput
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onInput?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onInputCapture
+    name: onInputCapture
+    fullName: onInputCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onInputCapture?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onInvalid
+    name: onInvalid
+    fullName: onInvalid
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onInvalid?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onInvalidCapture
+    name: onInvalidCapture
+    fullName: onInvalidCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onInvalidCapture?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyDown
+    name: onKeyDown
+    fullName: onKeyDown
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onKeyDown?: KeyboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - KeyboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyDownCapture
+    name: onKeyDownCapture
+    fullName: onKeyDownCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onKeyDownCapture?: KeyboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - KeyboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyPress
+    name: onKeyPress
+    fullName: onKeyPress
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onKeyPress?: KeyboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - KeyboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyPressCapture
+    name: onKeyPressCapture
+    fullName: onKeyPressCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onKeyPressCapture?: KeyboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - KeyboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyUp
+    name: onKeyUp
+    fullName: onKeyUp
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onKeyUp?: KeyboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - KeyboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onKeyUpCapture
+    name: onKeyUpCapture
+    fullName: onKeyUpCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onKeyUpCapture?: KeyboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - KeyboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoad
+    name: onLoad
+    fullName: onLoad
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLoad?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadCapture
+    name: onLoadCapture
+    fullName: onLoadCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLoadCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadedData
+    name: onLoadedData
+    fullName: onLoadedData
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLoadedData?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadedDataCapture
+    name: onLoadedDataCapture
+    fullName: onLoadedDataCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLoadedDataCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadedMetadata
+    name: onLoadedMetadata
+    fullName: onLoadedMetadata
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLoadedMetadata?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadedMetadataCapture
+    name: onLoadedMetadataCapture
+    fullName: onLoadedMetadataCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLoadedMetadataCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadStart
+    name: onLoadStart
+    fullName: onLoadStart
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLoadStart?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLoadStartCapture
+    name: onLoadStartCapture
+    fullName: onLoadStartCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLoadStartCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLostPointerCapture
+    name: onLostPointerCapture
+    fullName: onLostPointerCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLostPointerCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onLostPointerCaptureCapture
+    name: onLostPointerCaptureCapture
+    fullName: onLostPointerCaptureCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onLostPointerCaptureCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseDown
+    name: onMouseDown
+    fullName: onMouseDown
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseDown?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseDownCapture
+    name: onMouseDownCapture
+    fullName: onMouseDownCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseDownCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseEnter
+    name: onMouseEnter
+    fullName: onMouseEnter
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseEnter?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseLeave
+    name: onMouseLeave
+    fullName: onMouseLeave
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseLeave?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseMove
+    name: onMouseMove
+    fullName: onMouseMove
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseMove?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseMoveCapture
+    name: onMouseMoveCapture
+    fullName: onMouseMoveCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseMoveCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseOut
+    name: onMouseOut
+    fullName: onMouseOut
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseOut?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseOutCapture
+    name: onMouseOutCapture
+    fullName: onMouseOutCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseOutCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseOver
+    name: onMouseOver
+    fullName: onMouseOver
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseOver?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseOverCapture
+    name: onMouseOverCapture
+    fullName: onMouseOverCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseOverCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseUp
+    name: onMouseUp
+    fullName: onMouseUp
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseUp?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onMouseUpCapture
+    name: onMouseUpCapture
+    fullName: onMouseUpCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onMouseUpCapture?: MouseEventHandler<HTMLElement>'
+      return:
+        type:
+          - MouseEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPaste
+    name: onPaste
+    fullName: onPaste
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPaste?: ClipboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - ClipboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPasteCapture
+    name: onPasteCapture
+    fullName: onPasteCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPasteCapture?: ClipboardEventHandler<HTMLElement>'
+      return:
+        type:
+          - ClipboardEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPause
+    name: onPause
+    fullName: onPause
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPause?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPauseCapture
+    name: onPauseCapture
+    fullName: onPauseCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPauseCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPlay
+    name: onPlay
+    fullName: onPlay
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPlay?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPlayCapture
+    name: onPlayCapture
+    fullName: onPlayCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPlayCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPlaying
+    name: onPlaying
+    fullName: onPlaying
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPlaying?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPlayingCapture
+    name: onPlayingCapture
+    fullName: onPlayingCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPlayingCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerCancel
+    name: onPointerCancel
+    fullName: onPointerCancel
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerCancel?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerCancelCapture
+    name: onPointerCancelCapture
+    fullName: onPointerCancelCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerCancelCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerDown
+    name: onPointerDown
+    fullName: onPointerDown
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerDown?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerDownCapture
+    name: onPointerDownCapture
+    fullName: onPointerDownCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerDownCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerEnter
+    name: onPointerEnter
+    fullName: onPointerEnter
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerEnter?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerEnterCapture
+    name: onPointerEnterCapture
+    fullName: onPointerEnterCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerEnterCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerLeave
+    name: onPointerLeave
+    fullName: onPointerLeave
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerLeave?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerLeaveCapture
+    name: onPointerLeaveCapture
+    fullName: onPointerLeaveCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerLeaveCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerMove
+    name: onPointerMove
+    fullName: onPointerMove
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerMove?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerMoveCapture
+    name: onPointerMoveCapture
+    fullName: onPointerMoveCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerMoveCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerOut
+    name: onPointerOut
+    fullName: onPointerOut
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerOut?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerOutCapture
+    name: onPointerOutCapture
+    fullName: onPointerOutCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerOutCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerOver
+    name: onPointerOver
+    fullName: onPointerOver
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerOver?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerOverCapture
+    name: onPointerOverCapture
+    fullName: onPointerOverCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerOverCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerUp
+    name: onPointerUp
+    fullName: onPointerUp
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerUp?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onPointerUpCapture
+    name: onPointerUpCapture
+    fullName: onPointerUpCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onPointerUpCapture?: PointerEventHandler<HTMLElement>'
+      return:
+        type:
+          - PointerEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onProgress
+    name: onProgress
+    fullName: onProgress
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onProgress?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onProgressCapture
+    name: onProgressCapture
+    fullName: onProgressCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onProgressCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onRateChange
+    name: onRateChange
+    fullName: onRateChange
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onRateChange?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onRateChangeCapture
+    name: onRateChangeCapture
+    fullName: onRateChangeCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onRateChangeCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onReset
+    name: onReset
+    fullName: onReset
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onReset?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onResetCapture
+    name: onResetCapture
+    fullName: onResetCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onResetCapture?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onScroll
+    name: onScroll
+    fullName: onScroll
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onScroll?: UIEventHandler<HTMLElement>'
+      return:
+        type:
+          - UIEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onScrollCapture
+    name: onScrollCapture
+    fullName: onScrollCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onScrollCapture?: UIEventHandler<HTMLElement>'
+      return:
+        type:
+          - UIEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSeeked
+    name: onSeeked
+    fullName: onSeeked
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSeeked?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSeekedCapture
+    name: onSeekedCapture
+    fullName: onSeekedCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSeekedCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSeeking
+    name: onSeeking
+    fullName: onSeeking
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSeeking?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSeekingCapture
+    name: onSeekingCapture
+    fullName: onSeekingCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSeekingCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSelect
+    name: onSelect
+    fullName: onSelect
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSelect?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSelectCapture
+    name: onSelectCapture
+    fullName: onSelectCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSelectCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSelectDate
+    name: onSelectDate
+    fullName: onSelectDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Callback issued when a date is selected
+    optional: true
+    syntax:
+      content: >-
+        onSelectDate?: undefined | (date: Date, selectedDateRangeArray?: Date[])
+        => void
+      return:
+        type:
+          - 'undefined | (date: Date, selectedDateRangeArray?: Date[]) => void'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onStalled
+    name: onStalled
+    fullName: onStalled
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onStalled?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onStalledCapture
+    name: onStalledCapture
+    fullName: onStalledCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onStalledCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSubmit
+    name: onSubmit
+    fullName: onSubmit
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSubmit?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSubmitCapture
+    name: onSubmitCapture
+    fullName: onSubmitCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSubmitCapture?: FormEventHandler<HTMLElement>'
+      return:
+        type:
+          - FormEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSuspend
+    name: onSuspend
+    fullName: onSuspend
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSuspend?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onSuspendCapture
+    name: onSuspendCapture
+    fullName: onSuspendCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onSuspendCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTimeUpdate
+    name: onTimeUpdate
+    fullName: onTimeUpdate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTimeUpdate?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTimeUpdateCapture
+    name: onTimeUpdateCapture
+    fullName: onTimeUpdateCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTimeUpdateCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchCancel
+    name: onTouchCancel
+    fullName: onTouchCancel
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTouchCancel?: TouchEventHandler<HTMLElement>'
+      return:
+        type:
+          - TouchEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchCancelCapture
+    name: onTouchCancelCapture
+    fullName: onTouchCancelCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTouchCancelCapture?: TouchEventHandler<HTMLElement>'
+      return:
+        type:
+          - TouchEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchEnd
+    name: onTouchEnd
+    fullName: onTouchEnd
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTouchEnd?: TouchEventHandler<HTMLElement>'
+      return:
+        type:
+          - TouchEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchEndCapture
+    name: onTouchEndCapture
+    fullName: onTouchEndCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTouchEndCapture?: TouchEventHandler<HTMLElement>'
+      return:
+        type:
+          - TouchEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchMove
+    name: onTouchMove
+    fullName: onTouchMove
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTouchMove?: TouchEventHandler<HTMLElement>'
+      return:
+        type:
+          - TouchEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchMoveCapture
+    name: onTouchMoveCapture
+    fullName: onTouchMoveCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTouchMoveCapture?: TouchEventHandler<HTMLElement>'
+      return:
+        type:
+          - TouchEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchStart
+    name: onTouchStart
+    fullName: onTouchStart
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTouchStart?: TouchEventHandler<HTMLElement>'
+      return:
+        type:
+          - TouchEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTouchStartCapture
+    name: onTouchStartCapture
+    fullName: onTouchStartCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTouchStartCapture?: TouchEventHandler<HTMLElement>'
+      return:
+        type:
+          - TouchEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTransitionEnd
+    name: onTransitionEnd
+    fullName: onTransitionEnd
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTransitionEnd?: TransitionEventHandler<HTMLElement>'
+      return:
+        type:
+          - TransitionEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onTransitionEndCapture
+    name: onTransitionEndCapture
+    fullName: onTransitionEndCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onTransitionEndCapture?: TransitionEventHandler<HTMLElement>'
+      return:
+        type:
+          - TransitionEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onVolumeChange
+    name: onVolumeChange
+    fullName: onVolumeChange
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onVolumeChange?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onVolumeChangeCapture
+    name: onVolumeChangeCapture
+    fullName: onVolumeChangeCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onVolumeChangeCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onWaiting
+    name: onWaiting
+    fullName: onWaiting
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onWaiting?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onWaitingCapture
+    name: onWaitingCapture
+    fullName: onWaitingCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onWaitingCapture?: ReactEventHandler<HTMLElement>'
+      return:
+        type:
+          - ReactEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onWheel
+    name: onWheel
+    fullName: onWheel
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onWheel?: WheelEventHandler<HTMLElement>'
+      return:
+        type:
+          - WheelEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.onWheelCapture
+    name: onWheelCapture
+    fullName: onWheelCapture
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onWheelCapture?: WheelEventHandler<HTMLElement>'
+      return:
+        type:
+          - WheelEventHandler<HTMLElement>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.placeholder
+    name: placeholder
+    fullName: placeholder
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'placeholder?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.prefix
+    name: prefix
+    fullName: prefix
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'prefix?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.property
+    name: property
+    fullName: property
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'property?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.radioGroup
+    name: radioGroup
+    fullName: radioGroup
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'radioGroup?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.resource
+    name: resource
+    fullName: resource
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'resource?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.restrictedDates
+    name: restrictedDates
+    fullName: restrictedDates
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: If set the Calendar will not allow selection of dates in this array.
+    optional: true
+    syntax:
+      content: 'restrictedDates?: Date[]'
+      return:
+        type:
+          - 'Date[]'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.results
+    name: results
+    fullName: results
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'results?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.role
+    name: role
+    fullName: role
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'role?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.security
+    name: security
+    fullName: security
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'security?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.selectDateOnClick
+    name: selectDateOnClick
+    fullName: selectDateOnClick
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'When clicking on "Today", select the date and close the calendar.'
+    optional: true
+    syntax:
+      content: 'selectDateOnClick?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.shouldFocusOnMount
+    name: shouldFocusOnMount
+    fullName: shouldFocusOnMount
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      This property has been removed at 0.80.0 in place of the `focus` method,
+      to be removed \@ 1.0.0.
+    optional: true
+    syntax:
+      content: 'shouldFocusOnMount?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+    deprecated:
+      content: Replaced with the `focus` method.
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showCloseButton
+    name: showCloseButton
+    fullName: showCloseButton
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Whether the close button should be shown or not
+    optional: true
+    syntax:
+      content: 'showCloseButton?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showGoToToday
+    name: showGoToToday
+    fullName: showGoToToday
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Whether the "Go to today" link should be shown or not
+    optional: true
+    syntax:
+      content: 'showGoToToday?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showMonthPickerAsOverlay
+    name: showMonthPickerAsOverlay
+    fullName: showMonthPickerAsOverlay
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Show month picker on top of date picker when visible.
+    optional: true
+    syntax:
+      content: 'showMonthPickerAsOverlay?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showSixWeeksByDefault
+    name: showSixWeeksByDefault
+    fullName: showSixWeeksByDefault
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Whether the calendar should show 6 weeks by default.
+    optional: true
+    syntax:
+      content: 'showSixWeeksByDefault?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.showWeekNumbers
+    name: showWeekNumbers
+    fullName: showWeekNumbers
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      Whether the calendar should show the week number (weeks 1 to 53) before
+      each week row
+    optional: true
+    syntax:
+      content: 'showWeekNumbers?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.slot
+    name: slot
+    fullName: slot
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'slot?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.spellCheck
+    name: spellCheck
+    fullName: spellCheck
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'spellCheck?: Booleanish'
+      return:
+        type:
+          - Booleanish
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.strings
+    name: strings
+    fullName: strings
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: Localized strings to use in the Calendar
+    syntax:
+      content: 'strings: ICalendarStrings | null'
+      return:
+        type:
+          - >-
+            calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+            | null
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.style
+    name: style
+    fullName: style
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'style?: CSSProperties'
+      return:
+        type:
+          - CSSProperties
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.suppressContentEditableWarning
+    name: suppressContentEditableWarning
+    fullName: suppressContentEditableWarning
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'suppressContentEditableWarning?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.suppressHydrationWarning
+    name: suppressHydrationWarning
+    fullName: suppressHydrationWarning
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'suppressHydrationWarning?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.tabIndex
+    name: tabIndex
+    fullName: tabIndex
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'tabIndex?: undefined | number'
+      return:
+        type:
+          - undefined | number
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.title
+    name: title
+    fullName: title
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'title?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.today
+    name: today
+    fullName: today
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'Value of today. If null, current time in client machine will be used.'
+    optional: true
+    syntax:
+      content: 'today?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.translate
+    name: translate
+    fullName: translate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'translate?: "yes" | "no"'
+      return:
+        type:
+          - '"yes" | "no"'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.typeof
+    name: typeof
+    fullName: typeof
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'typeof?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.unselectable
+    name: unselectable
+    fullName: unselectable
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'unselectable?: "on" | "off"'
+      return:
+        type:
+          - '"on" | "off"'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.value
+    name: value
+    fullName: value
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'Default value of the Calendar, if any'
+    optional: true
+    syntax:
+      content: 'value?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.vocab
+    name: vocab
+    fullName: vocab
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'vocab?: undefined | string'
+      return:
+        type:
+          - undefined | string
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.workWeekDays
+    name: workWeekDays
+    fullName: workWeekDays
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: |-
+      The days that are selectable when dateRangeType is WorkWeek.
+      If dateRangeType is not WorkWeek this property does nothing.
+    optional: true
+    syntax:
+      content: 'workWeekDays?: DayOfWeek[]'
+      return:
+        type:
+          - 'DayOfWeek[]'
+        description: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+    name: ICalendar
+    spec.typeScript:
+      - name: ICalendar
+        fullName: ICalendar
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+    spec.typeScript:
+      - name: ICalendarFormatDateCallbacks
+        fullName: ICalendarFormatDateCallbacks
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+    spec.typeScript:
+      - name: ICalendarPropsFixed
+        fullName: ICalendarPropsFixed
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+  - uid: >-
+      IRefObject<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar>
+    name: ICalendar>
+    spec.typeScript:
+      - name: IRefObject<
+        fullName: IRefObject<
+      - name: ICalendar
+        fullName: ICalendar
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+      | null
+    name: ICalendarStrings | null
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+      - name: ' | null'
+        fullName: ' | null'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+    name: ICalendarProps
+    spec.typeScript:
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings

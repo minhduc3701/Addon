@@ -1,0 +1,41 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.serviceWorker
+    name: src.serviceWorker
+    langs:
+      - typeScript
+    fullName: src.serviceWorker
+    children:
+      - calendar-custom.src.serviceWorker.register
+      - calendar-custom.src.serviceWorker.unregister
+    type: module
+    summary: ''
+    package: calendar-custom
+  - uid: calendar-custom.src.serviceWorker.register
+    name: register(Config)
+    children: []
+    type: function
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function register(config?: Config)'
+      parameters:
+        - id: config
+          type:
+            - Config
+          description: ''
+          optional: true
+    package: calendar-custom
+  - uid: calendar-custom.src.serviceWorker.unregister
+    name: unregister()
+    children: []
+    type: function
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function unregister()
+      parameters: []
+    package: calendar-custom
+references: []

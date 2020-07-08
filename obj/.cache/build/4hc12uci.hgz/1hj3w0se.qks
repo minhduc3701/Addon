@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Package calendar-custom
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Package calendar-custom
+   ">
+    <meta name="generator" content="docfx 2.56.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="calendar-custom">
+  
+  <h1 id="calendar_custom" data-uid="calendar-custom" class="text-break">Package calendar-custom
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.Calendar.d.Calendar.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar">Calendar</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.html#calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_CalendarDay">CalendarDay</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth.html#calendar_custom_src_Dependencies_calendar_custom_CalendarMonth_d_CalendarMonth">CalendarMonth</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear.html#calendar_custom_src_Dependencies_calendar_custom_CalendarYear_d_CalendarYear">CalendarYear</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalenderInline.CalendarInline.html#calendar_custom_src_Dependencies_calendar_custom_CalenderInline_CalendarInline">CalendarInline</a></h4>
+        <section></section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+        <h4><a class="xref" href="src.Component.Calender.CalenderInline.ICalendarInlineExampleProps.html#calendar_custom_src_Component_Calender_CalenderInline_ICalendarInlineExampleProps">ICalendarInlineExampleProps</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Component.Calender.CalenderInline.ICalendarPropsFixed.html#calendar_custom_src_Component_Calender_CalenderInline_ICalendarPropsFixed">ICalendarPropsFixed</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.Calendar.d.ICalendarState.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_d_ICalendarState">ICalendarState</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendar.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendar">ICalendar</a></h4>
+        <section><p>{@docCategory Calendar}</p>
+</section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarFormatDateCallbacks">ICalendarFormatDateCallbacks</a></h4>
+        <section><p>{@docCategory Calendar}</p>
+</section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarIconStrings">ICalendarIconStrings</a></h4>
+        <section><p>{@docCategory Calendar}</p>
+</section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a></h4>
+        <section><p>{@docCategory Calendar}</p>
+</section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarStrings">ICalendarStrings</a></h4>
+        <section><p>{@docCategory Calendar}</p>
+</section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay.html#calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDay">ICalendarDay</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.html#calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps">ICalendarDayProps</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState.html#calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayState">ICalendarDayState</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo.html#calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_IDayInfo">IDayInfo</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth.html#calendar_custom_src_Dependencies_calendar_custom_CalendarMonth_d_ICalendarMonth">ICalendarMonth</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.html#calendar_custom_src_Dependencies_calendar_custom_CalendarMonth_d_ICalendarMonthProps">ICalendarMonthProps</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState.html#calendar_custom_src_Dependencies_calendar_custom_CalendarMonth_d_ICalendarMonthState">ICalendarMonthState</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYear.html#calendar_custom_src_Dependencies_calendar_custom_CalendarYear_d_ICalendarYear">ICalendarYear</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearHeaderProps.html#calendar_custom_src_Dependencies_calendar_custom_CalendarYear_d_ICalendarYearHeaderProps">ICalendarYearHeaderProps</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps.html#calendar_custom_src_Dependencies_calendar_custom_CalendarYear_d_ICalendarYearProps">ICalendarYearProps</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRange.html#calendar_custom_src_Dependencies_calendar_custom_CalendarYear_d_ICalendarYearRange">ICalendarYearRange</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString.html#calendar_custom_src_Dependencies_calendar_custom_CalendarYear_d_ICalendarYearRangeToString">ICalendarYearRangeToString</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState.html#calendar_custom_src_Dependencies_calendar_custom_CalendarYear_d_ICalendarYearState">ICalendarYearState</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearStrings.html#calendar_custom_src_Dependencies_calendar_custom_CalendarYear_d_ICalendarYearStrings">ICalendarYearStrings</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps.html#calendar_custom_src_Dependencies_calendar_custom_CalenderInline_ICalendarInlineExampleProps">ICalendarInlineExampleProps</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed.html#calendar_custom_src_Dependencies_calendar_custom_CalenderInline_ICalendarPropsFixed">ICalendarPropsFixed</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps.html#calendar_custom_src_Dependencies_calendar_custom_examples_Calendar_Button_Example_d_ICalendarButtonExampleProps">ICalendarButtonExampleProps</a></h4>
+        <section></section>
+        <h4><a class="xref" href="src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps.html#calendar_custom_src_Dependencies_calendar_custom_examples_Calendar_Inline_Example_d_ICalendarInlineExampleProps">ICalendarInlineExampleProps</a></h4>
+        <section></section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

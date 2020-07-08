@@ -1,0 +1,93 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d
+    name: src.Dependencies.calendar-custom.Calendar.types.d
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.Calendar.types.d
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    type: module
+    summary: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+    name: ICalendar
+    spec.typeScript:
+      - name: ICalendar
+        fullName: ICalendar
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+    spec.typeScript:
+      - name: ICalendarFormatDateCallbacks
+        fullName: ICalendarFormatDateCallbacks
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+    spec.typeScript:
+      - name: ICalendarPropsFixed
+        fullName: ICalendarPropsFixed
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+  - uid: >-
+      IRefObject<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar>
+    name: ICalendar>
+    spec.typeScript:
+      - name: IRefObject<
+        fullName: IRefObject<
+      - name: ICalendar
+        fullName: ICalendar
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+      | null
+    name: ICalendarStrings | null
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+      - name: ' | null'
+        fullName: ' | null'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+    name: ICalendarProps
+    spec.typeScript:
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings

@@ -1,0 +1,256 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom
+    name: calendar-custom
+    summary: ''
+    children:
+      - calendar-custom.src.App
+      - calendar-custom.src.App.test
+      - calendar-custom.src.Component.Calender.CalenderInline
+      - >-
+        calendar-custom.src.Component.Calender.CalenderInline.ICalendarInlineExampleProps
+      - >-
+        calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed
+      - calendar-custom.src.Component.Calender.CalenderStyle
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.d
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.doc
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.doc.d
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.scss
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.scss.d
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.types
+      - calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+      - calendar-custom.src.Dependencies.calendar-custom.CalendarDay
+      - calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+      - calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo
+      - calendar-custom.src.Dependencies.calendar-custom.CalendarMonth
+      - calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+      - calendar-custom.src.Dependencies.calendar-custom.CalendarYear
+      - calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYear
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearHeaderProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRange
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearStrings
+      - calendar-custom.src.Dependencies.calendar-custom.CalenderInline
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+      - calendar-custom.src.Dependencies.calendar-custom.CalenderStyle
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps
+      - calendar-custom.src.Dependencies.calendar-custom.index
+      - calendar-custom.src.Dependencies.calendar-custom.index.d
+      - calendar-custom.src.index
+      - calendar-custom.src.react-app-env.d
+      - calendar-custom.src.serviceWorker
+      - calendar-custom.src.setupTests
+    type: package
+    langs:
+      - typeScript
+references:
+  - uid: calendar-custom.src.App
+    name: src.App
+  - uid: calendar-custom.src.App.test
+    name: src.App.test
+  - uid: calendar-custom.src.Component.Calender.CalenderInline
+    name: src.Component.Calender.CalenderInline
+  - uid: >-
+      calendar-custom.src.Component.Calender.CalenderInline.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+  - uid: calendar-custom.src.Component.Calender.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+  - uid: calendar-custom.src.Component.Calender.CalenderStyle
+    name: src.Component.Calender.CalenderStyle
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar
+    name: src.Dependencies.calendar-custom.Calendar
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d
+    name: src.Dependencies.calendar-custom.Calendar.d
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar
+    name: Calendar
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+    name: ICalendarState
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.doc
+    name: src.Dependencies.calendar-custom.Calendar.doc
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.doc.d
+    name: src.Dependencies.calendar-custom.Calendar.doc.d
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.scss
+    name: src.Dependencies.calendar-custom.Calendar.scss
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.scss.d
+    name: src.Dependencies.calendar-custom.Calendar.scss.d
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.types
+    name: src.Dependencies.calendar-custom.Calendar.types
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d
+    name: src.Dependencies.calendar-custom.Calendar.types.d
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendar
+    name: ICalendar
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+    name: ICalendarProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay
+    name: src.Dependencies.calendar-custom.CalendarDay
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d
+    name: src.Dependencies.calendar-custom.CalendarDay.d
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay
+    name: CalendarDay
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay
+    name: ICalendarDay
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps
+    name: ICalendarDayProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayState
+    name: ICalendarDayState
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.IDayInfo
+    name: IDayInfo
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarMonth
+    name: src.Dependencies.calendar-custom.CalendarMonth
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d
+    name: src.Dependencies.calendar-custom.CalendarMonth.d
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+    name: CalendarMonth
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+    name: ICalendarMonth
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+    name: ICalendarMonthProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+    name: ICalendarMonthState
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarYear
+    name: src.Dependencies.calendar-custom.CalendarYear
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d
+    name: src.Dependencies.calendar-custom.CalendarYear.d
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear
+    name: CalendarYear
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYear
+    name: ICalendarYear
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearHeaderProps
+    name: ICalendarYearHeaderProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+    name: ICalendarYearProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRange
+    name: ICalendarYearRange
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+    name: ICalendarYearRangeToString
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+    name: ICalendarYearState
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearStrings
+    name: ICalendarYearStrings
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalenderInline
+    name: src.Dependencies.calendar-custom.CalenderInline
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.CalendarInline
+    name: CalendarInline
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalenderInline.ICalendarPropsFixed
+    name: ICalendarPropsFixed
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalenderStyle
+    name: src.Dependencies.calendar-custom.CalenderStyle
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example
+    name: src.Dependencies.calendar-custom.examples.Calendar.Button.Example
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d
+    name: src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Button.Example.d.ICalendarButtonExampleProps
+    name: ICalendarButtonExampleProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example
+    name: src.Dependencies.calendar-custom.examples.Calendar.Inline.Example
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d
+    name: src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.d.ICalendarInlineExampleProps
+    name: ICalendarInlineExampleProps
+  - uid: calendar-custom.src.Dependencies.calendar-custom.index
+    name: src.Dependencies.calendar-custom.index
+  - uid: calendar-custom.src.Dependencies.calendar-custom.index.d
+    name: src.Dependencies.calendar-custom.index.d
+  - uid: calendar-custom.src.index
+    name: src.index
+  - uid: calendar-custom.src.react-app-env.d
+    name: src.react-app-env.d
+  - uid: calendar-custom.src.serviceWorker
+    name: src.serviceWorker
+  - uid: calendar-custom.src.setupTests
+    name: src.setupTests

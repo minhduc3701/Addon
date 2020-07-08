@@ -1,0 +1,12 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Dependencies.calendar-custom.CalenderStyle
+    name: src.Dependencies.calendar-custom.CalenderStyle
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.CalenderStyle
+    children: []
+    type: module
+    summary: ''
+    package: calendar-custom
+references: []

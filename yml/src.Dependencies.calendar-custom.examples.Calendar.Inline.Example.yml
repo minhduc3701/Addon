@@ -1,0 +1,35 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example
+    name: src.Dependencies.calendar-custom.examples.Calendar.Inline.Example
+    langs:
+      - typeScript
+    fullName: src.Dependencies.calendar-custom.examples.Calendar.Inline.Example
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.CalendarInlineExample
+    type: module
+    summary: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.examples.Calendar.Inline.Example.CalendarInlineExample
+    name: CalendarInlineExample(any)
+    children: []
+    type: function
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: 'function CalendarInlineExample(props: any)'
+      parameters:
+        - id: props
+          type:
+            - any
+          description: ''
+      return:
+        type:
+          - 'DetailedReactHTMLElement<Object, HTMLElement>'
+        description: ''
+    package: calendar-custom
+references: []

@@ -1,0 +1,465 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+    name: ICalendarMonthProps
+    fullName: ICalendarMonthProps
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.componentRef
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.dateTimeFormatter
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.highlightCurrentMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.highlightSelectedMonth
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.key
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.maxDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.minDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.navigatedDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.navigationIcons
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.onHeaderSelect
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.onNavigateDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.ref
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.selectedDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.strings
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.today
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.yearPickerHidden
+    langs:
+      - typeScript
+    type: interface
+    summary: ''
+    extends:
+      name: >-
+        ClassAttributes<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth>
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.componentRef
+    name: componentRef
+    fullName: componentRef
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'componentRef?: IRefObject<ICalendarMonth>'
+      return:
+        type:
+          - >-
+            IRefObject<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.dateTimeFormatter
+    name: dateTimeFormatter
+    fullName: dateTimeFormatter
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'dateTimeFormatter: ICalendarFormatDateCallbacks'
+      return:
+        type:
+          - >-
+            calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.highlightCurrentMonth
+    name: highlightCurrentMonth
+    fullName: highlightCurrentMonth
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'highlightCurrentMonth: boolean'
+      return:
+        type:
+          - boolean
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.highlightSelectedMonth
+    name: highlightSelectedMonth
+    fullName: highlightSelectedMonth
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'highlightSelectedMonth: boolean'
+      return:
+        type:
+          - boolean
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.key
+    name: key
+    fullName: key
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'key?: Key'
+      return:
+        type:
+          - Key
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.maxDate
+    name: maxDate
+    fullName: maxDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'maxDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.minDate
+    name: minDate
+    fullName: minDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'minDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.navigatedDate
+    name: navigatedDate
+    fullName: navigatedDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'navigatedDate: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.navigationIcons
+    name: navigationIcons
+    fullName: navigationIcons
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'navigationIcons: ICalendarIconStrings'
+      return:
+        type:
+          - >-
+            calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.onHeaderSelect
+    name: onHeaderSelect
+    fullName: onHeaderSelect
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'onHeaderSelect?: undefined | (focus: boolean) => void'
+      return:
+        type:
+          - 'undefined | (focus: boolean) => void'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.onNavigateDate
+    name: onNavigateDate
+    fullName: onNavigateDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'onNavigateDate: (date: Date, focusOnNavigatedDay: boolean) => void'
+      return:
+        type:
+          - '(date: Date, focusOnNavigatedDay: boolean) => void'
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.ref
+    name: ref
+    fullName: ref
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'ref?: LegacyRef<CalendarMonth>'
+      return:
+        type:
+          - >-
+            LegacyRef<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth>
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.selectedDate
+    name: selectedDate
+    fullName: selectedDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'selectedDate: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.strings
+    name: strings
+    fullName: strings
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    syntax:
+      content: 'strings: ICalendarStrings'
+      return:
+        type:
+          - >-
+            calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.today
+    name: today
+    fullName: today
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'today?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps.yearPickerHidden
+    name: yearPickerHidden
+    fullName: yearPickerHidden
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: ''
+    optional: true
+    syntax:
+      content: 'yearPickerHidden?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps,
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState>
+    name: ICalendarMonthState>
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarMonthProps
+        fullName: ICalendarMonthProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+      - name: ', '
+        fullName: ', '
+      - name: ICalendarMonthState
+        fullName: ICalendarMonthState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+    name: ICalendarMonthProps
+    spec.typeScript:
+      - name: ICalendarMonthProps
+        fullName: ICalendarMonthProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps>
+      & Readonly<Object>
+    name: ICalendarMonthProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarMonthProps
+        fullName: ICalendarMonthProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState>
+    name: ICalendarMonthState>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarMonthState
+        fullName: ICalendarMonthState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps>
+    name: ICalendarMonthProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarMonthProps
+        fullName: ICalendarMonthProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthProps
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+    name: CalendarMonth
+    spec.typeScript:
+      - name: CalendarMonth
+        fullName: CalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+    name: ICalendarMonth
+    spec.typeScript:
+      - name: ICalendarMonth
+        fullName: ICalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+  - uid: >-
+      ClassAttributes<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth>
+    name: CalendarMonth>
+    spec.typeScript:
+      - name: ClassAttributes<
+        fullName: ClassAttributes<
+      - name: CalendarMonth
+        fullName: CalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      IRefObject<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth>
+    name: ICalendarMonth>
+    spec.typeScript:
+      - name: IRefObject<
+        fullName: IRefObject<
+      - name: ICalendarMonth
+        fullName: ICalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonth
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+    name: ICalendarFormatDateCallbacks
+    spec.typeScript:
+      - name: ICalendarFormatDateCallbacks
+        fullName: ICalendarFormatDateCallbacks
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      LegacyRef<calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth>
+    name: CalendarMonth>
+    spec.typeScript:
+      - name: LegacyRef<
+        fullName: LegacyRef<
+      - name: CalendarMonth
+        fullName: CalendarMonth
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.CalendarMonth
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+    name: ICalendarStrings
+    spec.typeScript:
+      - name: ICalendarStrings
+        fullName: ICalendarStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState
+    name: ICalendarMonthState
+    spec.typeScript:
+      - name: ICalendarMonthState
+        fullName: ICalendarMonthState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarMonth.d.ICalendarMonthState

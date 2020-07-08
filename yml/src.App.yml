@@ -1,0 +1,28 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.App
+    name: src.App
+    langs:
+      - typeScript
+    fullName: src.App
+    children:
+      - calendar-custom.src.App.App
+    type: module
+    summary: ''
+    package: calendar-custom
+  - uid: calendar-custom.src.App.App
+    name: App()
+    children: []
+    type: function
+    langs:
+      - typeScript
+    summary: ''
+    syntax:
+      content: function App()
+      parameters: []
+      return:
+        type:
+          - Element
+        description: ''
+    package: calendar-custom
+references: []

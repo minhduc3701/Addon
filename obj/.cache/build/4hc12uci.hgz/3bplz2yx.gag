@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ICalendarDayProps
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ICalendarDayProps
+   ">
+    <meta name="generator" content="docfx 2.56.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps">
+  
+  
+  <h1 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps">Interface ICalendarDayProps
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Package</strong>: <a class="xref" href="index.html">calendar-custom</a></h6>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_allFocusable" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.allFocusable">allFocusable</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">allFocusable?: undefined | false | true</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">undefined | false | true</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_autoNavigateOnSelection" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.autoNavigateOnSelection">autoNavigateOnSelection</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">autoNavigateOnSelection: boolean</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_componentRef" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.componentRef">componentRef</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">componentRef?: IRefObject&lt;ICalendarDay&gt;</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IRefObject&lt;<a class="xref" href="src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDay.html#calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDay">ICalendarDay</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_dateRangeType" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.dateRangeType">dateRangeType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">dateRangeType: DateRangeType</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DateRangeType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_dateTimeFormatter" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.dateTimeFormatter">dateTimeFormatter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">dateTimeFormatter: ICalendarFormatDateCallbacks</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarFormatDateCallbacks.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarFormatDateCallbacks">ICalendarFormatDateCallbacks</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_firstDayOfWeek" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.firstDayOfWeek">firstDayOfWeek</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">firstDayOfWeek: DayOfWeek</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DayOfWeek</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_firstWeekOfYear" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.firstWeekOfYear">firstWeekOfYear</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">firstWeekOfYear: FirstWeekOfYear</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FirstWeekOfYear</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_key" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.key">key</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">key?: Key</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_maxDate" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.maxDate">maxDate</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">maxDate?: Date</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Date</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_minDate" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.minDate">minDate</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">minDate?: Date</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Date</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_navigatedDate" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.navigatedDate">navigatedDate</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">navigatedDate: Date</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Date</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_navigationIcons" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.navigationIcons">navigationIcons</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">navigationIcons: ICalendarIconStrings</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarIconStrings">ICalendarIconStrings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_onDismiss" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.onDismiss">onDismiss</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">onDismiss?: undefined | () =&gt; void</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">undefined | () =&gt; void</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_onHeaderSelect" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.onHeaderSelect">onHeaderSelect</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">onHeaderSelect?: undefined | (focus: boolean) =&gt; void</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">undefined | (focus: boolean) =&gt; void</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_onNavigateDate" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.onNavigateDate">onNavigateDate</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">onNavigateDate: (date: Date, focusOnNavigatedDay: boolean) =&gt; void</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">(date: Date, focusOnNavigatedDay: boolean) =&gt; void</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_onSelectDate" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.onSelectDate">onSelectDate</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">onSelectDate: (date: Date, selectedDateRangeArray?: Date[]) =&gt; void</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">(date: Date, selectedDateRangeArray?: Date[]) =&gt; void</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_ref" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.ref">ref</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">ref?: LegacyRef&lt;CalendarDay&gt;</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LegacyRef&lt;<a class="xref" href="src.Dependencies.calendar-custom.CalendarDay.d.CalendarDay.html#calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_CalendarDay">CalendarDay</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_restrictedDates" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.restrictedDates">restrictedDates</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">restrictedDates?: Date[]</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Date[]</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_selectedDate" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.selectedDate">selectedDate</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">selectedDate: Date</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Date</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_showCloseButton" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.showCloseButton">showCloseButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">showCloseButton?: undefined | false | true</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">undefined | false | true</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_showSixWeeksByDefault" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.showSixWeeksByDefault">showSixWeeksByDefault</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">showSixWeeksByDefault?: undefined | false | true</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">undefined | false | true</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_showWeekNumbers" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.showWeekNumbers">showWeekNumbers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">showWeekNumbers?: undefined | false | true</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">undefined | false | true</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_strings" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.strings">strings</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">strings: ICalendarStrings</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarStrings.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarStrings">ICalendarStrings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_today" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.today">today</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">today?: Date</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Date</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_CalendarDay_d_ICalendarDayProps_workWeekDays" data-uid="calendar-custom.src.Dependencies.calendar-custom.CalendarDay.d.ICalendarDayProps.workWeekDays">workWeekDays</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">workWeekDays?: DayOfWeek[]</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DayOfWeek[]</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

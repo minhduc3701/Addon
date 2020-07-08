@@ -1,0 +1,802 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Calendar
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Calendar
+   ">
+    <meta name="generator" content="docfx 2.56.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar">
+  
+  
+  <h1 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar">Class Calendar
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Package</strong>: <a class="xref" href="index.html">calendar-custom</a></h6>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_constructor" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.constructor">Calendar(ICalendarProps)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">new Calendar(props: ICalendarProps)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a></td>
+        <td><em>props</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_context" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.context">context</h4>
+  <div class="markdown level1 summary"><p>If using the new style context, re-declare this in your class to be the
+<code>React.ContextType</code> of your <code>static contextType</code>.
+Should be used with type annotation or static contextType.</p>
+<pre><code class="lang-ts">static contextType = MyContext
+// For TS pre-3.7:
+context!: React.ContextType&lt;typeof MyContext&gt;
+// For TS 3.7 and above:
+declare context: React.ContextType&lt;typeof MyContext&gt;
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">context: any</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">any</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_contextType" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.contextType">contextType</h4>
+  <div class="markdown level1 summary"><p>If set, <code>this.context</code> will be set at runtime to the current value of the given Context.
+Usage:</p>
+<pre><code class="lang-ts">type MyContext = number
+const Ctx = React.createContext&lt;MyContext&gt;(0)
+
+class Foo extends React.Component {
+  static contextType = Ctx
+  context!: React.ContextType&lt;typeof Ctx&gt;
+  render () {
+    return &lt;&gt;My context&#39;s value: {this.context}&lt;/&gt;;
+  }
+}
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">static contextType?: Context&lt;any&gt;</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Context&lt;any&gt;</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_defaultProps" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.defaultProps">defaultProps</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">static defaultProps: ICalendarProps</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_props" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.props">props</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">props: Readonly&lt;ICalendarProps&gt; &amp; Readonly&lt;Object&gt;</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a>&gt; &amp; Readonly&lt;Object&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_refs" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.refs">refs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">refs: [key: string]: ReactInstance</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">[key: string]: ReactInstance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_state" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.state">state</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">state: Readonly&lt;ICalendarState&gt;</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.d.ICalendarState.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_d_ICalendarState">ICalendarState</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_componentDidCatch" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.componentDidCatch">componentDidCatch(Error, ErrorInfo)</h4>
+  <div class="markdown level1 summary"><p>Catches exceptions generated in descendant components. Unhandled exceptions will cause
+the entire component tree to unmount.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function componentDidCatch(error: Error, errorInfo: ErrorInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Error</span></td>
+        <td><em>error</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">ErrorInfo</span></td>
+        <td><em>errorInfo</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_componentDidMount" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.componentDidMount">componentDidMount()</h4>
+  <div class="markdown level1 summary"><p>Called immediately after a component is mounted. Setting state here will trigger re-rendering.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function componentDidMount()</code></pre>
+  </div>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_componentDidUpdate" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.componentDidUpdate">componentDidUpdate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function componentDidUpdate()</code></pre>
+  </div>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_componentWillMount" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.componentWillMount">componentWillMount()</h4>
+  <div class="markdown level1 summary"><p>Called immediately before mounting occurs, and before <code>Component#render</code>.
+Avoid introducing any side-effects or subscriptions in this method.
+Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+prevents this from being invoked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function componentWillMount()</code></pre>
+  </div>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_componentWillReceiveProps" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.componentWillReceiveProps">componentWillReceiveProps(Readonly&lt;ICalendarProps&gt;, any)</h4>
+  <div class="markdown level1 summary"><p>Called when the component may be receiving new props.
+React may call this even if props have not changed, so be sure to compare new and existing
+props if you only want to handle changes.
+Calling <code>Component#setState</code> generally does not trigger this method.</p>
+<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+prevents this from being invoked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function componentWillReceiveProps(nextProps: Readonly&lt;ICalendarProps&gt;, nextContext: any)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a>&gt;</td>
+        <td><em>nextProps</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">any</span></td>
+        <td><em>nextContext</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_componentWillUnmount" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.componentWillUnmount">componentWillUnmount()</h4>
+  <div class="markdown level1 summary"><p>Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as
+cancelled network requests, or cleaning up any DOM elements created in <code>componentDidMount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function componentWillUnmount()</code></pre>
+  </div>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_componentWillUpdate" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.componentWillUpdate">componentWillUpdate(Readonly&lt;ICalendarProps&gt;, Readonly&lt;ICalendarState&gt;, any)</h4>
+  <div class="markdown level1 summary"><p>Called immediately before rendering when new props or state is received. Not called for the initial render.
+Note: You cannot call <code>Component#setState</code> here.</p>
+<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+prevents this from being invoked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function componentWillUpdate(nextProps: Readonly&lt;ICalendarProps&gt;, nextState: Readonly&lt;ICalendarState&gt;, nextContext: any)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a>&gt;</td>
+        <td><em>nextProps</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.d.ICalendarState.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_d_ICalendarState">ICalendarState</a>&gt;</td>
+        <td><em>nextState</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">any</span></td>
+        <td><em>nextContext</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_focus" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.focus">focus()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function focus()</code></pre>
+  </div>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_forceUpdate" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.forceUpdate">forceUpdate(undefined | () =&gt; void)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function forceUpdate(callback?: undefined | () =&gt; void)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">undefined | () =&gt; void</span></td>
+        <td><em>callback</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_getSnapshotBeforeUpdate" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.getSnapshotBeforeUpdate">getSnapshotBeforeUpdate(Readonly&lt;ICalendarProps&gt;, Readonly&lt;ICalendarState&gt;)</h4>
+  <div class="markdown level1 summary"><p>Runs before React applies the result of <code>render</code> to the document, and
+returns an object to be given to componentDidUpdate. Useful for saving
+things such as scroll position before <code>render</code> causes changes to it.
+Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
+lifecycle events from running.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function getSnapshotBeforeUpdate(prevProps: Readonly&lt;ICalendarProps&gt;, prevState: Readonly&lt;ICalendarState&gt;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a>&gt;</td>
+        <td><em>prevProps</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.d.ICalendarState.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_d_ICalendarState">ICalendarState</a>&gt;</td>
+        <td><em>prevState</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SS | null</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_render" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.render">render()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function render()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_setState" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.setState">setState((prevState: Readonly&lt;ICalendarState&gt;, props: Readonly&lt;ICalendarProps&gt;) =&gt; null | S | Object | null | S | Object, undefined | () =&gt; void)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function setState&lt;K&gt;(state: (prevState: Readonly&lt;ICalendarState&gt;, props: Readonly&lt;ICalendarProps&gt;) =&gt; null | S | Object | null | S | Object, callback?: undefined | () =&gt; void)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">(prevState: Readonly&lt;ICalendarState&gt;, props: Readonly&lt;ICalendarProps&gt;) =&gt; null | S | Object | null | S | Object</span></td>
+        <td><em>state</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">undefined | () =&gt; void</span></td>
+        <td><em>callback</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_shouldComponentUpdate" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.shouldComponentUpdate">shouldComponentUpdate(Readonly&lt;ICalendarProps&gt;, Readonly&lt;ICalendarState&gt;, any)</h4>
+  <div class="markdown level1 summary"><p>Called to determine whether the change in props and state should trigger a re-render.
+<code>Component</code> always returns true.
+<code>PureComponent</code> implements a shallow comparison on props and state and returns true if any
+props or states have changed.</p>
+<p>If false is returned, <code>Component#render</code>, <code>componentWillUpdate</code>
+and <code>componentDidUpdate</code> will not be called.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function shouldComponentUpdate(nextProps: Readonly&lt;ICalendarProps&gt;, nextState: Readonly&lt;ICalendarState&gt;, nextContext: any)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a>&gt;</td>
+        <td><em>nextProps</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.d.ICalendarState.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_d_ICalendarState">ICalendarState</a>&gt;</td>
+        <td><em>nextState</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">any</span></td>
+        <td><em>nextContext</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_UNSAFE_componentWillMount" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.UNSAFE_componentWillMount">UNSAFE_componentWillMount()</h4>
+  <div class="markdown level1 summary"><p>Called immediately before mounting occurs, and before <code>Component#render</code>.
+Avoid introducing any side-effects or subscriptions in this method.
+This method will not stop working in React 17.</p>
+<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+prevents this from being invoked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function UNSAFE_componentWillMount()</code></pre>
+  </div>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_UNSAFE_componentWillReceiveProps" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.UNSAFE_componentWillReceiveProps">UNSAFE_componentWillReceiveProps(ICalendarProps)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function UNSAFE_componentWillReceiveProps(nextProps: ICalendarProps)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a></td>
+        <td><em>nextProps</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="calendar_custom_src_Dependencies_calendar_custom_Calendar_d_Calendar_UNSAFE_componentWillUpdate" data-uid="calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar.UNSAFE_componentWillUpdate">UNSAFE_componentWillUpdate(Readonly&lt;ICalendarProps&gt;, Readonly&lt;ICalendarState&gt;, any)</h4>
+  <div class="markdown level1 summary"><p>Called immediately before rendering when new props or state is received. Not called for the initial render.
+Note: You cannot call <code>Component#setState</code> here.</p>
+<p>This method will not stop working in React 17.</p>
+<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps
+prevents this from being invoked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-typeScript hljs">function UNSAFE_componentWillUpdate(nextProps: Readonly&lt;ICalendarProps&gt;, nextState: Readonly&lt;ICalendarState&gt;, nextContext: any)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_types_d_ICalendarProps">ICalendarProps</a>&gt;</td>
+        <td><em>nextProps</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>Readonly&lt;<a class="xref" href="src.Dependencies.calendar-custom.Calendar.d.ICalendarState.html#calendar_custom_src_Dependencies_calendar_custom_Calendar_d_ICalendarState">ICalendarState</a>&gt;</td>
+        <td><em>nextState</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">any</span></td>
+        <td><em>nextContext</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+### YamlMime:UniversalReference
+items:
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+    name: ICalendarYearRangeToString
+    fullName: ICalendarYearRangeToString
+    children: []
+    langs:
+      - typeScript
+    type: interface
+    summary: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps,
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+    name: ICalendarYearState>
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarYearProps
+        fullName: ICalendarYearProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+      - name: ', '
+        fullName: ', '
+      - name: ICalendarYearState
+        fullName: ICalendarYearState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+    name: ICalendarYearProps
+    spec.typeScript:
+      - name: ICalendarYearProps
+        fullName: ICalendarYearProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+      & Readonly<Object>
+    name: ICalendarYearProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarYearProps
+        fullName: ICalendarYearProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState>
+    name: ICalendarYearState>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarYearState
+        fullName: ICalendarYearState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps>
+    name: ICalendarYearProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarYearProps
+        fullName: ICalendarYearProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearProps
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear
+    name: CalendarYear
+    spec.typeScript:
+      - name: CalendarYear
+        fullName: CalendarYear
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.CalendarYear
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYear
+    name: ICalendarYear
+    spec.typeScript:
+      - name: ICalendarYear
+        fullName: ICalendarYear
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYear
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+    name: ICalendarIconStrings
+    spec.typeScript:
+      - name: ICalendarIconStrings
+        fullName: ICalendarIconStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarIconStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearStrings
+    name: ICalendarYearStrings
+    spec.typeScript:
+      - name: ICalendarYearStrings
+        fullName: ICalendarYearStrings
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearStrings
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearHeaderProps
+    name: ICalendarYearHeaderProps
+    spec.typeScript:
+      - name: ICalendarYearHeaderProps
+        fullName: ICalendarYearHeaderProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearHeaderProps
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRange
+    name: ICalendarYearRange
+    spec.typeScript:
+      - name: ICalendarYearRange
+        fullName: ICalendarYearRange
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRange
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+    name: ICalendarYearRangeToString
+    spec.typeScript:
+      - name: ICalendarYearRangeToString
+        fullName: ICalendarYearRangeToString
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+    name: ICalendarYearState
+    spec.typeScript:
+      - name: ICalendarYearState
+        fullName: ICalendarYearState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearState
+  - uid: >-
+      string |
+      calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString
+    name: ICalendarYearRangeToString
+    spec.typeScript:
+      - name: 'string | '
+        fullName: 'string | '
+      - name: ICalendarYearRangeToString
+        fullName: ICalendarYearRangeToString
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.CalendarYear.d.ICalendarYearRangeToString

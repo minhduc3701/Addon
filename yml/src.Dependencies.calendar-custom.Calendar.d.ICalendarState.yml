@@ -1,0 +1,186 @@
+### YamlMime:UniversalReference
+items:
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+    name: ICalendarState
+    fullName: ICalendarState
+    children:
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.isDayPickerVisible
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.isMonthPickerVisible
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.navigatedDayDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.navigatedMonthDate
+      - >-
+        calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.selectedDate
+    langs:
+      - typeScript
+    type: interface
+    summary: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.isDayPickerVisible
+    name: isDayPickerVisible
+    fullName: isDayPickerVisible
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: State used to show/hide day picker
+    optional: true
+    syntax:
+      content: 'isDayPickerVisible?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.isMonthPickerVisible
+    name: isMonthPickerVisible
+    fullName: isMonthPickerVisible
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: State used to show/hide month picker
+    optional: true
+    syntax:
+      content: 'isMonthPickerVisible?: undefined | false | true'
+      return:
+        type:
+          - undefined | false | true
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.navigatedDayDate
+    name: navigatedDayDate
+    fullName: navigatedDayDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: 'The currently focused date in the day picker, but not necessarily selected'
+    optional: true
+    syntax:
+      content: 'navigatedDayDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.navigatedMonthDate
+    name: navigatedMonthDate
+    fullName: navigatedMonthDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: >-
+      The currently focused date in the month picker, but not necessarily
+      selected
+    optional: true
+    syntax:
+      content: 'navigatedMonthDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState.selectedDate
+    name: selectedDate
+    fullName: selectedDate
+    children: []
+    langs:
+      - typeScript
+    type: property
+    summary: The currently selected date in the calendar
+    optional: true
+    syntax:
+      content: 'selectedDate?: Date'
+      return:
+        type:
+          - Date
+        description: ''
+    package: calendar-custom
+references:
+  - uid: >-
+      Component<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps,
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState>
+    name: ICalendarState>
+    spec.typeScript:
+      - name: Component<
+        fullName: Component<
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+      - name: ', '
+        fullName: ', '
+      - name: ICalendarState
+        fullName: ICalendarState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+    name: ICalendarProps
+    spec.typeScript:
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps>
+      & Readonly<Object>
+    name: ICalendarProps> & Readonly<Object>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+      - name: '> & Readonly<Object>'
+        fullName: '> & Readonly<Object>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState>
+    name: ICalendarState>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarState
+        fullName: ICalendarState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+      - name: '>'
+        fullName: '>'
+  - uid: >-
+      Readonly<calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps>
+    name: ICalendarProps>
+    spec.typeScript:
+      - name: Readonly<
+        fullName: Readonly<
+      - name: ICalendarProps
+        fullName: ICalendarProps
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.types.d.ICalendarProps
+      - name: '>'
+        fullName: '>'
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar
+    name: Calendar
+    spec.typeScript:
+      - name: Calendar
+        fullName: Calendar
+        uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.Calendar
+  - uid: calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
+    name: ICalendarState
+    spec.typeScript:
+      - name: ICalendarState
+        fullName: ICalendarState
+        uid: >-
+          calendar-custom.src.Dependencies.calendar-custom.Calendar.d.ICalendarState
