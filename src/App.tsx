@@ -4,6 +4,7 @@ import Languages from "./Component/Calender/languages.json";
 // <ImportCS>
 import Calendar from "calendar-custom/CalenderInline";
 // </ImportCS>
+import CalenderInline from "./Dependencies/calendar-custom/CalenderInline";
 import { initializeIcons } from "./Dependencies/@uifabric/icons";
 // <TreeViewImport>
 import TreeView from "./Dependencies/TreeView/TreeView";
@@ -49,10 +50,7 @@ function App() {
       childRepo: [
         {
           label: "Send Items",
-          childRepo: [
-            { label: "John Wick" },
-            { label: "Lao Hac" },
-          ],
+          childRepo: [{ label: "John Wick" }, { label: "Lao Hac" }],
         },
       ],
     },
@@ -91,7 +89,7 @@ function App() {
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <Calendar
+      <CalenderInline
         autoNavigateOnSelection={true} //required
         showGoToToday={false} //required
         highlightSelectedMonth={true}

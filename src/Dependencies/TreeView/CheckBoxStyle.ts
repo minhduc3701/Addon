@@ -11,6 +11,7 @@ export interface CheckboxPropsExample {
   multilingual?: { textKey: string; context: string }[];
   value: string;
   groupCheck?: string[];
+  onCheckParent?: ITreeViewProps | null;
 }
 export interface CheckBoxState {
   checked: boolean;

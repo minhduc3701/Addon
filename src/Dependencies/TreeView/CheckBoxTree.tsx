@@ -18,6 +18,14 @@ class CheckboxBasicExample extends React.Component<
     };
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps: CheckboxPropsExample) {
+    if (nextProps.onCheckParent?.label === nextProps.label) {
+      this.setState({
+        checked: true,
+      });
+    }
+  }
+
   // checked for last child repo
   handleLastChild = async () => {
     if (this.props.lastChild) {
@@ -37,7 +45,6 @@ class CheckboxBasicExample extends React.Component<
         checked: !current,
       });
     }
-
     this.props.getValue &&
       this.props.getValue(this.props.value, this.state.checked);
   };
@@ -50,7 +57,6 @@ class CheckboxBasicExample extends React.Component<
   };
 
   render() {
-    // console.log(this.props);
     return (
       <div>
         <ItemWrapper
@@ -61,7 +67,7 @@ class CheckboxBasicExample extends React.Component<
           {!this.props.lastChild && (
             <Icon
               onClick={this.onHandleDisplayTree}
-              iconName={this.state.checked ? `ChevronDown` : `ChevronRight`}
+              iconName={this.state.viewTree ? `ChevronDown` : `ChevronRight`}
               className="icon-rightArrow"
             />
           )}
@@ -101,6 +107,7 @@ class CheckboxBasicExample extends React.Component<
                   disable={item.disable}
                   childRepo={item.childRepo}
                   lastChild={lastChild}
+                  onCheckParent={this.props.onCheckParent}
                 />
               </RepoWrapper>
             );

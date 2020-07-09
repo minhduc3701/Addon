@@ -5,7 +5,8 @@ import { TestLanguage } from "../TestLanguage";
 import { group } from "console";
 
 interface TreeViewState {
-  groupCheck: { label: string }[];
+  groupCheck: string[];
+  parentCheck: ITreeViewProps | null;
 }
 
 class TreeView extends React.Component<ITreeViewPropsExample, TreeViewState> {
@@ -13,22 +14,24 @@ class TreeView extends React.Component<ITreeViewPropsExample, TreeViewState> {
     super(props);
     this.state = {
       groupCheck: [],
+      parentCheck: null,
     };
   }
 
   onCheckedValue = async (label: string, checked: boolean) => {
     let currentGroupCheck = [...this.state.groupCheck];
     if (checked) {
-      currentGroupCheck.push({ label });
+      currentGroupCheck.push(label);
       await this.setState({
         groupCheck: currentGroupCheck,
       });
     }
     if (!checked) {
-      let index = currentGroupCheck.indexOf({ label });
+      let index = currentGroupCheck.indexOf(label);
       currentGroupCheck.splice(index, 1);
       await this.setState({
         groupCheck: currentGroupCheck,
+        parentCheck: null,
       });
     }
     this.onCheckParent();
@@ -36,56 +39,44 @@ class TreeView extends React.Component<ITreeViewPropsExample, TreeViewState> {
     // this.props.onGetChecked && this.props.onGetChecked({ label: val, checked });
   };
 
-  // onCheckParent = (data: ITreeViewProps[] | undefined) => {
-  //   let matchArr = [];
-  //   if (data) {
-  //     for (let i = 0; i < data.length; i++) {
-  //       if (data[i].childRepo) {
-  //         let dataRepo = data[i].childRepo ? data[i].childRepo : undefined;
-  //         this.onCheckChild(dataRepo);
-  //       } else {
-  //         let index = this.state.groupCheck.indexOf(data[i].label);
-  //         console.log(data[i].label);
-  //         console.log(data[i].childRepo);
-  //       }
-  //     }
-  //   }
-  // };
-
-  // onCheckChild = (dataRepo: ITreeViewProps[] | undefined) => {
-  //   if (dataRepo) {
-  //     for (let i = 0; i < dataRepo.length; i++) {
-  //       if (dataRepo[i].childRepo) {
-  //         let dataRepoChild = dataRepo[i].childRepo
-  //           ? dataRepo[i].childRepo
-  //           : undefined;
-  //         this.onCheckParent(dataRepoChild);
-  //       }
-  //     }
-  //   }
-  // };
-
   onCheckParent = () => {
     // let { groupCheck } = this.state;
-    let equal = false;
     let itemRepo = this.props.data;
-    let groupCheck = JSON.stringify(this.state.groupCheck);
+    let groupCheck = this.state.groupCheck;
 
     for (let i = 0; i < itemRepo.length; i++) {
       let child = itemRepo[i];
-      if (
-        child.childRepo &&
-        child.childRepo.length === this.state.groupCheck.length
-      ) {
+      if (child.childRepo && this.onCheckString(groupCheck, child)) {
+        this.setState({
+          parentCheck: child,
+        });
+      } else {
         console.log(child);
-        equal = this.onCheckString(groupCheck, JSON.stringify(child.childRepo));
       }
     }
   };
 
-  onCheckString = (group: string, item: string) => {
-    if (group === item) {
-      return true;
+  onCheckChildRepo = (childRepo: ITreeViewProps[]) => {
+    let repo = childRepo;
+    if (repo) {
+      for (let i = 0; i < repo.length; i++) {
+        // console.log(repo[i]);
+        // console.log(repo[i].childRepo?.length);
+        // console.log(this.state.groupCheck.length);
+        if (repo[i].childRepo?.length === this.state.groupCheck.length) {
+          console.log(repo[i]);
+        }
+      }
+    }
+  };
+
+  onCheckString = (group: any, item: any) => {
+    let repo = item.childRepo;
+    for (let i = 0; i < repo.length; i++) {
+      let index = group.indexOf(repo[i].label);
+      if (index !== -1) {
+        return true;
+      }
     }
     return false;
   };
@@ -106,6 +97,7 @@ class TreeView extends React.Component<ITreeViewPropsExample, TreeViewState> {
                 label={textLabel}
                 value={item.label}
                 key={index}
+                onCheckParent={this.state.parentCheck}
                 // groupCheck={this.state.groupCheck}
                 disable={item.disable}
                 childRepo={item.childRepo}
