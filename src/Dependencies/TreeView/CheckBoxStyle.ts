@@ -10,9 +10,11 @@ export interface CheckboxPropsExample {
   lastChild?: boolean;
   multilingual?: { textKey: string; context: string }[];
   value: string;
+  groupCheck?: string[];
 }
 export interface CheckBoxState {
   checked: boolean;
+  viewTree: boolean;
 }
 
 export const ItemWrapper = styled.div`

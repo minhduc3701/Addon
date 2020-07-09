@@ -9,6 +9,8 @@ import { initializeIcons } from "./Dependencies/@uifabric/icons";
 import TreeView from "./Dependencies/TreeView/TreeView";
 // </TreeViewImport>
 
+import Button from "./Dependencies/Button";
+
 initializeIcons();
 
 function App() {
@@ -49,7 +51,7 @@ function App() {
           label: "Send Items",
           childRepo: [
             { label: "John Wick" },
-            { label: "Lao Hac", disable: true },
+            { label: "Lao Hac" },
           ],
         },
       ],
@@ -110,14 +112,19 @@ function App() {
         switchMode={true}
         // </ToggleSwitchMode>
       />
-      <div>
-        <TreeView
-          data={dataTreeView}
-          darkMode={"dark"}
-          onGetChecked={getTreeView}
-          multilingual={LanguagesTree}
-        />
-      </div>
+      <TreeView
+        data={dataTreeView}
+        darkMode="dark"
+        onGetChecked={getTreeView}
+        // multilingual={LanguagesTree}
+      />
+      <Button
+        text="Button"
+        onClick={() => console.log("click")}
+        darkMode="dark"
+        disabled={true}
+        // type="Primary"
+      />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Icon } from "../@uifabric/icons/Icon";
 import { ItemWrapper, RepoWrapper } from "./CheckBoxStyle";
 import { CheckboxPropsExample, CheckBoxState } from "./CheckBoxStyle";
 import { TestLanguage } from "../TestLanguage";
+import { ITreeViewProps } from "./TreeViewInterface";
 
 class CheckboxBasicExample extends React.Component<
   CheckboxPropsExample,
@@ -13,11 +14,8 @@ class CheckboxBasicExample extends React.Component<
     super(props);
     this.state = {
       checked: false,
+      viewTree: false,
     };
-  }
-
-  componentDidMount() {
-    this.handleLastChild();
   }
 
   // checked for last child repo
@@ -39,11 +37,20 @@ class CheckboxBasicExample extends React.Component<
         checked: !current,
       });
     }
+
     this.props.getValue &&
       this.props.getValue(this.props.value, this.state.checked);
   };
 
+  onHandleDisplayTree = () => {
+    let currentTreeView = this.state.viewTree;
+    this.setState({
+      viewTree: !currentTreeView,
+    });
+  };
+
   render() {
+    // console.log(this.props);
     return (
       <div>
         <ItemWrapper
@@ -53,13 +60,14 @@ class CheckboxBasicExample extends React.Component<
         >
           {!this.props.lastChild && (
             <Icon
-              onClick={this.onHandleCheck}
+              onClick={this.onHandleDisplayTree}
               iconName={this.state.checked ? `ChevronDown` : `ChevronRight`}
               className="icon-rightArrow"
             />
           )}
           <Checkbox
             checked={this.state.checked}
+            // indeterminate={true}
             title={this.props.label}
             label={this.props.label}
             disabled={this.props.disable || false}
@@ -67,7 +75,7 @@ class CheckboxBasicExample extends React.Component<
           />
         </ItemWrapper>
         {this.props.childRepo && //render child repo checkbox
-          this.state.checked &&
+          this.state.viewTree &&
           this.props.childRepo.map((item, index) => {
             let lastChild = false;
             let labelText = this.props.multilingual
