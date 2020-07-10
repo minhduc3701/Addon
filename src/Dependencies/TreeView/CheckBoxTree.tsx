@@ -14,17 +14,66 @@ class CheckboxBasicExample extends React.Component<
     super(props);
     this.state = {
       checked: false,
+      handleCheck: null,
       viewTree: false,
+      indeterminate: false,
     };
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: CheckboxPropsExample) {
-    if (nextProps.onCheckParent?.label === nextProps.label) {
-      this.setState({
-        checked: true,
-      });
+    let { TreeChecked } = nextProps;
+    if (
+      TreeChecked &&
+      JSON.stringify(this.props.TreeChecked) !==
+        JSON.stringify(nextProps.TreeChecked)
+    ) {
+      this.onCheckParentList(TreeChecked.parent);
+      this.onCheckChildList(TreeChecked.child);
+    }
+    // if (
+    //   JSON.stringify(nextProps.unCheckParent) !==
+    //   JSON.stringify(this.props.unCheckParent)
+    // ) {
+    //   this.onUnCheckParent(nextProps.unCheckParent);
+    // }
+  }
+
+  componentDidMount() {
+    let { TreeChecked } = this.props;
+    if (TreeChecked) {
+      this.onCheckChildList(TreeChecked.child);
+      this.onCheckParentList(TreeChecked.parent);
     }
   }
+
+  // onUnCheckParent = (parent: ITreeViewProps[]) => {
+  //   for (let i = 0; i < parent.length; i++) {
+  //     if (this.props.label === parent[i].label) {
+  //       this.setState({
+  //         checked: false,
+  //       });
+  //     }
+  //   }
+  // };
+
+  onCheckChildList = (child: ITreeViewProps[]) => {
+    for (let i = 0; i < child.length; i++) {
+      if (this.props.label === child[i].label) {
+        this.setState({
+          checked: true,
+        });
+      }
+    }
+  };
+  onCheckParentList = (parent: ITreeViewProps[]) => {
+    for (let i = 0; i < parent.length; i++) {
+      if (this.props.label === parent[i].label) {
+        this.setState({
+          checked: true,
+        });
+      }
+    }
+  };
 
   // checked for last child repo
   handleLastChild = async () => {
@@ -73,7 +122,7 @@ class CheckboxBasicExample extends React.Component<
           )}
           <Checkbox
             checked={this.state.checked}
-            // indeterminate={true}
+            // indeterminate={this.state.indeterminate}
             title={this.props.label}
             label={this.props.label}
             disabled={this.props.disable || false}
@@ -104,9 +153,11 @@ class CheckboxBasicExample extends React.Component<
                   darkMode={this.props.darkMode}
                   label={labelText}
                   value={item.label}
+                  TreeChecked={this.props.TreeChecked}
                   disable={item.disable}
                   childRepo={item.childRepo}
                   lastChild={lastChild}
+                  unCheckParent={this.props.unCheckParent}
                   onCheckParent={this.props.onCheckParent}
                 />
               </RepoWrapper>

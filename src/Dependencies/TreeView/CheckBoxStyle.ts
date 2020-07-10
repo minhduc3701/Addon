@@ -12,10 +12,14 @@ export interface CheckboxPropsExample {
   value: string;
   groupCheck?: string[];
   onCheckParent?: ITreeViewProps | null;
+  TreeChecked?: any;
+  unCheckParent?: any;
 }
 export interface CheckBoxState {
   checked: boolean;
   viewTree: boolean;
+  indeterminate: boolean;
+  handleCheck: boolean | null;
 }
 
 export const ItemWrapper = styled.div`
