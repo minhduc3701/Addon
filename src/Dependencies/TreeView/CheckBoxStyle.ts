@@ -1,17 +1,22 @@
 import styled from "styled-components";
 import { ITreeViewProps } from "./TreeViewInterface";
 
+export interface getValueProps extends ITreeViewProps {
+  isLastChild?: boolean;
+  repo?: ITreeViewProps[];
+  isEnough?: boolean | null;
+}
+
 export interface CheckboxPropsExample {
-  label: string;
-  disable?: boolean;
-  childRepo?: ITreeViewProps[];
+  header: string;
+  isDisable?: boolean;
+  isChecked?: boolean;
+  repo?: ITreeViewProps[];
   darkMode?: string;
-  getValue?: (val: string, checked: boolean) => void;
+  getValue?: (data: getValueProps) => void;
   lastChild?: boolean;
   multilingual?: { textKey: string; context: string }[];
-  value: string;
-  groupCheck?: string[];
-  onCheckParent?: ITreeViewProps | null;
+  data: any;
 }
 export interface CheckBoxState {
   checked: boolean;

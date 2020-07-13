@@ -6,30 +6,30 @@ initializeIcons();
 
 function App() {
   // <TreeViewgetData>
-  const getTreeView = (value: { label: string; checked: boolean }) => {
-    console.log(value);
-  };
+  // const getTreeView = (value: { label: string; checked: boolean }) => {
+  //   console.log(value);
+  // };
   // </TreeViewgetData>
 
   const dataTreeView = [
     {
-      label: "Inbox",
-      childRepo: [
+      header: "Inbox",
+      repo: [
         {
-          label: "Send Items",
-          childRepo: [
-            { label: "John Wick" },
-            { label: "Lao Hac", disable: true },
+          header: "Send Items",
+          repo: [
+            { header: "John Wick" },
+            { header: "Lao Hac", isDisable: true },
           ],
         },
       ],
     },
     {
-      label: "Draft",
-      childRepo: [{ label: "New" }],
+      header: "Draft",
+      repo: [{ header: "New" }],
     },
     {
-      label: "Delete Item",
+      header: "Delete Item",
     },
   ];
 
@@ -41,7 +41,7 @@ function App() {
         // <TreeViewDarkMode>
         darkMode={"light"}
         // </TreeViewDarkMode>
-        onGetChecked={getTreeView}
+        // onGetChecked={getTreeView}
       />
     </div>
   );

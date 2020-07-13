@@ -18,35 +18,20 @@ class CheckboxBasicExample extends React.Component<
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps: CheckboxPropsExample) {
-    if (nextProps.onCheckParent?.label === nextProps.label) {
-      this.setState({
-        checked: true,
-      });
-    }
-  }
-
-  // checked for last child repo
-  handleLastChild = async () => {
-    if (this.props.lastChild) {
-      await this.setState({
-        checked: true,
-      });
-      !this.props.disable &&
-        this.props.getValue &&
-        this.props.getValue(this.props.value, this.state.checked);
-    }
-  };
-
   onHandleCheck = async () => {
     let current = this.state.checked;
-    if (!this.props.disable) {
+    if (!this.props.isDisable) {
       await this.setState({
         checked: !current,
       });
     }
     this.props.getValue &&
-      this.props.getValue(this.props.value, this.state.checked);
+      this.props.getValue({
+        isChecked: this.state.checked,
+        header: this.props.header,
+        isLastChild: this.props.repo ? false : true,
+        repo: this.props.repo,
+      });
   };
 
   onHandleDisplayTree = () => {
@@ -74,20 +59,20 @@ class CheckboxBasicExample extends React.Component<
           <Checkbox
             checked={this.state.checked}
             // indeterminate={true}
-            title={this.props.label}
-            label={this.props.label}
-            disabled={this.props.disable || false}
+            title={this.props.header}
+            label={this.props.header}
+            disabled={this.props.isDisable || false}
             onChange={this.onHandleCheck}
           />
         </ItemWrapper>
-        {this.props.childRepo && //render child repo checkbox
+        {this.props.repo && //render child repo checkbox
           this.state.viewTree &&
-          this.props.childRepo.map((item, index) => {
+          this.props.repo.map((item, index) => {
             let lastChild = false;
             let labelText = this.props.multilingual
-              ? TestLanguage(item.label, this.props.multilingual)
-              : item.label;
-            if (!item.childRepo) {
+              ? TestLanguage(item.header, this.props.multilingual)
+              : item.header;
+            if (!item.repo) {
               lastChild = true;
             }
             return (
@@ -102,12 +87,11 @@ class CheckboxBasicExample extends React.Component<
                 <CheckboxBasicExample
                   getValue={this.props.getValue}
                   darkMode={this.props.darkMode}
-                  label={labelText}
-                  value={item.label}
-                  disable={item.disable}
-                  childRepo={item.childRepo}
+                  header={labelText}
+                  data={item.data}
+                  isDisable={item.isDisable}
+                  repo={item.repo}
                   lastChild={lastChild}
-                  onCheckParent={this.props.onCheckParent}
                 />
               </RepoWrapper>
             );
