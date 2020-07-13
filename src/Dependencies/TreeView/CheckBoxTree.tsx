@@ -4,7 +4,7 @@ import { Icon } from "../@uifabric/icons/Icon";
 import { ItemWrapper, RepoWrapper } from "./CheckBoxStyle";
 import { CheckboxPropsExample, CheckBoxState } from "./CheckBoxStyle";
 import { TestLanguage } from "../TestLanguage";
-import { ITreeViewProps } from "./TreeViewInterface";
+import { TreeViewState } from "./TreeView";
 
 class CheckboxBasicExample extends React.Component<
   CheckboxPropsExample,
@@ -21,81 +21,117 @@ class CheckboxBasicExample extends React.Component<
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: CheckboxPropsExample) {
-    let { TreeChecked } = nextProps;
-    if (
-      TreeChecked &&
-      JSON.stringify(this.props.TreeChecked) !==
-        JSON.stringify(nextProps.TreeChecked)
-    ) {
-      this.onCheckParentList(TreeChecked.parent);
-      this.onCheckChildList(TreeChecked.child);
+    let { dataChecked } = nextProps;
+    if (dataChecked && dataChecked.checkedRepo?.isChecked) {
+      this.onCheckChild(dataChecked!);
+      this.onCheckParent(dataChecked!);
+      this.onCheckEmptyisEnough(dataChecked!);
     }
-    // if (
-    //   JSON.stringify(nextProps.unCheckParent) !==
-    //   JSON.stringify(this.props.unCheckParent)
-    // ) {
-    //   this.onUnCheckParent(nextProps.unCheckParent);
-    // }
+    if (dataChecked && !dataChecked.checkedRepo?.isChecked) {
+      this.onCheckParent(dataChecked!);
+      this.onCheckEmptyisEnough(dataChecked!);
+    }
   }
 
   componentDidMount() {
-    let { TreeChecked } = this.props;
-    if (TreeChecked) {
-      this.onCheckChildList(TreeChecked.child);
-      this.onCheckParentList(TreeChecked.parent);
-    }
+    this.onCheckChild(this.props.dataChecked!);
+    this.onCheckParent(this.props.dataChecked!);
+    this.onCheckEmptyisEnough(this.props.dataChecked!);
   }
 
-  // onUnCheckParent = (parent: ITreeViewProps[]) => {
-  //   for (let i = 0; i < parent.length; i++) {
-  //     if (this.props.label === parent[i].label) {
-  //       this.setState({
-  //         checked: false,
-  //       });
-  //     }
-  //   }
-  // };
-
-  onCheckChildList = (child: ITreeViewProps[]) => {
-    for (let i = 0; i < child.length; i++) {
-      if (this.props.label === child[i].label) {
+  onCheckEmptyisEnough = (data: TreeViewState) => {
+    let { parentList, isEnough } = data;
+    let currentParent = [...new Set(parentList)];
+    for (let i = 0; i < currentParent.length; i++) {
+      if (
+        currentParent[i].header === this.props.header &&
+        isEnough.length < 1
+      ) {
         this.setState({
-          checked: true,
+          checked: false,
+          indeterminate: false,
         });
+      }
+      if (
+        currentParent[i].header === this.props.header &&
+        isEnough.length > 0
+      ) {
+        let count = 0;
+        for (let j = 0; j < currentParent.length; j++) {
+          let repo = currentParent[j].repo!;
+          if (repo) {
+            for (let k = 0; k < repo.length; k++) {
+              for (let l = 0; l < isEnough.length; l++) {
+                if (isEnough[l].header === repo[k].header) {
+                  count++;
+                }
+              }
+            }
+            if (count === 0) {
+              this.setState({
+                checked: false,
+                indeterminate: false,
+              });
+            }
+          }
+        }
       }
     }
   };
-  onCheckParentList = (parent: ITreeViewProps[]) => {
-    for (let i = 0; i < parent.length; i++) {
-      if (this.props.label === parent[i].label) {
-        this.setState({
-          checked: true,
-        });
+
+  onCheckChild = (data: TreeViewState) => {
+    if (data.childList && data.childList.length > 0) {
+      let repo = data.childList;
+      for (let i = 0; i < repo.length; i++) {
+        if (repo[i].header === this.props.header) {
+          this.setState({
+            checked: true,
+            indeterminate: false,
+          });
+        }
       }
     }
   };
 
-  // checked for last child repo
-  handleLastChild = async () => {
-    if (this.props.lastChild) {
-      await this.setState({
-        checked: true,
-      });
-      !this.props.disable &&
-        this.props.getValue &&
-        this.props.getValue(this.props.value, this.state.checked);
+  onCheckParent = (data: TreeViewState) => {
+    let { parentList } = data;
+    let currentParent = [...new Set(parentList)];
+    for (let i = 0; i < currentParent.length; i++) {
+      if (
+        currentParent[i].header === this.props.header &&
+        currentParent[i].isEnough
+      ) {
+        this.setState({
+          checked: true,
+          indeterminate: false,
+        });
+      }
+      if (
+        currentParent[i].header === this.props.header &&
+        !currentParent[i].isEnough
+      ) {
+        this.setState({
+          checked: false,
+          indeterminate: true,
+        });
+      }
     }
   };
 
   onHandleCheck = async () => {
-    let current = this.state.checked;
-    if (!this.props.disable) {
+    let currentChecked = this.state.checked;
+    if (!this.props.isDisable) {
       await this.setState({
-        checked: !current,
+        checked: !currentChecked,
       });
     }
     this.props.getValue &&
-      this.props.getValue(this.props.value, this.state.checked);
+      this.props.getValue({
+        isChecked: this.state.checked,
+        header: this.props.header,
+        isLastChild: this.props.repo ? false : true,
+        repo: this.props.repo,
+      });
   };
 
   onHandleDisplayTree = () => {
@@ -122,21 +158,23 @@ class CheckboxBasicExample extends React.Component<
           )}
           <Checkbox
             checked={this.state.checked}
-            // indeterminate={this.state.indeterminate}
-            title={this.props.label}
-            label={this.props.label}
-            disabled={this.props.disable || false}
+            indeterminate={
+              this.state.checked ? false : this.state.indeterminate
+            }
+            title={this.props.header}
+            label={this.props.header}
+            disabled={this.props.isDisable || false}
             onChange={this.onHandleCheck}
           />
         </ItemWrapper>
-        {this.props.childRepo && //render child repo checkbox
+        {this.props.repo && //render child repo checkbox
           this.state.viewTree &&
-          this.props.childRepo.map((item, index) => {
+          this.props.repo.map((item, index) => {
             let lastChild = false;
             let labelText = this.props.multilingual
-              ? TestLanguage(item.label, this.props.multilingual)
-              : item.label;
-            if (!item.childRepo) {
+              ? TestLanguage(item.header, this.props.multilingual)
+              : item.header;
+            if (!item.repo) {
               lastChild = true;
             }
             return (
@@ -151,14 +189,12 @@ class CheckboxBasicExample extends React.Component<
                 <CheckboxBasicExample
                   getValue={this.props.getValue}
                   darkMode={this.props.darkMode}
-                  label={labelText}
-                  value={item.label}
-                  TreeChecked={this.props.TreeChecked}
-                  disable={item.disable}
-                  childRepo={item.childRepo}
+                  header={labelText}
+                  data={item.data}
+                  isDisable={item.isDisable}
+                  repo={item.repo}
                   lastChild={lastChild}
-                  unCheckParent={this.props.unCheckParent}
-                  onCheckParent={this.props.onCheckParent}
+                  dataChecked={this.props.dataChecked}
                 />
               </RepoWrapper>
             );

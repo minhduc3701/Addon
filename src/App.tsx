@@ -46,20 +46,23 @@ function App() {
 
   const dataTreeView = [
     {
-      label: "Inbox",
-      childRepo: [
+      header: "Inbox",
+      repo: [
         {
-          label: "Send Items",
-          childRepo: [{ label: "John Wick" }, { label: "Lao Hac" }],
+          header: "Send Items",
+          repo: [
+            { header: "John Wick", repo: [{ header: "Dog" }] },
+            { header: "Lao Hac" },
+          ],
         },
       ],
     },
     {
-      label: "Draft",
-      childRepo: [{ label: "New" }],
+      header: "Draft",
+      repo: [{ header: "New" }],
     },
     {
-      label: "Delete Item",
+      header: "Delete Item",
     },
   ];
 
@@ -113,7 +116,7 @@ function App() {
       <TreeView
         data={dataTreeView}
         darkMode="dark"
-        onGetChecked={getTreeView}
+        // onGetChecked={getTreeView}
         // multilingual={LanguagesTree}
       />
       <Button
