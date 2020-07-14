@@ -95,17 +95,25 @@ class CheckboxBasicExample extends React.Component<
     };
 
     const onCheckChild = async (repo:ITreeViewProps[],id:string) =>{
-     let idSub = null
+      let idSub = null
+      let newArr:ITreeViewProps[] = [];
+      console.log(repo,id);
      for (let i = 0; i < repo.length; i++) {
        if (repo[i].id === id ) {
          let repoChild = repo[i].repo!;
-         for (let j = 0; j < repoChild.length; j++) {
+         console.log(repo[i]);
+          for (let j = 0; j < repoChild.length; j++) {
             let repoSub = repoChild[j].repo!;
             isChecked[id] = {...isChecked[id],[repoChild[j].id]:{isChecked:true}}
+            onChangeIsChecked(isChecked);
             idSub = repoChild[j].id
+            newArr = repoChild
          }
        }
-     }
+      }
+      if (idSub) {
+        onCheckChild(newArr,idSub)
+      }
     }
 
     return (
