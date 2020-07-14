@@ -1,6 +1,6 @@
 // <ITreeViewProps>
 export interface ITreeViewProps {
-  key?: number | string;
+  id: string;
   header: string;
   isDisable?: boolean;
   repo?: ITreeViewProps[];

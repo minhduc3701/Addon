@@ -59,20 +59,20 @@ class TreeView extends React.Component<ITreeViewPropsExample, TreeViewState> {
   onCheckParentEnough = () => {
     let parentList = [...new Set(this.state.parentList)];
     let currentEnough = [...this.state.isEnough];
-    for (let i = 0; i < parentList.length; i++) {
-      if (parentList[i].isEnough === true) {
-        let data = {
-          header: parentList[i].header,
-          repo: parentList[i].repo,
-          isChecked: true,
-          isLastChild: false,
-        };
-        currentEnough.push(data);
-        this.setState({
-          isEnough: currentEnough,
-        });
-      }
-    }
+    // for (let i = 0; i < parentList.length; i++) {
+    //   if (parentList[i].isEnough === true) {
+    //     let data = {
+    //       header: parentList[i].header,
+    //       repo: parentList[i].repo,
+    //       isChecked: true,
+    //       isLastChild: false,
+    //     };
+    //     currentEnough.push(data);
+    //     this.setState({
+    //       isEnough: currentEnough,
+    //     });
+    //   }
+    // }
   };
 
   onCheckAllParent = async (data: getValueProps | getValueProps[]) => {

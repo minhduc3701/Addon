@@ -7,7 +7,7 @@ import Calendar from "calendar-custom/CalenderInline";
 import CalenderInline from "./Dependencies/calendar-custom/CalenderInline";
 import { initializeIcons } from "./Dependencies/@uifabric/icons";
 // <TreeViewImport>
-import TreeView from "./Dependencies/TreeView/TreeView";
+import TreeView from "./Dependencies/TreeView/TreeViewCheckBox";
 // </TreeViewImport>
 
 import Button from "./Dependencies/Button";
@@ -44,25 +44,70 @@ function App() {
     },
   ];
 
-  const dataTreeView = [
+  const toppingOptions = [
     {
-      header: "Inbox",
+      header: "Pepperoni",
+      id: "pepperoni-id",
+      isChecked:false,
       repo: [
         {
-          header: "Send Items",
-          repo: [
-            { header: "John Wick", repo: [{ header: "Dog" }] },
-            { header: "Lao Hac" },
-          ],
+          header: "Spicy",
+          id: "spicy-id",
+          repo: [],
+      isChecked:false,
+        },
+        {
+          header: "Regular",
+          id: "regular-id",
+          repo: [],
+      isChecked:false,
         },
       ],
     },
     {
-      header: "Draft",
-      repo: [{ header: "New" }],
-    },
-    {
-      header: "Delete Item",
+      header: "Chicken",
+      id: "chicken-id",
+      isChecked:false,
+      repo: [
+        {
+          header: "Buffalo",
+          id: "buffalo-id",
+      isChecked:false,
+          repo: [
+            {
+              header: "Mild",
+              id: "mild-id",
+      isChecked:false,
+              repo: [],
+            },
+            {
+              header: "Hot",
+              id: "hot-id",
+      isChecked:false,
+              repo: [
+                {
+                  header: "Jalapeño",
+                  id: "jalapeno-id",
+                  repo: [],
+      isChecked:true
+                },
+                {
+                  header: "Cayenne",
+                  id: "cayenne-id",
+                  repo: [],
+      isChecked:false,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          header: "BBQ",
+          id: "bbq-id",
+          repo: [],
+      isChecked:false,
+        },
+      ],
     },
   ];
 
@@ -114,7 +159,7 @@ function App() {
         // </ToggleSwitchMode>
       />
       <TreeView
-        data={dataTreeView}
+        data={toppingOptions}
         darkMode="dark"
         // onGetChecked={getTreeView}
         // multilingual={LanguagesTree}

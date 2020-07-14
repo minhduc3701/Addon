@@ -9,22 +9,28 @@ export interface getValueProps extends ITreeViewProps {
 }
 
 export interface CheckboxPropsExample {
-  header: string;
+  header?: string;
   isDisable?: boolean;
-  isChecked?: boolean;
+  isChecked?: any;
   repo?: ITreeViewProps[];
   darkMode?: string;
   getValue?: (data: getValueProps) => void;
   lastChild?: boolean;
   multilingual?: { textKey: string; context: string }[];
-  data: any;
+  data?: any;
   dataChecked?: TreeViewState;
+  onChange?: any;
+  selected?: any;
+  options?: ITreeViewProps[];
+  selectedOptions?: any;
 }
 export interface CheckBoxState {
   checked: boolean;
   viewTree: boolean;
   indeterminate: boolean;
   handleCheck: boolean | null;
+  selectedRepo?: any;
+  isChecked?: any;
 }
 
 export const ItemWrapper = styled.div`

@@ -125,13 +125,13 @@ class CheckboxBasicExample extends React.Component<
         checked: !currentChecked,
       });
     }
-    this.props.getValue &&
-      this.props.getValue({
-        isChecked: this.state.checked,
-        header: this.props.header,
-        isLastChild: this.props.repo ? false : true,
-        repo: this.props.repo,
-      });
+    // this.props.getValue &&
+    //   this.props.getValue({
+    //     isChecked: this.state.checked,
+    //     header: this.props.header,
+    //     isLastChild: this.props.repo ? false : true,
+    //     repo: this.props.repo,
+    //   });
   };
 
   onHandleDisplayTree = () => {
@@ -187,7 +187,7 @@ class CheckboxBasicExample extends React.Component<
                 }}
               >
                 <CheckboxBasicExample
-                  getValue={this.props.getValue}
+                  // getValue={this.props.getValue}
                   darkMode={this.props.darkMode}
                   header={labelText}
                   data={item.data}

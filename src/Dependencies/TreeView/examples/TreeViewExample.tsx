@@ -34,18 +34,15 @@ function App() {
   ];
 
   // <TreeViewExample>
-  return (
-    <div className="App">
-      <CheckBoxTree
-        data={dataTreeView}
-        // <TreeViewDarkMode>
-        darkMode={"light"}
-        // </TreeViewDarkMode>
-        // onGetChecked={getTreeView}
-      />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 // </TreeViewExample>
 
 export default App;
+// <CheckBoxTree
+//   data={dataTreeView}
+//   // <TreeViewDarkMode>
+//   darkMode={"light"}
+//   // </TreeViewDarkMode>
+//   // onGetChecked={getTreeView}
+// />
