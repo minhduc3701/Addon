@@ -33,6 +33,7 @@ export interface CheckBoxState {
   isChecked?: any;
   selectedNode?: string[];
   parentNode?: string[];
+  parentAddCheck?: any;
 }
 
 export const ItemWrapper = styled.div`

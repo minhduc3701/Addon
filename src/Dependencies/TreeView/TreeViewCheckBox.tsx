@@ -6,6 +6,7 @@ import { CheckboxPropsExample, CheckBoxState } from "./CheckBoxStyle";
 import { TestLanguage } from "../TestLanguage";
 import { TreeViewState } from "./TreeView";
 import { ITreeViewProps } from "./TreeViewInterface";
+import { parentPort } from "worker_threads";
 
 export interface OptionsListProps {
   repo: ITreeViewProps[];
@@ -19,6 +20,7 @@ export interface OptionsListProps {
   selectedNode?: string[];
   onSelectedNode?: any;
   parentCheckNode?: string[];
+  CheckForParent?: any;
 }
 
 class CheckboxBasicExample extends React.Component<
@@ -36,6 +38,7 @@ class CheckboxBasicExample extends React.Component<
       isChecked: {},
       selectedNode: [],
       parentNode: [],
+      parentAddCheck: null,
     };
   }
   onHandleCheck = async () => {
@@ -73,6 +76,7 @@ class CheckboxBasicExample extends React.Component<
     onSelectedNode,
     selectedNode,
     parentCheckNode,
+    CheckForParent,
   }: OptionsListProps) => {
     const handleCheckboxClicked = async (selectedId: string) => {
       // is currently selected
@@ -125,6 +129,7 @@ class CheckboxBasicExample extends React.Component<
     const onHandleParent = (parentNode: ITreeViewProps) => {
       onChangeParent(parentNode);
     };
+
     return (
       <div>
         {repo.map((item, index) => {
@@ -144,14 +149,10 @@ class CheckboxBasicExample extends React.Component<
                 />
                 <Checkbox
                   checked={selectedNode?.includes(item.id) ? true : false}
-                  // checked={
-                  //   isChecked[item.id] && isChecked[item.id].isChecked
-                  //     ? true
-                  //     : false
-                  // }
                   indeterminate={
                     parentCheckNode?.includes(item.id) ? true : false
                   }
+                  // indeterminate={onCheckChildCurrent(item)}
                   title={item.header}
                   label={item.header}
                   disabled={item.isDisable || false}
@@ -197,6 +198,7 @@ class CheckboxBasicExample extends React.Component<
     parentNode?: ITreeViewProps
   ) => {
     let currentSeleted = [...this.state.selectedNode];
+    let currentParent = [...new Set(this.state.parentNode)];
     if (currentSeleted.includes(id)) {
       let index = currentSeleted.indexOf(id);
       currentSeleted.splice(index, 1);
@@ -204,19 +206,22 @@ class CheckboxBasicExample extends React.Component<
         selectedNode: currentSeleted,
       });
       if (parentNode && currentSeleted.includes(parentNode.id)) {
-        let currentParent = [...this.state.parentNode];
-        let currentSeleted = [...this.state.selectedNode];
+        // let currentParent = [...this.state.parentNode];
+        let currentSeleted = [...new Set(this.state.selectedNode)];
         let index = currentSeleted.indexOf(parentNode.id);
         currentSeleted.splice(index, 1);
-        currentParent.push(parentNode.id);
         this.setState({
           selectedNode: currentSeleted,
-          parentNode: currentParent,
+          // parentNode: currentParent,
         });
       }
     } else {
+      let index = currentParent.indexOf(parentNode?.id!);
+      currentParent.splice(index, 1);
       currentSeleted.push(id);
+      currentSeleted = [...new Set(currentSeleted)];
       this.setState({
+        parentNode: currentParent,
         selectedNode: currentSeleted,
       });
       this.onAddToState(repo, id);
@@ -231,6 +236,7 @@ class CheckboxBasicExample extends React.Component<
           for (let j = 0; j < repoChild.length; j++) {
             let currentSeleted = [...this.state.selectedNode];
             currentSeleted.push(repoChild[j].id);
+            currentSeleted = [...new Set(currentSeleted)];
             this.setState({
               selectedNode: currentSeleted,
             });
@@ -245,6 +251,7 @@ class CheckboxBasicExample extends React.Component<
       for (let i = 0; i < repo.length; i++) {
         let currentSeleted = [...this.state.selectedNode];
         currentSeleted.push(repo[i].id);
+        currentSeleted = [...new Set(currentSeleted)];
         this.setState({
           selectedNode: currentSeleted,
         });
@@ -277,15 +284,22 @@ class CheckboxBasicExample extends React.Component<
       let index = currentParent.indexOf(parentNode.id);
       currentSeleted.push(parentNode.id);
       currentParent.splice(index, 1);
+      currentSeleted = [...new Set(currentSeleted)];
       this.setState({
         parentNode: currentParent,
         selectedNode: currentSeleted,
       });
     }
+    if (count === 0) {
+      let currentParent = [...new Set(this.state.parentNode)];
+      let index = currentParent.indexOf(parentNode.id);
+      currentParent.splice(index, 1);
+      this.setState({
+        parentNode: currentParent,
+      });
+    }
   };
-
   render() {
-    console.log(this.state);
     return (
       <div>
         {this.props.data &&
