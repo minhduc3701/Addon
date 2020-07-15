@@ -6,7 +6,6 @@ import { CheckboxPropsExample, CheckBoxState } from "./CheckBoxStyle";
 import { TestLanguage } from "../TestLanguage";
 import { TreeViewState } from "./TreeView";
 import { ITreeViewProps } from "./TreeViewInterface";
-import { parentPort } from "worker_threads";
 
 export interface OptionsListProps {
   repo: ITreeViewProps[];
