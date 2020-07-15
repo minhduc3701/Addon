@@ -11,11 +11,12 @@ export interface OptionsListProps {
   repo: ITreeViewProps[];
   selectedRepo: any;
   onChange: any;
-  onChangeParent:any;
-  theme?:string;
-  parentNode?:ITreeViewProps
-  isChecked?:any
-  onChangeIsChecked:any
+  onChangeParent: any;
+  theme?: string;
+  parentNode?: ITreeViewProps;
+  isChecked?: any;
+  onChangeIsChecked: any;
+  onCheckAllChild?: any;
 }
 
 class CheckboxBasicExample extends React.Component<
@@ -56,34 +57,44 @@ class CheckboxBasicExample extends React.Component<
     });
   };
 
-  OptionsList = ({parentNode, repo, selectedRepo,isChecked, onChange,onChangeIsChecked,onChangeParent,theme}: OptionsListProps) => {
+  OptionsList = ({
+    parentNode,
+    repo,
+    selectedRepo,
+    isChecked,
+    onChange,
+    onChangeIsChecked,
+    onChangeParent,
+    theme,
+    onCheckAllChild,
+  }: OptionsListProps) => {
     const handleCheckboxClicked = async (selectedId: string) => {
       // is currently selected
       if (isChecked[selectedId]) {
         // remove selected key from options list
-         isChecked[selectedId].isChecked = true;
+        isChecked[selectedId].isChecked = true;
       } else {
         // is not currently selected
-        isChecked[selectedId] = {isChecked:true};
+        isChecked[selectedId] = { isChecked: true };
       }
       // call onChange function given by parent
       await onChangeIsChecked(isChecked);
-      onCheckChild(repo,selectedId)
+      onCheckChild(repo, selectedId);
     };
 
-    const onHandleDisplayTree = (selectedId:string) =>{
+    const onHandleDisplayTree = (selectedId: string) => {
       // issue : selectedRepo !== isChecked
-     if (selectedRepo[selectedId]) {
+      if (selectedRepo[selectedId]) {
         delete selectedRepo[selectedId];
       } else {
         selectedRepo[selectedId] = {};
         if (!isChecked[selectedId]) {
-          isChecked[selectedId] = {isChecked:false};
+          isChecked[selectedId] = { isChecked: false };
         }
       }
       onChange(selectedRepo);
       onChangeIsChecked(isChecked);
-    }
+    };
 
     const handleSubOptionsListChange = (
       optionId: string,
@@ -94,27 +105,23 @@ class CheckboxBasicExample extends React.Component<
       onChangeIsChecked(isChecked);
     };
 
-    const onCheckChild = async (repo:ITreeViewProps[],id:string) =>{
-      let idSub = null
-      let newArr:ITreeViewProps[] = [];
-      console.log(repo,id);
-     for (let i = 0; i < repo.length; i++) {
-       if (repo[i].id === id ) {
-         let repoChild = repo[i].repo!;
-         console.log(repo[i]);
+    const onCheckChild = async (repo: ITreeViewProps[], id: string) => {
+      for (let i = 0; i < repo.length; i++) {
+        if (repo[i].id === id) {
+          let repoChild = repo[i].repo!;
           for (let j = 0; j < repoChild.length; j++) {
             let repoSub = repoChild[j].repo!;
-            isChecked[id] = {...isChecked[id],[repoChild[j].id]:{isChecked:true}}
-            onChangeIsChecked(isChecked);
-            idSub = repoChild[j].id
-            newArr = repoChild
-         }
-       }
+            isChecked[id] = {
+              ...isChecked[id],
+              [repoChild[j].id]: { isChecked: true },
+            };
+            // if (repoSub.length > 0) {
+            //   onCheckChild(repoChild, repoChild[j].id);
+            // }
+          }
+        }
       }
-      if (idSub) {
-        onCheckChild(newArr,idSub)
-      }
-    }
+    };
 
     return (
       <div>
@@ -122,17 +129,23 @@ class CheckboxBasicExample extends React.Component<
           return (
             <ul key={index}>
               <ItemWrapper
-              theme={{
-                darkMode: theme,
-              }}
+                theme={{
+                  darkMode: theme,
+                }}
               >
                 <Icon
-                  onClick={()=>onHandleDisplayTree(item.id)}
-                  iconName={selectedRepo[item.id] ? `ChevronDown` : `ChevronRight`}
+                  onClick={() => onHandleDisplayTree(item.id)}
+                  iconName={
+                    selectedRepo[item.id] ? `ChevronDown` : `ChevronRight`
+                  }
                   className="icon-rightArrow"
                 />
                 <Checkbox
-                  checked={isChecked[item.id] && isChecked[item.id].isChecked ? true : false}
+                  checked={
+                    isChecked[item.id] && isChecked[item.id].isChecked
+                      ? true
+                      : false
+                  }
                   // indeterminate={
                   //   this.state.checked ? false : this.state.indeterminate
                   // }
@@ -142,20 +155,20 @@ class CheckboxBasicExample extends React.Component<
                   onChange={() => handleCheckboxClicked(item.id)}
                 />
               </ItemWrapper>
-              {item.repo && 
+              {item.repo &&
                 item.repo.length > 0 &&
                 selectedRepo[item.id] &&
                 this.OptionsList({
-                  parentNode:item,
+                  parentNode: item,
                   repo: item.repo,
                   selectedRepo: selectedRepo[item.id],
                   isChecked: isChecked[item.id],
                   onChange: (subRepo: ITreeViewProps[]) =>
-                  handleSubOptionsListChange(item.id, subRepo),
+                    handleSubOptionsListChange(item.id, subRepo),
                   onChangeIsChecked: (subRepo: ITreeViewProps[]) =>
-                  handleSubOptionsListChange(item.id, subRepo),
-                  onChangeParent:(TreeView:boolean) =>{
-                    onHandleDisplayTree(item.id)
+                    handleSubOptionsListChange(item.id, subRepo),
+                  onChangeParent: (TreeView: boolean) => {
+                    onHandleDisplayTree(item.id);
                   },
                   theme,
                 })}
@@ -167,7 +180,7 @@ class CheckboxBasicExample extends React.Component<
   };
 
   render() {
-    console.log(this.state.isChecked);
+    console.log(this.state.selectedRepo);
     return (
       <div>
         {this.props.data &&
@@ -179,11 +192,11 @@ class CheckboxBasicExample extends React.Component<
               this.setState({ isChecked }),
             selectedRepo: this.state.selectedRepo,
             isChecked: this.state.isChecked,
-            onChangeParent:(parentNode:boolean)=>{
+            onChangeParent: (parentNode: boolean) => {
               console.log(parentNode);
             },
-            theme:this.props.darkMode
-            })}
+            theme: this.props.darkMode,
+          })}
       </div>
     );
   }
