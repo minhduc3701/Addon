@@ -31,6 +31,8 @@ export interface CheckBoxState {
   handleCheck: boolean | null;
   selectedRepo?: any;
   isChecked?: any;
+  selectedNode?: string[];
+  parentNode?: string[];
 }
 
 export const ItemWrapper = styled.div`
