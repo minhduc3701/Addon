@@ -49,17 +49,17 @@ function App() {
       header: "Pepperoni",
       id: "pepperoni-id",
       isChecked: false,
-      repo: [
+      childNodes: [
         {
           header: "Spicy",
           id: "spicy-id",
-          repo: [],
+          childNodes: [],
           isChecked: false,
         },
         {
           header: "Regular",
           id: "regular-id",
-          repo: [],
+          childNodes: [],
           isChecked: false,
         },
       ],
@@ -68,33 +68,33 @@ function App() {
       header: "Chicken",
       id: "chicken-id",
       isChecked: false,
-      repo: [
+      childNodes: [
         {
           header: "Buffalo",
           id: "buffalo-id",
           isChecked: false,
-          repo: [
+          childNodes: [
             {
               header: "Mild",
               id: "mild-id",
               isChecked: false,
-              repo: [],
+              childNodes: [],
             },
             {
               header: "Hot",
               id: "hot-id",
               isChecked: false,
-              repo: [
+              childNodes: [
                 {
                   header: "Jalapeño",
                   id: "jalapeno-id",
-                  repo: [],
+                  childNodes: [],
                   isChecked: true,
                 },
                 {
                   header: "Cayenne",
                   id: "cayenne-id",
-                  repo: [],
+                  childNodes: [],
                   isChecked: false,
                 },
               ],
@@ -104,7 +104,7 @@ function App() {
         {
           header: "BBQ",
           id: "bbq-id",
-          repo: [],
+          childNodes: [],
           isChecked: false,
         },
       ],

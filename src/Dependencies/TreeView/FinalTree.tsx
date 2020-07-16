@@ -3,89 +3,81 @@ import { Checkbox } from "./index.js";
 import { Icon } from "../@uifabric/icons/Icon";
 import { ItemWrapper, RepoWrapper } from "./CheckBoxStyle";
 // import { TestLanguage } from "../TestLanguage";
-import { IRenderNode, TreeViewState } from "./FinalTreeInterface";
+import {
+  IRenderNode,
+  TreeViewState,
+  INodes,
+  ITreeState,
+  ITreeProps,
+} from "./FinalTreeInterface";
+import TreeNode from "./FinalNode";
 
-class TreeNode extends React.Component<TreeViewState, any> {
-  constructor(props: TreeViewState) {
+class Tree extends React.Component<ITreeProps, ITreeState> {
+  constructor(props: ITreeProps) {
     super(props);
     this.state = {
-      id: this.props.id,
-      header: this.props.header,
-      parentNode: this.props,
-      parentNodeId: this.props.id,
-      isChecked: this.props.isChecked || false,
-      isExpand: true,
-      isAllChildSelected: false,
-      childNodes: this.props.repo! || this.props.childNodes,
-      indeterminate: false,
-      isDisable: this.props.isDisable || false,
-      node: this.props,
-      theme: this.props.darkMode,
+      NodesList: this.props.childNodes,
+      myNodes: null,
     };
   }
 
-  onRenderNode = (props: IRenderNode) => {
+  onFindNodeInState = (node: any, loopData?: any) => {
+    let currentNodes = this.state.NodesList;
+    if (!loopData) {
+      for (let i = 0; i < currentNodes.length; i++) {
+        if (currentNodes[i].id !== node.id) {
+          currentNodes[i].childNodes.length >= 1 &&
+            this.onFindNodeInState(node, currentNodes[i].childNodes);
+        } else {
+          currentNodes[i] = node;
+          this.setState({ myNodes: currentNodes[i] });
+        }
+      }
+    }
+    if (loopData) {
+      for (let i = 0; i < loopData.length; i++) {
+        if (loopData[i].id !== node.id) {
+          loopData[i].childNodes.length >= 1 &&
+            this.onFindNodeInState(node, loopData[i].childNodes);
+        } else {
+          loopData[i] = node;
+          this.setState({ myNodes: loopData[i] });
+        }
+      }
+    }
+  };
+
+  onExpandsTree = async (node: any) => {
+    node = { ...node, isExpand: !node.isExpand };
+    await this.onFindNodeInState(node);
+    console.log(this.state.NodesList);
+  };
+
+  render() {
     return (
       <div>
-        {props.childNodes?.map((item, index) => {
-          let state = {
-            id: item.id,
-            header: item.header,
-            parentNode: props.node,
-            parentNodeId: item.id,
-            isChecked: item.isChecked || false,
-            isExpand: true,
-            isAllChildSelected: false,
-            childNodes: item.repo! || item.childNodes,
-            indeterminate: false,
-            isDisable: item.isDisable || false,
-            node: item,
-            theme: item.darkMode,
-          };
+        {this.state.NodesList?.map((item) => {
           return (
-            <ul>
-              <ItemWrapper
-                theme={{
-                  darkMode: props.theme,
-                }}
-              >
-                <Icon
-                  // onClick={() => onHandleDisplayTree(item.id)}
-                  iconName={`ChevronDown`}
-                  className="icon-rightArrow"
-                />
-                <Checkbox
-                  // checked={selectedNode?.includes(item.id) ? true : false}
-                  // indeterminate={parentCheckNode?.includes(item.id) ? true : false}
-                  // indeterminate={onCheckChildCurrent(item)}
-                  title={item.header}
-                  label={item.header}
-                  disabled={item.isDisable}
-                  // onChange={() => handleCheckboxClicked(item.id)}
-                />
-              </ItemWrapper>
-              {props.isExpand && this.onRenderChildNode(state, props.theme)}
-            </ul>
+            <TreeNode
+              isChecked={item.isChecked || false}
+              isExpand={item.isExpand || false}
+              isDisable={item.isDisable || false}
+              header={item.header}
+              isAllChildSelected={item.isAllChildSelected || false}
+              isIndeterminate={item.isIndeterminate || false}
+              childNodes={item.childNodes}
+              key={item.id}
+              node={item}
+              parentNode={item.parentNode}
+              theme={this.props.darkMode || ""}
+              id={item.id}
+              onExpands={(node: any) => this.onExpandsTree(node)}
+            />
           );
         })}
       </div>
     );
-  };
-
-  onRenderChildNode = (props: any, theme?: string) => {
-    console.log(props);
-    if (props && props.childNodes.length > 0) {
-      return (
-        <ul>
-          <TreeNode childNodes={props.childNodes} darkMode={theme} />
-        </ul>
-      );
-    }
-  };
-
-  render() {
-    return <div>{this.onRenderNode(this.state)}</div>;
   }
 }
 
-export default TreeNode;
+export default Tree;
