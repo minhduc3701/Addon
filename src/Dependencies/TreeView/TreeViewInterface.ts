@@ -5,7 +5,11 @@ export interface ITreeViewProps {
   isDisable?: boolean;
   repo?: ITreeViewProps[];
   isChecked?: boolean;
+  isExpand?: boolean;
+  isAllChildrenSelected?: boolean;
+  parentNode?: ITreeViewProps;
   data?: any;
+  hasChild?: boolean;
 }
 // </ITreeViewProps>
 

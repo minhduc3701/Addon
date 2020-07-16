@@ -48,54 +48,54 @@ function App() {
     {
       header: "Pepperoni",
       id: "pepperoni-id",
-      isChecked:false,
+      isChecked: false,
       repo: [
         {
           header: "Spicy",
           id: "spicy-id",
           repo: [],
-      isChecked:false,
+          isChecked: false,
         },
         {
           header: "Regular",
           id: "regular-id",
           repo: [],
-      isChecked:false,
+          isChecked: false,
         },
       ],
     },
     {
       header: "Chicken",
       id: "chicken-id",
-      isChecked:false,
+      isChecked: false,
       repo: [
         {
           header: "Buffalo",
           id: "buffalo-id",
-      isChecked:false,
+          isChecked: false,
           repo: [
             {
               header: "Mild",
               id: "mild-id",
-      isChecked:false,
+              isChecked: false,
               repo: [],
             },
             {
               header: "Hot",
               id: "hot-id",
-      isChecked:false,
+              isChecked: false,
               repo: [
                 {
                   header: "Jalapeño",
                   id: "jalapeno-id",
                   repo: [],
-      isChecked:true
+                  isChecked: true,
                 },
                 {
                   header: "Cayenne",
                   id: "cayenne-id",
                   repo: [],
-      isChecked:false,
+                  isChecked: false,
                 },
               ],
             },
@@ -105,7 +105,7 @@ function App() {
           header: "BBQ",
           id: "bbq-id",
           repo: [],
-      isChecked:false,
+          isChecked: false,
         },
       ],
     },
@@ -158,12 +158,7 @@ function App() {
         switchMode={true}
         // </ToggleSwitchMode>
       />
-      <TreeView
-        data={toppingOptions}
-        darkMode="dark"
-        // onGetChecked={getTreeView}
-        // multilingual={LanguagesTree}
-      />
+      <TreeView data={toppingOptions} darkMode="dark" />
       <Button
         text="Button"
         onClick={() => console.log("click")}
