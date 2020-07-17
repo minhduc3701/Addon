@@ -1,174 +1,119 @@
-import TreeView from "./TreeView";
+import styled from "styled-components";
 
-export interface OptionsListProps {
-  repo?: ITreeViewProps[];
-  selectedRepo?: any;
-  onChange?: any;
-  onChangeParent?: any;
-  theme?: string;
-  parentNode?: ITreeViewProps;
-  isChecked?: any;
-  onChangeIsChecked?: any;
-  selectedNode?: string[];
-  onSelectedNode?: any;
-  parentCheckNode?: string[];
-  CheckForParent?: any;
-  nodes?: TreeViewState;
-}
-
-export interface ITreeViewProps {
-  id: string;
-  header: string;
-  isDisable?: boolean;
-  repo?: ITreeViewProps[];
-  isChecked?: boolean;
-  isExpand?: boolean;
-  isAllChildrenSelected?: boolean;
-  parentNode?: ITreeViewProps;
-  data?: any;
-  hasChild?: boolean;
-}
-
-export interface ITreeViewPropsExample {
-  data: ITreeViewProps[];
-  darkMode?: string;
-  // onGetChecked?: (value: { label: string; checked: boolean }) => void;
-  multilingual?: { textKey: string; context: string }[];
-}
-
-export interface CheckBoxState {
-  checked?: boolean;
-  viewTree?: boolean;
-  indeterminate?: boolean;
-  selectedRepo?: any;
-  isChecked?: any;
-  selectedNode?: string[];
-  parentNode?: string[];
-  parentAddCheck?: any;
-}
-
-export interface getValueProps extends ITreeViewProps {
-  isLastChild?: boolean;
-  repo?: ITreeViewProps[];
-  isEnough?: boolean | null;
-}
-
-export interface CheckboxPropsExample {
-  header?: string;
-  isDisable?: boolean;
-  isChecked?: any;
-  repo?: ITreeViewProps[];
-  darkMode?: string;
-  getValue?: (data: getValueProps) => void;
-  lastChild?: boolean;
-  multilingual?: { textKey: string; context: string }[];
-  data?: any;
-  dataChecked?: TreeViewState;
-  onChange?: any;
-  selected?: any;
-  options?: ITreeViewProps[];
-  selectedOptions?: any;
-}
-
-export interface TreeViewState {
-  id?: string;
-  header?: string;
-  parentNode?: TreeViewState | null;
-  parentNodeId?: string;
-  isChecked?: boolean;
-  isExpand?: boolean;
-  isAllChildSelected?: boolean;
-  childNodes?: TreeViewState[];
-  indeterminate?: boolean;
-  isDisable?: boolean;
-  data?: ITreeViewProps[];
-  darkMode?: string;
-  multilingual?: { textKey: string; context: string }[];
-  repo?: ITreeViewProps[];
-}
-
-export interface IRenderNode extends TreeViewState {
-  id?: string;
-  key?: number;
-  theme?: string;
-  node?: any;
-  idNode?: string;
-  onExpandsNode?: any;
-}
-
-export interface ITreeViewPropsFIX {
-  childNodes: ITreeViewProps[];
-  darkMode?: string;
-  // onGetChecked?: (value: { label: string; checked: boolean }) => void;
-  multilingual?: { textKey: string; context: string }[];
-}
-
-export interface ITreeNodeState {
-  childNodes?: ITreeNodeState[];
-  header?: string;
-  id?: string;
-  indeterminate?: boolean;
-  isAllChildSelected?: boolean;
-  isChecked?: boolean;
-  isDisable?: boolean;
-  isExpand?: boolean;
-  onExpandsNode?: any;
-  parentNode?: ITreeNodeState | null;
-  theme?: string;
-  darkMode?: string;
-}
-
-// childNodes: (2) [{…}, {…}]
-// header: "Chicken"
-// id: "chicken-id"
-// indeterminate: false
-// isAllChildSelected: false
-// isChecked: false
-// isDisable: false
-// isExpand: false
-// onExpandsNode: isExpand => this.onExpands(isExpand)
-// parentNode: null
-// theme: "dark"
-
+// <TreeViewProps>
 export interface ITreeProps {
   childNodes: INodes[];
   darkMode?: string;
-  // onGetChecked?: (value: { label: string; checked: boolean }) => void;
+  onGetChecked?: (value: INodes[]) => void;
   multilingual?: { textKey: string; context: string }[];
 }
+// </TreeViewProps>
 
 export interface ITreeState {
   NodesList: INodes[];
-  myNodes: any;
+  myNodes: INodes | null;
+  currentNodes: INodes[];
 }
 
+// <INodes>
 export interface INodes {
   childNodes: INodes[];
-  header?: string;
-  id?: string;
+  label: string;
+  id: string;
   isIndeterminate?: boolean;
   isAllChildSelected?: boolean;
   isChecked?: boolean;
   isDisable?: boolean;
   isExpand?: boolean;
-  parentNode?: ITreeNodeProps | null;
+  parentNode?: INodes | null;
   theme?: string;
-  node?: any;
-  onExpands?: any;
+  node?: INodes;
+  onExpands?: (node: INodes) => void;
+  onChecked?: (node: INodes) => void;
+  multilingual?: { textKey: string; context: string }[];
 }
+// </INodes>
 
-export interface ITreeNodeProps {
-  childNodes: INodes[];
-  header?: string;
-  id?: string;
-  isIndeterminate?: boolean;
-  isAllChildSelected?: boolean;
-  isChecked?: boolean;
-  isDisable?: boolean;
-  isExpand?: boolean;
-  parentNode?: ITreeNodeProps | null;
-  theme?: string;
-  node?: any;
-  key?: string | number;
-  onExpands?: any;
-}
+export const ItemWrapper = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+  .ms-Checkbox {
+    padding-left: ${({ theme }) => (theme.visibleIcon ? "0" : "29px")};
+  }
+  .ms-Checkbox-checkbox {
+    border-radius: 0;
+    border-color: ${(props) =>
+      props.theme.darkMode === "dark" ? "#ffffff" : "#666666"};
+  }
+  .icon-rightArrow {
+    font-size: 16px;
+    color: ${(props) =>
+      props.theme.darkMode === "dark" ? "#ffffff" : "#8f8e8c"};
+    line-height: 16px;
+    padding-right: 13px;
+    cursor: pointer;
+  }
+  .ms-Checkbox-text {
+    color: ${(props) =>
+      props.theme.darkMode === "dark" ? "#ffffff" : "#333333"};
+    font-weight: normal;
+  }
+  .is-disabled {
+    pointer-events: none;
+    .ms-Checkbox-checkbox {
+      background-color: ${(props) =>
+        props.theme.darkMode === "dark" ? "#212121" : "#e5e5e5"};
+      border-color: ${(props) =>
+        props.theme.darkMode === "dark" ? "#212121" : "#e5e5e5"};
+    }
+    .ms-Checkbox-text {
+      color: ${(props) => props.theme.darkMode === "dark" && "#D5D5D5"};
+    }
+  }
+  .ms-Checkbox:hover {
+    .ms-Checkbox-checkmark {
+      color: #ffffff;
+    }
+    .ms-Checkbox-checkbox {
+      border-color: ${({ theme }) =>
+        theme.darkMode === "dark" ? "#ffffff" : "#666666"};
+      &::after {
+        border-color: #0078d4;
+      }
+    }
+    .ms-Checkbox-text {
+      color: ${(props) =>
+        props.theme.darkMode === "dark" ? "#ffffff" : "#333333"};
+    }
+  }
+  .is-checked {
+    .ms-Checkbox-checkbox {
+      border-color: ${(props) =>
+        props.theme.darkMode === "dark" ? "#0078d4" : "#0078D4"};
+      &:hover {
+        border-color: transparent;
+        background-color: #0078d4;
+      }
+    }
+    &:hover {
+      .ms-Checkbox-checkbox {
+        border-color: transparent;
+        background-color: #0078d4;
+      }
+    }
+  }
+  .is-checked.is-disabled {
+    .ms-Checkbox-checkbox {
+      border-color: ${(props) =>
+        props.theme.darkMode === "dark" ? "#212121" : "#e5e5e5"};
+    }
+    &:hover {
+      .ms-Checkbox-checkbox {
+        border-color: ${(props) =>
+          props.theme.darkMode === "dark" ? "#212121" : "#e5e5e5"};
+        border-color: transparent;
+        background-color: #0078d4;
+      }
+    }
+  }
+`;

@@ -1,48 +1,114 @@
 import React from "react";
 import { initializeIcons } from "../../@uifabric/icons";
-import CheckBoxTree from "../TreeView";
+// <TreeViewImport>
+import TreeView from "../FinalTree";
+// </TreeViewImport>
+import { INodes } from "../FinalTreeInterface";
 
 initializeIcons();
 
 function App() {
   // <TreeViewgetData>
-  // const getTreeView = (value: { label: string; checked: boolean }) => {
-  //   console.log(value);
-  // };
+  const getTreeView = async (value: INodes[]) => {
+    console.log(value);
+  };
   // </TreeViewgetData>
 
-  const dataTreeView = [
+  const toppingOptions = [
     {
-      header: "Inbox",
-      repo: [
+      label: "Pepperoni",
+      id: "pepperoni-id",
+      childNodes: [
         {
-          header: "Send Items",
-          repo: [
-            { header: "John Wick" },
-            { header: "Lao Hac", isDisable: true },
-          ],
+          label: "Spicy",
+          id: "spicy-id",
+          childNodes: [],
+        },
+        {
+          label: "Regular",
+          id: "regular-id",
+          childNodes: [],
         },
       ],
     },
     {
-      header: "Draft",
-      repo: [{ header: "New" }],
-    },
-    {
-      header: "Delete Item",
+      label: "Chicken",
+      id: "chicken-id",
+      childNodes: [
+        {
+          label: "Buffalo",
+          id: "buffalo-id",
+          childNodes: [
+            {
+              label: "Mild",
+              id: "mild-id",
+              childNodes: [],
+            },
+            {
+              label: "Hot",
+              id: "hot-id",
+              isChecked: true,
+              childNodes: [
+                {
+                  label: "Jalapeño",
+                  id: "jalapeno-id",
+                  childNodes: [],
+                },
+                {
+                  label: "Cayenne",
+                  id: "cayenne-id",
+                  childNodes: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: "BBQ",
+          id: "bbq-id",
+          childNodes: [],
+        },
+      ],
     },
   ];
 
-  // <TreeViewExample>
-  return <div className="App"></div>;
+  const LanguagesTree = [
+    {
+      textKey: "Spicy",
+      context: "Cay",
+    },
+    {
+      textKey: "Chicken",
+      context: "Gà",
+    },
+    {
+      textKey: "Hot",
+      context: "Nóng",
+    },
+    {
+      textKey: "BBQ",
+      context: "Thịt Nướng",
+    },
+    {
+      textKey: "Regular",
+      context: "Truyền thống",
+    },
+  ];
+
+  return (
+    // <TreeViewExample>
+    <div className="App">
+      <TreeView
+        childNodes={toppingOptions}
+        // <TreeViewDarkMode>
+        darkMode="dark"
+        // </TreeViewDarkMode>
+        onGetChecked={getTreeView}
+        multilingual={LanguagesTree}
+      />
+    </div>
+    // </TreeViewExample>
+  );
 }
-// </TreeViewExample>
 
 export default App;
-// <CheckBoxTree
-//   data={dataTreeView}
-//   // <TreeViewDarkMode>
-//   darkMode={"light"}
-//   // </TreeViewDarkMode>
-//   // onGetChecked={getTreeView}
-// />

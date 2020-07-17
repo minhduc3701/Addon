@@ -11,11 +11,12 @@ import TreeView from "./Dependencies/TreeView/FinalTree";
 // </TreeViewImport>
 
 import Button from "./Dependencies/Button";
+import { INodes } from "./Dependencies/TreeView/FinalTreeInterface";
 
 initializeIcons();
 
 function App() {
-  const getTreeView = async (value: { label: string; checked: boolean }) => {
+  const getTreeView = async (value: INodes[]) => {
     console.log(value);
   };
 
@@ -46,66 +47,57 @@ function App() {
 
   const toppingOptions = [
     {
-      header: "Pepperoni",
+      label: "Pepperoni",
       id: "pepperoni-id",
-      isChecked: false,
       childNodes: [
         {
-          header: "Spicy",
+          label: "Spicy",
           id: "spicy-id",
           childNodes: [],
-          isChecked: false,
         },
         {
-          header: "Regular",
+          label: "Regular",
           id: "regular-id",
           childNodes: [],
-          isChecked: false,
         },
       ],
     },
     {
-      header: "Chicken",
+      label: "Chicken",
       id: "chicken-id",
-      isChecked: false,
       childNodes: [
         {
-          header: "Buffalo",
+          label: "Buffalo",
           id: "buffalo-id",
-          isChecked: false,
           childNodes: [
             {
-              header: "Mild",
+              label: "Mild",
               id: "mild-id",
-              isChecked: false,
               childNodes: [],
             },
             {
-              header: "Hot",
+              label: "Hot",
               id: "hot-id",
-              isChecked: false,
+              isChecked: true,
               childNodes: [
                 {
-                  header: "Jalapeño",
+                  label: "Jalapeño",
                   id: "jalapeno-id",
                   childNodes: [],
-                  isChecked: true,
                 },
                 {
-                  header: "Cayenne",
+                  label: "Cayenne",
                   id: "cayenne-id",
                   childNodes: [],
-                  isChecked: false,
                 },
               ],
             },
           ],
         },
         {
-          header: "BBQ",
+          label: "BBQ",
           id: "bbq-id",
           childNodes: [],
-          isChecked: false,
         },
       ],
     },
@@ -113,24 +105,24 @@ function App() {
 
   const LanguagesTree = [
     {
-      textKey: "Inbox",
-      context: "Tin nhắn",
+      textKey: "Spicy",
+      context: "Cay",
     },
     {
-      textKey: "Send Items",
-      context: "Đã gửi",
+      textKey: "Chicken",
+      context: "Gà",
     },
     {
-      textKey: "Delete Item",
-      context: "Đã xóa",
+      textKey: "Hot",
+      context: "Nóng",
     },
     {
-      textKey: "Draft",
-      context: "Nháp",
+      textKey: "BBQ",
+      context: "Thịt Nướng",
     },
     {
-      textKey: "New",
-      context: "Mới",
+      textKey: "Regular",
+      context: "Truyền thống",
     },
   ];
 
@@ -158,7 +150,12 @@ function App() {
         switchMode={true}
         // </ToggleSwitchMode>
       />
-      <TreeView childNodes={toppingOptions} darkMode="dark" />
+      <TreeView
+        childNodes={toppingOptions}
+        darkMode="dark"
+        onGetChecked={getTreeView}
+        multilingual={LanguagesTree}
+      />
       <Button
         text="Button"
         onClick={() => console.log("click")}

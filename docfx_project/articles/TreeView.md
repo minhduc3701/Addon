@@ -17,7 +17,7 @@
 [!code-javascript[TreeViewExample](../../src/Dependencies/TreeView/examples/TreeViewExample.tsx?name=TreeViewExample)]
 
 **Example Props**
-[!code-javascript[TreeViewProps](../../src/Dependencies/TreeView/TreeViewInterface.ts?name=TreeViewProps)]
+[!code-javascript[TreeViewProps](../../src/Dependencies/TreeView/FinalTreeInterface.ts?name=TreeViewProps)]
 
-**ITreeViewProps Props**
-[!code-javascript[ITreeViewProps](../../src/Dependencies/TreeView/TreeViewInterface.ts?name=ITreeViewProps)]
+**INodes Props**
+[!code-javascript[INodes](../../src/Dependencies/TreeView/FinalTreeInterface.ts?name=INodes)]
