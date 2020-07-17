@@ -50,7 +50,6 @@ class Tree extends React.Component<ITreeProps, ITreeState> {
   onExpandsTree = async (node: any) => {
     node = { ...node, isExpand: !node.isExpand };
     await this.onFindNodeInState(node);
-    console.log(this.state.NodesList);
   };
 
   render() {
