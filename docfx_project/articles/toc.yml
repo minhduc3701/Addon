@@ -1,4 +1,6 @@
-- name: Calendar custom user guide
+- name: Calendar
   href: calendar-custom.md
-- name: Tree view user guide
+- name: TreeView
   href: TreeView.md
+- name: Button
+  href: Button.md

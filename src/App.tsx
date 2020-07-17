@@ -9,8 +9,9 @@ import { initializeIcons } from "./Dependencies/@uifabric/icons";
 // <TreeViewImport>
 import TreeView from "./Dependencies/TreeView/FinalTree";
 // </TreeViewImport>
-
+// <ButtonImport>
 import Button from "./Dependencies/Button";
+// </ButtonImport>
 import { INodes } from "./Dependencies/TreeView/FinalTreeInterface";
 
 initializeIcons();
@@ -160,8 +161,10 @@ function App() {
         text="Button"
         onClick={() => console.log("click")}
         darkMode="dark"
-        disabled={true}
-        // type="Primary"
+        disabled={false}
+        type="Primary"
+        icon="Delete"
+        styles={{ opacity: "1", height: "auto" }}
       />
     </div>
   );
