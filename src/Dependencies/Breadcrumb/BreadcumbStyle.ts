@@ -23,12 +23,17 @@ export interface IBreadNodesProps {
   theme?: string;
   key: string | number;
   isSelected?: boolean;
+  onSelected?: (value: any) => void;
 }
 
 export interface IBreadcrumdStates {
   NodesList: IBreadNodes[];
   myNodes: IBreadNodes | null;
   currentNodes: IBreadNodes[];
+}
+
+export interface INodeState {
+  selectedItem: IBreadNodes[] | null;
 }
 
 export const BreadWrapper = styled.div`
@@ -99,6 +104,7 @@ export const ItemWrapper = styled.div`
 
 export const SelectWrapper = styled.div`
   width: auto;
+  margin: 0 4px;
   select {
     -moz-appearance: none;
     -webkit-appearance: none;
