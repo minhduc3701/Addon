@@ -5,16 +5,16 @@
  */
 // tslint:disable-next-line:no-any
 export function shallowCompare(a, b) {
-  for (let propName in a) {
+  for (var propName in a) {
     if (a.hasOwnProperty(propName)) {
       if (!b.hasOwnProperty(propName) || b[propName] !== a[propName]) {
         return false;
       }
     }
   }
-  for (let propName in b) {
-    if (b.hasOwnProperty(propName)) {
-      if (!a.hasOwnProperty(propName)) {
+  for (var propName1 in b) {
+    if (b.hasOwnProperty(propName1)) {
+      if (!a.hasOwnProperty(propName1)) {
         return false;
       }
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import { initializeIcons } from "../../@uifabric/icons";
 // <TreeViewImport>
-import TreeView from "../FinalTree";
+import TreeView from "../TreeView";
 // </TreeViewImport>
 import { INodes } from "../FinalTreeInterface";
 

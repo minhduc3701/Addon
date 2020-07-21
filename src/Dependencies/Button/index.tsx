@@ -2,7 +2,6 @@ import * as React from "react";
 import { DefaultButton } from "./DefaultButton";
 import { ButtonWrapper, IButtonExampleProps } from "./ButtonStyle";
 
-// Example formatting
 class ButtonDefaultExample extends React.Component<IButtonExampleProps> {
   render() {
     const { disabled, checked } = this.props;

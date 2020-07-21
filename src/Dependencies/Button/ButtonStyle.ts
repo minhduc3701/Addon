@@ -44,7 +44,7 @@ export const ButtonWrapper = styled.div`
     }
     .ms-Icon {
       margin: 0;
-      padding-right: 2px;
+      padding-right: 5px;
       color: ${({ theme }) => theme.darkMode !== "dark" && hanldType(theme)[4]};
       font-weight: normal;
     }

@@ -18,9 +18,9 @@ import {
   initializeComponentRef,
   Async,
   FocusRects,
-} from "../../Utilities";
-import { Icon, FontIcon, ImageIcon } from "../../Icon";
-import { DirectionalHint } from "./DirectionalHint";
+} from "../@uifabric/utilities/index";
+import { Icon, FontIcon, ImageIcon } from "../@uifabric/icons";
+import { DirectionalHint } from "../common";
 import { ContextualMenu } from "../@uifabric/utilities/ContextualMenu copy/ContextualMenu";
 import { getBaseButtonClassNames } from "./BaseButton.classNames";
 import { getClassNames as getBaseSplitButtonClassNames } from "./SplitButton/SplitButton.classNames";

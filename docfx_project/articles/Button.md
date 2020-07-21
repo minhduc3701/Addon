@@ -4,7 +4,7 @@
 
 [!code-javascript[ButtonImport](../../src/App.tsx?name=ButtonImport)]
 
-## Tree view for what?
+## Button property
 
 - Dark mode
   [!code-javascript[ButtonDarkMode](../../src/Dependencies/Button/examples/Button.tsx?name=ButtonDarkMode)]
@@ -20,7 +20,7 @@
 
 ## Example:
 
-[!code-javascript[ButtonExample](../../src/Dependencies/Button/examples/ButtonExample.tsx?name=ButtonExample)]
+[!code-javascript[ButtonExample](../../src/Dependencies/Button/examples/Button.tsx?name=ButtonExample)]
 
 **Example Props**
-[!code-javascript[ButtonProps](../../src/Dependencies/TreeView/ButtonStyle.ts?name=ButtonProps)]
+[!code-javascript[ButtonProps](../../src/Dependencies/Button/ButtonStyle.ts?name=ButtonProps)]

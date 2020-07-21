@@ -1,4 +1,4 @@
-import { ITheme } from '../../Styling';
+import { ITheme } from '../../styling';
 import { IVerticalDividerClassNames } from '../Divider/VerticalDivider.types';
 import { IContextualMenuItemStyles, IContextualMenuItemStyleProps } from './ContextualMenuItem.types';
 import { IContextualMenuSubComponentStyles } from './ContextualMenu.types';

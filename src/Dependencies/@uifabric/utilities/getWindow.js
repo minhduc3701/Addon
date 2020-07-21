@@ -1,13 +1,12 @@
-import { _isSSR } from './setSSR';
+import { _isSSR } from "./index";
 var _window = undefined;
 // Note: Accessing "window" in IE11 is somewhat expensive, and calling "typeof window"
 // hits a memory leak, whereas aliasing it and calling "typeof _window" does not.
 // Caching the window value at the file scope lets us minimize the impact.
 try {
-    _window = window;
-}
-catch (e) {
-    /* no-op */
+  _window = window;
+} catch (e) {
+  /* no-op */
 }
 /**
  * Helper to get the window object. The helper will make sure to use a cached variable
@@ -18,12 +17,13 @@ catch (e) {
  * @public
  */
 export function getWindow(rootElement) {
-    if (_isSSR || typeof _window === 'undefined') {
-        return undefined;
-    }
-    else {
-        var el = rootElement;
-        return el && el.ownerDocument && el.ownerDocument.defaultView ? el.ownerDocument.defaultView : _window;
-    }
+  if (_isSSR || typeof _window === "undefined") {
+    return undefined;
+  } else {
+    var el = rootElement;
+    return el && el.ownerDocument && el.ownerDocument.defaultView
+      ? el.ownerDocument.defaultView
+      : _window;
+  }
 }
 //# sourceMappingURL=getWindow.js.map

@@ -27,6 +27,7 @@ var DefaultButton = /** @class */ (function (_super) {
       })
     );
   };
+  // eslint-disable-next-line no-func-assign
   DefaultButton = __decorate(
     [customizable("DefaultButton", ["theme", "styles"], true)],
     DefaultButton

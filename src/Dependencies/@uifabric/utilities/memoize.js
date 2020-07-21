@@ -1,22 +1,22 @@
-import { Stylesheet } from '@uifabric/merge-styles';
+import { Stylesheet } from "@uifabric/merge-styles";
 var _initializedStylesheetResets = false;
 var _resetCounter = 0;
 var _emptyObject = { empty: true };
 var _dictionary = {};
-var _weakMap = typeof WeakMap === 'undefined' ? null : WeakMap;
+var _weakMap = typeof WeakMap === "undefined" ? null : WeakMap;
 /**
  *  Test utility for providing a custom weakmap.
  *
  * @internal
  * */
 export function setMemoizeWeakMap(weakMap) {
-    _weakMap = weakMap;
+  _weakMap = weakMap;
 }
 /**
  * Reset memoizations.
  */
 export function resetMemoizations() {
-    _resetCounter++;
+  _resetCounter++;
 }
 /**
  * Memoize decorator to be used on class methods. WARNING: the `this` reference
@@ -26,15 +26,15 @@ export function resetMemoizations() {
  * @public
  */
 export function memoize(target, key, descriptor) {
-    // We bind to "null" to prevent people from inadvertently pulling values from "this",
-    // rather than passing them in as input values which can be memoized.
-    var fn = memoizeFunction(descriptor.value && descriptor.value.bind(null));
-    return {
-        configurable: true,
-        get: function () {
-            return fn;
-        },
-    };
+  // We bind to "null" to prevent people from inadvertently pulling values from "this",
+  // rather than passing them in as input values which can be memoized.
+  var fn = memoizeFunction(descriptor.value && descriptor.value.bind(null));
+  return {
+    configurable: true,
+    get: function () {
+      return fn;
+    },
+  };
 }
 /**
  * Memoizes a function; when you pass in the same parameters multiple times, it returns a cached result.
@@ -56,54 +56,63 @@ export function memoize(target, key, descriptor) {
  * @returns A memoized version of the function.
  */
 export function memoizeFunction(cb, maxCacheSize, ignoreNullOrUndefinedResult) {
-    if (maxCacheSize === void 0) { maxCacheSize = 100; }
-    if (ignoreNullOrUndefinedResult === void 0) { ignoreNullOrUndefinedResult = false; }
-    // Avoid breaking scenarios which don't have weak map.
-    if (!_weakMap) {
-        return cb;
+  if (maxCacheSize === void 0) {
+    maxCacheSize = 100;
+  }
+  if (ignoreNullOrUndefinedResult === void 0) {
+    ignoreNullOrUndefinedResult = false;
+  }
+  // Avoid breaking scenarios which don't have weak map.
+  if (!_weakMap) {
+    return cb;
+  }
+  if (!_initializedStylesheetResets) {
+    var stylesheet = Stylesheet.getInstance();
+    if (stylesheet && stylesheet.onReset) {
+      Stylesheet.getInstance().onReset(resetMemoizations);
     }
-    if (!_initializedStylesheetResets) {
-        var stylesheet = Stylesheet.getInstance();
-        if (stylesheet && stylesheet.onReset) {
-            Stylesheet.getInstance().onReset(resetMemoizations);
-        }
-        _initializedStylesheetResets = true;
+    _initializedStylesheetResets = true;
+  }
+  var rootNode;
+  var cacheSize = 0;
+  var localResetCounter = _resetCounter;
+  // tslint:disable-next-line:no-function-expression
+  return function memoizedFunction() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args[_i] = arguments[_i];
     }
-    var rootNode;
-    var cacheSize = 0;
-    var localResetCounter = _resetCounter;
-    // tslint:disable-next-line:no-function-expression
-    return function memoizedFunction() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        var currentNode = rootNode;
-        if (rootNode === undefined ||
-            localResetCounter !== _resetCounter ||
-            (maxCacheSize > 0 && cacheSize > maxCacheSize)) {
-            rootNode = _createNode();
-            cacheSize = 0;
-            localResetCounter = _resetCounter;
-        }
-        currentNode = rootNode;
-        // Traverse the tree until we find the match.
-        for (var i = 0; i < args.length; i++) {
-            var arg = _normalizeArg(args[i]);
-            if (!currentNode.map.has(arg)) {
-                currentNode.map.set(arg, _createNode());
-            }
-            currentNode = currentNode.map.get(arg);
-        }
-        if (!currentNode.hasOwnProperty('value')) {
-            currentNode.value = cb.apply(void 0, args);
-            cacheSize++;
-        }
-        if (ignoreNullOrUndefinedResult && (currentNode.value === null || currentNode.value === undefined)) {
-            currentNode.value = cb.apply(void 0, args);
-        }
-        return currentNode.value;
-    };
+    var currentNode = rootNode;
+    if (
+      rootNode === undefined ||
+      localResetCounter !== _resetCounter ||
+      (maxCacheSize > 0 && cacheSize > maxCacheSize)
+    ) {
+      rootNode = _createNode();
+      cacheSize = 0;
+      localResetCounter = _resetCounter;
+    }
+    currentNode = rootNode;
+    // Traverse the tree until we find the match.
+    for (var i = 0; i < args.length; i++) {
+      var arg = _normalizeArg(args[i]);
+      if (!currentNode.map.has(arg)) {
+        currentNode.map.set(arg, _createNode());
+      }
+      currentNode = currentNode.map.get(arg);
+    }
+    if (!currentNode.hasOwnProperty("value")) {
+      currentNode.value = cb.apply(void 0, args);
+      cacheSize++;
+    }
+    if (
+      ignoreNullOrUndefinedResult &&
+      (currentNode.value === null || currentNode.value === undefined)
+    ) {
+      currentNode.value = cb.apply(void 0, args);
+    }
+    return currentNode.value;
+  };
 }
 /**
  * Creates a memoizer for a single-value function, backed by a WeakMap.
@@ -117,42 +126,40 @@ export function memoizeFunction(cb, maxCacheSize, ignoreNullOrUndefinedResult) {
  * @public
  */
 export function createMemoizer(getValue) {
-    if (!_weakMap) {
-        // Without a `WeakMap` implementation, memoization is not possible.
-        return getValue;
+  if (!_weakMap) {
+    // Without a `WeakMap` implementation, memoization is not possible.
+    return getValue;
+  }
+  var cache = new _weakMap();
+  function memoizedGetValue(input) {
+    if (!input || (typeof input !== "function" && typeof input !== "object")) {
+      // A WeakMap can only be used to test against reference values, i.e. 'function' and 'object'.
+      // All other inputs cannot be memoized against in this manner.
+      return getValue(input);
     }
-    var cache = new _weakMap();
-    function memoizedGetValue(input) {
-        if (!input || (typeof input !== 'function' && typeof input !== 'object')) {
-            // A WeakMap can only be used to test against reference values, i.e. 'function' and 'object'.
-            // All other inputs cannot be memoized against in this manner.
-            return getValue(input);
-        }
-        if (cache.has(input)) {
-            // tslint:disable-next-line:no-non-null-assertion
-            return cache.get(input);
-        }
-        var value = getValue(input);
-        cache.set(input, value);
-        return value;
+    if (cache.has(input)) {
+      // tslint:disable-next-line:no-non-null-assertion
+      return cache.get(input);
     }
-    return memoizedGetValue;
+    var value = getValue(input);
+    cache.set(input, value);
+    return value;
+  }
+  return memoizedGetValue;
 }
 function _normalizeArg(val) {
-    if (!val) {
-        return _emptyObject;
-    }
-    else if (typeof val === 'object' || typeof val === 'function') {
-        return val;
-    }
-    else if (!_dictionary[val]) {
-        _dictionary[val] = { val: val };
-    }
-    return _dictionary[val];
+  if (!val) {
+    return _emptyObject;
+  } else if (typeof val === "object" || typeof val === "function") {
+    return val;
+  } else if (!_dictionary[val]) {
+    _dictionary[val] = { val: val };
+  }
+  return _dictionary[val];
 }
 function _createNode() {
-    return {
-        map: _weakMap ? new _weakMap() : null,
-    };
+  return {
+    map: _weakMap ? new _weakMap() : null,
+  };
 }
 //# sourceMappingURL=memoize.js.map
