@@ -17,11 +17,12 @@ export interface IBreadNodes {
 export interface IBreadNodesProps {
   node?: IBreadNodes;
   child: IBreadNodes[];
+  currentTree?: IBreadNodes[];
   label: string;
   src: string;
   parentNode?: IBreadNodes | null;
   theme?: string;
-  key: string | number;
+  key?: string | number;
   isSelected?: boolean;
   onSelected?: (value: any) => void;
 }
@@ -30,6 +31,7 @@ export interface IBreadcrumdStates {
   NodesList: IBreadNodes[];
   myNodes: IBreadNodes | null;
   currentNodes: IBreadNodes[];
+  mySelectTree: IBreadNodes[];
 }
 
 export interface INodeState {

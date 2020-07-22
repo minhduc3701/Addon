@@ -17,32 +17,58 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
     };
   }
 
-  onRenderChildNode = (
-    child: IBreadNodes[],
+  onRenderSelectedNode = (
+    node: IBreadNodes[],
     parentNode?: IBreadNodes,
-    onSelected?: (value: any) => void
+    onSelected?: (value: any) => void,
+    currentTree?: IBreadNodes[]
   ) => {
-    console.log(child);
-    if (child.length >= 1) {
-      return (
-        <div style={{ display: "flex" }}>
-          {child.map((item, index) => {
-            return (
-              <BreadNode
-                key={index}
-                child={item.child}
-                label={item.label}
-                src={item.src}
-                parentNode={parentNode}
-                node={item}
-                isSelected={item.isSelected || false}
-                onSelected={onSelected}
-              />
-            );
-          })}
-        </div>
-      );
-    }
+    return (
+      <div style={{ display: "flex" }}>
+        {node.map((item, index) => {
+          return (
+            <BreadNode
+              key={index}
+              child={item.child}
+              label={item.label}
+              src={item.src}
+              parentNode={parentNode}
+              node={item}
+              isSelected={item.isSelected || false}
+              onSelected={onSelected}
+              currentTree={currentTree}
+            />
+          );
+        })}
+      </div>
+    );
+  };
+
+  onRenderTreeNode = (
+    node: IBreadNodes[],
+    parentNode?: IBreadNodes,
+    onSelected?: (value: any) => void,
+    currentTree?: IBreadNodes[]
+  ) => {
+    return (
+      <div style={{ display: "flex" }}>
+        {node.map((item, index) => {
+          return (
+            <BreadNode
+              key={index}
+              child={item.child}
+              label={item.label}
+              src={item.src}
+              parentNode={parentNode}
+              node={item}
+              isSelected={item.isSelected || false}
+              onSelected={onSelected}
+              currentTree={currentTree}
+            />
+          );
+        })}
+      </div>
+    );
   };
 
   onRenderNode = (props: IBreadNodesProps) => {
@@ -51,43 +77,59 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
       let selectedItem = JSON.parse(value);
       props.onSelected && props.onSelected(selectedItem);
     };
-
     return (
       <ItemWrapper>
         <BreadWrapper>
-          {props.child.length >= 2 ? (
-            <SelectWrapper>
-              <select
-                defaultValue={props.label}
-                id={`select-${props.label}`}
-                onChange={onSelectOption}
-              >
-                <option disabled hidden>
+          {(!props.parentNode ||
+            (props.child.length <= 1 &&
+              props.currentTree &&
+              props.currentTree.length < 1)) && (
+            <>
+              <ItemWrapper>
+                <a className="label-btn" href={props.src}>
                   {props.label}
-                </option>
-                {props.child.map((item, index) => {
-                  return (
-                    <option value={JSON.stringify(item)} key={index}>
-                      {item.label}
-                    </option>
-                  );
-                })}
-              </select>
-            </SelectWrapper>
-          ) : (
-            <a className="label-btn" href={props.src}>
-              {props.label}
-            </a>
+                </a>
+                <Icon className="ms-breadIcon" iconName="ChevronRight" />
+              </ItemWrapper>
+            </>
           )}
-          {props.child.length >= 1 && (
-            <Icon className="ms-breadIcon" iconName="ChevronRight" />
+          {props.child.length > 1 && (
+            <ItemWrapper>
+              {props.parentNode && props.parentNode.child.length < 2 && (
+                <>
+                  <a className="label-btn" href={props.src}>
+                    {props.label}
+                  </a>
+                  <Icon className="ms-breadIcon" iconName="ChevronRight" />
+                </>
+              )}
+              <SelectWrapper>
+                <select id={`select-${props.label}`} onChange={onSelectOption}>
+                  {props.child.map((item, index) => {
+                    return (
+                      <option value={JSON.stringify(item)} key={index}>
+                        {item.label}
+                      </option>
+                    );
+                  })}
+                </select>
+              </SelectWrapper>
+            </ItemWrapper>
           )}
         </BreadWrapper>
-        {this.onRenderChildNode(props.child, props, props.onSelected)}
+        {props.isSelected &&
+          this.onRenderSelectedNode(
+            props.child,
+            props,
+            props.onSelected,
+            props.currentTree
+          )}
+        {props.currentTree &&
+          props.currentTree.length > 0 &&
+          this.onRenderTreeNode(props.currentTree, props, props.onSelected)}
       </ItemWrapper>
     );
   };
-
   render() {
     return <div>{this.onRenderNode(this.props)}</div>;
   }
