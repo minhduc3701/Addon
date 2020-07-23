@@ -13,12 +13,12 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
       NodesList: this.props.child,
       myNodes: null,
       currentNodes: [],
-      mySelectTree: [],
     };
   }
 
   onSelectedChild = async (value: IBreadNodes, child?: IBreadNodes[]) => {
     let { NodesList } = this.state;
+    this.setState({ myNodes: value });
     if (!child) {
       for (let i = 0; i < NodesList.length; i++) {
         if (NodesList[i].child.length >= 1) {
@@ -71,66 +71,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
     });
   };
 
-  onSetSeletedTree = async (value: IBreadNodes, childRepo?: IBreadNodes[]) => {
-    // if (this.state.mySelectTree.length < 1) {
-    this.setState({
-      mySelectTree: [value],
-    });
-    // }
-  };
-
-  //doing with for in for
-  // onCheckIncludes = async (value: IBreadNodes, childRepo?: IBreadNodes[]) => {
-  //   let currentTree = this.state.mySelectTree;
-  //   let result = false;
-  //   if (!childRepo) {
-  //     for (let i = 0; i < currentTree.length; i++) {
-  //       if (currentTree[i].label === value.label) {
-  //         console.log("find");
-  //       }
-  //       if (
-  //         currentTree[i].label !== value.label &&
-  //         currentTree[i].child.length >= 1
-  //       ) {
-  //         let child = currentTree[i].child;
-  //         for (let j = 0; j < child.length; j++) {
-  //           if (child[j].label === value.label) {
-  //             console.log(currentTree[i]);
-  //             console.log("find");
-  //           }
-  //           if (child[j].label !== value.label && child[j].child.length >= 1) {
-  //             this.onCheckIncludes(value, child[j].child);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  //   if (childRepo) {
-  //     for (let i = 0; i < childRepo.length; i++) {
-  //       if (childRepo[i].label === value.label) {
-  //         console.log("find");
-  //       }
-  //       if (
-  //         childRepo[i].label !== value.label &&
-  //         childRepo[i].child.length >= 1
-  //       ) {
-  //         let child = childRepo[i].child;
-  //         for (let j = 0; j < child.length; j++) {
-  //           if (child[j].label === value.label) {
-  //             console.log(childRepo[i]);
-  //             console.log("find");
-  //           }
-  //           if (child[j].label !== value.label && child[j].child.length >= 1) {
-  //             this.onCheckIncludes(value, child[j].child);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // };
-
   render() {
-    console.log(this.state.NodesList);
     return (
       <div>
         {this.state.NodesList.map((item, index) => {
@@ -141,9 +82,9 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
               label={item.label}
               src={item.src}
               theme={this.props.darkMode}
-              currentTree={this.state.mySelectTree}
               isSelected={item.child.length === 1 ? true : false}
               parentNode={null}
+              currentSelectedNode={this.state.myNodes}
               onSelected={(value: any) => this.onSelectedChild(value)}
             />
           );

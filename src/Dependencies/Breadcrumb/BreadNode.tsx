@@ -6,6 +6,7 @@ import {
   IBreadNodes,
   ItemWrapper,
   INodeState,
+  RowWrapper,
 } from "./BreadcumbStyle";
 import { Icon } from "../@uifabric/icons/Icon";
 
@@ -21,7 +22,8 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
     node: IBreadNodes[],
     parentNode?: IBreadNodes,
     onSelected?: (value: any) => void,
-    currentTree?: IBreadNodes[]
+    currentSelectedNode?: IBreadNodes | null,
+    theme?: string
   ) => {
     return (
       <div style={{ display: "flex" }}>
@@ -36,7 +38,8 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               node={item}
               isSelected={item.isSelected || false}
               onSelected={onSelected}
-              currentTree={currentTree}
+              currentSelectedNode={currentSelectedNode}
+              theme={theme}
             />
           );
         })}
@@ -45,16 +48,25 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
   };
 
   onRenderNode = (props: IBreadNodesProps) => {
-    const onSelectOption = (e?: any) => {
+    let selectNode = props.child.filter((node) => node.isSelected);
+    const onSelectOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const { value } = e.target;
       let selectedItem = JSON.parse(value);
       props.onSelected && props.onSelected(selectedItem);
+      // let length = selectedItem.label.length * 14 + "px";
+      // let item = document.getElementById(`${selectedItem.label} selected`);
+      // let text = item?.clientWidth;
+      // console.log(item);
+      // if (item) {
+      //   item.style.width = length;
+      // }
     };
 
-    let selectNode = props.child.filter((node) => node.isSelected);
+    console.log(selectNode[0]);
+
     return (
-      <ItemWrapper>
-        <BreadWrapper>
+      <RowWrapper>
+        <BreadWrapper theme={props}>
           {(!props.parentNode || props.child.length === 1) && (
             <ItemWrapper>
               <a className="label-btn" href={props.src}>
@@ -73,8 +85,27 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
                   <Icon className="ms-breadIcon" iconName="ChevronRight" />
                 </ItemWrapper>
               )}
-              <SelectWrapper>
-                <select onChange={onSelectOption}>
+              {props.parentNode && props.parentNode.child.length >= 2 && (
+                <Icon className="ms-breadIcon" iconName="ChevronRight" />
+              )}
+              <SelectWrapper theme={props}>
+                <select
+                  style={{
+                    width: `${
+                      props.currentSelectedNode &&
+                      props.currentSelectedNode.label === props.label
+                        ? props.child[0].label.length * 14 + "px"
+                        : selectNode[0]
+                        ? selectNode[0].label.length * 14 + "px"
+                        : props.label.length * 14 + "px"
+                    }`,
+                  }}
+                  id={`${props.label}`}
+                  onChange={onSelectOption}
+                >
+                  <option selected disabled hidden>
+                    {props.child[0].label}
+                  </option>
                   {props.child.map((item, index) => {
                     return (
                       <option value={JSON.stringify(item)} key={index}>
@@ -84,9 +115,6 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
                   })}
                 </select>
               </SelectWrapper>
-              {props.currentTree && props.currentTree.length < 1 && (
-                <Icon className="ms-breadIcon" iconName="ChevronRight" />
-              )}
             </ItemWrapper>
           )}
         </BreadWrapper>
@@ -96,9 +124,10 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
             selectNode && selectNode.length >= 1 ? selectNode : props.child,
             props,
             props.onSelected,
-            props.currentTree
+            props.currentSelectedNode,
+            props.theme
           )}
-      </ItemWrapper>
+      </RowWrapper>
     );
   };
   render() {

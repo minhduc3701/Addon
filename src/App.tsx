@@ -134,7 +134,7 @@ function App() {
       src: "./aa",
       child: [
         {
-          label: "rc365",
+          label: "RC365",
           src: "./aa",
           child: [
             {
@@ -149,6 +149,11 @@ function App() {
             { label: "Backend", src: "./aa", child: [] },
           ],
         },
+        {
+          label: "RCnúihduaihsduishdădawdawdawdawdwdwhs",
+          src: "./RCnúihduaihsduishdădawdawdawdawdwdwhs",
+          child: [],
+        },
       ],
     },
   ];
@@ -156,7 +161,7 @@ function App() {
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <Breadcrumb child={BreadcrumbData} darkMode="dark" />
+      <Breadcrumb child={BreadcrumbData} darkMode="light" />
     </div>
   );
 }
