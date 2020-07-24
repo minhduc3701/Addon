@@ -24,13 +24,14 @@ export interface IBreadNodesProps {
   key?: string | number;
   isSelected?: boolean;
   currentSelectedNode?: IBreadNodes | null;
+  selectedArr?: IBreadNodesProps[];
   onSelected?: (value: any) => void;
 }
 
 export interface IBreadcrumdStates {
   NodesList: IBreadNodes[];
   myNodes: IBreadNodes | null;
-  currentNodes: IBreadNodes[];
+  currentNodes: IBreadNodesProps[];
 }
 
 export interface INodeState {
@@ -81,8 +82,8 @@ export const SelectWrapper = styled.div`
   margin: 0 4px;
   width: 100%;
   select {
-    width: fit-content;
-    padding: 5px;
+    text-align-last: center;
+    padding: 5px 0;
     max-width: 160px;
     -moz-appearance: none;
     -webkit-appearance: none;

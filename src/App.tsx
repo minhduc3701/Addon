@@ -1,24 +1,26 @@
 import React from "react";
 import "./App.css";
-import Languages from "./Component/Calender/languages.json";
+// import Languages from "./Component/Calender/languages.json";
 // <ImportCS>
-import Calendar from "calendar-custom/CalenderInline";
+// import Calendar from "calendar-custom/CalenderInline";
 // </ImportCS>
-import CalenderInline from "./Dependencies/calendar-custom/CalenderInline";
+// import CalenderInline from "./Dependencies/calendar-custom/CalenderInline";
 import { initializeIcons } from "./Dependencies/@uifabric/icons";
 // <TreeViewImport>
-import TreeView from "./Dependencies/TreeView/TreeView";
+// import TreeView from "./Dependencies/TreeView/TreeView";
 // </TreeViewImport>
 // <ButtonImport>
-import Button from "./Dependencies/Button";
+// import Button from "./Dependencies/Button";
 // </ButtonImport>
 import { INodes } from "./Dependencies/TreeView/FinalTreeInterface";
 import Breadcrumb from "./Dependencies/Breadcrumb";
+import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcumbStyle";
+// import { DetailsListDocumentsExample } from "./Dependencies/StateList";
 
 initializeIcons();
 
 function App() {
-  const getTreeView = async (value: INodes[]) => {
+  const getTreeView = (value: INodes[]) => {
     console.log(value);
   };
 
@@ -27,6 +29,10 @@ function App() {
     console.log(val);
   };
   // </getDate>
+
+  const getSelectedBreadcrumb = (val: IBreadNodesProps[]): void => {
+    console.log(val);
+  };
 
   const data = [
     {
@@ -141,27 +147,35 @@ function App() {
               label: "Frontend",
               src: "./aa",
               child: [
-                { label: "TreeView", src: "./aa", child: [] },
-                { label: "Calendar", src: "./aa", child: [] },
-                { label: "Button", src: "./aa", child: [] },
+                {
+                  label: "Đức",
+                  src: "./xadan",
+                  child: [
+                    {
+                      label: "TreeView",
+                      src: "./aa",
+                      child: [{ label: "Node", src: "./aa", child: [] }],
+                    },
+                    { label: "Calendar", src: "./aa", child: [] },
+                    { label: "Button", src: "./aa", child: [] },
+                  ],
+                },
               ],
             },
-            { label: "Backend", src: "./aa", child: [] },
+            { label: "Backend Frontend", src: "./aa", child: [] },
           ],
-        },
-        {
-          label: "RCnúihduaihsduishdădawdawdawdawdwdwhs",
-          src: "./RCnúihduaihsduishdădawdawdawdawdwdwhs",
-          child: [],
         },
       ],
     },
   ];
-
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <Breadcrumb child={BreadcrumbData} darkMode="light" />
+      <Breadcrumb
+        child={BreadcrumbData}
+        darkMode="light"
+        onGetData={getSelectedBreadcrumb}
+      />
     </div>
   );
 }

@@ -23,7 +23,8 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
     parentNode?: IBreadNodes,
     onSelected?: (value: any) => void,
     currentSelectedNode?: IBreadNodes | null,
-    theme?: string
+    theme?: string,
+    selectedArr?: IBreadNodesProps[]
   ) => {
     return (
       <div style={{ display: "flex" }}>
@@ -40,6 +41,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               onSelected={onSelected}
               currentSelectedNode={currentSelectedNode}
               theme={theme}
+              selectedArr={selectedArr}
             />
           );
         })}
@@ -52,27 +54,35 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
     const onSelectOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const { value } = e.target;
       let selectedItem = JSON.parse(value);
-      props.onSelected && props.onSelected(selectedItem);
-      // let length = selectedItem.label.length * 14 + "px";
-      // let item = document.getElementById(`${selectedItem.label} selected`);
-      // let text = item?.clientWidth;
-      // console.log(item);
-      // if (item) {
-      //   item.style.width = length;
-      // }
+      props.onSelected &&
+        props.onSelected({
+          ...selectedItem,
+          parentNode: props,
+        });
+      let item = document.getElementById(props.label);
+      if (item) {
+        item.style.width = `calc(${
+          selectedItem.label.length * 14 + "px"
+        } - 9px)`;
+      }
     };
-
-    console.log(selectNode[0]);
 
     return (
       <RowWrapper>
         <BreadWrapper theme={props}>
-          {(!props.parentNode || props.child.length === 1) && (
+          {(((!props.parentNode || props.child.length <= 1) &&
+            props.selectedArr?.findIndex(
+              (node) => node.label === props.parentNode?.label
+            ) === -1) ||
+            (props.parentNode?.child.length === 1 &&
+              props.child.length === 0)) && (
             <ItemWrapper>
               <a className="label-btn" href={props.src}>
                 {props.label}
               </a>
-              <Icon className="ms-breadIcon" iconName="ChevronRight" />
+              {!props.parentNode && (
+                <Icon className="ms-breadIcon" iconName="ChevronRight" />
+              )}
             </ItemWrapper>
           )}
           {props.child.length > 1 && (
@@ -91,14 +101,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               <SelectWrapper theme={props}>
                 <select
                   style={{
-                    width: `${
-                      props.currentSelectedNode &&
-                      props.currentSelectedNode.label === props.label
-                        ? props.child[0].label.length * 14 + "px"
-                        : selectNode[0]
-                        ? selectNode[0].label.length * 14 + "px"
-                        : props.label.length * 14 + "px"
-                    }`,
+                    width: `${props.child[0].label.length * 14 + "px"}`,
                   }}
                   id={`${props.label}`}
                   onChange={onSelectOption}
@@ -108,13 +111,22 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
                   </option>
                   {props.child.map((item, index) => {
                     return (
-                      <option value={JSON.stringify(item)} key={index}>
+                      <option
+                        // id={item.label}
+                        value={JSON.stringify(item)}
+                        key={index}
+                      >
                         {item.label}
                       </option>
                     );
                   })}
                 </select>
               </SelectWrapper>
+              {props.child.findIndex((node) => node.isSelected) !== -1 &&
+                selectNode.length > 0 &&
+                selectNode[0].child.length > 0 && (
+                  <Icon className="ms-breadIcon" iconName="ChevronRight" />
+                )}
             </ItemWrapper>
           )}
         </BreadWrapper>
@@ -125,7 +137,8 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
             props,
             props.onSelected,
             props.currentSelectedNode,
-            props.theme
+            props.theme,
+            props.selectedArr
           )}
       </RowWrapper>
     );
