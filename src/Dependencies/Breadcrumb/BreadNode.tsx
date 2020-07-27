@@ -123,12 +123,27 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
     };
 
     let currentMobile = props.mobileCurrentList?.findIndex(
-      (node) => node.id === props.id
+      (node) => node.id === props.id && !node.isLast
     );
 
     let currentParentMobile = props.mobileCurrentList?.findIndex(
-      (node) => node.parentNode?.id === props.id && node.isSelected
+      (node) =>
+        node.parentNode?.id === props.id && node.isSelected && !node.isLast
     );
+    let isLast = false;
+    if (props.mobileCurrentList) {
+      let propsMobile = props.mobileCurrentList;
+      for (let i = 0; i < propsMobile.length; i++) {
+        if (propsMobile[i].isLast) {
+          let index = props.child.findIndex(
+            (node) => node.id === propsMobile[i].id
+          );
+          if (index !== -1) {
+            isLast = true;
+          }
+        }
+      }
+    }
 
     return (
       <BreadNodeWrapper>
@@ -201,6 +216,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               props.mobileCurrentList &&
               props.mobileCurrentList.length >= 1 && (
                 <>
+                  {}
                   <SelectWrapper theme={{ ...props, selectNode: selectNode }}>
                     <select
                       style={{
@@ -214,11 +230,13 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
                       </option>
                       {props.mobileCurrentList &&
                         props.mobileCurrentList.map((item, index) => {
-                          return (
-                            <option value={JSON.stringify(item)} key={index}>
-                              {item.label}
-                            </option>
-                          );
+                          if (!item.isLast) {
+                            return (
+                              <option value={JSON.stringify(item)} key={index}>
+                                {item.label}
+                              </option>
+                            );
+                          }
                         })}
                     </select>
                   </SelectWrapper>
@@ -245,7 +263,13 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               currentParentMobile === -1 &&
               currentMobile !== -1 && (
                 <>
-                  <SelectWrapper theme={{ ...props, selectNode: selectNode }}>
+                  <SelectWrapper
+                    theme={{
+                      ...props,
+                      selectNode: selectNode,
+                      isLast,
+                    }}
+                  >
                     <select
                       style={{
                         width: `calc(${
@@ -267,9 +291,6 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
                       })}
                     </select>
                   </SelectWrapper>
-                  {currentMobile === -1 && (
-                    <Icon className="ms-breadIcon" iconName="ChevronRight" />
-                  )}
                 </>
               )}
           </BreadWrapper>

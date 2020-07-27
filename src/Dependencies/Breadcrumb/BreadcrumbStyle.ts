@@ -43,6 +43,7 @@ export interface IBreadNodesProps {
       | React.MouseEvent<HTMLSpanElement>
       | React.ChangeEvent<HTMLSelectElement>
   ) => void;
+  isLast?: boolean;
 }
 
 export interface IBreadcrumdStates {
@@ -135,9 +136,10 @@ export const SelectWrapper = styled.div`
     background-color: transparent;
     color: ${({ theme }) => (theme.theme === "dark" ? "#ffffff" : "#212121")};
     font-weight: ${({ theme }) =>
-      theme.selectNode &&
-      theme.selectNode.length > 0 &&
-      theme.selectNode[0].child.length === 0
+      (theme.selectNode &&
+        theme.selectNode.length > 0 &&
+        theme.selectNode[0].child.length === 0) ||
+      theme.isLast
         ? "600"
         : "350"};
     cursor: pointer;

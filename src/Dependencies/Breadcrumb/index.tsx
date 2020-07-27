@@ -98,17 +98,19 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
     );
     if (value.parentNode) {
       if (indexValue === -1 && filterSibling === -1) {
-        if (value.child.length > 0) {
-          currentMobileList.push(value);
-          this.setState({
-            mobileList: currentMobileList,
-          });
-        }
+        let values =
+          value.child.length === 0 ? { ...value, isLast: true } : value;
+        currentMobileList.push(values);
+        this.setState({
+          mobileList: currentMobileList,
+        });
       }
       if (filterSibling !== -1) {
         currentMobileList[filterSibling].child.length > 0 &&
           (await this.onRemoveChildOfSibling(currentMobileList[filterSibling]));
-        currentMobileList[filterSibling] = value;
+        let values =
+          value.child.length === 0 ? { ...value, isLast: true } : value;
+        currentMobileList[filterSibling] = values;
         this.setState({
           mobileList: currentMobileList,
         });
@@ -158,14 +160,17 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
     }
   };
 
-  onSetDefaultOtherSelected = (node: IBreadNodes[], value?: IBreadNodes) => {
+  onSetDefaultOtherSelected = async (
+    node: IBreadNodes[],
+    value?: IBreadNodes
+  ) => {
     if (value) {
       for (let i = 0; i < node.length; i++) {
         if (node[i].id !== value.id) {
           node[i].isSelected = false;
         }
         if (node[i].id !== value.id && node[i].child.length >= 1) {
-          this.onSetDefaultOtherSelected(node[i].child);
+          await this.onSetDefaultOtherSelected(node[i].child);
         }
       }
     }
@@ -173,7 +178,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
       for (let i = 0; i < node.length; i++) {
         node[i].isSelected = false;
         if (node[i].child.length >= 1) {
-          this.onSetDefaultOtherSelected(node[i].child);
+          await this.onSetDefaultOtherSelected(node[i].child);
         }
       }
     }
@@ -203,7 +208,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
           await this.setState({ mobileList: currentMobileList });
         }
         if (child[i].child.length > 0) {
-          this.onRemoveAllChild(value, child[i].child);
+          await this.onRemoveAllChild(value, child[i].child);
         }
       }
     }
@@ -217,7 +222,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
           await this.setState({ mobileList: currentMobileList });
         }
         if (childNode[i].child.length > 0) {
-          this.onRemoveAllChild(value, childNode[i].child);
+          await this.onRemoveAllChild(value, childNode[i].child);
         }
       }
     }
