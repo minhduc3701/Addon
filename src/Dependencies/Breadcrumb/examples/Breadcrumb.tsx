@@ -58,7 +58,7 @@ function App() {
       <Breadcrumb
         child={BreadcrumbData}
         // <BreadcrumbDarkMode>
-        darkMode="light"
+        darkMode="dark"
         // </BreadcrumbDarkMode>
         onGetData={getSelectedBreadcrumb}
       />

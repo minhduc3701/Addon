@@ -12,6 +12,7 @@ import {
 } from "office-ui-fabric-react/lib/DetailsList";
 import { MarqueeSelection } from "office-ui-fabric-react/lib/MarqueeSelection";
 import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
+import { StateListWrapper } from "./StateListStyle";
 
 const classNames = mergeStyleSets({
   fileIconHeaderIcon: {
@@ -204,58 +205,60 @@ export class DetailsListDocumentsExample extends React.Component<
     } = this.state;
 
     return (
-      <Fabric>
-        <div className={classNames.controlWrapper}>
-          <Toggle
-            label="Enable compact mode"
-            checked={isCompactMode}
-            onChange={() => this._onChangeCompactMode}
-            onText="Compact"
-            offText="Normal"
-            styles={controlStyles}
-          />
-          <Toggle
-            label="Enable modal selection"
-            checked={isModalSelection}
-            onChange={() => this._onChangeModalSelection}
-            onText="Modal"
-            offText="Normal"
-            styles={controlStyles}
-          />
-          <TextField
-            label="Filter by name:"
-            onChange={() => this._onChangeText}
-            styles={controlStyles}
-          />
-          <Announced
-            message={`Number of items after filter applied: ${items.length}.`}
-          />
-        </div>
-        <div className={classNames.selectionDetails}>{selectionDetails}</div>
-        <Announced message={selectionDetails} />
-        {announcedMessage ? (
-          <Announced message={announcedMessage} />
-        ) : undefined}
-        <MarqueeSelection selection={this._selection}>
-          <DetailsList
-            items={items}
-            compact={isCompactMode}
-            columns={columns}
-            selectionMode={SelectionMode.multiple}
-            getKey={this._getKey}
-            setKey="multiple"
-            layoutMode={DetailsListLayoutMode.justified}
-            isHeaderVisible={true}
-            selection={this._selection}
-            selectionPreservedOnEmptyClick={true}
-            onItemInvoked={this._onItemInvoked}
-            enterModalSelectionOnTouch={true}
-            ariaLabelForSelectionColumn="Toggle selection"
-            ariaLabelForSelectAllCheckbox="Toggle selection for all items"
-            checkButtonAriaLabel="Row checkbox"
-          />
-        </MarqueeSelection>
-      </Fabric>
+      <StateListWrapper>
+        <Fabric>
+          <div className={classNames.controlWrapper}>
+            <Toggle
+              label="Enable compact mode"
+              checked={isCompactMode}
+              onChange={() => this._onChangeCompactMode}
+              onText="Compact"
+              offText="Normal"
+              styles={controlStyles}
+            />
+            <Toggle
+              label="Enable modal selection"
+              checked={isModalSelection}
+              onChange={() => this._onChangeModalSelection}
+              onText="Modal"
+              offText="Normal"
+              styles={controlStyles}
+            />
+            <TextField
+              label="Filter by name:"
+              onChange={() => this._onChangeText}
+              styles={controlStyles}
+            />
+            <Announced
+              message={`Number of items after filter applied: ${items.length}.`}
+            />
+          </div>
+          <div className={classNames.selectionDetails}>{selectionDetails}</div>
+          <Announced message={selectionDetails} />
+          {announcedMessage ? (
+            <Announced message={announcedMessage} />
+          ) : undefined}
+          <MarqueeSelection selection={this._selection}>
+            <DetailsList
+              items={items}
+              compact={isCompactMode}
+              columns={columns}
+              selectionMode={SelectionMode.multiple}
+              getKey={this._getKey}
+              setKey="multiple"
+              layoutMode={DetailsListLayoutMode.justified}
+              isHeaderVisible={true}
+              selection={this._selection}
+              selectionPreservedOnEmptyClick={true}
+              onItemInvoked={this._onItemInvoked}
+              enterModalSelectionOnTouch={true}
+              ariaLabelForSelectionColumn="Toggle selection"
+              ariaLabelForSelectAllCheckbox="Toggle selection for all items"
+              checkButtonAriaLabel="Row checkbox"
+            />
+          </MarqueeSelection>
+        </Fabric>
+      </StateListWrapper>
     );
   }
 

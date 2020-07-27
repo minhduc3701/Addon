@@ -36,6 +36,10 @@ function App() {
     console.log(val);
   };
 
+  const onClickActionBreadcrumb = () => {
+    console.log("click");
+  };
+
   const data = [
     {
       date: "Mon Jul 06 2020 00:00:00 GMT+0700 (Indochina Time)",
@@ -162,7 +166,7 @@ function App() {
                       label: "TreeView",
                       src: "./aa",
                       child: [
-                        { id: "", label: "Node", src: "./aa", child: [] },
+                        { id: "no", label: "Node", src: "./aa", child: [] },
                       ],
                     },
                     { id: "cal", label: "Calendar", src: "./aa", child: [] },
@@ -181,16 +185,16 @@ function App() {
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      {/* <DetailsListDocumentsExample /> */}
       <Breadcrumb
         child={BreadcrumbData}
-        darkMode="dark"
+        darkMode="light"
         onGetData={getSelectedBreadcrumb}
+        onClick={onClickActionBreadcrumb}
       />
     </div>
   );
 }
-// </ExampleUsingCalendar>
+//</ExampleUsingCalendar>
 
 export default App;
 // <CalenderInline

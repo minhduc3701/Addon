@@ -6,6 +6,11 @@ export interface IBreadcrumdProps {
   darkMode?: string;
   onGetData?: (value: IBreadNodes[]) => void;
   multilingual?: { textKey: string; context: string }[];
+  onClick?: (
+    event:
+      | React.MouseEvent<HTMLSpanElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => void;
 }
 // </BreadcrumbProps>
 // <IBreadNodes>
@@ -30,6 +35,14 @@ export interface IBreadNodesProps {
   currentSelectedNode?: IBreadNodes | null;
   selectedArr?: IBreadNodesProps[];
   onSelected?: (value: IBreadNodes) => void;
+  onSelectedMobile?: (value: IBreadNodesProps) => void;
+  onSelectRootMobile?: (value: IBreadNodesProps) => void;
+  mobileCurrentList?: IBreadNodesProps[];
+  onClick?: (
+    event:
+      | React.MouseEvent<HTMLSpanElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => void;
 }
 
 export interface IBreadcrumdStates {
@@ -37,6 +50,7 @@ export interface IBreadcrumdStates {
   myNodes: IBreadNodes | null;
   currentNodes: IBreadNodesProps[];
   widthElement: number;
+  mobileList: any;
 }
 
 export interface INodeState {
@@ -50,6 +64,7 @@ export const BreadWrapper = styled.div`
   justify-content: center;
   align-items: center;
   .label-btn {
+    cursor: pointer;
     max-width: 160px;
     padding: 5px;
     color: ${({ theme }) => (theme.theme === "dark" ? "#ffffff" : "#212121")};
@@ -87,12 +102,14 @@ export const RowWrapper = styled.div`
   // .is-mobile {
   //   display: none;
   // }
-  @media screen and (max-width: 599px) {
-    flex-wrap: nowrap;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
+  // @media screen and (max-width: 599px) {
+  //   .is-pc {
+  //     display: none;
+  //   }
+  //   .is-mobile {
+  //     display: flex;
+  //   }
+  // }
 `;
 
 export const NodeWrapper = styled.div`
@@ -106,7 +123,6 @@ export const NodeWrapper = styled.div`
 `;
 
 export const SelectWrapper = styled.div`
-  opacity: ${({ theme }): any => console.log(theme)}
   margin: 0 4px;
   width: 100%;
   select {
@@ -151,5 +167,19 @@ export const SelectWrapper = styled.div`
     white-space: nowrap;
     text-overflow: ellipsis;
     display: initial;
+  }
+`;
+
+export const BreadNodeWrapper = styled.div`
+  .is-mobile {
+    display: none;
+  }
+  @media screen and (max-width: 599px) {
+    .is-pc {
+      display: none;
+    }
+    .is-mobile {
+      display: flex;
+    }
   }
 `;
