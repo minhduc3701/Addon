@@ -236,39 +236,25 @@ export class DetailsListDocumentsExample extends React.Component<
         {announcedMessage ? (
           <Announced message={announcedMessage} />
         ) : undefined}
-        {isModalSelection ? (
-          <MarqueeSelection selection={this._selection}>
-            <DetailsList
-              items={items}
-              compact={isCompactMode}
-              columns={columns}
-              selectionMode={SelectionMode.multiple}
-              getKey={this._getKey}
-              setKey="multiple"
-              layoutMode={DetailsListLayoutMode.justified}
-              isHeaderVisible={true}
-              selection={this._selection}
-              selectionPreservedOnEmptyClick={true}
-              onItemInvoked={this._onItemInvoked}
-              enterModalSelectionOnTouch={true}
-              ariaLabelForSelectionColumn="Toggle selection"
-              ariaLabelForSelectAllCheckbox="Toggle selection for all items"
-              checkButtonAriaLabel="Row checkbox"
-            />
-          </MarqueeSelection>
-        ) : (
+        <MarqueeSelection selection={this._selection}>
           <DetailsList
             items={items}
             compact={isCompactMode}
             columns={columns}
-            selectionMode={SelectionMode.none}
+            selectionMode={SelectionMode.multiple}
             getKey={this._getKey}
-            setKey="none"
+            setKey="multiple"
             layoutMode={DetailsListLayoutMode.justified}
             isHeaderVisible={true}
+            selection={this._selection}
+            selectionPreservedOnEmptyClick={true}
             onItemInvoked={this._onItemInvoked}
+            enterModalSelectionOnTouch={true}
+            ariaLabelForSelectionColumn="Toggle selection"
+            ariaLabelForSelectAllCheckbox="Toggle selection for all items"
+            checkButtonAriaLabel="Row checkbox"
           />
-        )}
+        </MarqueeSelection>
       </Fabric>
     );
   }

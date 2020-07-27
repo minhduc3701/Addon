@@ -1,22 +1,26 @@
 import styled from "styled-components";
 
+// <BreadcrumbProps>
 export interface IBreadcrumdProps {
   child: IBreadNodes[];
   darkMode?: string;
   onGetData?: (value: IBreadNodes[]) => void;
   multilingual?: { textKey: string; context: string }[];
 }
-
+// </BreadcrumbProps>
+// <IBreadNodes>
 export interface IBreadNodes {
+  id: string | number;
   label: string;
   src: string;
   child: IBreadNodes[];
   isSelected?: boolean;
 }
-
+// </IBreadNodes>
 export interface IBreadNodesProps {
   node?: IBreadNodes;
   child: IBreadNodes[];
+  id: string | number;
   label: string;
   src: string;
   parentNode?: IBreadNodes | null;
@@ -25,13 +29,14 @@ export interface IBreadNodesProps {
   isSelected?: boolean;
   currentSelectedNode?: IBreadNodes | null;
   selectedArr?: IBreadNodesProps[];
-  onSelected?: (value: any) => void;
+  onSelected?: (value: IBreadNodes) => void;
 }
 
 export interface IBreadcrumdStates {
   NodesList: IBreadNodes[];
   myNodes: IBreadNodes | null;
   currentNodes: IBreadNodesProps[];
+  widthElement: number;
 }
 
 export interface INodeState {
@@ -69,6 +74,9 @@ export const ItemWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  .font-weight-bold {
+    font-weight: ${({ theme }) => (theme.length === 0 ? "600" : "350")};
+  }
 `;
 export const RowWrapper = styled.div`
   display: flex;
@@ -76,9 +84,29 @@ export const RowWrapper = styled.div`
   align-items: center;
   max-height: 40px;
   flex-wrap: wrap;
+  // .is-mobile {
+  //   display: none;
+  // }
+  @media screen and (max-width: 599px) {
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+`;
+
+export const NodeWrapper = styled.div`
+  @media screen and (max-width: 599px) {
+    padding-bottom: 7px;
+    overflow-x: auto;
+    width: auto;
+    display: flex;
+    flex-direction: ${({ theme }) => (theme >= 410 ? "row-reverse" : "row")};
+  }
 `;
 
 export const SelectWrapper = styled.div`
+  opacity: ${({ theme }): any => console.log(theme)}
   margin: 0 4px;
   width: 100%;
   select {
@@ -90,7 +118,12 @@ export const SelectWrapper = styled.div`
     border: none;
     background-color: transparent;
     color: ${({ theme }) => (theme.theme === "dark" ? "#ffffff" : "#212121")};
-    font-weight: 350;
+    font-weight: ${({ theme }) =>
+      theme.selectNode &&
+      theme.selectNode.length > 0 &&
+      theme.selectNode[0].child.length === 0
+        ? "600"
+        : "350"};
     cursor: pointer;
     font-size: 21px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",

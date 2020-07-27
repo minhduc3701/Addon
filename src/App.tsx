@@ -13,9 +13,11 @@ import { initializeIcons } from "./Dependencies/@uifabric/icons";
 // import Button from "./Dependencies/Button";
 // </ButtonImport>
 import { INodes } from "./Dependencies/TreeView/FinalTreeInterface";
+// <BreadcrumbImport>
 import Breadcrumb from "./Dependencies/Breadcrumb";
-import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcumbStyle";
-// import { DetailsListDocumentsExample } from "./Dependencies/StateList";
+// </BreadcrumbImport>
+import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcrumbStyle";
+import { DetailsListDocumentsExample } from "./Dependencies/StateList";
 
 initializeIcons();
 
@@ -136,44 +138,53 @@ function App() {
 
   const BreadcrumbData = [
     {
+      id: "ad",
       label: "Add-on",
       src: "./aa",
       child: [
         {
+          id: "365",
           label: "RC365",
           src: "./aa",
           child: [
             {
+              id: "fe",
               label: "Frontend",
               src: "./aa",
               child: [
                 {
+                  id: "nmd",
                   label: "Đức",
                   src: "./xadan",
                   child: [
                     {
+                      id: "tree",
                       label: "TreeView",
                       src: "./aa",
-                      child: [{ label: "Node", src: "./aa", child: [] }],
+                      child: [
+                        { id: "", label: "Node", src: "./aa", child: [] },
+                      ],
                     },
-                    { label: "Calendar", src: "./aa", child: [] },
-                    { label: "Button", src: "./aa", child: [] },
+                    { id: "cal", label: "Calendar", src: "./aa", child: [] },
+                    { id: "btn", label: "Button", src: "./aa", child: [] },
                   ],
                 },
               ],
             },
-            { label: "Backend Frontend", src: "./aa", child: [] },
+            { id: "be", label: "Backend Frontend", src: "./aa", child: [] },
           ],
         },
+        { id: "fe2", label: "Frontend", src: "./aa", child: [] },
       ],
     },
   ];
   // <ExampleUsingCalendar>
   return (
     <div className="App">
+      {/* <DetailsListDocumentsExample /> */}
       <Breadcrumb
         child={BreadcrumbData}
-        darkMode="light"
+        darkMode="dark"
         onGetData={getSelectedBreadcrumb}
       />
     </div>

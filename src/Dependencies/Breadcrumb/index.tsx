@@ -4,7 +4,8 @@ import {
   IBreadcrumdStates,
   IBreadNodes,
   IBreadNodesProps,
-} from "./BreadcumbStyle";
+  NodeWrapper,
+} from "./BreadcrumbStyle";
 import BreadNode from "./BreadNode";
 
 class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
@@ -14,7 +15,17 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
       NodesList: this.props.child,
       myNodes: null,
       currentNodes: [],
+      widthElement: 0,
     };
+  }
+
+  componentDidMount() {
+    let element: HTMLElement = document.getElementsByClassName(
+      "node-wrapper"
+    )[0] as HTMLElement;
+    this.setState({
+      widthElement: element.clientWidth,
+    });
   }
 
   onSelectedChild = async (value: IBreadNodes, child?: IBreadNodes[]) => {
@@ -25,7 +36,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
         if (NodesList[i].child.length >= 1) {
           let nodeChild = NodesList[i].child;
           for (let j = 0; j < nodeChild.length; j++) {
-            if (nodeChild[j].label === value.label) {
+            if (nodeChild[j].id === value.id) {
               nodeChild[j].isSelected = true;
               await this.onSetDefaultOtherSelected(nodeChild, value);
               this.onSetState(value);
@@ -42,7 +53,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
         if (child[i].child.length >= 1) {
           let nodeChild = child[i].child;
           for (let j = 0; j < nodeChild.length; j++) {
-            if (nodeChild[j].label === value.label) {
+            if (nodeChild[j].id === value.id) {
               nodeChild[j].isSelected = true;
               await this.onSetDefaultOtherSelected(nodeChild, value);
               this.onSetState(value);
@@ -54,15 +65,21 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
         }
       }
     }
+    let item: HTMLElement = document.getElementsByClassName(
+      "node-wrapper"
+    )[0] as HTMLElement;
+    this.setState({
+      widthElement: item.clientWidth,
+    });
   };
 
   onSetDefaultOtherSelected = (node: IBreadNodes[], value?: IBreadNodes) => {
     if (value) {
       for (let i = 0; i < node.length; i++) {
-        if (node[i].label !== value.label) {
+        if (node[i].id !== value.id) {
           node[i].isSelected = false;
         }
-        if (node[i].label !== value.label && node[i].child.length >= 1) {
+        if (node[i].id !== value.id && node[i].child.length >= 1) {
           this.onSetDefaultOtherSelected(node[i].child);
         }
       }
@@ -80,26 +97,16 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
   onSetState = async (value: IBreadNodesProps) => {
     let currentNodes = [...this.state.currentNodes];
     let indexParent = currentNodes.findIndex(
-      (node) => node.label === value.parentNode?.label
+      (node) => node.id === value.parentNode?.id
     );
-    let index = currentNodes.findIndex((node) => node.label === value.label);
+    let index = currentNodes.findIndex((node) => node.id === value.id);
     let filterSibling = value.parentNode
       ? currentNodes.findIndex(
           (node) =>
-            node.parentNode &&
-            node.parentNode?.label === value.parentNode?.label
+            node.parentNode && node.parentNode?.id === value.parentNode?.id
         )
       : -1;
-    if (
-      currentNodes.findIndex(
-        (node) => node.label === this.state.NodesList[0].label
-      ) === -1
-    ) {
-      currentNodes.push(this.state.NodesList[0]);
-      await this.setState({
-        currentNodes,
-      });
-    }
+
     if (indexParent === -1 && value.parentNode) {
       currentNodes.push(value.parentNode);
       await this.setState({ currentNodes });
@@ -123,7 +130,16 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
       });
       await this.onRemoveSiblingChild(value);
     }
-
+    if (
+      currentNodes.findIndex(
+        (node) => node.id === this.state.NodesList[0].id
+      ) === -1
+    ) {
+      currentNodes.push(this.state.NodesList[0]);
+      await this.setState({
+        currentNodes,
+      });
+    }
     this.props.onGetData && this.props.onGetData(this.state.currentNodes);
   };
 
@@ -133,7 +149,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
     if (value.parentNode) {
       let parentChild = value.parentNode.child;
       for (let i = 0; i < parentChild.length; i++) {
-        if (parentChild[i].label !== value.label) {
+        if (parentChild[i].id !== value.id) {
           childFinded.push(parentChild[i]);
         }
       }
@@ -141,9 +157,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
     if (childFinded.length > 0) {
       for (let i = 0; i < childFinded.length; i++) {
         childFinded[i].child.forEach((item) => {
-          let index = currentNodes.findIndex(
-            (node) => node.label === item.label
-          );
+          let index = currentNodes.findIndex((node) => node.id === item.id);
           if (index !== -1) {
             currentNodes.splice(index, currentNodes.length - 1);
             this.setState({ currentNodes });
@@ -155,24 +169,30 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
 
   render() {
     return (
-      <div>
+      <NodeWrapper className="node-wrapper" theme={this.state.widthElement}>
         {this.state.NodesList.map((item, index) => {
           return (
             <BreadNode
+              id={item.id}
               child={item.child}
               key={index}
               label={item.label}
               src={item.src}
               theme={this.props.darkMode}
-              isSelected={item.child.length === 1 ? true : false}
+              isSelected={
+                item.child.length === 1 ||
+                item.child.findIndex((item) => item.isSelected) !== -1
+                  ? true
+                  : false
+              }
               parentNode={null}
               currentSelectedNode={this.state.myNodes}
               selectedArr={this.state.currentNodes}
-              onSelected={(value: any) => this.onSelectedChild(value)}
+              onSelected={(value: IBreadNodes) => this.onSelectedChild(value)}
             />
           );
         })}
-      </div>
+      </NodeWrapper>
     );
   }
 }

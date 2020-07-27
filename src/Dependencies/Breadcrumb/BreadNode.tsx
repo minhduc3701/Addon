@@ -7,7 +7,7 @@ import {
   ItemWrapper,
   INodeState,
   RowWrapper,
-} from "./BreadcumbStyle";
+} from "./BreadcrumbStyle";
 import { Icon } from "../@uifabric/icons/Icon";
 
 class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
@@ -21,7 +21,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
   onRenderSelectedNode = (
     node: IBreadNodes[],
     parentNode?: IBreadNodes,
-    onSelected?: (value: any) => void,
+    onSelected?: (value: IBreadNodes) => void,
     currentSelectedNode?: IBreadNodes | null,
     theme?: string,
     selectedArr?: IBreadNodesProps[]
@@ -31,6 +31,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
         {node.map((item, index) => {
           return (
             <BreadNode
+              id={item.id}
               key={index}
               child={item.child}
               label={item.label}
@@ -69,15 +70,15 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
 
     return (
       <RowWrapper>
-        <BreadWrapper theme={props}>
+        <BreadWrapper theme={props} className="is-pc">
           {(((!props.parentNode || props.child.length <= 1) &&
             props.selectedArr?.findIndex(
-              (node) => node.label === props.parentNode?.label
+              (node) => node.id === props.parentNode?.id
             ) === -1) ||
             (props.parentNode?.child.length === 1 &&
               props.child.length === 0)) && (
-            <ItemWrapper>
-              <a className="label-btn" href={props.src}>
+            <ItemWrapper theme={props.child}>
+              <a className="label-btn font-weight-bold" href={props.src}>
                 {props.label}
               </a>
               {!props.parentNode && (
@@ -95,10 +96,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
                   <Icon className="ms-breadIcon" iconName="ChevronRight" />
                 </ItemWrapper>
               )}
-              {props.parentNode && props.parentNode.child.length >= 2 && (
-                <Icon className="ms-breadIcon" iconName="ChevronRight" />
-              )}
-              <SelectWrapper theme={props}>
+              <SelectWrapper theme={{ ...props, selectNode: selectNode }}>
                 <select
                   style={{
                     width: `${props.child[0].label.length * 14 + "px"}`,
@@ -111,11 +109,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
                   </option>
                   {props.child.map((item, index) => {
                     return (
-                      <option
-                        // id={item.label}
-                        value={JSON.stringify(item)}
-                        key={index}
-                      >
+                      <option value={JSON.stringify(item)} key={index}>
                         {item.label}
                       </option>
                     );
@@ -140,6 +134,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
             props.theme,
             props.selectedArr
           )}
+        {/* <div className="is-mobile">aaaa</div> */}
       </RowWrapper>
     );
   };
