@@ -39,3 +39,4 @@ export * from "./transforms/rtlifyRules";
 export * from "./transforms/provideUnits";
 export * from "./transforms/prefixRules";
 export * from "./AnimationStyles";
+export * from "./GeneralStyles";

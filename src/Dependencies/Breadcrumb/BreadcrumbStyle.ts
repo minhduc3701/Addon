@@ -4,30 +4,30 @@ import styled from "styled-components";
 export interface IBreadcrumdProps {
   child: IBreadNodes[];
   darkMode?: string;
-  onGetData?: (value: IBreadNodes[]) => void;
   multilingual?: { textKey: string; context: string }[];
   onClick?: (
-    event:
-      | React.MouseEvent<HTMLSpanElement>
-      | React.ChangeEvent<HTMLSelectElement>
+    event: React.MouseEvent<HTMLSpanElement> | React.FormEvent<HTMLDivElement>
   ) => void;
 }
 // </BreadcrumbProps>
 // <IBreadNodes>
 export interface IBreadNodes {
   id: string | number;
-  label: string;
-  src: string;
+  text: string;
+  data: string;
   child: IBreadNodes[];
   isSelected?: boolean;
+  // @defaultvalue false
+  key?: string | number;
 }
 // </IBreadNodes>
+
 export interface IBreadNodesProps {
   node?: IBreadNodes;
   child: IBreadNodes[];
   id: string | number;
-  label: string;
-  src: string;
+  text: string;
+  data: string;
   parentNode?: IBreadNodes | null;
   theme?: string;
   key?: string | number;
@@ -39,9 +39,7 @@ export interface IBreadNodesProps {
   onSelectRootMobile?: (value: IBreadNodesProps) => void;
   mobileCurrentList?: IBreadNodesProps[];
   onClick?: (
-    event:
-      | React.MouseEvent<HTMLSpanElement>
-      | React.ChangeEvent<HTMLSelectElement>
+    event: React.MouseEvent<HTMLSpanElement> | React.FormEvent<HTMLDivElement>
   ) => void;
   isLast?: boolean;
 }
@@ -55,7 +53,7 @@ export interface IBreadcrumdStates {
 }
 
 export interface INodeState {
-  selectedItem: IBreadNodes[] | null;
+  width: number;
 }
 
 export const BreadWrapper = styled.div`
@@ -69,7 +67,6 @@ export const BreadWrapper = styled.div`
     max-width: 160px;
     padding: 5px;
     color: ${({ theme }) => (theme.theme === "dark" ? "#ffffff" : "#212121")};
-    text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -90,27 +87,28 @@ export const ItemWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  .font-weight-bold {
-    font-weight: ${({ theme }) => (theme.length === 0 ? "600" : "350")};
-  }
+  font-weight: ${({ theme }) =>
+    theme.child && theme.child.length === 0 ? "600" : "350"};
 `;
 export const RowWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   max-height: 40px;
-  flex-wrap: wrap;
-  // .is-mobile {
-  //   display: none;
-  // }
-  // @media screen and (max-width: 599px) {
-  //   .is-pc {
-  //     display: none;
-  //   }
-  //   .is-mobile {
-  //     display: flex;
-  //   }
-  // }
+  .is-mobile {
+    display: none;
+  }
+  .is-pc {
+    display: flex;
+  }
+  @media screen and (max-width: 599px) {
+    .is-pc {
+      display: none;
+    }
+    .is-mobile {
+      display: flex;
+    }
+  }
 `;
 
 export const NodeWrapper = styled.div`
@@ -170,17 +168,51 @@ export const SelectWrapper = styled.div`
     text-overflow: ellipsis;
     display: initial;
   }
+  .ms-Dropdown-container {
+    .ms-Dropdown {
+      &:focus::after {
+        border: none !important;
+      }
+      width: fit-content;
+      .ms-Dropdown-title {
+        padding: 0 4px;
+        border: none;
+        max-width: 160px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 21px;
+        font-weight: 350;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+        color: #212121;
+        font-weight: ${({ theme }) =>
+          theme.isLast ||
+          (theme.selectNode.length > 0 &&
+            theme.selectNode[0].child.length === 0)
+            ? "600"
+            : "350"};
+      }
+      .ms-Dropdown-caretDownWrapper {
+        display: none;
+      }
+    }
+  }
 `;
 
 export const BreadNodeWrapper = styled.div`
-  .is-mobile {
+  .display-mobile {
     display: none;
   }
+  .display-pc {
+    display: flex;
+  }
   @media screen and (max-width: 599px) {
-    .is-pc {
-      display: none;
+    .display-pc {
+      display: none !important;
     }
-    .is-mobile {
+    .display-mobile {
       display: flex;
     }
   }

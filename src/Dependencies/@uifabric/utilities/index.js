@@ -61,3 +61,4 @@ export * from "./getRect";
 export * from "./IRenderFunction";
 export * from "./on";
 export * from "./hoistStatics";
+export * from "./safeRequestAnimationFrame";

@@ -12,7 +12,7 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
   constructor(props: IBreadcrumdProps) {
     super(props);
     this.state = {
-      NodesList: this.props.child,
+      NodesList: [],
       myNodes: null,
       currentNodes: [],
       widthElement: 0,
@@ -21,13 +21,31 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
   }
 
   componentDidMount() {
-    let element: HTMLElement = document.getElementsByClassName(
-      "node-wrapper"
-    )[0] as HTMLElement;
     this.setState({
-      widthElement: element.clientWidth,
+      NodesList: this.isSelectedDefault(),
     });
   }
+
+  isSelectedDefault = (childNode?: IBreadNodes[]) => {
+    let nodeList = this.props.child;
+    if (!childNode) {
+      nodeList.forEach((item) => {
+        item.isSelected = false;
+        if (item.child.length > 0) {
+          this.isSelectedDefault(item.child);
+        }
+      });
+    }
+    if (childNode) {
+      childNode.forEach((item) => {
+        item.isSelected = false;
+        if (item.child.length > 0) {
+          this.isSelectedDefault(item.child);
+        }
+      });
+    }
+    return nodeList;
+  };
 
   onHandleOnChange = async (value: IBreadNodes) => {
     this.onSelectedChild(value);
@@ -77,12 +95,6 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
         }
       }
     }
-    let item: HTMLElement = document.getElementsByClassName(
-      "node-wrapper"
-    )[0] as HTMLElement;
-    this.setState({
-      widthElement: item.clientWidth,
-    });
   };
 
   onSetStateMobile = async (value: IBreadNodesProps) => {
@@ -234,11 +246,11 @@ class Breadcrumd extends React.Component<IBreadcrumdProps, IBreadcrumdStates> {
         {this.state.NodesList.map((item, index) => {
           return (
             <BreadNode
+              key={index}
               id={item.id}
               child={item.child}
-              key={index}
-              label={item.label}
-              src={item.src}
+              text={item.text}
+              data={item.data}
               theme={this.props.darkMode}
               isSelected={item.isSelected || false}
               parentNode={null}

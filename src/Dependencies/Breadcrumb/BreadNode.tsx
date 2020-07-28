@@ -10,12 +10,13 @@ import {
   BreadNodeWrapper,
 } from "./BreadcrumbStyle";
 import { Icon } from "../@uifabric/icons/Icon";
+import { Dropdown, IDropdownOption } from "../Dropdown";
 
 class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
   constructor(props: IBreadNodesProps) {
     super(props);
     this.state = {
-      selectedItem: null,
+      width: 0,
     };
   }
 
@@ -27,9 +28,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
     theme?: string,
     mobileCurrentList?: IBreadNodesProps[],
     onClick?: (
-      event:
-        | React.MouseEvent<HTMLSpanElement>
-        | React.ChangeEvent<HTMLSelectElement>
+      event: React.MouseEvent<HTMLSpanElement> | React.FormEvent<HTMLDivElement>
     ) => void,
     onSelectedMobile?: (value: IBreadNodesProps) => void,
     onSelectRootMobile?: (value: IBreadNodesProps) => void
@@ -39,11 +38,11 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
         {node.map((item, index) => {
           return (
             <BreadNode
-              id={item.id}
               key={index}
+              id={item.id}
               child={item.child}
-              label={item.label}
-              src={item.src}
+              text={item.text}
+              data={item.data}
               parentNode={parentNode}
               node={item}
               isSelected={item.isSelected || false}
@@ -63,23 +62,6 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
 
   onRenderNode = (props: IBreadNodesProps) => {
     let selectNode = props.child.filter((node) => node.isSelected);
-    const onSelectOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const { value } = e.target;
-      let selectedItem = JSON.parse(value);
-      props.onSelected &&
-        props.onSelected({
-          ...selectedItem,
-          parentNode: props,
-        });
-      let item = document.getElementById(props.label);
-      if (item) {
-        item.style.width = `calc(${
-          selectedItem.label.length * 14 + "px"
-        } - 9px)`;
-      }
-      props.onClick && props.onClick(e);
-    };
-
     const onChoiceItem = (
       e: React.MouseEvent<HTMLSpanElement>,
       value: IBreadNodesProps
@@ -88,48 +70,58 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
       props.onClick && props.onClick(e);
     };
 
-    const onSelectOptionOfMobile = (
-      e: React.ChangeEvent<HTMLSelectElement>
-    ) => {
-      const { value } = e.target;
-      let selectedItem = JSON.parse(value);
-      props.onSelectedMobile &&
-        props.onSelectedMobile({ ...selectedItem, parentNode: props });
-      props.onClick && props.onClick(e);
-      let item = document.getElementById(JSON.stringify(props.id));
-      if (item) {
-        item.style.width = `calc(${selectedItem.label.length * 14 + "px"} - ${
-          selectedItem.label.length + "px"
-        })`;
-      }
-    };
-
     const onChoiceItemMobile = (
       e: React.MouseEvent<HTMLSpanElement>,
       value: IBreadNodesProps
     ) => {
-      props.onSelectedMobile && props.onSelectedMobile({ ...value });
+      props.onSelectedMobile &&
+        value.child.length > 0 &&
+        props.onSelectedMobile({ ...value });
       props.onClick && props.onClick(e);
     };
 
-    const onHandleSelectRoot = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const { value } = e.target;
-      let selectedItem = JSON.parse(value);
-      props.onSelectRootMobile &&
-        props.onSelectRootMobile({
-          ...selectedItem,
+    const onHandleDropdown = (
+      event: React.FormEvent<HTMLDivElement>,
+      option?: IDropdownOption,
+      index?: number
+    ) => {
+      props.onSelected &&
+        option &&
+        props.onSelected({
+          ...option.data,
+          parentNode: props,
         });
-      props.onClick && props.onClick(e);
+      props.onClick && props.onClick(event);
     };
 
-    let currentMobile = props.mobileCurrentList?.findIndex(
-      (node) => node.id === props.id && !node.isLast
-    );
+    const onHandleDropdownMobile = (
+      event: React.FormEvent<HTMLDivElement>,
+      option?: IDropdownOption,
+      index?: number
+    ) => {
+      props.onSelectedMobile &&
+        option &&
+        props.onSelectedMobile({
+          ...option.data,
+          parentNode: props,
+        });
+      props.onClick && props.onClick(event);
+    };
 
-    let currentParentMobile = props.mobileCurrentList?.findIndex(
-      (node) =>
-        node.parentNode?.id === props.id && node.isSelected && !node.isLast
-    );
+    const onHandleDropdownMobileRoot = (
+      event: React.FormEvent<HTMLDivElement>,
+      option?: IDropdownOption,
+      index?: number
+    ) => {
+      props.onSelectRootMobile &&
+        option &&
+        props.onSelectRootMobile({
+          ...option.data,
+          parentNode: props,
+        });
+      // props.onClick && props.onClick(event);
+    };
+
     let isLast = false;
     if (props.mobileCurrentList) {
       let propsMobile = props.mobileCurrentList;
@@ -145,6 +137,56 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
       }
     }
 
+    let option: IDropdownOption[] = [];
+    if (props.child) {
+      let childNode = props.child;
+      childNode.forEach((element) => {
+        let item = {
+          key: element.id,
+          text: element.text,
+          data: element,
+        };
+        option.push(item);
+      });
+    }
+    let MobileOption: IDropdownOption[] = [];
+    if (props.mobileCurrentList) {
+      let childNode = props.mobileCurrentList;
+      MobileOption.push({ key: "", text: "...", disabled: true, hidden: true });
+      childNode.forEach((element) => {
+        let item = {
+          key: element.id,
+          text: element.text,
+          data: element,
+        };
+        MobileOption.push(item);
+      });
+    }
+
+    let currentMobile = props.mobileCurrentList?.findIndex(
+      (node) => node.id === props.id && !node.isLast
+    );
+
+    let indexParnet = props.mobileCurrentList?.findIndex(
+      (node) => node.id === props.parentNode?.id
+    );
+
+    let itemInsideMobileList = props.mobileCurrentList?.findIndex(
+      (node) => node.id === props.id
+    );
+
+    let mobileList = props.mobileCurrentList ? props.mobileCurrentList : [];
+    let matching = mobileList.map((item) => {
+      let index = props.child.findIndex(
+        (node) => node.id === item.id && !item.isLast
+      );
+      return index;
+    });
+
+    let matchIndex = -1;
+    if (matching.length > 0) {
+      matchIndex = matching.findIndex((item) => item !== -1);
+    }
     return (
       <BreadNodeWrapper>
         <RowWrapper>
@@ -157,9 +199,9 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               <ItemWrapper theme={props.child}>
                 <span
                   onClick={(e) => onChoiceItem(e, props)}
-                  className="label-btn font-weight-bold"
+                  className="label-btn"
                 >
-                  {props.label}
+                  {props.text}
                 </span>
                 {props.child.length > 0 && (
                   <Icon className="ms-breadIcon" iconName="ChevronRight" />
@@ -169,24 +211,12 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
             {props.child.length > 1 && props.isSelected && (
               <ItemWrapper>
                 <SelectWrapper theme={{ ...props, selectNode: selectNode }}>
-                  <select
-                    style={{
-                      width: `${props.child[0].label.length * 14 + "px"}`,
-                    }}
-                    id={`${props.label}`}
-                    onChange={onSelectOption}
-                  >
-                    <option selected disabled hidden>
-                      {props.child[0].label}
-                    </option>
-                    {props.child.map((item, index) => {
-                      return (
-                        <option value={JSON.stringify(item)} key={index}>
-                          {item.label}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  <Dropdown
+                    className="selectDrop"
+                    placeholder={option[0].text}
+                    options={option}
+                    onChange={onHandleDropdown}
+                  />
                 </SelectWrapper>
                 {props.child.findIndex((node) => node.isSelected) !== -1 &&
                   selectNode.length > 0 &&
@@ -196,7 +226,11 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               </ItemWrapper>
             )}
           </BreadWrapper>
-          {((props.child.length < 2 && selectNode && selectNode.length < 1) ||
+          {((props.child.length < 2 &&
+            selectNode &&
+            selectNode.length < 1 &&
+            props.mobileCurrentList &&
+            props.mobileCurrentList.length < 1) ||
             (selectNode && selectNode.length >= 1)) &&
             this.onRenderSelectedNode(
               selectNode && selectNode.length >= 1 ? selectNode : props.child,
@@ -216,86 +250,75 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               props.mobileCurrentList &&
               props.mobileCurrentList.length >= 1 && (
                 <>
-                  {}
                   <SelectWrapper theme={{ ...props, selectNode: selectNode }}>
-                    <select
-                      style={{
-                        width: `30px`,
-                      }}
-                      value={"..."}
-                      onChange={onHandleSelectRoot}
-                    >
-                      <option selected disabled hidden>
-                        ...
-                      </option>
-                      {props.mobileCurrentList &&
-                        props.mobileCurrentList.map((item, index) => {
-                          if (!item.isLast) {
-                            return (
-                              <option value={JSON.stringify(item)} key={index}>
-                                {item.label}
-                              </option>
-                            );
-                          }
-                        })}
-                    </select>
+                    <Dropdown
+                      defaultSelectedKey="..."
+                      className="selectDrop-mobileRoot"
+                      placeHolder="..."
+                      options={MobileOption}
+                      onChange={onHandleDropdownMobileRoot}
+                    />
                   </SelectWrapper>
                   <Icon className="ms-breadIcon" iconName="ChevronRight" />
                 </>
               )}
+
             {((!props.parentNode && currentMobile === -1) ||
               (props.parentNode &&
                 props.parentNode.child.length === 1 &&
+                indexParnet !== -1 &&
                 currentMobile === -1)) && (
               <ItemWrapper theme={props.child}>
                 <span
                   onClick={(e) => onChoiceItemMobile(e, props)}
-                  className="label-btn font-weight-bold"
+                  className="label-btn"
                 >
-                  {props.label}
+                  {props.text}
                 </span>
                 {(currentMobile !== -1 || !props.parentNode) && (
                   <Icon className="ms-breadIcon" iconName="ChevronRight" />
                 )}
               </ItemWrapper>
             )}
-            {props.child.length > 1 &&
-              currentParentMobile === -1 &&
-              currentMobile !== -1 && (
-                <>
-                  <SelectWrapper
-                    theme={{
-                      ...props,
-                      selectNode: selectNode,
-                      isLast,
-                    }}
+            {itemInsideMobileList !== -1 &&
+              props.child.length === 1 &&
+              matchIndex === -1 && (
+                <ItemWrapper theme={props.child[0]}>
+                  <span
+                    onClick={(e) => onChoiceItemMobile(e, props.child[0])}
+                    className="label-btn"
                   >
-                    <select
-                      style={{
-                        width: `calc(${
-                          props.child[0].label.length * 14 + "px"
-                        } - ${props.child[0].label.length + "px"})`,
-                      }}
-                      id={`${JSON.stringify(props.id)}`}
-                      onChange={onSelectOptionOfMobile}
-                    >
-                      <option selected disabled hidden>
-                        {props.child[0].label}
-                      </option>
-                      {props.child.map((item, index) => {
-                        return (
-                          <option value={JSON.stringify(item)} key={index}>
-                            {item.label}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </SelectWrapper>
-                </>
+                    {props.child[0].text}
+                  </span>
+                </ItemWrapper>
               )}
+            {((props.child.length > 1 &&
+              indexParnet === -1 &&
+              matchIndex === -1) ||
+              (indexParnet !== -1 &&
+                matchIndex === -1 &&
+                props.child.length > 1)) && (
+              <>
+                <SelectWrapper
+                  theme={{
+                    ...props,
+                    selectNode: selectNode,
+                    isLast,
+                  }}
+                >
+                  {option.length > 0 && (
+                    <Dropdown
+                      className="selectDrop"
+                      placeholder={option[0].text}
+                      options={option}
+                      onChange={onHandleDropdownMobile}
+                    />
+                  )}
+                </SelectWrapper>
+              </>
+            )}
           </BreadWrapper>
-          {currentMobile !== -1 &&
-            currentParentMobile !== -1 &&
+          {matchIndex !== -1 &&
             this.onRenderSelectedNode(
               props.child,
               props,

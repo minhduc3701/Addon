@@ -1,54 +1,53 @@
 import React from "react";
 import "./App.css";
 import Breadcrumb from "../index";
-import { IBreadNodesProps } from "../BreadcrumbStyle";
 
 function App() {
   //<BreadcrumbGetData>
-  const getSelectedBreadcrumb = (val: IBreadNodesProps[]): void => {
-    console.log(val);
+  const onClickActionBreadcrumb = () => {
+    console.log("click");
   };
   //</BreadcrumbGetData>
 
   const BreadcrumbData = [
     {
       id: "ad",
-      label: "Add-on",
-      src: "./aa",
+      text: "Add-on",
+      data: "./aa",
       child: [
         {
           id: "365",
-          label: "RC365",
-          src: "./aa",
+          text: "RC365",
+          data: "./aa",
           child: [
             {
               id: "fe",
-              label: "Frontend",
-              src: "./aa",
+              text: "Frontend",
+              data: "./aa",
               child: [
                 {
                   id: "nmd",
-                  label: "Đức",
-                  src: "./xadan",
+                  text: "Đức",
+                  data: "./xadan",
                   child: [
                     {
                       id: "tree",
-                      label: "TreeView",
-                      src: "./aa",
+                      text: "TreeView",
+                      data: "./aa",
                       child: [
-                        { id: "", label: "Node", src: "./aa", child: [] },
+                        { id: "", text: "Node", data: "./aa", child: [] },
                       ],
                     },
-                    { id: "cal", label: "Calendar", src: "./aa", child: [] },
-                    { id: "btn", label: "Button", src: "./aa", child: [] },
+                    { id: "cal", text: "Calendar", data: "./aa", child: [] },
+                    { id: "btn", text: "Button", data: "./aa", child: [] },
                   ],
                 },
               ],
             },
-            { id: "be", label: "Backend Frontend", src: "./aa", child: [] },
+            { id: "be", text: "Backend Frontend", data: "./aa", child: [] },
           ],
         },
-        { id: "fe2", label: "Frontend", src: "./aa", child: [] },
+        { id: "fe2", text: "Frontend", data: "./aa", child: [] },
       ],
     },
   ];
@@ -60,7 +59,7 @@ function App() {
         // <BreadcrumbDarkMode>
         darkMode="dark"
         // </BreadcrumbDarkMode>
-        onGetData={getSelectedBreadcrumb}
+        onClick={onClickActionBreadcrumb}
       />
     </div>
   );

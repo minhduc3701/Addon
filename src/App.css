@@ -33,6 +33,10 @@ body {
   color: #61dafb;
 }
 
+.ms-Callout.ms-Dropdown-callout {
+  width: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

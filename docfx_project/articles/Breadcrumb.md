@@ -9,7 +9,7 @@
 - Dark mode
   [!code-javascript[BreadcrumbDarkMode](../../src/Dependencies/Breadcrumb/examples/Breadcrumb.tsx?name=BreadcrumbDarkMode)]
 
-- Get data from parent component
+- Action for Breadcrumb
   [!code-javascript[BreadcrumbGetData](../../src/Dependencies/Breadcrumb/examples/Breadcrumb.tsx?name=BreadcrumbGetData)]
 
 ## Example:
