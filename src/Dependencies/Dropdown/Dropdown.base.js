@@ -29,7 +29,7 @@ import { FocusZone, FocusZoneDirection } from "../FocusZone";
 import { Icon } from "../@uifabric/icons";
 import { Label } from "../Label";
 import { KeytipData } from "../KeytipData";
-import { Panel } from "../../Panel";
+import { Panel } from "../Panel";
 import {
   ResponsiveMode,
   withResponsiveMode,

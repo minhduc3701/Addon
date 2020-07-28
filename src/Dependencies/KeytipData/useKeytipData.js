@@ -1,7 +1,7 @@
 import { __assign, __spreadArrays } from "tslib";
 import * as React from "react";
 import { useConst, usePrevious } from "@uifabric/react-hooks";
-import { mergeAriaAttributeValues } from "@uifabric/utilities";
+import { mergeAriaAttributeValues } from "../@uifabric/utilities";
 import {
   KeytipManager,
   mergeOverflows,

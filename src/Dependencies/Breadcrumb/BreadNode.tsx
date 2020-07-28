@@ -74,6 +74,7 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
       e: React.MouseEvent<HTMLSpanElement>,
       value: IBreadNodesProps
     ) => {
+      console.log("do");
       props.onSelectedMobile &&
         value.child.length > 0 &&
         props.onSelectedMobile({ ...value });

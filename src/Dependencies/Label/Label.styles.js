@@ -1,4 +1,4 @@
-import { HighContrastSelector, FontWeights } from "@uifabric/styling";
+import { HighContrastSelector, FontWeights } from "../@uifabric/styling";
 export var getStyles = function (props) {
   var _a;
   var theme = props.theme,

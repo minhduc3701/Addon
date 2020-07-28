@@ -1,4 +1,4 @@
 /* tslint:disable */
-import { loadStyles } from '@microsoft/load-themed-styles';
+import { loadStyles } from "./Label.types";
 loadStyles([]);
 //# sourceMappingURL=LabelMixins.scss.js.map

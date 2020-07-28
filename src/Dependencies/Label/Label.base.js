@@ -1,7 +1,10 @@
 import { __assign, __extends } from "tslib";
 import * as React from "react";
-import { divProperties, getNativeProps } from "@uifabric/utilities";
-import { classNamesFunction } from "@uifabric/utilities";
+import {
+  divProperties,
+  getNativeProps,
+  classNamesFunction,
+} from "../@uifabric/utilities";
 var getClassNames = classNamesFunction({
   // Label is used a lot by other components.
   // It's likely to see expected cases which pass different className to the Label.

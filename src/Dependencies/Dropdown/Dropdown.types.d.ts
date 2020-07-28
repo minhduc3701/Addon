@@ -13,7 +13,7 @@ import { IKeytipProps } from "../@uifabric/utilities/Keytip";
 import { RectangleEdge } from "../@uifabric/utilities/positioning";
 import { ICheckboxStyleProps, ICheckboxStyles } from "../Checkbox";
 import { ILabelStyleProps, ILabelStyles } from "../Label";
-import { IPanelStyleProps, IPanelStyles } from "../Panel/Panel.types";
+import { IPanelStyleProps, IPanelStyles } from "../Panel";
 export { SelectableOptionMenuItemType as DropdownMenuItemType } from "../@uifabric/utilities/selectableOption";
 export { ResponsiveMode };
 /**

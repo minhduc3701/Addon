@@ -11,7 +11,6 @@ import {
   mergeAriaAttributeValues,
   portalContainsElement,
   memoizeFunction,
-  nullRender,
   warnConditionallyRequiredProps,
   warnDeprecations,
   EventGroup,
@@ -19,6 +18,7 @@ import {
   Async,
   FocusRects,
 } from "../@uifabric/utilities/index";
+import { nullRender } from "./BaseComponent";
 import { Icon, FontIcon, ImageIcon } from "../@uifabric/icons";
 import { DirectionalHint } from "../common";
 import { ContextualMenu } from "../@uifabric/utilities/ContextualMenu copy/ContextualMenu";

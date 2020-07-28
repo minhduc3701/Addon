@@ -1,7 +1,7 @@
 import { __assign } from "tslib";
 import * as React from "react";
 import { Callout } from "./Callout";
-import { FocusTrapZone } from "../FocusTrapZone";
+import { FocusTrapZone } from "../FocusTrapZone/index";
 /**
  * A special Callout that uses FocusTrapZone to trap focus
  * @param props - Props for the component
