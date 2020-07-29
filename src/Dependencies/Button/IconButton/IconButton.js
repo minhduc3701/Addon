@@ -26,6 +26,7 @@ var IconButton = /** @class */ (function (_super) {
       })
     );
   };
+  // eslint-disable-next-line no-func-assign
   IconButton = __decorate(
     [customizable("IconButton", ["theme", "styles"], true)],
     IconButton

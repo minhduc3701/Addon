@@ -1,5 +1,4 @@
-import { IRawStyle } from '@uifabric/merge-styles';
-import { IGetFocusStylesOptions, ITheme } from '../interfaces/index';
+import { IGetFocusStylesOptions, ITheme, IRawStyle } from "./index";
 /**
  * Generates a focus style which can be used to define an :after focus border.
  *
@@ -7,7 +6,10 @@ import { IGetFocusStylesOptions, ITheme } from '../interfaces/index';
  * @param options - Options to customize the focus border.
  * @returns The style object.
  */
-export declare function getFocusStyle(theme: ITheme, options?: IGetFocusStylesOptions): IRawStyle;
+export declare function getFocusStyle(
+  theme: ITheme,
+  options?: IGetFocusStylesOptions
+): IRawStyle;
 /**
  * Generates a focus style which can be used to define an :after focus border.
  *
@@ -22,7 +24,15 @@ export declare function getFocusStyle(theme: ITheme, options?: IGetFocusStylesOp
  * @returns The style object.
  * @deprecated Use the object parameter version instead.
  */
-export declare function getFocusStyle(theme: ITheme, inset?: number, position?: 'relative' | 'absolute', highContrastStyle?: IRawStyle | undefined, borderColor?: string, outlineColor?: string, isFocusedOnly?: boolean): IRawStyle;
+export declare function getFocusStyle(
+  theme: ITheme,
+  inset?: number,
+  position?: "relative" | "absolute",
+  highContrastStyle?: IRawStyle | undefined,
+  borderColor?: string,
+  outlineColor?: string,
+  isFocusedOnly?: boolean
+): IRawStyle;
 /**
  * Generates style to clear browser specific focus styles.
  */
@@ -36,7 +46,12 @@ export declare function focusClear(): IRawStyle;
  * @param color - Color of the outline (default `theme.palette.neutralSecondary`)
  * @returns The style object.
  */
-export declare function getFocusOutlineStyle(theme: ITheme, inset?: number, width?: number, color?: string): IRawStyle;
+export declare function getFocusOutlineStyle(
+  theme: ITheme,
+  inset?: number,
+  width?: number,
+  color?: string
+): IRawStyle;
 /**
  * Generates text input border styles on focus.
  *
@@ -47,4 +62,9 @@ export declare function getFocusOutlineStyle(theme: ITheme, inset?: number, widt
  * as it's the most common border width of the input element)
  * @returns The style object.
  */
-export declare const getInputFocusStyle: (borderColor: string, borderRadius: string | number, borderType?: "border" | "borderBottom", borderPosition?: number) => IRawStyle;
+export declare const getInputFocusStyle: (
+  borderColor: string,
+  borderRadius: string | number,
+  borderType?: "border" | "borderBottom",
+  borderPosition?: number
+) => IRawStyle;

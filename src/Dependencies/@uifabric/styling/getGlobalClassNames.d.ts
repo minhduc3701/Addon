@@ -1,4 +1,4 @@
-import { ITheme } from "../styling";
+import { ITheme } from "./ITheme";
 export declare type GlobalClassNames<IStyles> = Record<keyof IStyles, string>;
 /**
  * Checks for the `disableGlobalClassNames` property on the `theme` to determine if it should return `classNames`

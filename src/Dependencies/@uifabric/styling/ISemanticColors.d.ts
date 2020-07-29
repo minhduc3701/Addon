@@ -1,4 +1,4 @@
-import { ISemanticTextColors } from './ISemanticTextColors';
+import { ISemanticTextColors } from "./ISemanticTextColors";
 /**
  * The collection of all semantic slots for colors used in themes.
  *
@@ -60,302 +60,302 @@ import { ISemanticTextColors } from './ISemanticTextColors';
  * {@docCategory ISemanticColors}
  */
 export interface ISemanticColors extends ISemanticTextColors {
-    /**
-     * The default color for backgrounds.
-     */
-    bodyBackground: string;
-    /**
-     * The default hover color for the backgrounds of interactable elements that don't have their own backgrounds.
-     * e.g. if links had hover backgrounds, they'd use this
-     */
-    bodyBackgroundHovered: string;
-    /**
-     * The default background color of selected interactable elements that don't have their own backgrounds.
-     * e.g. indicates in the nav which page you're currently on
-     */
-    bodyBackgroundChecked: string;
-    /**
-     * The standout color for highlighted content backgrounds.
-     * For highlighted content when there is no emphasis, use the neutral variant instead.
-     * This should be a shade darker than bodyBackground in light themes,
-     * and a shade lighter in inverted themes.
-     */
-    bodyStandoutBackground: string;
-    /**
-     * The color for chrome adjacent to an area with bodyBackground.
-     * This can be used to provide visual separation of zones when using stronger colors, when using a divider line
-     * is not desired.
-     * In most themes, this should match the color of bodyBackground.
-     * See also: bodyFrameDivider
-     */
-    bodyFrameBackground: string;
-    /**
-     * Used as the border between a zone with bodyFrameBackground and a zone with bodyBackground.
-     * If bodyBackground and bodyFrameBackground are different, this should be the same color as bodyFrameBackground
-     * in order to visually disappear.
-     * See also: bodyFrameBackground
-     */
-    bodyFrameDivider: string;
-    /**
-     * Divider lines; e.g. lines that separate sections in a menu, an <HR> element.
-     */
-    bodyDivider: string;
-    /**
-     * The default color for backgrounds of disabled controls; e.g. disabled text field.
-     */
-    disabledBackground: string;
-    /**
-     * The default color for border of disabled controls; e.g. disabled slider, disabled toggle border.
-     */
-    disabledBorder: string;
-    /**
-     * The color of the outline around focused controls that don't already have a border; e.g. menu items
-     */
-    focusBorder: string;
-    /**
-     * The color of the border that provides contrast between an element, such as a card, and an emphasized background.
-     */
-    variantBorder: string;
-    /**
-     * Hover color of border that provides contrast between an element, such as a card, and an emphasized background.
-     */
-    variantBorderHovered: string;
-    /**
-     * Background color for default/empty state graphical elements; eg default icons, empty section that
-     * needs user to fill in content, placeholder graphics, empty seats, etc.
-     */
-    defaultStateBackground: string;
-    /**
-     * Background for informational messages.
-     */
-    infoBackground: string;
-    /**
-     * The background for errors, if necessary, or highlighting the section of the page where the error is present.
-     */
-    errorBackground: string;
-    /**
-     * Background for blocking issues, which is more severe than a warning, but not as bad as an error.
-     */
-    blockingBackground: string;
-    /**
-     * Background for warning messages.
-     */
-    warningBackground: string;
-    /**
-     * Background for severe warning messages.
-     */
-    severeWarningBackground: string;
-    /**
-     * Background for success
-     */
-    successBackground: string;
-    /**
-     * Color for icons on infoBackground.
-     */
-    infoIcon: string;
-    /**
-     * Color for icons on errorBackground.
-     */
-    errorIcon: string;
-    /**
-     * Color for icons on blockingBackground.
-     */
-    blockingIcon: string;
-    /**
-     * Color for icons on warningBackground.
-     */
-    warningIcon: string;
-    /**
-     * Color for icons on severeWarningBackground.
-     */
-    severeWarningIcon: string;
-    /**
-     * Color for icons on successBackground.
-     */
-    successIcon: string;
-    /**
-     * Color of links within a message.
-     */
-    messageLink: string;
-    /**
-     * Color of links within a message when hovered.
-     */
-    messageLinkHovered: string;
-    /**
-     * The border of a large input control in its resting, state; e.g. the box of dropdown.
-     */
-    inputBorder: string;
-    /**
-     * The border of a small input control in its resting unchecked state; e.g. the box of an unchecked checkbox.
-     */
-    smallInputBorder: string;
-    /**
-     * The border color of a large hovered input control, such as textbox.
-     */
-    inputBorderHovered: string;
-    /**
-     * The background color of an input, e.g. textbox background.
-     */
-    inputBackground: string;
-    /**
-     * The background of a checked control; e.g. checked radio button's dot, checked toggle's background.
-     */
-    inputBackgroundChecked: string;
-    /**
-     * The background of a checked and hovered control; e.g. checked checkbox's background color on hover.
-     */
-    inputBackgroundCheckedHovered: string;
-    /**
-     * The placeholder background color of a checked control, e.g. slider background, spinner background.
-     */
-    inputPlaceholderBackgroundChecked: string;
-    /**
-     * The foreground of a checked control; e.g. checked checkbox's checkmark color, checked toggle's thumb color,
-     * radio button's background color around the dot.
-     */
-    inputForegroundChecked: string;
-    /**
-     * The alternate focus border color for elements that already have a border; e.g. text field borders on focus.
-     */
-    inputFocusBorderAlt: string;
-    /**
-     * The color for disabled icon ; e.g. SearchBox magnifying glass in disabled state.
-     */
-    inputIconDisabled: string;
-    /**
-     * The color for icon ; e.g. SearchBox magnifying glass in rest state.
-     */
-    inputIcon: string;
-    /**
-     * The color for hovered icon ; e.g. SearchBox magnifying glass in hovered state.
-     */
-    inputIconHovered: string;
-    /**
-     * Background of a standard button
-     */
-    buttonBackground: string;
-    /**
-     * Background of a checked standard button; e.g. bold/italicize/underline text button in toolbar
-     */
-    buttonBackgroundChecked: string;
-    /**
-     * Background of a hovered standard button
-     */
-    buttonBackgroundHovered: string;
-    /**
-     * Background of a checked and hovered standard button; e.g. bold/italicize/underline text button in toolbar
-     */
-    buttonBackgroundCheckedHovered: string;
-    /**
-     * Background of a disabled standard button
-     */
-    buttonBackgroundDisabled: string;
-    /**
-     * Background of a pressed standard button; i.e. currently being clicked by mouse
-     */
-    buttonBackgroundPressed: string;
-    /**
-     * Border of a standard button
-     */
-    buttonBorder: string;
-    /**
-     * Border of a disabled standard button
-     */
-    buttonBorderDisabled: string;
-    /**
-     * Background of a primary button
-     */
-    primaryButtonBackground: string;
-    /**
-     * Background of a hovered primary button
-     */
-    primaryButtonBackgroundHovered: string;
-    /**
-     * Background of a pressed primary button; i.e. currently being clicked by mouse
-     */
-    primaryButtonBackgroundPressed: string;
-    /**
-     * Background of a disabled primary button
-     */
-    primaryButtonBackgroundDisabled: string;
-    /**
-     * Border of a primary button
-     */
-    primaryButtonBorder: string;
-    /**
-     * Background of an accent button (kicker)
-     */
-    accentButtonBackground: string;
-    /**
-     * The background of a menu.
-     */
-    menuBackground: string;
-    /**
-     * The divider between menu items.
-     */
-    menuDivider: string;
-    /**
-     * The default colors of icons in menus.
-     */
-    menuIcon: string;
-    /**
-     * The headers in menus that denote title of a section.
-     */
-    menuHeader: string;
-    /**
-     * The background of a hovered menu item.
-     */
-    menuItemBackgroundHovered: string;
-    /**
-     * The background of a pressed menu item.
-     */
-    menuItemBackgroundPressed: string;
-    /**
-     * The text color of a menu item.
-     */
-    menuItemText: string;
-    /**
-     * The text color of a hovered menu item.
-     */
-    menuItemTextHovered: string;
-    /**
-     * The background color for the entire list.
-     */
-    listBackground: string;
-    /**
-     * The default text color for list item titles and text in column fields.
-     */
-    listText: string;
-    /**
-     * The background color of a hovered list item.
-     */
-    listItemBackgroundHovered: string;
-    /**
-     * The background color of a checked list item.
-     */
-    listItemBackgroundChecked: string;
-    /**
-     * The background color of a checked and hovered list item.
-     */
-    listItemBackgroundCheckedHovered: string;
-    /**
-     * The background color for a hovered list header.
-     */
-    listHeaderBackgroundHovered: string;
-    /**
-     * The background color for a pressed list header.
-     */
-    listHeaderBackgroundPressed: string;
-    /**
-     * @deprecated
-     * (Checked menu items no longer get a background color.)
-     * The background of checked menu item; e.g. a menu item whose submenu is open, a selected dropdown item.
-     */
-    menuItemBackgroundChecked: string;
-    /**
-     * @deprecated
-     * (no longer used)
-     * Foreground color for warning highlights
-     */
-    warningHighlight: string;
+  /**
+   * The default color for backgrounds.
+   */
+  bodyBackground: string;
+  /**
+   * The default hover color for the backgrounds of interactable elements that don't have their own backgrounds.
+   * e.g. if links had hover backgrounds, they'd use this
+   */
+  bodyBackgroundHovered: string;
+  /**
+   * The default background color of selected interactable elements that don't have their own backgrounds.
+   * e.g. indicates in the nav which page you're currently on
+   */
+  bodyBackgroundChecked: string;
+  /**
+   * The standout color for highlighted content backgrounds.
+   * For highlighted content when there is no emphasis, use the neutral variant instead.
+   * This should be a shade darker than bodyBackground in light themes,
+   * and a shade lighter in inverted themes.
+   */
+  bodyStandoutBackground: string;
+  /**
+   * The color for chrome adjacent to an area with bodyBackground.
+   * This can be used to provide visual separation of zones when using stronger colors, when using a divider line
+   * is not desired.
+   * In most themes, this should match the color of bodyBackground.
+   * See also: bodyFrameDivider
+   */
+  bodyFrameBackground: string;
+  /**
+   * Used as the border between a zone with bodyFrameBackground and a zone with bodyBackground.
+   * If bodyBackground and bodyFrameBackground are different, this should be the same color as bodyFrameBackground
+   * in order to visually disappear.
+   * See also: bodyFrameBackground
+   */
+  bodyFrameDivider: string;
+  /**
+   * Divider lines; e.g. lines that separate sections in a menu, an <HR> element.
+   */
+  bodyDivider: string;
+  /**
+   * The default color for backgrounds of disabled controls; e.g. disabled text field.
+   */
+  disabledBackground: string;
+  /**
+   * The default color for border of disabled controls; e.g. disabled slider, disabled toggle border.
+   */
+  disabledBorder: string;
+  /**
+   * The color of the outline around focused controls that don't already have a border; e.g. menu items
+   */
+  focusBorder: string;
+  /**
+   * The color of the border that provides contrast between an element, such as a card, and an emphasized background.
+   */
+  variantBorder: string;
+  /**
+   * Hover color of border that provides contrast between an element, such as a card, and an emphasized background.
+   */
+  variantBorderHovered: string;
+  /**
+   * Background color for default/empty state graphical elements; eg default icons, empty section that
+   * needs user to fill in content, placeholder graphics, empty seats, etc.
+   */
+  defaultStateBackground: string;
+  /**
+   * Background for informational messages.
+   */
+  infoBackground: string;
+  /**
+   * The background for errors, if necessary, or highlighting the section of the page where the error is present.
+   */
+  errorBackground: string;
+  /**
+   * Background for blocking issues, which is more severe than a warning, but not as bad as an error.
+   */
+  blockingBackground: string;
+  /**
+   * Background for warning messages.
+   */
+  warningBackground: string;
+  /**
+   * Background for severe warning messages.
+   */
+  severeWarningBackground: string;
+  /**
+   * Background for success
+   */
+  successBackground: string;
+  /**
+   * Color for icons on infoBackground.
+   */
+  infoIcon: string;
+  /**
+   * Color for icons on errorBackground.
+   */
+  errorIcon: string;
+  /**
+   * Color for icons on blockingBackground.
+   */
+  blockingIcon: string;
+  /**
+   * Color for icons on warningBackground.
+   */
+  warningIcon: string;
+  /**
+   * Color for icons on severeWarningBackground.
+   */
+  severeWarningIcon: string;
+  /**
+   * Color for icons on successBackground.
+   */
+  successIcon: string;
+  /**
+   * Color of links within a message.
+   */
+  messageLink: string;
+  /**
+   * Color of links within a message when hovered.
+   */
+  messageLinkHovered: string;
+  /**
+   * The border of a large input control in its resting, state; e.g. the box of dropdown.
+   */
+  inputBorder: string;
+  /**
+   * The border of a small input control in its resting unchecked state; e.g. the box of an unchecked checkbox.
+   */
+  smallInputBorder: string;
+  /**
+   * The border color of a large hovered input control, such as textbox.
+   */
+  inputBorderHovered: string;
+  /**
+   * The background color of an input, e.g. textbox background.
+   */
+  inputBackground: string;
+  /**
+   * The background of a checked control; e.g. checked radio button's dot, checked toggle's background.
+   */
+  inputBackgroundChecked: string;
+  /**
+   * The background of a checked and hovered control; e.g. checked checkbox's background color on hover.
+   */
+  inputBackgroundCheckedHovered: string;
+  /**
+   * The placeholder background color of a checked control, e.g. slider background, spinner background.
+   */
+  inputPlaceholderBackgroundChecked: string;
+  /**
+   * The foreground of a checked control; e.g. checked checkbox's checkmark color, checked toggle's thumb color,
+   * radio button's background color around the dot.
+   */
+  inputForegroundChecked: string;
+  /**
+   * The alternate focus border color for elements that already have a border; e.g. text field borders on focus.
+   */
+  inputFocusBorderAlt: string;
+  /**
+   * The color for disabled icon ; e.g. SearchBox magnifying glass in disabled state.
+   */
+  inputIconDisabled: string;
+  /**
+   * The color for icon ; e.g. SearchBox magnifying glass in rest state.
+   */
+  inputIcon: string;
+  /**
+   * The color for hovered icon ; e.g. SearchBox magnifying glass in hovered state.
+   */
+  inputIconHovered: string;
+  /**
+   * Background of a standard button
+   */
+  buttonBackground: string;
+  /**
+   * Background of a checked standard button; e.g. bold/italicize/underline text button in toolbar
+   */
+  buttonBackgroundChecked: string;
+  /**
+   * Background of a hovered standard button
+   */
+  buttonBackgroundHovered: string;
+  /**
+   * Background of a checked and hovered standard button; e.g. bold/italicize/underline text button in toolbar
+   */
+  buttonBackgroundCheckedHovered: string;
+  /**
+   * Background of a disabled standard button
+   */
+  buttonBackgroundDisabled: string;
+  /**
+   * Background of a pressed standard button; i.e. currently being clicked by mouse
+   */
+  buttonBackgroundPressed: string;
+  /**
+   * Border of a standard button
+   */
+  buttonBorder: string;
+  /**
+   * Border of a disabled standard button
+   */
+  buttonBorderDisabled: string;
+  /**
+   * Background of a primary button
+   */
+  primaryButtonBackground: string;
+  /**
+   * Background of a hovered primary button
+   */
+  primaryButtonBackgroundHovered: string;
+  /**
+   * Background of a pressed primary button; i.e. currently being clicked by mouse
+   */
+  primaryButtonBackgroundPressed: string;
+  /**
+   * Background of a disabled primary button
+   */
+  primaryButtonBackgroundDisabled: string;
+  /**
+   * Border of a primary button
+   */
+  primaryButtonBorder: string;
+  /**
+   * Background of an accent button (kicker)
+   */
+  accentButtonBackground: string;
+  /**
+   * The background of a menu.
+   */
+  menuBackground: string;
+  /**
+   * The divider between menu items.
+   */
+  menuDivider: string;
+  /**
+   * The default colors of icons in menus.
+   */
+  menuIcon: string;
+  /**
+   * The headers in menus that denote title of a section.
+   */
+  menuHeader: string;
+  /**
+   * The background of a hovered menu item.
+   */
+  menuItemBackgroundHovered: string;
+  /**
+   * The background of a pressed menu item.
+   */
+  menuItemBackgroundPressed: string;
+  /**
+   * The text color of a menu item.
+   */
+  menuItemText: string;
+  /**
+   * The text color of a hovered menu item.
+   */
+  menuItemTextHovered: string;
+  /**
+   * The background color for the entire list.
+   */
+  listBackground: string;
+  /**
+   * The default text color for list item titles and text in column fields.
+   */
+  listText: string;
+  /**
+   * The background color of a hovered list item.
+   */
+  listItemBackgroundHovered: string;
+  /**
+   * The background color of a checked list item.
+   */
+  listItemBackgroundChecked: string;
+  /**
+   * The background color of a checked and hovered list item.
+   */
+  listItemBackgroundCheckedHovered: string;
+  /**
+   * The background color for a hovered list header.
+   */
+  listHeaderBackgroundHovered: string;
+  /**
+   * The background color for a pressed list header.
+   */
+  listHeaderBackgroundPressed: string;
+  /**
+   * @deprecated
+   * (Checked menu items no longer get a background color.)
+   * The background of checked menu item; e.g. a menu item whose submenu is open, a selected dropdown item.
+   */
+  menuItemBackgroundChecked: string;
+  /**
+   * @deprecated
+   * (no longer used)
+   * Foreground color for warning highlights
+   */
+  warningHighlight: string;
 }

@@ -1,5 +1,4 @@
-import { IFontWeight } from "@uifabric/merge-styles";
-import { IFontStyles } from "../interfaces/index";
+import { IFontStyles, IFontWeight } from "./index";
 export declare namespace LocalizedFontNames {
   const Arabic = "Segoe UI Web (Arabic)";
   const Cyrillic = "Segoe UI Web (Cyrillic)";

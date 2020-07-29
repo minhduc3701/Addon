@@ -1,4 +1,4 @@
-import { getWindow } from "./getWindow";
+import { getWindow } from "../utilities";
 export var IsFocusVisibleClassName = "ms-Fabric--isFocusVisible";
 export var IsFocusHiddenClassName = "ms-Fabric--isFocusHidden";
 /**

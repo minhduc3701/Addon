@@ -1,5 +1,5 @@
 import { Stylesheet } from "./index";
-import { memoizeFunction } from "../utilities";
+import { memoizeFunction } from "../utilities/memoize";
 /**
  * Internal memoized function which simply takes in the class map and the
  * disable boolean. These immutable values can be memoized.

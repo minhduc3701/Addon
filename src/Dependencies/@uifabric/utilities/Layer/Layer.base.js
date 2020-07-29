@@ -26,8 +26,6 @@ var LayerBase = /** @class */ (function (_super) {
       var hostId = _this.props.hostId;
       var doc = getDocument(_this._rootRef.current);
       var host = _this._getHost();
-      console.log(doc);
-      console.log(host);
       if (!doc || !host) {
         return;
       }
@@ -157,7 +155,7 @@ var LayerBase = /** @class */ (function (_super) {
   };
   // eslint-disable-next-line no-func-assign
   LayerBase = __decorate(
-    [() => customizable("Layer", ["theme", "hostId"])],
+    [customizable("Layer", ["theme", "hostId"])],
     LayerBase
   );
   return LayerBase;

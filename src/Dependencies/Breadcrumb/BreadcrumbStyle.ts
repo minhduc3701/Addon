@@ -89,6 +89,9 @@ export const ItemWrapper = styled.div`
   align-items: center;
   font-weight: ${({ theme }) =>
     theme.child && theme.child.length === 0 ? "600" : "350"};
+  .font-weight-bold {
+    font-weight: 600;
+  }
 `;
 export const RowWrapper = styled.div`
   display: flex;
@@ -124,50 +127,7 @@ export const NodeWrapper = styled.div`
 export const SelectWrapper = styled.div`
   margin: 0 4px;
   width: 100%;
-  select {
-    text-align-last: center;
-    padding: 5px 0;
-    max-width: 160px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    background-color: transparent;
-    color: ${({ theme }) => (theme.theme === "dark" ? "#ffffff" : "#212121")};
-    font-weight: ${({ theme }) =>
-      (theme.selectNode &&
-        theme.selectNode.length > 0 &&
-        theme.selectNode[0].child.length === 0) ||
-      theme.isLast
-        ? "600"
-        : "350"};
-    cursor: pointer;
-    font-size: 21px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
-    &::-ms-expand {
-      display: none;
-    }
-    &:focus {
-      outline: none;
-    }
-    &:hover {
-      background-color: ${({ theme }) =>
-        theme.theme === "dark" ? "#000000" : "#dadada"};
-    }
-    option {
-      background-color: ${({ theme }) =>
-        theme.theme === "dark" ? "rgb(27, 26, 25)" : "#ffffff"};
-    }
-  }
-  select,
-  option.selected {
-    max-width: 160px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    display: initial;
-  }
+
   .ms-Dropdown-container {
     .ms-Dropdown {
       &:focus::after {

@@ -1,5 +1,5 @@
 import { getWindow } from "./getWindow";
-import { Stylesheet } from "@uifabric/merge-styles";
+import { Stylesheet } from "../styling";
 // Initialize global window id.
 var CURRENT_ID_PROPERTY = "__currentId__";
 var DEFAULT_ID_STRING = "id__";

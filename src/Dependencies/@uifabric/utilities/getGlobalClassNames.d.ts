@@ -1,4 +1,4 @@
-import { ITheme } from '../interfaces/index';
+import { ITheme } from "../styling";
 export declare type GlobalClassNames<IStyles> = Record<keyof IStyles, string>;
 /**
  * Checks for the `disableGlobalClassNames` property on the `theme` to determine if it should return `classNames`
@@ -9,4 +9,8 @@ export declare type GlobalClassNames<IStyles> = Record<keyof IStyles, string>;
  * @param theme - The theme to check the flag on
  * @param disableGlobalClassNames - Optional. Explicitly opt in/out of disabling global classnames. Defaults to false.
  */
-export declare function getGlobalClassNames<T>(classNames: GlobalClassNames<T>, theme: ITheme, disableGlobalClassNames?: boolean): GlobalClassNames<T>;
+export declare function getGlobalClassNames<T>(
+  classNames: GlobalClassNames<T>,
+  theme: ITheme,
+  disableGlobalClassNames?: boolean
+): GlobalClassNames<T>;

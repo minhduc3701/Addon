@@ -89,7 +89,8 @@ export function withResponsiveMode(ComposedComponent) {
     };
     return WithResponsiveMode;
   })(BaseDecorator);
-  return hoistStatics(ComposedComponent, resultClass);
+  // fix delete return
+  hoistStatics(ComposedComponent, resultClass);
 }
 function getResponsiveMode(currentWindow) {
   var responsiveMode = ResponsiveMode.small;
@@ -119,3 +120,4 @@ function getResponsiveMode(currentWindow) {
   }
   return responsiveMode;
 }
+//# sourceMappingURL=withResponsiveMode.js.map

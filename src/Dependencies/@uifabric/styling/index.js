@@ -40,3 +40,7 @@ export * from "./transforms/provideUnits";
 export * from "./transforms/prefixRules";
 export * from "./AnimationStyles";
 export * from "./GeneralStyles";
+export * from "./IGetFocusStyles";
+export * from "./fontFace";
+export * from "./IFontStyles";
+export * from "./ISemanticTextColors";

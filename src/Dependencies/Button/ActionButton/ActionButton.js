@@ -25,6 +25,7 @@ var ActionButton = /** @class */ (function (_super) {
       })
     );
   };
+  // eslint-disable-next-line no-func-assign
   ActionButton = __decorate(
     [customizable("ActionButton", ["theme", "styles"], true)],
     ActionButton

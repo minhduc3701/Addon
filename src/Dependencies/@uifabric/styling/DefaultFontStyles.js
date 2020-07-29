@@ -1,11 +1,12 @@
-import { fontFace } from "@uifabric/merge-styles";
+import { fontFace } from "./fontFace";
 import {
-  createFontStyles,
   FontWeights,
   LocalizedFontFamilies,
   LocalizedFontNames,
 } from "../utilities/fonts";
-import { getLanguage, getWindow } from "@uifabric/utilities";
+import { createFontStyles } from "./fonts";
+import { getLanguage } from "../utilities/language";
+import { getWindow } from "../utilities/getWindow";
 // Default urls.
 var DefaultBaseUrl = "https://static2.sharepointonline.com/files/fabric/assets";
 // Standard font styling.

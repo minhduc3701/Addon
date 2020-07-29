@@ -1,3 +1,3 @@
-import { IFontStyles } from '../interfaces/index';
+import { IFontStyles } from "./IFontStyles";
 export declare const DefaultFontStyles: IFontStyles;
 export declare function registerDefaultFontFaces(baseUrl: string): void;

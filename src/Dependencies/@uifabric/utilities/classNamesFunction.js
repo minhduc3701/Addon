@@ -1,4 +1,4 @@
-import { mergeCssSets, Stylesheet } from "@uifabric/merge-styles";
+import { mergeCssSets, Stylesheet } from "../styling";
 import { getRTL } from "./rtl";
 import { getWindow } from "./getWindow";
 var MAX_CACHE_COUNT = 50;

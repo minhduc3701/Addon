@@ -1,7 +1,7 @@
 import { KeyCodes } from "./KeyCodes";
 import { getDocument } from "./getDocument";
 import { getItem, setItem } from "./sessionStorage";
-import { setRTL as mergeStylesSetRTL } from "@uifabric/merge-styles";
+import { setRTL as mergeStylesSetRTL } from "../styling";
 var RTL_LOCAL_STORAGE_KEY = "isRTL";
 // Default to undefined so that we initialize on first read.
 var _isRTL;

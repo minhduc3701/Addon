@@ -1,10 +1,12 @@
 import { __assign } from "tslib";
-import { Customizations, merge, getWindow } from "@uifabric/utilities";
+import { getWindow } from "../utilities/getWindow";
 import { DefaultFontStyles } from "./DefaultFontStyles";
 import { DefaultPalette } from "./DefaultPalette";
 import { DefaultSpacing } from "./DefaultSpacing";
 import { loadTheme as legacyLoadTheme } from "@microsoft/load-themed-styles";
 import { DefaultEffects } from "./DefaultEffects";
+import { merge } from "../utilities/merge";
+import { Customizations } from "../utilities/customizations/Customizations";
 var _theme = createTheme({
   palette: DefaultPalette,
   semanticColors: _makeSemanticColorsFromPalette(DefaultPalette, false, false),

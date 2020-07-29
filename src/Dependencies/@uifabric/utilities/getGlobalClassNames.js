@@ -1,20 +1,24 @@
-import { Stylesheet } from '@uifabric/merge-styles';
-import { memoizeFunction } from '@uifabric/utilities';
+import { Stylesheet } from "../styling";
+// import { memoizeFunction } from "../utilities";
+import { memoizeFunction } from "../utilities/memoize";
 /**
  * Internal memoized function which simply takes in the class map and the
  * disable boolean. These immutable values can be memoized.
  */
-var _getGlobalClassNames = memoizeFunction(function (classNames, disableGlobalClassNames) {
-    var styleSheet = Stylesheet.getInstance();
-    if (disableGlobalClassNames) {
-        // disable global classnames
-        return Object.keys(classNames).reduce(function (acc, className) {
-            acc[className] = styleSheet.getClassName(classNames[className]);
-            return acc;
-        }, {});
-    }
-    // use global classnames
-    return classNames;
+var _getGlobalClassNames = memoizeFunction(function (
+  classNames,
+  disableGlobalClassNames
+) {
+  var styleSheet = Stylesheet.getInstance();
+  if (disableGlobalClassNames) {
+    // disable global classnames
+    return Object.keys(classNames).reduce(function (acc, className) {
+      acc[className] = styleSheet.getClassName(classNames[className]);
+      return acc;
+    }, {});
+  }
+  // use global classnames
+  return classNames;
 });
 /**
  * Checks for the `disableGlobalClassNames` property on the `theme` to determine if it should return `classNames`
@@ -25,7 +29,16 @@ var _getGlobalClassNames = memoizeFunction(function (classNames, disableGlobalCl
  * @param theme - The theme to check the flag on
  * @param disableGlobalClassNames - Optional. Explicitly opt in/out of disabling global classnames. Defaults to false.
  */
-export function getGlobalClassNames(classNames, theme, disableGlobalClassNames) {
-    return _getGlobalClassNames(classNames, disableGlobalClassNames !== undefined ? disableGlobalClassNames : theme.disableGlobalClassNames);
+export function getGlobalClassNames(
+  classNames,
+  theme,
+  disableGlobalClassNames
+) {
+  return _getGlobalClassNames(
+    classNames,
+    disableGlobalClassNames !== undefined
+      ? disableGlobalClassNames
+      : theme.disableGlobalClassNames
+  );
 }
 //# sourceMappingURL=getGlobalClassNames.js.map

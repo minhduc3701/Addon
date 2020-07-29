@@ -1,7 +1,9 @@
-import { IRectangle } from '../IRectangle';
+import { IRectangle } from "../utilities";
 /**
  * Helper to get bounding client rect. Passing in window will get the window size.
  *
  * @public
  */
-export declare function getRect(element: HTMLElement | Window | null): IRectangle | undefined;
+export declare function getRect(
+  element: HTMLElement | Window | null
+): IRectangle | undefined;

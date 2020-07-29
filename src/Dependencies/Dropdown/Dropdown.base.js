@@ -1190,8 +1190,8 @@ var DropdownBase = /** @class */ (function (_super) {
       var selectedIndex = this._getSelectedIndex(options, null);
       return selectedIndex !== -1 ? [selectedIndex] : [];
     } else if (!Array.isArray(selectedKey)) {
-      var selectedIndex = this._getSelectedIndex(options, selectedKey);
-      return selectedIndex !== -1 ? [selectedIndex] : [];
+      var selectedIndex2 = this._getSelectedIndex(options, selectedKey);
+      return selectedIndex2 !== -1 ? [selectedIndex2] : [];
     }
     var selectedIndices = [];
     for (
@@ -1200,8 +1200,8 @@ var DropdownBase = /** @class */ (function (_super) {
       _i++
     ) {
       var key = selectedKey_1[_i];
-      var selectedIndex = this._getSelectedIndex(options, key);
-      selectedIndex !== -1 && selectedIndices.push(selectedIndex);
+      var selectedIndex1 = this._getSelectedIndex(options, key);
+      selectedIndex1 !== -1 && selectedIndices.push(selectedIndex1);
     }
     return selectedIndices;
   };
@@ -1259,8 +1259,8 @@ var DropdownBase = /** @class */ (function (_super) {
   DropdownBase.defaultProps = {
     options: [],
   };
+  // eslint-disable-next-line no-func-assign
   DropdownBase = __decorate([withResponsiveMode], DropdownBase);
   return DropdownBase;
 })(React.Component);
 export { DropdownBase };
-//# sourceMappingURL=Dropdown.base.js.map

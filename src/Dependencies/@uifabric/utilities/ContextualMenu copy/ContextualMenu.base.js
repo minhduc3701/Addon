@@ -1362,6 +1362,7 @@ var ContextualMenuBase = /** @class */ (function (_super) {
     beakWidth: 16,
   };
   // ContextualMenuBase = __decorate(withResponsiveMode, ContextualMenuBase);
+  // eslint-disable-next-line no-func-assign
   ContextualMenuBase = __decorate([withResponsiveMode], ContextualMenuBase);
   return ContextualMenuBase;
 })(React.Component);

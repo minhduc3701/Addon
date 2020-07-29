@@ -11,6 +11,7 @@ import {
 } from "./BreadcrumbStyle";
 import { Icon } from "../@uifabric/icons/Icon";
 import { Dropdown, IDropdownOption } from "../Dropdown";
+// import { Dropdown, IDropdownOption } from "office-ui-fabric-react/lib/Dropdown";
 
 class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
   constructor(props: IBreadNodesProps) {
@@ -200,7 +201,11 @@ class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
               <ItemWrapper theme={props.child}>
                 <span
                   onClick={(e) => onChoiceItem(e, props)}
-                  className="label-btn"
+                  className={
+                    props.child.length === 0
+                      ? "label-btn font-weight-bold"
+                      : "label-btn"
+                  }
                 >
                   {props.text}
                 </span>

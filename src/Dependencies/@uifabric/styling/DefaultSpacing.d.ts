@@ -1,2 +1,2 @@
-import { ISpacing } from '../interfaces/index';
+import { ISpacing } from "./ISpacing";
 export declare const DefaultSpacing: ISpacing;

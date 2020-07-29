@@ -1,8 +1,7 @@
 import { __assign, __extends, __rest } from "tslib";
 import * as React from "react";
-import { concatStyleSetsWithProps } from "@uifabric/merge-styles";
-import { Customizations } from "./Customizations";
-import { CustomizerContext } from "./CustomizerContext";
+import { concatStyleSetsWithProps } from "../styling";
+import { Customizations, CustomizerContext } from "./customizations";
 var DefaultFields = ["theme", "styles"];
 /**
  * The styled HOC wrapper allows you to create a functional wrapper around a given component which will resolve

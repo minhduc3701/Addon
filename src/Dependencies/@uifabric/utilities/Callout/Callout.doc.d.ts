@@ -1,2 +1,2 @@
-import { IDocPageProps } from "../../../common/DocPage.types";
+import { IDocPageProps } from "../../../common";
 export declare const CalloutPageProps: IDocPageProps;

@@ -1,7 +1,7 @@
 import { __assign, __extends } from "tslib";
 import * as React from "react";
 import { Customizations } from "./Customizations";
-import { hoistStatics } from "../../utilities/index";
+import { hoistStatics } from "../hoistStatics";
 import { CustomizerContext } from "./CustomizerContext";
 import { concatStyleSets } from "../../styling";
 export function customizable(scope, fields, concatStyles) {

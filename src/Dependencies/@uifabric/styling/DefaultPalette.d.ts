@@ -1,2 +1,2 @@
-import { IPalette } from '../interfaces/index';
+import { IPalette } from "./IPalette";
 export declare const DefaultPalette: IPalette;

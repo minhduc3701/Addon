@@ -1,4 +1,4 @@
-import { Stylesheet } from "@uifabric/merge-styles";
+import { Stylesheet } from "../styling";
 var _initializedStylesheetResets = false;
 var _resetCounter = 0;
 var _emptyObject = { empty: true };

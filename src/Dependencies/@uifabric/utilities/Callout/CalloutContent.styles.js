@@ -2,7 +2,7 @@ import {
   HighContrastSelector,
   focusClear,
   getGlobalClassNames,
-} from "../../styling/index";
+} from "../../styling";
 function getBeakStyle(beakWidth) {
   return {
     height: beakWidth,

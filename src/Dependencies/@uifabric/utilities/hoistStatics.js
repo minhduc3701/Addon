@@ -17,3 +17,4 @@ export function hoistStatics(source, dest) {
   }
   return dest;
 }
+//# sourceMappingURL=hoistStatics.js.map
