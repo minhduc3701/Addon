@@ -12,7 +12,7 @@ import {
 } from "office-ui-fabric-react/lib/DetailsList";
 import { MarqueeSelection } from "office-ui-fabric-react/lib/MarqueeSelection";
 import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
-import { StateListWrapper } from "./StateListStyle";
+import { StateListWrapper, IListProps, IListStates } from "./ListStyle";
 
 const classNames = mergeStyleSets({
   fileIconHeaderIcon: {
@@ -57,7 +57,7 @@ const controlStyles = {
   },
 };
 
-export interface IDetailsListDocumentsExampleState {
+export interface IListState {
   columns: IColumn[];
   items: IDocument[];
   selectionDetails: string;
@@ -77,104 +77,119 @@ export interface IDocument {
   dateModifiedValue: number;
   fileSize: string;
   fileSizeRaw: number;
+  sharing: string;
 }
 
 export class DetailsListDocumentsExample extends React.Component<
-  {},
-  IDetailsListDocumentsExampleState
+  IListProps,
+  IListStates
 > {
   private _selection: Selection;
-  private _allItems: IDocument[];
+  // private _allItems: IDocument[];
 
-  constructor(props: {}) {
+  constructor(props: IListProps) {
     super(props);
 
-    this._allItems = _generateDocuments();
+    // this._allItems = _generateDocuments();
 
-    const columns: IColumn[] = [
-      {
-        key: "column1",
-        name: "File Type",
-        className: classNames.fileIconCell,
-        iconClassName: classNames.fileIconHeaderIcon,
-        ariaLabel:
-          "Column operations for File type, Press to sort on File type",
-        iconName: "Page",
-        isIconOnly: true,
-        fieldName: "name",
-        minWidth: 16,
-        maxWidth: 16,
-        onColumnClick: this._onColumnClick,
-        onRender: (item: IDocument) => {
-          return (
-            <img
-              src={item.iconName}
-              className={classNames.fileIconImg}
-              alt={item.fileType + " file icon"}
-            />
-          );
-        },
-      },
-      {
-        key: "column2",
-        name: "Name",
-        fieldName: "name",
-        minWidth: 210,
-        maxWidth: 350,
-        isRowHeader: true,
-        isResizable: true,
-        isSorted: true,
-        isSortedDescending: false,
-        sortAscendingAriaLabel: "Sorted A to Z",
-        sortDescendingAriaLabel: "Sorted Z to A",
-        onColumnClick: this._onColumnClick,
-        data: "string",
-        isPadded: true,
-      },
-      {
-        key: "column3",
-        name: "Date Modified",
-        fieldName: "dateModifiedValue",
-        minWidth: 70,
-        maxWidth: 90,
-        isResizable: true,
-        onColumnClick: this._onColumnClick,
-        data: "number",
-        onRender: (item: IDocument) => {
-          return <span>{item.dateModified}</span>;
-        },
-        isPadded: true,
-      },
-      {
-        key: "column4",
-        name: "Modified By",
-        fieldName: "modifiedBy",
-        minWidth: 70,
-        maxWidth: 90,
-        isResizable: true,
-        isCollapsible: true,
-        data: "string",
-        onColumnClick: this._onColumnClick,
-        onRender: (item: IDocument) => {
-          return <span>{item.modifiedBy}</span>;
-        },
-        isPadded: true,
-      },
-      {
-        key: "column5",
-        name: "File Size",
-        fieldName: "fileSizeRaw",
-        minWidth: 70,
-        maxWidth: 90,
-        isResizable: true,
-        isCollapsible: true,
-        data: "number",
-        onColumnClick: this._onColumnClick,
-        onRender: (item: IDocument) => {
-          return <span>{item.fileSize}</span>;
-        },
-      },
-    ];
+    // const columns: IColumn[] = [
+    //   {
+    //     key: "column1",
+    //     name: "File Type",
+    //     className: classNames.fileIconCell,
+    //     iconClassName: classNames.fileIconHeaderIcon,
+    //     ariaLabel:
+    //       "Column operations for File type, Press to sort on File type",
+    //     iconName: "Page",
+    //     isIconOnly: true,
+    //     fieldName: "name",
+    //     minWidth: 16,
+    //     maxWidth: 16,
+    //     onColumnClick: this._onColumnClick,
+    //     onRender: (item: IDocument) => {
+    //       return (
+    //         <img
+    //           src={item.iconName}
+    //           className={classNames.fileIconImg}
+    //           alt={item.fileType + " file icon"}
+    //         />
+    //       );
+    //     },
+    //   },
+    //   {
+    //     key: "column2",
+    //     name: "Name",
+    //     fieldName: "name",
+    //     minWidth: 210,
+    //     maxWidth: 350,
+    //     isRowHeader: true,
+    //     isResizable: true,
+    //     isSorted: true,
+    //     isSortedDescending: false,
+    //     sortAscendingAriaLabel: "Sorted A to Z",
+    //     sortDescendingAriaLabel: "Sorted Z to A",
+    //     onColumnClick: this._onColumnClick,
+    //     data: "string",
+    //     isPadded: true,
+    //   },
+    //   {
+    //     key: "column3",
+    //     name: "Date Modified",
+    //     fieldName: "dateModifiedValue",
+    //     minWidth: 70,
+    //     maxWidth: 90,
+    //     isResizable: true,
+    //     onColumnClick: this._onColumnClick,
+    //     data: "number",
+    //     onRender: (item: IDocument) => {
+    //       return <span>{item.dateModified}</span>;
+    //     },
+    //     isPadded: true,
+    //   },
+    //   {
+    //     key: "column4",
+    //     name: "Modified By",
+    //     fieldName: "modifiedBy",
+    //     minWidth: 70,
+    //     maxWidth: 90,
+    //     isResizable: true,
+    //     isCollapsible: true,
+    //     data: "string",
+    //     onColumnClick: this._onColumnClick,
+    //     onRender: (item: IDocument) => {
+    //       return <span>{item.modifiedBy}</span>;
+    //     },
+    //     isPadded: true,
+    //   },
+    //   {
+    //     key: "column5",
+    //     name: "Sharing",
+    //     fieldName: "sharing",
+    //     minWidth: 70,
+    //     maxWidth: 151,
+    //     isResizable: true,
+    //     isCollapsible: true,
+    //     data: "string",
+    //     onColumnClick: this._onColumnClick,
+    //     onRender: (item: IDocument) => {
+    //       return <span>{item.sharing}</span>;
+    //     },
+    //   },
+    //   {
+    //     key: "column6",
+    //     name: "File Size",
+    //     fieldName: "fileSizeRaw",
+    //     minWidth: 70,
+    //     maxWidth: 90,
+    //     isResizable: true,
+    //     isCollapsible: true,
+    //     data: "number",
+    //     onColumnClick: this._onColumnClick,
+    //     onRender: (item: IDocument) => {
+    //       return <span>{item.fileSize}</span>;
+    //     },
+    //   },
+    // ];
 
     this._selection = new Selection({
       onSelectionChanged: () => {
@@ -185,63 +200,68 @@ export class DetailsListDocumentsExample extends React.Component<
     });
 
     this.state = {
-      items: this._allItems,
-      columns: columns,
+      items: this.props.items,
+      columns: this.props.columns,
       selectionDetails: this._getSelectionDetails(),
-      isModalSelection: false,
-      isCompactMode: false,
-      announcedMessage: undefined,
     };
   }
 
-  public render() {
-    const {
-      columns,
-      isCompactMode,
-      items,
-      selectionDetails,
-      isModalSelection,
-      announcedMessage,
-    } = this.state;
+  componentDidMount() {
+    this.onSetDefaultColumns();
+    this.onSetDefaultItems();
+  }
 
+  onSetDefaultColumns = async () => {
+    let columnProps = this.props.columns;
+    let newColumns = await columnProps.map((col) => {
+      return (col = {
+        ...col,
+        isResizable: col.isResizable || true,
+        isCollapsible: col.isCollapsible || true,
+        isSorted: col.isSorted || true,
+        isSortedDescending: col.isSortedDescending || false,
+        sortAscendingAriaLabel: "Sorted A to Z",
+        sortDescendingAriaLabel: "Sorted Z to A",
+        isPadded: col.isPadded || true,
+        maxWidth: col.maxWidth || 99999,
+        fieldName: col.fieldName || "",
+        onColumnClick: this._onColumnClick,
+      });
+    });
+    await this.setState({ columns: newColumns });
+  };
+
+  onSetDefaultItems = async () => {
+    let itemsProps = this.props.items;
+    let newItems = await itemsProps.map((item) => {
+      let itemArr = [];
+      if (item.fileName) {
+        itemArr = item.fileName.split(".");
+      }
+      if (itemArr.length > 0) {
+        return (item = {
+          ...item,
+          iconSrc: `https://static2.sharepointonline.com/files/fabric/assets/item-types/16/${
+            itemArr[itemArr.length - 1]
+          }.svg`,
+          fileType: itemArr[itemArr.length - 1],
+        });
+      } else {
+        return item;
+      }
+    });
+    await this.setState({ items: newItems });
+  };
+
+  public render() {
+    const { columns, items } = this.state;
     return (
       <StateListWrapper>
-        <Fabric>
-          <div className={classNames.controlWrapper}>
-            <Toggle
-              label="Enable compact mode"
-              checked={isCompactMode}
-              onChange={() => this._onChangeCompactMode}
-              onText="Compact"
-              offText="Normal"
-              styles={controlStyles}
-            />
-            <Toggle
-              label="Enable modal selection"
-              checked={isModalSelection}
-              onChange={() => this._onChangeModalSelection}
-              onText="Modal"
-              offText="Normal"
-              styles={controlStyles}
-            />
-            <TextField
-              label="Filter by name:"
-              onChange={() => this._onChangeText}
-              styles={controlStyles}
-            />
-            <Announced
-              message={`Number of items after filter applied: ${items.length}.`}
-            />
-          </div>
-          <div className={classNames.selectionDetails}>{selectionDetails}</div>
-          <Announced message={selectionDetails} />
-          {announcedMessage ? (
-            <Announced message={announcedMessage} />
-          ) : undefined}
+        {columns.length > 0 && (
           <MarqueeSelection selection={this._selection}>
             <DetailsList
               items={items}
-              compact={isCompactMode}
+              compact={false}
               columns={columns}
               selectionMode={SelectionMode.multiple}
               getKey={this._getKey}
@@ -257,22 +277,19 @@ export class DetailsListDocumentsExample extends React.Component<
               checkButtonAriaLabel="Row checkbox"
             />
           </MarqueeSelection>
-        </Fabric>
+        )}
       </StateListWrapper>
     );
   }
 
-  public componentDidUpdate(
-    previousProps: any,
-    previousState: IDetailsListDocumentsExampleState
-  ) {
-    if (
-      previousState.isModalSelection !== this.state.isModalSelection &&
-      !this.state.isModalSelection
-    ) {
-      this._selection.setAllSelected(false);
-    }
-  }
+  // public componentDidUpdate(previousProps: any, previousState: IListState) {
+  //   if (
+  //     previousState.isModalSelection !== this.state.isModalSelection &&
+  //     !this.state.isModalSelection
+  //   ) {
+  //     this._selection.setAllSelected(false);
+  //   }
+  // }
 
   private _getKey(item: any, index?: number): string {
     return item.key;
@@ -282,26 +299,26 @@ export class DetailsListDocumentsExample extends React.Component<
     ev: React.MouseEvent<HTMLElement>,
     checked: boolean
   ): void => {
-    this.setState({ isCompactMode: checked });
+    // this.setState({ isCompactMode: checked });
   };
 
   private _onChangeModalSelection = (
     ev: React.MouseEvent<HTMLElement>,
     checked: boolean
   ): void => {
-    this.setState({ isModalSelection: checked });
+    // this.setState({ isModalSelection: checked });
   };
 
-  private _onChangeText = (
-    ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
-    text: string
-  ): void => {
-    this.setState({
-      items: text
-        ? this._allItems.filter((i) => i.name.toLowerCase().indexOf(text) > -1)
-        : this._allItems,
-    });
-  };
+  // private _onChangeText = (
+  //   ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
+  //   text: string
+  // ): void => {
+  //   this.setState({
+  //     items: text
+  //       ? this._allItems.filter((i) => i.name.toLowerCase().indexOf(text) > -1)
+  //       : this._allItems,
+  //   });
+  // };
 
   private _onItemInvoked(item: any): void {
     alert(`Item invoked: ${item.name}`);
@@ -336,11 +353,6 @@ export class DetailsListDocumentsExample extends React.Component<
       if (newCol === currColumn) {
         currColumn.isSortedDescending = !currColumn.isSortedDescending;
         currColumn.isSorted = true;
-        this.setState({
-          announcedMessage: `${currColumn.name} is sorted ${
-            currColumn.isSortedDescending ? "descending" : "ascending"
-          }`,
-        });
       } else {
         newCol.isSorted = false;
         newCol.isSortedDescending = true;
@@ -397,6 +409,7 @@ function _generateDocuments() {
       dateModifiedValue: randomDate.value,
       fileSize: randomFileSize.value,
       fileSizeRaw: randomFileSize.rawSize,
+      sharing: `${fileName}--aaa`,
     });
   }
   return items;

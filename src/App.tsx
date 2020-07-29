@@ -17,7 +17,8 @@ import { INodes } from "./Dependencies/TreeView/FinalTreeInterface";
 import Breadcrumb from "./Dependencies/Breadcrumb";
 // </BreadcrumbImport>
 import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcrumbStyle";
-import { DetailsListDocumentsExample } from "./Dependencies/StateList";
+import { DetailsListDocumentsExample } from "./Dependencies/List";
+import iconSharing from "./Dependencies/List/Media/groupIcon.svg";
 
 initializeIcons();
 
@@ -181,13 +182,131 @@ function App() {
       ],
     },
   ];
+
+  const columns = [
+    {
+      key: "column1",
+      name: "Name",
+      minWidth: 70,
+      data: "number",
+      onRender: (item: any) => {
+        return (
+          <div>
+            <img src={item.iconSrc} />
+            <span>{item.fileName}</span>
+          </div>
+        );
+      },
+    },
+    {
+      key: "column2",
+      name: "Date Modified",
+      fieldName: "dateModified",
+      minWidth: 70,
+      maxWidth: 250,
+      data: "number",
+      onRender: (item: any) => {
+        return <span>{item.dateModified}</span>;
+      },
+      isPadded: true,
+    },
+    {
+      key: "column3",
+      name: "Modified By",
+      fieldName: "modifiedBy",
+      minWidth: 70,
+      maxWidth: 250,
+      data: "string",
+      onRender: (item: any) => {
+        return <span>{item.modifiedBy}</span>;
+      },
+    },
+    {
+      key: "column4",
+      name: "Sharing",
+      minWidth: 70,
+      maxWidth: 250,
+      data: "string",
+      onRender: (item: any) => {
+        return (
+          <div>
+            <img
+              style={{ width: "12px", height: "12px", paddingRight: "8px" }}
+              src={iconSharing}
+              alt={item.sharingBy + " file icon"}
+            />
+            <span>{item.sharingBy}</span>
+          </div>
+        );
+      },
+    },
+    {
+      key: "column5",
+      name: "File Size",
+      minWidth: 70,
+      maxWidth: 250,
+      data: "number",
+      onRender: (item: any) => {
+        return <span>{item.fileSizeRaw}</span>;
+      },
+    },
+  ];
+
+  const items = [
+    {
+      name: "a",
+      key: "a",
+      dateModified: 12397123,
+      modifiedBy: "A Bền",
+      fileSizeRaw: 4920,
+      sharingBy: "Đức",
+      fileName: "feFile2.xlsx",
+    },
+    {
+      name: "b",
+      key: "b",
+      dateModified: 1002039,
+      modifiedBy: "A Bền",
+      fileSizeRaw: 33145,
+      sharingBy: "A Hiếu",
+      fileName: "feFile3.txt",
+    },
+    {
+      name: "c",
+      key: "c",
+      dateModified: 2312422,
+      modifiedBy: "A Sơn",
+      fileSizeRaw: 1222,
+      sharingBy: "A Bền",
+      fileName: "feFisdasdasdasdadle4.audio",
+    },
+    {
+      name: "d",
+      key: "d",
+      dateModified: 2312422,
+      modifiedBy: "Jay",
+      fileSizeRaw: 1222,
+      sharingBy: "Rash",
+      fileName: "asdsd.txt",
+    },
+    {
+      name: "e",
+      key: "e",
+      dateModified: 2312422,
+      modifiedBy: "Ling",
+      fileSizeRaw: 1222,
+      sharingBy: "GreenWood",
+      fileName: "222.jpg",
+    },
+  ];
+
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <Breadcrumb
-        child={BreadcrumbData}
-        darkMode="light"
-        onClick={onClickActionBreadcrumb}
+      <DetailsListDocumentsExample
+        columns={columns}
+        darkMode="dark"
+        items={items}
       />
     </div>
   );
@@ -231,3 +350,8 @@ export default App;
 //         icon="add"
 //         styles={{ opacity: "1", height: "auto" }}
 //       />
+// <Breadcrumb
+// child={BreadcrumbData}
+// darkMode="light"
+// onClick={onClickActionBreadcrumb}
+// />

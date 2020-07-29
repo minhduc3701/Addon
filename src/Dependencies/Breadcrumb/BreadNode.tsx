@@ -11,7 +11,6 @@ import {
 } from "./BreadcrumbStyle";
 import { Icon } from "../@uifabric/icons/Icon";
 import { Dropdown, IDropdownOption } from "../Dropdown";
-// import { Dropdown, IDropdownOption } from "office-ui-fabric-react/lib/Dropdown";
 
 class BreadNode extends React.Component<IBreadNodesProps, INodeState> {
   constructor(props: IBreadNodesProps) {

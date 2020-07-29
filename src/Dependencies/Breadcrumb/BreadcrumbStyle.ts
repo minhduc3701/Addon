@@ -1,10 +1,10 @@
 import styled from "styled-components";
+// multilingual?: { textKey: string; context: string }[];
 
 // <BreadcrumbProps>
 export interface IBreadcrumdProps {
   child: IBreadNodes[];
   darkMode?: string;
-  multilingual?: { textKey: string; context: string }[];
   onClick?: (
     event: React.MouseEvent<HTMLSpanElement> | React.FormEvent<HTMLDivElement>
   ) => void;
