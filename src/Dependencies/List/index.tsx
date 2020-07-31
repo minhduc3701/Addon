@@ -9,10 +9,34 @@ import {
   Selection,
   SelectionMode,
   IColumn,
+  IDetailsListProps,
+  DetailsRow,
+  IDetailsRowStyles,
 } from "office-ui-fabric-react/lib/DetailsList";
 import { MarqueeSelection } from "office-ui-fabric-react/lib/MarqueeSelection";
 import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
-import { StateListWrapper, IListProps, IListStates } from "./ListStyle";
+import {
+  StateListWrapper,
+  IListProps,
+  IListStates,
+  PanelWrapper,
+  IColumn as IColumnCustom,
+} from "./ListStyle";
+import {
+  IContextualMenuProps,
+  IContextualMenuItem,
+  DirectionalHint,
+  ContextualMenu,
+  ContextualMenuItemType,
+} from "office-ui-fabric-react/lib/ContextualMenu";
+import { Icon } from "../@uifabric/icons";
+import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
+import { Checkbox } from "../Checkbox/index";
+import Button from "../Button";
+import { Dropdown, IDropdownOption } from "../Dropdown";
+
+import { FontSizes } from "../@uifabric/styling";
+import { Text } from "office-ui-fabric-react";
 
 const classNames = mergeStyleSets({
   fileIconHeaderIcon: {
@@ -80,6 +104,105 @@ export interface IDocument {
   sharing: string;
 }
 
+const defaultColumns: IColumnCustom[] = [
+  {
+    key: "column1",
+    name: "Name",
+    fieldName: "name",
+    minWidth: 70,
+    maxWidth: 455,
+    data: "number",
+    onRender: (item: any) => {
+      return (
+        <div className="name-col">
+          <img src={item.iconName} />
+          <span>{item.name}</span>
+        </div>
+      );
+    },
+  },
+  {
+    key: "column2",
+    name: "Date Modified",
+    fieldName: "dateModified",
+    minWidth: 70,
+    maxWidth: 250,
+    data: "object",
+    onRender: (item: any) => {
+      let option = {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+        hour: "numeric",
+        hour12: true,
+        minute: "2-digit",
+      };
+      return (
+        <span>
+          {item.dateModified
+            .toLocaleDateString("en-US", option)
+            .replace(",", "")}
+        </span>
+      );
+    },
+    isPadded: true,
+  },
+  {
+    key: "column3",
+    name: "Modified By",
+    fieldName: "modifiedBy",
+    minWidth: 70,
+    maxWidth: 250,
+    data: "string",
+    onRender: (item: any) => {
+      return <span>{item.modifiedBy}</span>;
+    },
+  },
+  {
+    key: "column4",
+    name: "Sharing",
+    fieldName: "sharingBy",
+    minWidth: 70,
+    maxWidth: 250,
+    data: "string",
+    onRender: (item: any) => {
+      return (
+        <div>
+          {item.sharingBy && (
+            <Icon
+              iconName="People"
+              style={{ width: "12px", height: "12px", paddingRight: "8px" }}
+            />
+          )}
+          <span>{item.sharingBy}</span>
+        </div>
+      );
+    },
+  },
+  {
+    key: "column5",
+    name: "File Size",
+    fieldName: "fileSizeRaw",
+    minWidth: 70,
+    maxWidth: 250,
+    data: "number",
+    onRender: (item: any) => {
+      return <span>{item.fileSize}</span>;
+    },
+  },
+  {
+    key: "column6",
+    name: "Status",
+    fieldName: "status",
+    minWidth: 70,
+    maxWidth: 250,
+    data: "boolean",
+    onRender: (item: any) => {
+      return <span>{item.status ? "Done" : "Processing"}</span>;
+    },
+  },
+];
+
 export class DetailsListDocumentsExample extends React.Component<
   IListProps,
   IListStates
@@ -92,105 +215,6 @@ export class DetailsListDocumentsExample extends React.Component<
 
     // this._allItems = _generateDocuments();
 
-    // const columns: IColumn[] = [
-    //   {
-    //     key: "column1",
-    //     name: "File Type",
-    //     className: classNames.fileIconCell,
-    //     iconClassName: classNames.fileIconHeaderIcon,
-    //     ariaLabel:
-    //       "Column operations for File type, Press to sort on File type",
-    //     iconName: "Page",
-    //     isIconOnly: true,
-    //     fieldName: "name",
-    //     minWidth: 16,
-    //     maxWidth: 16,
-    //     onColumnClick: this._onColumnClick,
-    //     onRender: (item: IDocument) => {
-    //       return (
-    //         <img
-    //           src={item.iconName}
-    //           className={classNames.fileIconImg}
-    //           alt={item.fileType + " file icon"}
-    //         />
-    //       );
-    //     },
-    //   },
-    //   {
-    //     key: "column2",
-    //     name: "Name",
-    //     fieldName: "name",
-    //     minWidth: 210,
-    //     maxWidth: 350,
-    //     isRowHeader: true,
-    //     isResizable: true,
-    //     isSorted: true,
-    //     isSortedDescending: false,
-    //     sortAscendingAriaLabel: "Sorted A to Z",
-    //     sortDescendingAriaLabel: "Sorted Z to A",
-    //     onColumnClick: this._onColumnClick,
-    //     data: "string",
-    //     isPadded: true,
-    //   },
-    //   {
-    //     key: "column3",
-    //     name: "Date Modified",
-    //     fieldName: "dateModifiedValue",
-    //     minWidth: 70,
-    //     maxWidth: 90,
-    //     isResizable: true,
-    //     onColumnClick: this._onColumnClick,
-    //     data: "number",
-    //     onRender: (item: IDocument) => {
-    //       return <span>{item.dateModified}</span>;
-    //     },
-    //     isPadded: true,
-    //   },
-    //   {
-    //     key: "column4",
-    //     name: "Modified By",
-    //     fieldName: "modifiedBy",
-    //     minWidth: 70,
-    //     maxWidth: 90,
-    //     isResizable: true,
-    //     isCollapsible: true,
-    //     data: "string",
-    //     onColumnClick: this._onColumnClick,
-    //     onRender: (item: IDocument) => {
-    //       return <span>{item.modifiedBy}</span>;
-    //     },
-    //     isPadded: true,
-    //   },
-    //   {
-    //     key: "column5",
-    //     name: "Sharing",
-    //     fieldName: "sharing",
-    //     minWidth: 70,
-    //     maxWidth: 151,
-    //     isResizable: true,
-    //     isCollapsible: true,
-    //     data: "string",
-    //     onColumnClick: this._onColumnClick,
-    //     onRender: (item: IDocument) => {
-    //       return <span>{item.sharing}</span>;
-    //     },
-    //   },
-    //   {
-    //     key: "column6",
-    //     name: "File Size",
-    //     fieldName: "fileSizeRaw",
-    //     minWidth: 70,
-    //     maxWidth: 90,
-    //     isResizable: true,
-    //     isCollapsible: true,
-    //     data: "number",
-    //     onColumnClick: this._onColumnClick,
-    //     onRender: (item: IDocument) => {
-    //       return <span>{item.fileSize}</span>;
-    //     },
-    //   },
-    // ];
-
     this._selection = new Selection({
       onSelectionChanged: () => {
         this.setState({
@@ -201,8 +225,19 @@ export class DetailsListDocumentsExample extends React.Component<
 
     this.state = {
       items: this.props.items,
-      columns: this.props.columns,
+      columns: defaultColumns,
       selectionDetails: this._getSelectionDetails(),
+      contextualMenu: undefined,
+      isSortedDescending: false,
+      isPanelVisible: false,
+      currentColumn: null,
+      filterBy: [],
+      filterResult: [],
+      targetColumn: undefined,
+      filterString: {
+        type: undefined,
+        value: undefined,
+      },
     };
   }
 
@@ -212,23 +247,33 @@ export class DetailsListDocumentsExample extends React.Component<
   }
 
   onSetDefaultColumns = async () => {
-    let columnProps = this.props.columns;
-    let newColumns = await columnProps.map((col) => {
+    let dataColumn = this.props.columns ? this.props.columns : defaultColumns;
+    let newColumns = await dataColumn.map((col) => {
       return (col = {
         ...col,
         isResizable: col.isResizable || true,
         isCollapsible: col.isCollapsible || true,
-        isSorted: col.isSorted || true,
+        isSorted: col.isSorted || false,
         isSortedDescending: col.isSortedDescending || false,
         sortAscendingAriaLabel: "Sorted A to Z",
         sortDescendingAriaLabel: "Sorted Z to A",
         isPadded: col.isPadded || true,
-        maxWidth: col.maxWidth || 99999,
-        fieldName: col.fieldName || "",
-        onColumnClick: this._onColumnClick,
+        maxWidth: col.maxWidth || 450,
+        isDisable: col.isDisable || false,
+        onColumnClick: this.onHeaderClick,
       });
     });
     await this.setState({ columns: newColumns });
+  };
+
+  onHeaderClick = (
+    ev: React.MouseEvent<HTMLElement>,
+    column: IColumn
+  ): void => {
+    this.setState({
+      contextualMenu: this._getContextualMenuProps(ev, column),
+      currentColumn: column,
+    });
   };
 
   onSetDefaultItems = async () => {
@@ -241,7 +286,7 @@ export class DetailsListDocumentsExample extends React.Component<
       if (itemArr.length > 0) {
         return (item = {
           ...item,
-          iconSrc: `https://static2.sharepointonline.com/files/fabric/assets/item-types/16/${
+          iconName: `https://static2.sharepointonline.com/files/fabric/assets/item-types/16/${
             itemArr[itemArr.length - 1]
           }.svg`,
           fileType: itemArr[itemArr.length - 1],
@@ -253,14 +298,202 @@ export class DetailsListDocumentsExample extends React.Component<
     await this.setState({ items: newItems });
   };
 
+  onChoiceItemSort = (item: any[], index: any, ev: MouseEvent) => {
+    let { key } = index;
+    const { columns, items, currentColumn } = this.state;
+    const newColumns: IColumn[] = columns.slice();
+    if (currentColumn && index.key !== "filterBy") {
+      const currColumn: IColumn = newColumns.filter(
+        (currCol) => currentColumn.key === currCol.key
+      )[0];
+      const sortList: any = {
+        aToZ: [true],
+        zToA: [false],
+      };
+      newColumns.forEach((newCol: IColumn) => {
+        if (newCol === currColumn) {
+          currColumn.isSortedDescending = sortList[key][0];
+          currColumn.isSorted = true;
+        } else {
+          newCol.isSorted = false;
+          newCol.isSortedDescending = false;
+        }
+      });
+      const newItems = _copyAndSort(
+        items,
+        currColumn.fieldName!,
+        currColumn.isSortedDescending
+      );
+      this.setState({
+        columns: newColumns,
+        items: newItems,
+        contextualMenu: undefined,
+      });
+    }
+    if (currentColumn && index.key === "filterBy") {
+      const currColumn: IColumn = newColumns.filter(
+        (currCol) => currentColumn.key === currCol.key
+      )[0];
+      newColumns.forEach((newCol: IColumn) => {
+        newCol.isSorted = false;
+      });
+      this.setState({
+        isPanelVisible: true,
+        columns: newColumns,
+        targetColumn: currColumn,
+      });
+    }
+  };
+
+  onSetVisiblePanel = () => {
+    this.setState({
+      isPanelVisible: !this.state.isPanelVisible,
+      filterBy: [],
+    });
+  };
+
+  onCheckedBox = (ev?: React.FormEvent<HTMLElement>, value?: string) => {
+    let currentFilter = [...this.state.filterBy];
+    let index = currentFilter.findIndex((item) => item === value);
+    if (index === -1 && value) {
+      currentFilter.push(value);
+      this.setState({ filterBy: currentFilter });
+    }
+    if (index !== -1) {
+      currentFilter.splice(index, 1);
+      this.setState({ filterBy: currentFilter });
+    }
+  };
+
+  onSortByFilter = async () => {
+    let items = [...this.state.items];
+    let filterArr = [...this.state.filterBy];
+    let result = await items.filter((item) => {
+      for (const keys in item) {
+        let index = filterArr.findIndex(
+          (filterItem) => filterItem === item[keys]
+        );
+        if (index !== -1) {
+          return true;
+        }
+      }
+      return false;
+    });
+    this.setState({
+      filterResult: result,
+      isPanelVisible: !this.state.isPanelVisible,
+      filterBy: [],
+    });
+  };
+
+  onSelectDrop = (
+    event: React.FormEvent<HTMLDivElement>,
+    option?: IDropdownOption,
+    index?: number
+  ) => {
+    if (option) {
+      this.setState({
+        filterString: { ...this.state.filterString, type: option.key },
+      });
+    }
+  };
+
+  onChangeInput = (
+    event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
+    newValue?: string
+  ) => {
+    if (newValue) {
+      this.setState({
+        filterString: { ...this.state.filterString, value: newValue },
+      });
+    }
+  };
+
+  onRenderCheckBox = (type: string): JSX.Element => {
+    let targetCol = this.state.targetColumn;
+    const options: IDropdownOption[] = [
+      { key: "equal", text: "Equal" },
+      { key: "notEqual", text: "Does not equal" },
+      { key: "contains", text: "Contains" },
+      { key: "notContains", text: "Does not contain" },
+    ];
+    switch (type) {
+      case "boolean":
+        return (
+          <>
+            <h4>Is done?</h4>
+            <ul>
+              <li>
+                <Checkbox
+                  title="Done"
+                  label="Done"
+                  checked={
+                    this.state.filterBy &&
+                    this.state.filterBy.findIndex((item) => item === "true") !==
+                      -1
+                      ? true
+                      : false
+                  }
+                  onChange={(e) => this.onCheckedBox(e, "true")}
+                />
+              </li>
+              <li>
+                <Checkbox
+                  title="Processing"
+                  label="Processing"
+                  checked={
+                    this.state.filterBy &&
+                    this.state.filterBy.findIndex(
+                      (item) => item === "false"
+                    ) !== -1
+                      ? true
+                      : false
+                  }
+                  onChange={(e) => this.onCheckedBox(e, "false")}
+                />
+              </li>
+            </ul>
+          </>
+        );
+
+      case "object":
+        return <h1>a</h1>;
+
+      default:
+        return (
+          <ul>
+            <li>
+              <Dropdown
+                label="Operator"
+                placeHolder="Select filter"
+                options={options}
+                onChange={this.onSelectDrop}
+              />
+            </li>
+            <li>
+              <TextField label="Value" required onChange={this.onChangeInput} />
+            </li>
+          </ul>
+        );
+    }
+  };
+
   public render() {
-    const { columns, items } = this.state;
+    const {
+      columns,
+      items,
+      contextualMenu,
+      isPanelVisible,
+      filterResult,
+      targetColumn,
+    } = this.state;
+    console.log(this.state);
     return (
-      <StateListWrapper>
+      <StateListWrapper theme={this.state}>
         {columns.length > 0 && (
           <MarqueeSelection selection={this._selection}>
             <DetailsList
-              items={items}
+              items={filterResult.length > 0 ? filterResult : items}
               compact={false}
               columns={columns}
               selectionMode={SelectionMode.multiple}
@@ -271,13 +504,79 @@ export class DetailsListDocumentsExample extends React.Component<
               selection={this._selection}
               selectionPreservedOnEmptyClick={true}
               onItemInvoked={this._onItemInvoked}
-              enterModalSelectionOnTouch={true}
-              ariaLabelForSelectionColumn="Toggle selection"
-              ariaLabelForSelectAllCheckbox="Toggle selection for all items"
-              checkButtonAriaLabel="Row checkbox"
+              useFastIcons={false}
+              onRenderRow={this._onRenderRow}
             />
           </MarqueeSelection>
         )}
+        {contextualMenu && (
+          <ContextualMenu
+            onItemClick={this.onChoiceItemSort}
+            {...contextualMenu}
+          />
+        )}
+
+        <Panel
+          isOpen={isPanelVisible}
+          onDismiss={this.onSetVisiblePanel}
+          headerText="Filter by"
+          closeButtonAriaLabel="Close"
+          isLightDismiss={true}
+          customWidth={"321px"}
+          type={PanelType.custom}
+          styles={{
+            headerText: {
+              fontSize: "21px",
+              fontWeight: "300",
+            },
+            subComponentStyles: {
+              closeButton: {
+                icon: {
+                  fontSize: "15px",
+                  color: "#000000",
+                  fontWeight: "normal",
+                },
+              },
+            },
+            content: {
+              paddingLeft: "32px",
+            },
+            header: {
+              paddingLeft: "32px",
+            },
+          }}
+        >
+          <PanelWrapper>
+            {targetColumn &&
+              ["number", "string"].includes(targetColumn.data) &&
+              this.onRenderCheckBox("numString")}
+            {targetColumn &&
+              targetColumn.data === "boolean" &&
+              this.onRenderCheckBox("boolean")}
+            {targetColumn &&
+              targetColumn.data === "object" &&
+              this.onRenderCheckBox("object")}
+            <div className="btn-panel-group">
+              <Button
+                type="Primary"
+                text="Apply"
+                disabled={this.state.filterBy.length > 0 ? false : true}
+                onClick={
+                  this.state.filterBy.length > 0
+                    ? this.onSortByFilter
+                    : undefined
+                }
+              />
+              <Button
+                text="Clear all"
+                styles={{ color: "#333333" }}
+                onClick={() =>
+                  this.setState({ filterBy: [], filterResult: [] })
+                }
+              />
+            </div>
+          </PanelWrapper>
+        </Panel>
       </StateListWrapper>
     );
   }
@@ -320,6 +619,63 @@ export class DetailsListDocumentsExample extends React.Component<
   //   });
   // };
 
+  private _getContextualMenuProps(
+    ev: React.MouseEvent<HTMLElement>,
+    column: IColumn
+  ): IContextualMenuProps {
+    const items = [
+      {
+        key: "aToZ",
+        name: "A to Z",
+        canCheck: true,
+        // checked: column.isSorted && !column.isSortedDescending,
+        // onClick: () => this._onSortColumn(column.key, false),
+      },
+      {
+        key: "zToA",
+        name: "Z to A",
+        canCheck: true,
+        // checked: column.isSorted && column.isSortedDescending,
+        // onClick: () => this._onSortColumn(column.key, true),
+      },
+      {
+        key: "divider_1",
+        itemType: ContextualMenuItemType.Divider,
+      },
+      {
+        key: "filterBy",
+        name: "Filter By",
+        canCheck: true,
+        checked: column.isGrouped,
+        // onClick: () => this._onGroupByColumn(column),
+      },
+    ];
+    // if (isGroupable(column.key)) {
+    //   items.push({
+    //     key: 'groupBy',
+    //     name: 'Group by ' + column.name,
+    //     iconProps: { iconName: 'GroupedDescending' },
+    //     canCheck: true,
+    //     checked: column.isGrouped,
+    //     // onClick: () => this._onGroupByColumn(column),
+    //   });
+    // }
+    return {
+      items: items,
+      target: ev.currentTarget as HTMLElement,
+      directionalHint: DirectionalHint.bottomLeftEdge,
+      gapSpace: -5,
+      // isBeakVisible: true,
+      onDismiss: this._onContextualMenuDismissed,
+    };
+  }
+
+  private _onContextualMenuDismissed = (): void => {
+    this.setState({
+      contextualMenu: undefined,
+    });
+  };
+
   private _onItemInvoked(item: any): void {
     alert(`Item invoked: ${item.name}`);
   }
@@ -340,18 +696,61 @@ export class DetailsListDocumentsExample extends React.Component<
     }
   }
 
-  private _onColumnClick = (
-    ev: React.MouseEvent<HTMLElement>,
-    column: IColumn
+  private _onRenderRow: IDetailsListProps["onRenderRow"] = (props) => {
+    const customStyles: Partial<IDetailsRowStyles> = {};
+    if (props) {
+      if (props.item.isDisable) {
+        // Every other row renders with a different background color
+        customStyles.root = { color: "#666666" };
+      } else {
+        customStyles.root = { color: "#212121" };
+      }
+      return <DetailsRow {...props} styles={customStyles} />;
+    }
+    return null;
+  };
+
+  private _onItemContextMenu = (
+    item: any[],
+    index: number,
+    ev: MouseEvent
+  ): boolean => {
+    const contextualMenu: IContextualMenuProps = {
+      target: ev.target as HTMLElement,
+      items: [
+        {
+          key: "text",
+          name: `${this._selection.getSelectedCount()} selected`,
+        },
+      ],
+      onDismiss: () => {
+        this.setState({
+          contextualMenu: undefined,
+        });
+      },
+    };
+
+    if (index > -1) {
+      this.setState({
+        contextualMenu: contextualMenu,
+      });
+    }
+
+    return false;
+  };
+
+  _onColumnClick = (
+    ev: React.MouseEvent<HTMLElement> | MouseEvent,
+    column?: IColumn
   ): void => {
-    const { columns, items } = this.state;
+    const { columns, items, currentColumn, isSortedDescending } = this.state;
     const newColumns: IColumn[] = columns.slice();
-    const currColumn: IColumn = newColumns.filter(
-      (currCol) => column.key === currCol.key
+    const currColumn: IColumn = newColumns.filter((currCol) =>
+      column ? column.key : currentColumn?.key === currCol.key
     )[0];
     newColumns.forEach((newCol: IColumn) => {
       if (newCol === currColumn) {
-        currColumn.isSortedDescending = !currColumn.isSortedDescending;
+        currColumn.isSortedDescending = isSortedDescending;
         currColumn.isSorted = true;
       } else {
         newCol.isSorted = false;
@@ -360,13 +759,14 @@ export class DetailsListDocumentsExample extends React.Component<
     });
     const newItems = _copyAndSort(
       items,
-      currColumn.fieldName!,
+      currColumn.key,
       currColumn.isSortedDescending
     );
-    this.setState({
-      columns: newColumns,
-      items: newItems,
-    });
+    // this.setState({
+    //   columns: newColumns,
+    //   items: newItems,
+    //   contextualMenu: undefined,
+    // });
   };
 }
 
@@ -376,11 +776,63 @@ function _copyAndSort<T>(
   isSortedDescending?: boolean
 ): T[] {
   const key = columnKey as keyof T;
-  return items
-    .slice(0)
-    .sort((a: T, b: T) =>
-      (isSortedDescending ? a[key] < b[key] : a[key] > b[key]) ? 1 : -1
-    );
+  let item = items.find((node) => node[key]);
+  let typeValue = item && typeof item[key];
+  switch (typeValue) {
+    case "number":
+      return items
+        .slice(0)
+        .sort((a: T, b: T) =>
+          (isSortedDescending ? a[key] < b[key] : a[key] > b[key])
+            ? 1
+            : a[key] === b[key]
+            ? 0
+            : -1
+        );
+
+    case "boolean":
+      return items.slice(0).sort((a: T, b: T) => {
+        return isSortedDescending
+          ? a[key] === b[key]
+            ? 0
+            : a[key]
+            ? -1
+            : 1
+          : a[key] === b[key]
+          ? 0
+          : a[key]
+          ? 1
+          : -1;
+      });
+
+    case "object":
+      let isDateObject =
+        item && Object.prototype.toString.call(item[key]) === "[object Date]";
+      if (isDateObject) {
+        return items.splice(0).sort((a: T, b: T) => {
+          return (isSortedDescending ? a[key] < b[key] : a[key] > b[key])
+            ? 1
+            : a[key] === b[key]
+            ? 0
+            : -1;
+        });
+      } else {
+        return items;
+      }
+
+    default:
+      return items.slice(0).sort((a: T, b: T) => {
+        if (a[key] === b[key]) {
+          return 0;
+        } else if (!a[key] || !b[key]) {
+          return 1;
+        } else if (isSortedDescending) {
+          return a[key] < b[key] ? -1 : 1;
+        } else {
+          return a[key] < b[key] ? 1 : -1;
+        }
+      });
+  }
 }
 
 function _generateDocuments() {

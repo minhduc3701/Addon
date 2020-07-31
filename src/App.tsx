@@ -19,6 +19,7 @@ import Breadcrumb from "./Dependencies/Breadcrumb";
 import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcrumbStyle";
 import { DetailsListDocumentsExample } from "./Dependencies/List";
 import iconSharing from "./Dependencies/List/Media/groupIcon.svg";
+import { Icon } from "./Dependencies/@uifabric/icons/Icon";
 
 initializeIcons();
 
@@ -187,13 +188,14 @@ function App() {
     {
       key: "column1",
       name: "Name",
+      fieldName: "name",
       minWidth: 70,
       data: "number",
       onRender: (item: any) => {
         return (
-          <div>
-            <img src={item.iconSrc} />
-            <span>{item.fileName}</span>
+          <div className="name-col">
+            <img src={item.iconName} />
+            <span>{item.name}</span>
           </div>
         );
       },
@@ -206,7 +208,21 @@ function App() {
       maxWidth: 250,
       data: "number",
       onRender: (item: any) => {
-        return <span>{item.dateModified}</span>;
+        let option = {
+          year: "numeric",
+          month: "short",
+          day: "2-digit",
+          hour: "numeric",
+          hour12: true,
+          minute: "2-digit",
+        };
+        return (
+          <span>
+            {item.dateModified
+              .toLocaleDateString("en-US", option)
+              .replace(",", "")}
+          </span>
+        );
       },
       isPadded: true,
     },
@@ -224,17 +240,19 @@ function App() {
     {
       key: "column4",
       name: "Sharing",
+      fieldName: "sharingBy",
       minWidth: 70,
       maxWidth: 250,
       data: "string",
       onRender: (item: any) => {
         return (
           <div>
-            <img
-              style={{ width: "12px", height: "12px", paddingRight: "8px" }}
-              src={iconSharing}
-              alt={item.sharingBy + " file icon"}
-            />
+            {item.sharingBy && (
+              <Icon
+                iconName="People"
+                style={{ width: "12px", height: "12px", paddingRight: "8px" }}
+              />
+            )}
             <span>{item.sharingBy}</span>
           </div>
         );
@@ -243,68 +261,111 @@ function App() {
     {
       key: "column5",
       name: "File Size",
+      fieldName: "fileSizeRaw",
       minWidth: 70,
-      maxWidth: 250,
-      data: "number",
+      data: "object",
       onRender: (item: any) => {
-        return <span>{item.fileSizeRaw}</span>;
+        return <span>{item.fileSize}</span>;
       },
     },
   ];
 
+  //     key: i.toString(),
+  //     name: fileName,
+  //     value: fileName,
+  //     iconName: randomFileType.url,
+  //     fileType: randomFileType.docType,
+  //     modifiedBy: userName,
+  //     dateModified: randomDate.dateFormatted,
+  //     dateModifiedValue: randomDate.value,
+  //     fileSize: randomFileSize.value,
+  //     fileSizeRaw: randomFileSize.rawSize,
+  //     sharing: `${fileName}--aaa`,
+  //     isDisable: true,
+  //     fileName: "feFile2.docx",
+
   const items = [
     {
-      name: "a",
-      key: "a",
-      dateModified: 12397123,
-      modifiedBy: "A Bền",
-      fileSizeRaw: 4920,
+      name: "Manchester United",
+      status: true,
+      key: "MUN",
+      value: "MUN",
+      iconName: "",
+      modifiedBy: "Ole",
+      dateModified: new Date("Jan 17 2008, 7:12 PM"),
+      dateModifiedValue: 5302985205285,
+      fileSize: "75 KB",
+      fileSizeRaw: 75,
+      fileType: "docx",
       sharingBy: "Đức",
-      fileName: "feFile2.xlsx",
+      isDisable: true,
+      fileName: "mun.docx",
     },
     {
-      name: "b",
-      key: "b",
-      dateModified: 1002039,
-      modifiedBy: "A Bền",
-      fileSizeRaw: 33145,
-      sharingBy: "A Hiếu",
-      fileName: "feFile3.txt",
+      name: "Chelsea FC",
+      status: false,
+      key: "CHE",
+      value: "CHE",
+      iconName: "",
+      modifiedBy: "Lampart",
+      dateModified: new Date("Aug 11 2020, 3:12 AM"),
+      dateModifiedValue: 2118911711214,
+      fileSize: "115 KB",
+      fileSizeRaw: 115,
+      fileType: "audio",
+      sharingBy: "Trung",
+      isDisable: false,
+      fileName: "chel.audio",
     },
     {
-      name: "c",
-      key: "c",
-      dateModified: 2312422,
-      modifiedBy: "A Sơn",
-      fileSizeRaw: 1222,
-      sharingBy: "A Bền",
-      fileName: "feFisdasdasdasdadle4.audio",
+      name: "Liverpool FC",
+      status: true,
+      key: "LIV",
+      value: "LIV",
+      iconName: "",
+      modifiedBy: "Kloop",
+      dateModified: new Date("Dec 29 2018, 4:57 PM"),
+      dateModifiedValue: 798788171881,
+      fileSize: "80 KB",
+      fileSizeRaw: 80,
+      fileType: "csv",
+      sharingBy: "Sâm",
+      isDisable: false,
+      fileName: "live.csv",
     },
     {
-      name: "d",
-      key: "d",
-      dateModified: 2312422,
-      modifiedBy: "Jay",
-      fileSizeRaw: 1222,
-      sharingBy: "Rash",
-      fileName: "asdsd.txt",
+      name: "Spurs",
+      status: false,
+      key: "TOT",
+      value: "TOT",
+      iconName: "",
+      modifiedBy: "Mourinho",
+      dateModified: new Date("May 22 2020, 2:27 PM"),
+      dateModifiedValue: 888278171718,
+      fileSize: "24 KB",
+      fileSizeRaw: 24,
+      fileType: "photo",
+      sharingBy: "Hoàng",
+      isDisable: true,
+      fileName: "tot.photo",
     },
-    {
-      name: "e",
-      key: "e",
-      dateModified: 2312422,
-      modifiedBy: "Ling",
-      fileSizeRaw: 1222,
-      sharingBy: "GreenWood",
-      fileName: "222.jpg",
-    },
+    // {
+    //   name: "e",
+    //   key: "e",
+    //   dateModified: 2312422,
+    //   modifiedBy: "Ling",
+    //   // fileSizeRaw: new Date("Nov 14 2020, 5:23 PM"),
+    //   fileSizeRaw: 2310281,
+    //   sharingBy: "GreenWood",
+    //   fileName: "222.photo",
+    // },
   ];
 
   // <ExampleUsingCalendar>
   return (
     <div className="App">
       <DetailsListDocumentsExample
-        columns={columns}
+        // columns={columns}
         darkMode="dark"
         items={items}
       />
