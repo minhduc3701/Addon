@@ -4,7 +4,14 @@ import { Toggle } from "office-ui-fabric-react/lib/Toggle";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 import { Announced } from "office-ui-fabric-react/lib/Announced";
 import {
+  ScrollablePane,
+  ScrollbarVisibility,
+  IScrollablePane,
+} from "office-ui-fabric-react/lib/ScrollablePane";
+import { Sticky, StickyPositionType } from "office-ui-fabric-react/lib/Sticky";
+import {
   DetailsList,
+  DetailsHeader,
   DetailsListLayoutMode,
   Selection,
   SelectionMode,
@@ -12,7 +19,9 @@ import {
   IDetailsListProps,
   DetailsRow,
   IDetailsRowStyles,
+  IDetailsHeaderProps,
 } from "office-ui-fabric-react/lib/DetailsList";
+import { ShimmeredDetailsList } from "office-ui-fabric-react/lib/ShimmeredDetailsList";
 import { MarqueeSelection } from "office-ui-fabric-react/lib/MarqueeSelection";
 import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
 import {
@@ -35,9 +44,9 @@ import { Checkbox } from "../Checkbox/index";
 import Button from "../Button";
 import { Dropdown, IDropdownOption } from "../Dropdown";
 import FilterElement from "./filterPanel";
-
 import { FontSizes } from "../@uifabric/styling";
-import { Text } from "office-ui-fabric-react";
+import { Text, ScrollToMode } from "office-ui-fabric-react";
+import { totalmem } from "os";
 
 const classNames = mergeStyleSets({
   fileIconHeaderIcon: {
@@ -128,7 +137,7 @@ const defaultColumns: IColumnCustom[] = [
     fieldName: "dateModified",
     minWidth: 70,
     maxWidth: 250,
-    data: "object",
+    data: "date",
     onRender: (item: any) => {
       let option = {
         year: "numeric",
@@ -204,13 +213,13 @@ const defaultColumns: IColumnCustom[] = [
   },
 ];
 
+const ITEM_COUNT = 6;
+
 export class DetailsListDocumentsExample extends React.Component<
   IListProps,
   IListStates
 > {
   private _selection: Selection;
-  // private _allItems: IDocument[];
-
   constructor(props: IListProps) {
     super(props);
 
@@ -225,7 +234,7 @@ export class DetailsListDocumentsExample extends React.Component<
     });
 
     this.state = {
-      items: this.props.items,
+      items: [],
       columns: defaultColumns,
       selectionDetails: this._getSelectionDetails(),
       contextualMenu: undefined,
@@ -234,6 +243,8 @@ export class DetailsListDocumentsExample extends React.Component<
       currentColumn: null,
       filterBy: [],
       filterResult: [],
+      total: 0,
+      loading: false,
       targetColumn: undefined,
       filter: {
         type: undefined,
@@ -243,9 +254,30 @@ export class DetailsListDocumentsExample extends React.Component<
   }
 
   componentDidMount() {
+    this.onGetItemLazy();
     this.onSetDefaultColumns();
-    this.onSetDefaultItems();
   }
+
+  // examples get data form server
+  onGetItemLazy = async () => {
+    let itemData = [...this.props.items];
+    let currentItem = [...this.state.items];
+    this.setState({ loading: true });
+    if (this.state.total < itemData.length && this.state.total <= 100) {
+      let newData = itemData.splice(this.state.total, ITEM_COUNT);
+      currentItem = [...currentItem, ...newData];
+      await this.setState({
+        items: currentItem,
+        loading: false,
+        total: currentItem.length,
+      });
+      this.onSetDefaultItems();
+    } else {
+      await this.setState({
+        loading: false,
+      });
+    }
+  };
 
   onSetDefaultColumns = async () => {
     let dataColumn = this.props.columns ? this.props.columns : defaultColumns;
@@ -278,7 +310,7 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   onSetDefaultItems = async () => {
-    let itemsProps = this.props.items;
+    let itemsProps = this.state.items;
     let newItems = await itemsProps.map((item) => {
       let itemArr = [];
       if (item.fileName) {
@@ -467,6 +499,31 @@ export class DetailsListDocumentsExample extends React.Component<
     }
   };
 
+  onGetResultArr = (arr: any[]) => {
+    this.setState({
+      filterResult: arr,
+      isPanelVisible: false,
+    });
+  };
+
+  onScrollList = (event: React.MouseEvent<HTMLDivElement, UIEvent>): void => {
+    let listItem: HTMLElement = document.getElementsByClassName(
+      "contentContainer-83"
+    )[0] as HTMLElement;
+    let currentColumn = [...this.state.columns];
+    if (
+      listItem &&
+      listItem?.scrollTop === listItem?.scrollHeight - listItem?.offsetHeight
+    ) {
+      this.onGetItemLazy();
+      let index = currentColumn.findIndex((item) => item.isSorted);
+      if (index !== -1) {
+        currentColumn[index].isSorted = false;
+        this.setState({ columns: currentColumn });
+      }
+    }
+  };
+
   public render() {
     const {
       columns,
@@ -476,35 +533,41 @@ export class DetailsListDocumentsExample extends React.Component<
       filterResult,
       targetColumn,
     } = this.state;
-    console.log(this.state);
     return (
-      <StateListWrapper theme={this.state}>
-        {columns.length > 0 && (
-          <MarqueeSelection selection={this._selection}>
-            <DetailsList
-              items={filterResult.length > 0 ? filterResult : items}
-              compact={false}
-              columns={columns}
-              selectionMode={SelectionMode.multiple}
-              getKey={this._getKey}
-              setKey="multiple"
-              layoutMode={DetailsListLayoutMode.justified}
-              isHeaderVisible={true}
-              selection={this._selection}
-              selectionPreservedOnEmptyClick={true}
-              onItemInvoked={this._onItemInvoked}
-              useFastIcons={false}
-              onRenderRow={this._onRenderRow}
-            />
-          </MarqueeSelection>
-        )}
+      <StateListWrapper
+        id="listWrapper"
+        onScroll={this.onScrollList}
+        theme={this.state}
+      >
+        <ScrollablePane scrollbarVisibility={ScrollbarVisibility.auto}>
+          {columns.length > 0 && (
+            <MarqueeSelection selection={this._selection}>
+              <ShimmeredDetailsList
+                enableShimmer={this.state.loading}
+                items={filterResult.length > 0 ? filterResult : items}
+                compact={false}
+                columns={columns}
+                selectionMode={SelectionMode.multiple}
+                // getKey={this._getKey}
+                setKey="multiple"
+                layoutMode={DetailsListLayoutMode.justified}
+                isHeaderVisible={true}
+                selection={this._selection}
+                selectionPreservedOnEmptyClick={true}
+                onItemInvoked={this._onItemInvoked}
+                useFastIcons={false}
+                onRenderRow={this._onRenderRow}
+                onRenderDetailsHeader={this._onRenderDetailsHeader}
+              />
+            </MarqueeSelection>
+          )}
+        </ScrollablePane>
         {contextualMenu && (
           <ContextualMenu
             onItemClick={this.onChoiceItemSort}
             {...contextualMenu}
           />
         )}
-
         <Panel
           isOpen={isPanelVisible}
           onDismiss={this.onSetVisiblePanel}
@@ -535,11 +598,13 @@ export class DetailsListDocumentsExample extends React.Component<
             },
           }}
         >
-          <FilterElement
-            targetColumn={this.state.targetColumn}
-            filter={this.state.filter}
-            items={this.state.items}
-          />
+          {targetColumn && (
+            <FilterElement
+              targetColumn={targetColumn}
+              items={items}
+              onGetItem={this.onGetResultArr}
+            />
+          )}
         </Panel>
       </StateListWrapper>
     );
@@ -582,6 +647,25 @@ export class DetailsListDocumentsExample extends React.Component<
   //       : this._allItems,
   //   });
   // };
+
+  private _onRenderDetailsHeader: IDetailsListProps["onRenderDetailsHeader"] = (
+    props
+  ) => {
+    const customStyles: Partial<IDetailsRowStyles> = {};
+    if (props) {
+      customStyles.root = { height: "30px" };
+      return (
+        <Sticky stickyPosition={StickyPositionType.Header} isScrollSynced>
+          <DetailsHeader
+            {...props}
+            styles={customStyles}
+            ariaLabelForToggleAllGroupsButton={"Toggle selection"}
+          />
+        </Sticky>
+      );
+    }
+    return null;
+  };
 
   private _getContextualMenuProps(
     ev: React.MouseEvent<HTMLElement>,

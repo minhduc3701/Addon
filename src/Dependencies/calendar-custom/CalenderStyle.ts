@@ -114,7 +114,7 @@ export const CalenderDarkMode = styled.div.attrs((props): any => ({
   }
   .ms-DatePicker-picker{
     height: auto;
-    max-height: 224px;
+    // max-height: 224px;
   }
 
   .goToday_4cbef05b{

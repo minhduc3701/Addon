@@ -19,6 +19,8 @@ export interface IListStates {
   filterBy: string[];
   targetColumn?: IColumn;
   filter: { type?: string | number; value?: string };
+  total: number;
+  loading: boolean;
 }
 
 export interface IDocument {
@@ -61,14 +63,17 @@ export interface IColumn {
 }
 
 export interface IFilterProps {
-  targetColumn?: IColumn;
-  filter: { type?: string | number; value?: string };
+  targetColumn: IColumn;
   items: any[];
+  onGetItem?: (arr: any[]) => void;
 }
 
 export const StateListWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  overflow: auto;
   font-family: Segoe UI;
+  position: relative;
   img {
     width: 18px;
     height: 18px;
@@ -80,12 +85,16 @@ export const StateListWrapper = styled.div`
     color: #333333;
   }
   .ms-DetailsHeader {
-    height: 30px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     .ms-DetailsHeader-cell {
       cursor: pointer;
+      height: 100%;
+      .ms-DetailsHeader-cellTitle {
+        height: 30px;
+        align-items: center;
+      }
       &:active {
         background: #f4f4f4;
       }
@@ -137,6 +146,20 @@ export const PanelWrapper = styled.div`
       background: #c8c8c8 !important;
       .ms-Button-label {
         color: #ffffff !important;
+      }
+    }
+  }
+`;
+
+export const CalendarWrapper = styled.div`
+  padding: 18px 0 18px 0;
+  .dayPicker_4cbef05b {
+    box-shadow: none;
+    width: 100%;
+    .ms-DatePicker-holder {
+      width: 100%;
+      .ms-DatePicker-table {
+        width: 100%;
       }
     }
   }
