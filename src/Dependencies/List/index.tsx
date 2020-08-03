@@ -34,6 +34,7 @@ import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
 import { Checkbox } from "../Checkbox/index";
 import Button from "../Button";
 import { Dropdown, IDropdownOption } from "../Dropdown";
+import FilterElement from "./filterPanel";
 
 import { FontSizes } from "../@uifabric/styling";
 import { Text } from "office-ui-fabric-react";
@@ -234,7 +235,7 @@ export class DetailsListDocumentsExample extends React.Component<
       filterBy: [],
       filterResult: [],
       targetColumn: undefined,
-      filterString: {
+      filter: {
         type: undefined,
         value: undefined,
       },
@@ -353,16 +354,9 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   onCheckedBox = (ev?: React.FormEvent<HTMLElement>, value?: string) => {
-    let currentFilter = [...this.state.filterBy];
-    let index = currentFilter.findIndex((item) => item === value);
-    if (index === -1 && value) {
-      currentFilter.push(value);
-      this.setState({ filterBy: currentFilter });
-    }
-    if (index !== -1) {
-      currentFilter.splice(index, 1);
-      this.setState({ filterBy: currentFilter });
-    }
+    let currentFilter = { ...this.state.filter };
+    currentFilter = { type: "boolean", value };
+    this.setState({ filter: currentFilter });
   };
 
   onSortByFilter = async () => {
@@ -393,7 +387,7 @@ export class DetailsListDocumentsExample extends React.Component<
   ) => {
     if (option) {
       this.setState({
-        filterString: { ...this.state.filterString, type: option.key },
+        filter: { ...this.state.filter, type: option.key },
       });
     }
   };
@@ -404,7 +398,7 @@ export class DetailsListDocumentsExample extends React.Component<
   ) => {
     if (newValue) {
       this.setState({
-        filterString: { ...this.state.filterString, value: newValue },
+        filter: { ...this.state.filter, value: newValue },
       });
     }
   };
@@ -428,9 +422,7 @@ export class DetailsListDocumentsExample extends React.Component<
                   title="Done"
                   label="Done"
                   checked={
-                    this.state.filterBy &&
-                    this.state.filterBy.findIndex((item) => item === "true") !==
-                      -1
+                    this.state.filter && this.state.filter.value === "true"
                       ? true
                       : false
                   }
@@ -442,10 +434,7 @@ export class DetailsListDocumentsExample extends React.Component<
                   title="Processing"
                   label="Processing"
                   checked={
-                    this.state.filterBy &&
-                    this.state.filterBy.findIndex(
-                      (item) => item === "false"
-                    ) !== -1
+                    this.state.filter && this.state.filter.value === "false"
                       ? true
                       : false
                   }
@@ -546,36 +535,11 @@ export class DetailsListDocumentsExample extends React.Component<
             },
           }}
         >
-          <PanelWrapper>
-            {targetColumn &&
-              ["number", "string"].includes(targetColumn.data) &&
-              this.onRenderCheckBox("numString")}
-            {targetColumn &&
-              targetColumn.data === "boolean" &&
-              this.onRenderCheckBox("boolean")}
-            {targetColumn &&
-              targetColumn.data === "object" &&
-              this.onRenderCheckBox("object")}
-            <div className="btn-panel-group">
-              <Button
-                type="Primary"
-                text="Apply"
-                disabled={this.state.filterBy.length > 0 ? false : true}
-                onClick={
-                  this.state.filterBy.length > 0
-                    ? this.onSortByFilter
-                    : undefined
-                }
-              />
-              <Button
-                text="Clear all"
-                styles={{ color: "#333333" }}
-                onClick={() =>
-                  this.setState({ filterBy: [], filterResult: [] })
-                }
-              />
-            </div>
-          </PanelWrapper>
+          <FilterElement
+            targetColumn={this.state.targetColumn}
+            filter={this.state.filter}
+            items={this.state.items}
+          />
         </Panel>
       </StateListWrapper>
     );

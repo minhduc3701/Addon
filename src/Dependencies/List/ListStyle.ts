@@ -18,7 +18,7 @@ export interface IListStates {
   isPanelVisible: boolean;
   filterBy: string[];
   targetColumn?: IColumn;
-  filterString: { type?: string | number; value?: string };
+  filter: { type?: string | number; value?: string };
 }
 
 export interface IDocument {
@@ -58,6 +58,12 @@ export interface IColumn {
   isPadded?: boolean;
   isCollapsible?: boolean;
   isDisable?: boolean;
+}
+
+export interface IFilterProps {
+  targetColumn?: IColumn;
+  filter: { type?: string | number; value?: string };
+  items: any[];
 }
 
 export const StateListWrapper = styled.div`
