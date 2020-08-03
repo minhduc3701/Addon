@@ -129,6 +129,9 @@ export const CalenderDarkMode = styled.div.attrs((props): any => ({
   .ms-DatePicker-holder{
     background-color: ${(props) =>
       props.theme.darkMode === "dark" ? "rgb(27, 26, 25)" : ""};
+      @media screen and (min-width: 460px){
+        overflow: visible;
+      }
       
   }
   .ms-DatePicker-frame, 

@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { IButtonProps } from "./Button.types";
 
 // <ButtonProps>
-export interface IButtonExampleProps {
+export interface IButtonExampleProps extends IButtonProps {
   disabled?: boolean;
   checked?: boolean;
   text: string;
@@ -10,7 +11,6 @@ export interface IButtonExampleProps {
   darkMode?: string;
   icon?: string;
   className?: string;
-  styles?: { [key: string]: string };
 }
 // </ButtonProps>
 
@@ -24,11 +24,8 @@ const hanldType = (theme: { type: string; darkMode: string }): string[] => {
       return ["#212121", "#F4F4F4", "#EAEAEA", "#C8C8C8", "#333333"];
   }
 };
-// ${({ theme }): any => console.log(theme.styles)};
+
 export const ButtonWrapper = styled.div`
-  ${({ theme }): string => {
-    return theme.styles;
-  }};
   .ms-Button {
     min-width: 80px;
     width: auto;

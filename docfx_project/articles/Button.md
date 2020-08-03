@@ -15,9 +15,6 @@
 - Icon
   [!code-javascript[ButtonIcon](../../src/Dependencies/Button/examples/Button.tsx?name=ButtonIcon)]
 
-- Style
-  [!code-javascript[ButtonStyle](../../src/Dependencies/Button/examples/Button.tsx?name=ButtonStyle)]
-
 ## Example:
 
 [!code-javascript[ButtonExample](../../src/Dependencies/Button/examples/Button.tsx?name=ButtonExample)]

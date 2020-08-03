@@ -322,8 +322,8 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
           />
           <Button
             text="Clear all"
-            styles={{ color: "#333333" }}
             onClick={this.onClearFilter}
+            style={{ color: "#333333" }}
           />
         </div>
       </PanelWrapper>

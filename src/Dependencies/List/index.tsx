@@ -1,16 +1,11 @@
 import * as React from "react";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
-import { Toggle } from "office-ui-fabric-react/lib/Toggle";
-import { Fabric } from "office-ui-fabric-react/lib/Fabric";
-import { Announced } from "office-ui-fabric-react/lib/Announced";
 import {
   ScrollablePane,
   ScrollbarVisibility,
-  IScrollablePane,
 } from "office-ui-fabric-react/lib/ScrollablePane";
 import { Sticky, StickyPositionType } from "office-ui-fabric-react/lib/Sticky";
 import {
-  DetailsList,
   DetailsHeader,
   DetailsListLayoutMode,
   Selection,
@@ -19,21 +14,17 @@ import {
   IDetailsListProps,
   DetailsRow,
   IDetailsRowStyles,
-  IDetailsHeaderProps,
 } from "office-ui-fabric-react/lib/DetailsList";
 import { ShimmeredDetailsList } from "office-ui-fabric-react/lib/ShimmeredDetailsList";
 import { MarqueeSelection } from "office-ui-fabric-react/lib/MarqueeSelection";
-import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
 import {
   StateListWrapper,
   IListProps,
   IListStates,
-  PanelWrapper,
   IColumn as IColumnCustom,
 } from "./ListStyle";
 import {
   IContextualMenuProps,
-  IContextualMenuItem,
   DirectionalHint,
   ContextualMenu,
   ContextualMenuItemType,
@@ -41,55 +32,8 @@ import {
 import { Icon } from "../@uifabric/icons";
 import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
 import { Checkbox } from "../Checkbox/index";
-import Button from "../Button";
 import { Dropdown, IDropdownOption } from "../Dropdown";
 import FilterElement from "./filterPanel";
-import { FontSizes } from "../@uifabric/styling";
-import { Text, ScrollToMode } from "office-ui-fabric-react";
-import { totalmem } from "os";
-
-const classNames = mergeStyleSets({
-  fileIconHeaderIcon: {
-    padding: 0,
-    fontSize: "16px",
-  },
-  fileIconCell: {
-    textAlign: "center",
-    selectors: {
-      "&:before": {
-        content: ".",
-        display: "inline-block",
-        verticalAlign: "middle",
-        height: "100%",
-        width: "0px",
-        visibility: "hidden",
-      },
-    },
-  },
-  fileIconImg: {
-    verticalAlign: "middle",
-    maxHeight: "16px",
-    maxWidth: "16px",
-  },
-  controlWrapper: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  exampleToggle: {
-    display: "inline-block",
-    marginBottom: "10px",
-    marginRight: "30px",
-  },
-  selectionDetails: {
-    marginBottom: "20px",
-  },
-});
-const controlStyles = {
-  root: {
-    margin: "0 30px 20px 0",
-    maxWidth: "300px",
-  },
-};
 
 export interface IListState {
   columns: IColumn[];

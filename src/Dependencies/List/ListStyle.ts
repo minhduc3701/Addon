@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { IContextualMenuItem } from "office-ui-fabric-react/lib/ContextualMenu";
 
 export interface IListProps {
   darkMode?: string;
@@ -88,6 +87,7 @@ export const StateListWrapper = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    padding-top: 0;
     .ms-DetailsHeader-cell {
       cursor: pointer;
       height: 100%;

@@ -11,15 +11,14 @@ class ButtonDefaultExample extends React.Component<IButtonExampleProps> {
         theme={{
           type: this.props.type,
           darkMode: this.props.darkMode,
-          styles: this.props.styles,
         }}
         className={this.props.className}
       >
         <DefaultButton
+          onClick={this.props.onClick}
+          {...this.props}
           iconProps={addIcon}
           text={this.props.text}
-          onClick={this.props.onClick}
-          allowDisabledFocus
           disabled={disabled}
           checked={checked}
         />

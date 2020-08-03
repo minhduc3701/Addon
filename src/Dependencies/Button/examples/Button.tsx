@@ -21,9 +21,6 @@ function App() {
         // <ButtonIcon>
         icon="Delete"
         // </ButtonIcon>
-        // <ButtonStyle>
-        styles={{ opacity: "1", height: "auto" }}
-        // </ButtonStyle>
       />
     </div>
     // </ButtonExample>
