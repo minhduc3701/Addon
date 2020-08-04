@@ -17,7 +17,7 @@ import { INodes } from "./Dependencies/TreeView/FinalTreeInterface";
 import Breadcrumb from "./Dependencies/Breadcrumb";
 // </BreadcrumbImport>
 import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcrumbStyle";
-import { DetailsListDocumentsExample } from "./Dependencies/List";
+import { DetailsListDocumentsExample } from "./Dependencies/ListCustom";
 import { Icon } from "./Dependencies/@uifabric/icons/Icon";
 
 initializeIcons();
@@ -673,7 +673,7 @@ function App() {
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <div style={{ height: "250px", width: "800px", position: "relative" }}>
+      <div style={{ height: "250px", width: "500px", position: "relative" }}>
         <DetailsListDocumentsExample
           // columns={columns}
           darkMode="dark"
@@ -687,29 +687,27 @@ function App() {
 
 export default App;
 
-{
-  /* <CalenderInline
-        autoNavigateOnSelection={true} //required
-        showGoToToday={false} //required
-        highlightSelectedMonth={true}
-        showMonthPickerAsOverlay={true}
-        showWeekNumbers={false}
-        showSixWeeksByDefault={false}
-        // <DarkMode>
-        // darkMode={"dark"}
-        // </DarkMode>
-        onSelectChanged={getDateRange}
-        // <Multilingual>
-        multilingual={Languages}
-        // </Multilingual>
-        // <Event>
-        userEvent={data}
-        // </Event>
-        // <ToggleSwitchMode>
-        switchMode={true}
-        // </ToggleSwitchMode>
-      /> */
-}
+//  <CalenderInline
+//         autoNavigateOnSelection={true} //required
+//         showGoToToday={false} //required
+//         highlightSelectedMonth={true}
+//         showMonthPickerAsOverlay={true}
+//         showWeekNumbers={false}
+//         showSixWeeksByDefault={false}
+//         // <DarkMode>
+//         // darkMode={"dark"}
+//         // </DarkMode>
+//         onSelectChanged={getDateRange}
+//         // <Multilingual>
+//         multilingual={Languages}
+//         // </Multilingual>
+//         // <Event>
+//         userEvent={data}
+//         // </Event>
+//         // <ToggleSwitchMode>
+//         switchMode={true}
+//         // </ToggleSwitchMode>
+//       />
 //       <TreeView
 //         childNodes={toppingOptions}
 //         darkMode="dark"

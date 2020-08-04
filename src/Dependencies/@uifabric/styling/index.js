@@ -44,3 +44,5 @@ export * from "./IGetFocusStyles";
 export * from "./fontFace";
 export * from "./IFontStyles";
 export * from "./ISemanticTextColors";
+export * from "./getPlaceholderStyles";
+export * from "./keyframes";
