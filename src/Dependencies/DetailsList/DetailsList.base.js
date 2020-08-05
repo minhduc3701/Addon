@@ -981,7 +981,6 @@ var DetailsListBase = /** @class */ (function (_super) {
       var column = priorityColumn[lastIndex];
       var minWidth = column.minWidth || MIN_COLUMN_WIDTH;
       var overflowWidth = totalWidth - availableWidth;
-
       // tslint:disable-next-line:deprecation
       if (
         column.calculatedWidth - minWidth >= overflowWidth ||
@@ -999,6 +998,12 @@ var DetailsListBase = /** @class */ (function (_super) {
         // adjustedColumns.splice(lastIndex, 1);
       }
       adjustedColumns = priorityColumn;
+      adjustedColumns.forEach((col) => {
+        if (col.isLast) {
+          col.isLast = false;
+        }
+      });
+      adjustedColumns[adjustedColumns.length - 1].isLast = true;
       lastIndex--;
     }
     // Then expand columns starting at the beginning, until we've filled the width.

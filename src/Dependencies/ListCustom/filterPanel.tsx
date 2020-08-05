@@ -1,10 +1,17 @@
 import * as React from "react";
-import { IFilterProps, PanelWrapper, CalendarWrapper } from "./ListStyle";
+import {
+  IFilterProps,
+  PanelWrapper,
+  CalendarWrapper,
+  PanelContentWrapper,
+  FilterColumnWrapper,
+} from "./ListStyle";
 import { Dropdown, IDropdownOption } from "../Dropdown";
 import { Checkbox } from "../Checkbox/index";
 import Button from "../Button";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
 import CalenderInline from "calendar-custom/CalenderInline";
+import { Icon } from "../@uifabric/icons";
 
 class Breadcrumd extends React.Component<IFilterProps, any> {
   constructor(props: IFilterProps) {
@@ -13,8 +20,32 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       type: undefined,
       value: undefined,
       result: [],
+      resultColumns: [],
+      isFilterColumns: false,
+      optionsFilterCol: [],
+      filterColKey: [],
     };
   }
+
+  componentDidMount() {
+    this.onGetOptionFromColumns();
+  }
+
+  onGetOptionFromColumns = async () => {
+    let currentColumns = this.props.columns;
+    let optionsFilter: IDropdownOption[] = [];
+    await currentColumns.forEach((item) => {
+      optionsFilter.push({
+        key: item.key,
+        text: item.name,
+      });
+    });
+    if (optionsFilter.length > 0) {
+      this.setState({
+        optionsFilterCol: optionsFilter,
+      });
+    }
+  };
 
   onSelectDrop = (
     event: React.FormEvent<HTMLDivElement>,
@@ -25,7 +56,34 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       this.setState({
         type: option.key,
         value: this.state.value ? this.state.value : "",
+        // key
+        // operator
       });
+    }
+  };
+
+  onSelectDropColumnsFilter = (
+    event: React.FormEvent<HTMLDivElement>,
+    option?: IDropdownOption,
+    index?: number
+  ) => {
+    if (option) {
+      let currentResultCol = [...this.state.filterColKey];
+      if (option.selected) {
+        currentResultCol.push(option.key);
+        this.setState({
+          filterColKey: currentResultCol,
+        });
+      }
+      if (!option.selected) {
+        let index = currentResultCol.findIndex((col) => col === option.key);
+        if (index !== -1) {
+          currentResultCol.splice(index, 1);
+          this.setState({
+            filterColKey: currentResultCol,
+          });
+        }
+      }
     }
   };
 
@@ -91,6 +149,7 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
                       ? true
                       : false
                   }
+                  disabled={this.state.isFilterColumns}
                   onChange={(e) => this.onCheckedBox(e, true)}
                 />
               </li>
@@ -103,6 +162,7 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
                       ? true
                       : false
                   }
+                  disabled={this.state.isFilterColumns}
                   onChange={(e) => this.onCheckedBox(e, false)}
                 />
               </li>
@@ -122,6 +182,7 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
               showSixWeeksByDefault={false}
               onSelectChanged={this.onGetDataCalendar}
               switchMode={true}
+              darkMode={this.props.darkMode}
             />
           </CalendarWrapper>
         );
@@ -134,16 +195,19 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
                 label="Operator"
                 placeHolder="Select filter"
                 options={options}
+                disabled={this.state.isFilterColumns}
                 onChange={this.onSelectDrop}
               />
             </li>
             <li>
               <TextField
-                disabled={this.state.type ? false : true}
+                disabled={
+                  this.state.type && !this.state.isFilterColumns ? false : true
+                }
                 label="Value"
                 required
                 onChange={this.onChangeInput}
-                value={this.state.value}
+                value={this.state.value ? this.state.value : ""}
               />
             </li>
           </ul>
@@ -167,14 +231,12 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       switch (type) {
         case "equal":
           let resultEqual = items.filter((item) => {
-            for (const keys in item) {
-              let itemVal =
-                typeof item[keyCol] === "string"
-                  ? item[keyCol].toLocaleLowerCase()
-                  : item[keyCol].toString();
-              if (itemVal === value) {
-                return true;
-              }
+            let itemVal =
+              typeof item[keyCol] === "string"
+                ? item[keyCol].toLocaleLowerCase()
+                : item[keyCol].toString();
+            if (itemVal === value) {
+              return true;
             }
             return false;
           });
@@ -185,14 +247,12 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
 
         case "notEqual":
           let resultNotEqual = items.filter((item) => {
-            for (const keys in item) {
-              let itemVal =
-                typeof item[keyCol] === "string"
-                  ? item[keyCol].toLocaleLowerCase()
-                  : item[keyCol].toString();
-              if (itemVal !== value) {
-                return true;
-              }
+            let itemVal =
+              typeof item[keyCol] === "string"
+                ? item[keyCol].toLocaleLowerCase()
+                : item[keyCol].toString();
+            if (itemVal !== value) {
+              return true;
             }
             return false;
           });
@@ -202,14 +262,12 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
           break;
         case "contains":
           let resultContain = items.filter((item) => {
-            for (const keys in item) {
-              let string =
-                typeof item[keyCol] === "string"
-                  ? item[keyCol].toLocaleLowerCase()
-                  : item[keyCol].toString();
-              if (string.indexOf(value) !== -1) {
-                return true;
-              }
+            let string =
+              typeof item[keyCol] === "string"
+                ? item[keyCol].toLocaleLowerCase()
+                : item[keyCol].toString();
+            if (string.indexOf(value) !== -1) {
+              return true;
             }
             return false;
           });
@@ -219,14 +277,12 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
           break;
         case "notContains":
           let resultNotContain = items.filter((item) => {
-            for (const keys in item) {
-              let string =
-                typeof item[keyCol] === "string"
-                  ? item[keyCol].toLocaleLowerCase()
-                  : item[keyCol].toString();
-              if (string.indexOf(value) === -1) {
-                return true;
-              }
+            let string =
+              typeof item[keyCol] === "string"
+                ? item[keyCol].toLocaleLowerCase()
+                : item[keyCol].toString();
+            if (string.indexOf(value) === -1) {
+              return true;
             }
             return false;
           });
@@ -287,44 +343,120 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
 
   onApplyFilter = async () => {
     await this.onSortByFilter();
-    this.props.onGetItem && this.props.onGetItem(this.state.result);
+    this.props.onGetItem &&
+      this.props.onGetItem(this.state.result, this.state.resultColumns);
+  };
+
+  onFilterColumns = async () => {
+    let currentColumns = [...this.props.columns];
+    if (this.state.filterColKey.length > 0) {
+      let newCol = currentColumns.filter((col) => {
+        if (this.state.filterColKey.includes(col.key)) {
+          return true;
+        }
+        return false;
+      });
+      await this.setState({
+        resultColumns: newCol,
+      });
+      this.props.onGetItem &&
+        this.props.onGetItem(this.state.result, this.state.resultColumns);
+    } else {
+      await this.setState({
+        isFilterColumns: false,
+        filterColKey: [],
+      });
+    }
   };
 
   render() {
     let { targetColumn } = this.props;
     return (
-      <PanelWrapper>
-        {targetColumn &&
-          ["number", "string"].includes(targetColumn.data) &&
-          this.onRenderCheckBox("numString")}
-        {targetColumn &&
-          targetColumn.data === "boolean" &&
-          this.onRenderCheckBox("boolean")}
-        {targetColumn &&
-          targetColumn.data === "date" &&
-          this.onRenderCheckBox("date")}
-        <div className="btn-panel-group">
-          <Button
-            type="Primary"
-            text="Apply"
-            disabled={
-              (typeof this.state.value !== "object" && this.state.value) ||
-              this.state.type === "boolean" ||
-              (Array.isArray(this.state.value) &&
-                this.state.value.length >= 1) ||
-              (typeof this.state.value === "object" && this.state.value)
-                ? false
-                : true
-            }
-            onClick={
-              this.state.type && this.state.value !== undefined
-                ? this.onApplyFilter
-                : undefined
-            }
-          />
-          <Button text="Clear all" onClick={this.onClearFilter} />
-        </div>
-      </PanelWrapper>
+      <PanelContentWrapper>
+        <PanelWrapper theme={this.props.darkMode}>
+          {targetColumn &&
+            ["number", "string"].includes(targetColumn.data) &&
+            this.onRenderCheckBox("numString")}
+          {targetColumn &&
+            targetColumn.data === "boolean" &&
+            this.onRenderCheckBox("boolean")}
+          {targetColumn &&
+            targetColumn.data === "date" &&
+            this.onRenderCheckBox("date")}
+          <div className="btn-panel-group">
+            <Button
+              type="Primary"
+              text="Apply"
+              disabled={
+                (typeof this.state.value !== "object" &&
+                  this.state.value &&
+                  !this.state.isFilterColumns) ||
+                (this.state.type === "boolean" &&
+                  !this.state.isFilterColumns) ||
+                (Array.isArray(this.state.value) &&
+                  this.state.value.length >= 1 &&
+                  !this.state.isFilterColumns) ||
+                (typeof this.state.value === "object" &&
+                  this.state.value &&
+                  !this.state.isFilterColumns)
+                  ? false
+                  : true
+              }
+              onClick={
+                this.state.type &&
+                this.state.value !== undefined &&
+                !this.state.isFilterColumns
+                  ? this.onApplyFilter
+                  : undefined
+              }
+              darkMode={this.props.darkMode}
+            />
+            <Button
+              disabled={this.state.isFilterColumns}
+              text="Clear all"
+              onClick={this.onClearFilter}
+              darkMode={this.props.darkMode}
+            />
+          </div>
+        </PanelWrapper>
+        <FilterColumnWrapper theme={this.props.darkMode}>
+          {!this.state.isFilterColumns && (
+            <p onClick={() => this.setState({ isFilterColumns: true })}>
+              Custom display by columns
+            </p>
+          )}
+          {this.state.isFilterColumns &&
+            this.state.optionsFilterCol.length > 0 && (
+              <>
+                <div className="label-row">
+                  <span>Select columns</span>
+                  <Icon
+                    iconName={
+                      this.state.filterColKey.length > 0
+                        ? "SkypeCircleCheck"
+                        : "StatusErrorFull"
+                    }
+                    style={{
+                      color: `${
+                        this.state.filterColKey.length > 0
+                          ? "#0078d4"
+                          : "#C8C8C8"
+                      }`,
+                    }}
+                    onClick={this.onFilterColumns}
+                  />
+                </div>
+                <Dropdown
+                  onChange={this.onSelectDropColumnsFilter}
+                  className="dropdown-filterCol"
+                  options={this.state.optionsFilterCol}
+                  multiSelect
+                  placeHolder="Select options"
+                />
+              </>
+            )}
+        </FilterColumnWrapper>
+      </PanelContentWrapper>
     );
   }
 }

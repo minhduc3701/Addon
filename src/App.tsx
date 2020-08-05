@@ -668,16 +668,40 @@ function App() {
       isDisable: true,
       fileName: "tot.photo",
     },
+    {
+      name: "aaaaa",
+      status: false,
+      key: "TOT7",
+      value: "TOT",
+      iconName: "",
+      modifiedBy: "Mourinho",
+      dateModified: new Date("May 22 2020, 10:27 PM"),
+      dateModifiedValue: 888278171718,
+      fileSize: "24 KB",
+      fileSizeRaw: 24,
+      fileType: "photo",
+      sharingBy: "Hoàng",
+      isDisable: true,
+      fileName: "tot.photo",
+    },
   ];
+
+  const onHandleSelection = (a: any[]) => {
+    console.log(a);
+  };
+  const onHandleClickItem = () => {
+    console.log("clicked");
+  };
 
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <div style={{ height: "250px", width: "500px", position: "relative" }}>
+      <div style={{ height: "500px", width: "900px", position: "relative" }}>
         <DetailsListDocumentsExample
           // columns={columns}
           darkMode="dark"
           items={items}
+          onGetSelectionItem={onHandleSelection}
         />
       </div>
     </div>

@@ -109,7 +109,6 @@ var DetailsColumnBase = /** @class */ (function (_super) {
       isDraggable = _a.isDraggable,
       styles = _a.styles,
       theme = _a.theme,
-      onCancelFilter = _a.onCancelFilter,
       _b = _a.cellStyleProps,
       cellStyleProps = _b === void 0 ? DEFAULT_CELL_STYLE_PROPS : _b,
       _c = _a.useFastIcons,
@@ -136,7 +135,6 @@ var DetailsColumnBase = /** @class */ (function (_super) {
     const onClickClose = () => {
       this.props.onCancelFilter && this.props.onCancelFilter();
     };
-
     return React.createElement(
       React.Fragment,
       null,
@@ -161,7 +159,8 @@ var DetailsColumnBase = /** @class */ (function (_super) {
                   column.calculatedWidth +
                   cellStyleProps.cellLeftPadding +
                   cellStyleProps.cellRightPadding +
-                  (column.isPadded ? cellStyleProps.cellExtraRightPadding : 0)
+                  (column.isPadded ? cellStyleProps.cellExtraRightPadding : 0) +
+                  "px"
                 } - 25px)`
               : column.calculatedWidth +
                 cellStyleProps.cellLeftPadding +
@@ -282,10 +281,7 @@ var DetailsColumnBase = /** @class */ (function (_super) {
           },
           React.createElement(IconComponent, {
             className: classNames.sortIcon,
-            iconName: "ChromeClose",
-            style: {
-              fontSize: "8px",
-            },
+            iconName: "ClearFilter",
           })
         ),
       !this.props.onRenderColumnHeaderTooltip
