@@ -241,12 +241,13 @@ var DetailsColumnBase = /** @class */ (function (_super) {
                   iconName: "Filter",
                 }),
 
-              React.createElement(IconComponent, {
-                className: classNames.sortIcon,
-                iconName: column.isSortedDescending
-                  ? "ChevronUp"
-                  : "ChevronDown",
-              }),
+              column.key !== "columnIcon" &&
+                React.createElement(IconComponent, {
+                  className: classNames.sortIcon,
+                  iconName: column.isSortedDescending
+                    ? "ChevronUp"
+                    : "ChevronDown",
+                }),
               column.isGrouped &&
                 React.createElement(IconComponent, {
                   className: classNames.nearIcon,
@@ -265,6 +266,7 @@ var DetailsColumnBase = /** @class */ (function (_super) {
         )
       ),
       column.isFilter &&
+        column.key !== "columnIcon" &&
         React.createElement(
           "div",
           {

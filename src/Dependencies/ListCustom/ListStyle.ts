@@ -9,6 +9,8 @@ export interface IListProps {
   columns?: IColumn[];
   items: any[];
   onGetSelectionItem?: (selectionItems: any[]) => void;
+  onGetFilterObject?: (filterObject: IObjectFilter) => void;
+  onRowClick?: () => void;
 }
 
 export interface IListStates {
@@ -27,6 +29,7 @@ export interface IListStates {
   total: number;
   loading: boolean;
   itemCount: number;
+  newFilterColumns: any[];
 }
 
 export interface IDocument {
@@ -76,6 +79,14 @@ export interface IFilterProps {
   onGetItem?: (arr: any[], columns: IColumn[]) => void;
   columns: IColumn[];
   darkMode?: string;
+  onGetFilterObject?: any;
+}
+
+export interface IObjectFilter {
+  columnKey: string;
+  value: string | boolean | Date | Date[];
+  key: string;
+  operator: string;
 }
 
 export const StateListWrapper = styled.div`
@@ -92,6 +103,10 @@ export const StateListWrapper = styled.div`
   .ms-DetailsHeader-cellName {
     font-weight: normal;
     font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
   }
   .ms-DetailsHeader {
     display: inline-flex;
@@ -100,7 +115,8 @@ export const StateListWrapper = styled.div`
     padding-top: 0;
     .btn-closeFilter {
       &:hover {
-        background: #f4f4f4;
+        background: ${({ theme }) =>
+          theme.darkMode === "dark" ? "#000000" : "#f4f4f4"};
         i {
           color: #c11818;
         }
@@ -109,6 +125,9 @@ export const StateListWrapper = styled.div`
     .ms-DetailsHeader-cell {
       cursor: pointer;
       height: 100%;
+      .columnIcon-filter {
+        font-size: 12px !important;
+      }
       &:hover {
         background: ${({ theme }) =>
           theme.darkMode === "dark" ? "#000000" : "#F4F4F4"};
@@ -128,6 +147,10 @@ export const StateListWrapper = styled.div`
   }
   .ms-DetailsRow {
     cursor: pointer;
+    width: 100%;
+    .column-icon {
+      padding-left: 6px;
+    }
     .name-col {
       color: ${({ theme }) =>
         theme.darkMode === "dark" ? "#ffffff" : "#212121"};
@@ -150,10 +173,29 @@ export const StateListWrapper = styled.div`
   .ms-Check {
     cursor: pointer;
   }
+  .ms-ScrollablePane--contentContainer {
+    .ms-DetailsList {
+      overflow-x: hidden;
+    }
+  }
 `;
 
 // .ms-ScrollablePane--contentContainer::-webkit-scrollbar {
 //   width: 10px;
+// }
+// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button {
+//   color: red;
+//   background-color: red;
+//   border-color: red;
+// }
+// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:horizontal:increment {
+//   background-image: url(https://dl.dropboxusercontent.com/u/55165267/icon2.png);
+// }
+// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:end:increment {
+//   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQwNC4zMDggNDA0LjMwOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDA0LjMwOCA0MDQuMzA5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTAsMTAxLjA4aDQwNC4zMDhMMjAyLjE1MSwzMDMuMjI5TDAsMTAxLjA4eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
+// }
+// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:start:decrement {
+//   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDI1NSAyNTUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iYXJyb3ctZHJvcC11cCI+CgkJPHBvbHlnb24gcG9pbnRzPSIwLDE5MS4yNSAxMjcuNSw2My43NSAyNTUsMTkxLjI1ICAgIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==)
 // }
 // .ms-ScrollablePane--contentContainer::-webkit-scrollbar-thumb {
 //   background: ${({ theme }) =>
@@ -224,40 +266,56 @@ export const PanelContentWrapper = styled.div`
   height: 100%;
 `;
 
-export const FilterColumnWrapper = styled.div`
-  .ms-Dropdown-container {
-    padding-bottom: 20px;
-  }
-  .label-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 5px;
-    span {
-      color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
-      cursor: default;
-    }
-    i {
-      color: #0078d4;
-      cursor: pointer;
-      transtion: ease linear 0.3s;
-      &:hover {
-        font-size: 15px;
+export const MenuFilterWrapper = styled.div`
+  padding: 5px 0 5px 10px;
+  .ms-Checkbox {
+    .ms-Checkbox-label {
+      .ms-Checkbox-checkbox {
+        border-radius: 0;
+        border-color: ${({ theme }) =>
+          theme === "dark" ? "#ffffff" : "rgb(50, 49, 48)"};
+      }
+      .ms-Checkbox-text {
+        color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#333333")};
       }
     }
   }
-  p {
-    text-align: center;
-    color: #0078d4;
-    cursor: pointer;
-  }
 `;
 
-export const DropAndTextWrapper = styled.div`
-  .ms-TextField {
-    .ms-TextField-wrapper {
+export const OptionAndTextWrapper = styled.div`
+  ul li {
+    .ms-Dropdown-container {
+      .ms-Dropdown-label {
+        color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
+      }
+      .ms-Dropdown-title {
+        border-color: ${({ theme }) =>
+          theme === "dark" ? "#ffffff" : "#212121"};
+        background-color: ${({ theme }) =>
+          theme === "dark" ? "#212121" : "#ffffff"};
+        color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
+      }
+    }
+    .ms-TextField {
       .ms-Label {
-        color: red;
+        color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
+      }
+      .ms-TextField-fieldGroup {
+        border-color: ${({ theme }) => theme === "dark" && "#ffffff"};
+        input:-webkit-autofill {
+          -webkit-text-fill-color: ${({ theme }) =>
+            theme === "dark" && "#ffffff"} !important;
+          -webkit-box-shadow: ${({ theme }) =>
+            theme === "dark" && "0 0 0 30px #212121 inset !important"};
+        }
+      }
+    }
+    .is-disabled {
+      .ms-TextField-fieldGroup {
+        border-color: ${({ theme }) => theme === "dark" && "rgb(96, 94, 92)"};
+        input {
+          background-color: ${({ theme }) => theme === "dark" && "#212121"};
+        }
       }
     }
   }

@@ -19,6 +19,7 @@ import Breadcrumb from "./Dependencies/Breadcrumb";
 import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcrumbStyle";
 import { DetailsListDocumentsExample } from "./Dependencies/ListCustom";
 import { Icon } from "./Dependencies/@uifabric/icons/Icon";
+import { IObjectFilter } from "./Dependencies/ListCustom/ListStyle";
 
 initializeIcons();
 
@@ -307,7 +308,7 @@ function App() {
       value: "CHE",
       iconName: "",
       modifiedBy: "Lampart",
-      dateModified: new Date("Aug 3 2020, 10:00 AM"),
+      dateModified: new Date("Jan 17 2008, 7:00 AM"),
       dateModifiedValue: 2118911711214,
       fileSize: "115 KB",
       fileSizeRaw: 115,
@@ -323,7 +324,7 @@ function App() {
       value: "LIV",
       iconName: "",
       modifiedBy: "Kloop",
-      dateModified: new Date("Dec 29 2018, 4:57 PM"),
+      dateModified: new Date("Jan 18 2008, 4:57 AM"),
       dateModifiedValue: 798788171881,
       fileSize: "80 KB",
       fileSizeRaw: 80,
@@ -547,7 +548,7 @@ function App() {
       value: "MUN",
       iconName: "",
       modifiedBy: "Ole",
-      dateModified: new Date("Jan 17 2008, 7:12 PM"),
+      dateModified: new Date("Jan 17 2008, 4:55 PM"),
       dateModifiedValue: 5302985205285,
       fileSize: "75 KB",
       fileSizeRaw: 75,
@@ -611,7 +612,7 @@ function App() {
       value: "MUN",
       iconName: "",
       modifiedBy: "Ole",
-      dateModified: new Date("Jan 17 2008, 7:12 PM"),
+      dateModified: new Date("Jan 17 2008, 8:30 AM"),
       dateModifiedValue: 5302985205285,
       fileSize: "75 KB",
       fileSizeRaw: 75,
@@ -668,29 +669,17 @@ function App() {
       isDisable: true,
       fileName: "tot.photo",
     },
-    {
-      name: "aaaaa",
-      status: false,
-      key: "TOT7",
-      value: "TOT",
-      iconName: "",
-      modifiedBy: "Mourinho",
-      dateModified: new Date("May 22 2020, 10:27 PM"),
-      dateModifiedValue: 888278171718,
-      fileSize: "24 KB",
-      fileSizeRaw: 24,
-      fileType: "photo",
-      sharingBy: "Hoàng",
-      isDisable: true,
-      fileName: "tot.photo",
-    },
   ];
 
   const onHandleSelection = (a: any[]) => {
     console.log(a);
   };
-  const onHandleClickItem = () => {
+  const onHandleRowClick = () => {
     console.log("clicked");
+  };
+
+  const onHandleFilterObject = (obj: IObjectFilter) => {
+    console.log(obj);
   };
 
   // <ExampleUsingCalendar>
@@ -699,9 +688,11 @@ function App() {
       <div style={{ height: "500px", width: "900px", position: "relative" }}>
         <DetailsListDocumentsExample
           // columns={columns}
-          darkMode="dark"
+          // darkMode="dark"
           items={items}
           onGetSelectionItem={onHandleSelection}
+          onGetFilterObject={onHandleFilterObject}
+          onRowClick={onHandleRowClick}
         />
       </div>
     </div>

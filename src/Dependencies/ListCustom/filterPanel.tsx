@@ -4,14 +4,13 @@ import {
   PanelWrapper,
   CalendarWrapper,
   PanelContentWrapper,
-  FilterColumnWrapper,
+  OptionAndTextWrapper,
 } from "./ListStyle";
 import { Dropdown, IDropdownOption } from "../Dropdown";
 import { Checkbox } from "../Checkbox/index";
 import Button from "../Button";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
 import CalenderInline from "calendar-custom/CalenderInline";
-import { Icon } from "../@uifabric/icons";
 
 class Breadcrumd extends React.Component<IFilterProps, any> {
   constructor(props: IFilterProps) {
@@ -24,28 +23,9 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       isFilterColumns: false,
       optionsFilterCol: [],
       filterColKey: [],
+      operator: undefined,
     };
   }
-
-  componentDidMount() {
-    this.onGetOptionFromColumns();
-  }
-
-  onGetOptionFromColumns = async () => {
-    let currentColumns = this.props.columns;
-    let optionsFilter: IDropdownOption[] = [];
-    await currentColumns.forEach((item) => {
-      optionsFilter.push({
-        key: item.key,
-        text: item.name,
-      });
-    });
-    if (optionsFilter.length > 0) {
-      this.setState({
-        optionsFilterCol: optionsFilter,
-      });
-    }
-  };
 
   onSelectDrop = (
     event: React.FormEvent<HTMLDivElement>,
@@ -56,34 +36,8 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       this.setState({
         type: option.key,
         value: this.state.value ? this.state.value : "",
-        // key
-        // operator
+        operator: option.key,
       });
-    }
-  };
-
-  onSelectDropColumnsFilter = (
-    event: React.FormEvent<HTMLDivElement>,
-    option?: IDropdownOption,
-    index?: number
-  ) => {
-    if (option) {
-      let currentResultCol = [...this.state.filterColKey];
-      if (option.selected) {
-        currentResultCol.push(option.key);
-        this.setState({
-          filterColKey: currentResultCol,
-        });
-      }
-      if (!option.selected) {
-        let index = currentResultCol.findIndex((col) => col === option.key);
-        if (index !== -1) {
-          currentResultCol.splice(index, 1);
-          this.setState({
-            filterColKey: currentResultCol,
-          });
-        }
-      }
     }
   };
 
@@ -108,7 +62,7 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       this.setState({ type: undefined, value: undefined });
     }
     if (currentValue !== value) {
-      this.setState({ type: "boolean", value });
+      this.setState({ type: "boolean", value, operator: "equal" });
     }
   };
 
@@ -116,12 +70,14 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
     if (Array.isArray(val)) {
       this.setState({
         type: "dateContains",
+        operator: "contains",
         value: val,
       });
     }
     if (!Array.isArray(val)) {
       this.setState({
         type: "date",
+        operator: "equal",
         value: new Date(val),
       });
     }
@@ -189,28 +145,37 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
 
       default:
         return (
-          <ul>
-            <li>
-              <Dropdown
-                label="Operator"
-                placeHolder="Select filter"
-                options={options}
-                disabled={this.state.isFilterColumns}
-                onChange={this.onSelectDrop}
-              />
-            </li>
-            <li>
-              <TextField
-                disabled={
-                  this.state.type && !this.state.isFilterColumns ? false : true
-                }
-                label="Value"
-                required
-                onChange={this.onChangeInput}
-                value={this.state.value ? this.state.value : ""}
-              />
-            </li>
-          </ul>
+          <OptionAndTextWrapper theme={this.props.darkMode}>
+            <ul>
+              <li>
+                <Dropdown
+                  label="Operator"
+                  placeHolder="Select filter"
+                  options={options}
+                  onChange={this.onSelectDrop}
+                />
+              </li>
+              <li>
+                <TextField
+                  disabled={this.state.type ? false : true}
+                  label="Value"
+                  required
+                  onChange={this.onChangeInput}
+                  value={this.state.value ? this.state.value : ""}
+                  styles={{
+                    fieldGroup: {
+                      backgroundColor:
+                        this.props.darkMode === "dark" ? "#212121" : "#ffffff",
+                    },
+                    field: {
+                      color:
+                        this.props.darkMode === "dark" ? "#ffffff" : "#212121",
+                    },
+                  }}
+                />
+              </li>
+            </ul>
+          </OptionAndTextWrapper>
         );
     }
   };
@@ -293,9 +258,10 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
 
         case "date":
           let resultDate = items.filter((item) => {
+            let selectedDate = new Date(item[keyCol]);
             if (
               Object.prototype.toString.call(value) === "[object Date]" &&
-              item[keyCol].setHours(0, 0, 0, 0).valueOf() === value.valueOf()
+              selectedDate.setHours(0, 0, 0, 0).valueOf() === value.valueOf()
             ) {
               return true;
             }
@@ -308,16 +274,18 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
 
         case "dateContains":
           let resultDateContain = items.filter((item) => {
+            let selectedDate = new Date(item[keyCol]);
             let index = value.findIndex(
               (val: { date: Date }) =>
                 val.date.valueOf() ===
-                item[keyCol].setHours(0, 0, 0, 0).valueOf()
+                selectedDate.setHours(0, 0, 0, 0).valueOf()
             );
             if (index !== -1) {
               return true;
             }
             return false;
           });
+          console.log(resultDateContain);
           await this.setState({
             result: resultDateContain,
           });
@@ -343,30 +311,15 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
 
   onApplyFilter = async () => {
     await this.onSortByFilter();
+    this.props.onGetFilterObject &&
+      this.props.onGetFilterObject({
+        columnKey: this.props.targetColumn.key,
+        key: this.props.targetColumn.fieldName,
+        value: this.state.value ? this.state.value : "",
+        operator: this.state.operator,
+      });
     this.props.onGetItem &&
       this.props.onGetItem(this.state.result, this.state.resultColumns);
-  };
-
-  onFilterColumns = async () => {
-    let currentColumns = [...this.props.columns];
-    if (this.state.filterColKey.length > 0) {
-      let newCol = currentColumns.filter((col) => {
-        if (this.state.filterColKey.includes(col.key)) {
-          return true;
-        }
-        return false;
-      });
-      await this.setState({
-        resultColumns: newCol,
-      });
-      this.props.onGetItem &&
-        this.props.onGetItem(this.state.result, this.state.resultColumns);
-    } else {
-      await this.setState({
-        isFilterColumns: false,
-        filterColKey: [],
-      });
-    }
   };
 
   render() {
@@ -419,43 +372,6 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
             />
           </div>
         </PanelWrapper>
-        <FilterColumnWrapper theme={this.props.darkMode}>
-          {!this.state.isFilterColumns && (
-            <p onClick={() => this.setState({ isFilterColumns: true })}>
-              Custom display by columns
-            </p>
-          )}
-          {this.state.isFilterColumns &&
-            this.state.optionsFilterCol.length > 0 && (
-              <>
-                <div className="label-row">
-                  <span>Select columns</span>
-                  <Icon
-                    iconName={
-                      this.state.filterColKey.length > 0
-                        ? "SkypeCircleCheck"
-                        : "StatusErrorFull"
-                    }
-                    style={{
-                      color: `${
-                        this.state.filterColKey.length > 0
-                          ? "#0078d4"
-                          : "#C8C8C8"
-                      }`,
-                    }}
-                    onClick={this.onFilterColumns}
-                  />
-                </div>
-                <Dropdown
-                  onChange={this.onSelectDropColumnsFilter}
-                  className="dropdown-filterCol"
-                  options={this.state.optionsFilterCol}
-                  multiSelect
-                  placeHolder="Select options"
-                />
-              </>
-            )}
-        </FilterColumnWrapper>
       </PanelContentWrapper>
     );
   }
