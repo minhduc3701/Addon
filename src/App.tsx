@@ -20,10 +20,14 @@ import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcrumbStyle";
 import { DetailsListDocumentsExample } from "./Dependencies/ListCustom";
 import { Icon } from "./Dependencies/@uifabric/icons/Icon";
 import { IObjectFilter } from "./Dependencies/ListCustom/ListStyle";
+import axios from "axios";
 
 initializeIcons();
 
 function App() {
+  // useState<IUser>({name: 'Jon'});
+  const [serverItems, setServerItems] = React.useState<any[]>([]);
+
   const getTreeView = (value: INodes[]) => {
     console.log(value);
   };
@@ -270,26 +274,11 @@ function App() {
     },
   ];
 
-  //     key: i.toString(),
-  //     name: fileName,
-  //     value: fileName,
-  //     iconName: randomFileType.url,
-  //     fileType: randomFileType.docType,
-  //     modifiedBy: userName,
-  //     dateModified: randomDate.dateFormatted,
-  //     dateModifiedValue: randomDate.value,
-  //     fileSize: randomFileSize.value,
-  //     fileSizeRaw: randomFileSize.rawSize,
-  //     sharing: `${fileName}--aaa`,
-  //     isDisable: true,
-  //     fileName: "feFile2.docx",
-
   const items = [
     {
       name: "Manchester United",
       status: true,
       key: "MUN",
-      value: "MUN",
       iconName: "",
       modifiedBy: "Ole",
       dateModified: new Date("Jan 17 2008, 7:12 PM"),
@@ -305,7 +294,6 @@ function App() {
       name: "Chelsea FC",
       status: false,
       key: "CHE",
-      value: "CHE",
       iconName: "",
       modifiedBy: "Lampart",
       dateModified: new Date("Jan 17 2008, 7:00 AM"),
@@ -321,7 +309,6 @@ function App() {
       name: "Liverpool FC",
       status: true,
       key: "LIV",
-      value: "LIV",
       iconName: "",
       modifiedBy: "Kloop",
       dateModified: new Date("Jan 18 2008, 4:57 AM"),
@@ -337,7 +324,6 @@ function App() {
       name: "Spurs",
       status: false,
       key: "TOT",
-      value: "TOT",
       iconName: "",
       modifiedBy: "Mourinho",
       dateModified: new Date("May 22 2020, 2:27 PM"),
@@ -353,7 +339,6 @@ function App() {
       name: "Manchester United",
       status: true,
       key: "MUN2",
-      value: "MUN",
       iconName: "",
       modifiedBy: "Ole",
       dateModified: new Date("Jan 17 2008, 7:12 PM"),
@@ -369,7 +354,6 @@ function App() {
       name: "Chelsea FC",
       status: false,
       key: "CHE2",
-      value: "CHE",
       iconName: "",
       modifiedBy: "Lampart",
       dateModified: new Date("Aug 11 2020, 3:12 AM"),
@@ -385,7 +369,6 @@ function App() {
       name: "Liverpool FC",
       status: true,
       key: "LIV2",
-      value: "LIV",
       iconName: "",
       modifiedBy: "Kloop",
       dateModified: new Date("Dec 29 2018, 4:57 PM"),
@@ -401,7 +384,6 @@ function App() {
       name: "Spurs",
       status: false,
       key: "TOT2",
-      value: "TOT",
       iconName: "",
       modifiedBy: "Mourinho",
       dateModified: new Date("May 22 2020, 2:27 PM"),
@@ -417,7 +399,6 @@ function App() {
       name: "Manchester United",
       status: true,
       key: "MUN3",
-      value: "MUN",
       iconName: "",
       modifiedBy: "Ole",
       dateModified: new Date("Jan 17 2008, 7:12 PM"),
@@ -433,7 +414,6 @@ function App() {
       name: "Chelsea FC",
       status: false,
       key: "CHE3",
-      value: "CHE",
       iconName: "",
       modifiedBy: "Lampart",
       dateModified: new Date("Aug 11 2020, 3:12 AM"),
@@ -449,7 +429,6 @@ function App() {
       name: "Liverpool FC",
       status: true,
       key: "LIV3",
-      value: "LIV",
       iconName: "",
       modifiedBy: "Kloop",
       dateModified: new Date("Dec 29 2018, 4:57 PM"),
@@ -465,7 +444,6 @@ function App() {
       name: "Spurs",
       status: false,
       key: "TOT3",
-      value: "TOT",
       iconName: "",
       modifiedBy: "Mourinho",
       dateModified: new Date("May 22 2020, 2:27 PM"),
@@ -481,7 +459,6 @@ function App() {
       name: "Manchester United",
       status: true,
       key: "MUN4",
-      value: "MUN",
       iconName: "",
       modifiedBy: "Ole",
       dateModified: new Date("Jan 17 2008, 7:12 PM"),
@@ -497,7 +474,6 @@ function App() {
       name: "Chelsea FC",
       status: false,
       key: "CHE4",
-      value: "CHE",
       iconName: "",
       modifiedBy: "Lampart",
       dateModified: new Date("Aug 11 2020, 3:12 AM"),
@@ -513,7 +489,6 @@ function App() {
       name: "Liverpool FC",
       status: true,
       key: "LIV4",
-      value: "LIV",
       iconName: "",
       modifiedBy: "Kloop",
       dateModified: new Date("Dec 29 2018, 4:57 PM"),
@@ -529,7 +504,6 @@ function App() {
       name: "Spurs",
       status: false,
       key: "TOT4",
-      value: "TOT",
       iconName: "",
       modifiedBy: "Mourinho",
       dateModified: new Date("May 22 2020, 2:27 PM"),
@@ -545,7 +519,6 @@ function App() {
       name: "Manchester United",
       status: true,
       key: "MUN5",
-      value: "MUN",
       iconName: "",
       modifiedBy: "Ole",
       dateModified: new Date("Jan 17 2008, 4:55 PM"),
@@ -561,7 +534,6 @@ function App() {
       name: "Chelsea FC",
       status: false,
       key: "CHE5",
-      value: "CHE",
       iconName: "",
       modifiedBy: "Lampart",
       dateModified: new Date("Aug 11 2020, 3:12 AM"),
@@ -577,7 +549,6 @@ function App() {
       name: "Liverpool FC",
       status: true,
       key: "LIV5",
-      value: "LIV",
       iconName: "",
       modifiedBy: "Kloop",
       dateModified: new Date("Dec 29 2018, 4:57 PM"),
@@ -593,7 +564,6 @@ function App() {
       name: "Spurs",
       status: false,
       key: "TOT5",
-      value: "TOT",
       iconName: "",
       modifiedBy: "Mourinho",
       dateModified: new Date("May 22 2020, 2:27 PM"),
@@ -609,7 +579,6 @@ function App() {
       name: "Manchester United",
       status: true,
       key: "MUN6",
-      value: "MUN",
       iconName: "",
       modifiedBy: "Ole",
       dateModified: new Date("Jan 17 2008, 8:30 AM"),
@@ -625,7 +594,6 @@ function App() {
       name: "Chelsea FC",
       status: false,
       key: "CHE6",
-      value: "CHE",
       iconName: "",
       modifiedBy: "Lampart",
       dateModified: new Date("Aug 11 2020, 3:12 AM"),
@@ -641,7 +609,6 @@ function App() {
       name: "Liverpool FC",
       status: true,
       key: "LIV6",
-      value: "LIV",
       iconName: "",
       modifiedBy: "Kloop",
       dateModified: new Date("Dec 29 2018, 4:57 PM"),
@@ -657,7 +624,6 @@ function App() {
       name: "Spurs",
       status: false,
       key: "TOT6",
-      value: "TOT",
       iconName: "",
       modifiedBy: "Mourinho",
       dateModified: new Date("May 22 2020, 2:27 PM"),
@@ -678,21 +644,71 @@ function App() {
     console.log("clicked");
   };
 
-  const onHandleFilterObject = (obj: IObjectFilter) => {
-    console.log(obj);
+  const onCallApi = (endpoint: string) => {
+    axios(`https://5f2cb8bfffc88500167b90aa.mockapi.io/api/files${endpoint}`)
+      .then((doc) => {
+        let res = doc.data;
+        let currentItem = [...serverItems];
+        res.forEach((item: any) => {
+          item.dateModified = new Date(item.dateModified);
+          currentItem.push(item);
+        });
+        setServerItems(currentItem);
+      })
+      .catch((err) => console.log(err));
   };
+
+  const onGetDataList = async (page: number, itemCount: number) => {
+    onCallApi(`?page=${page}&limit=${itemCount}`);
+  };
+
+  const onHandleFilterObject = (obj: IObjectFilter) => {
+    let { value, operator, key, columnKey } = obj;
+    switch (operator) {
+      case "contains":
+        axios(
+          `https://5f2cb8bfffc88500167b90aa.mockapi.io/api/files?${key}=${value}`
+        )
+          .then((doc) => {
+            let res = doc.data;
+            let result: any[] = [];
+            res.forEach((item: any) => {
+              item.dateModified = new Date(item.dateModified);
+              result.push(item);
+            });
+            setServerItems(result);
+          })
+          .catch((err) => console.log(err));
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const onHanldeCancelFilter = () => {
+    setServerItems([]);
+  };
+
+  console.log(serverItems);
+  // console.log(loading);
+  // console.log("render");
 
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <div style={{ height: "500px", width: "900px", position: "relative" }}>
+      <div style={{ height: "250px", width: "900px", position: "relative" }}>
         <DetailsListDocumentsExample
           // columns={columns}
-          // darkMode="dark"
-          items={items}
+          darkMode="dark"
+          items={serverItems}
           onGetSelectionItem={onHandleSelection}
           onGetFilterObject={onHandleFilterObject}
           onRowClick={onHandleRowClick}
+          onGetItemsList={(page: number, itemCount: number) =>
+            onGetDataList(page, itemCount)
+          }
+          onRemoveFilter={onHanldeCancelFilter}
         />
       </div>
     </div>

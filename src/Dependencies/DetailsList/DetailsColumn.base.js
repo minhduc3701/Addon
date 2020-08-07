@@ -154,18 +154,21 @@ var DetailsColumnBase = /** @class */ (function (_super) {
           "data-is-draggable": isDraggable,
           draggable: isDraggable,
           style: {
-            width: column.isFilter
-              ? `calc(${
-                  column.calculatedWidth +
+            width:
+              column.isFilter && !column.isIconOnly
+                ? `calc(${
+                    column.calculatedWidth +
+                    cellStyleProps.cellLeftPadding +
+                    cellStyleProps.cellRightPadding +
+                    (column.isPadded
+                      ? cellStyleProps.cellExtraRightPadding
+                      : 0) +
+                    "px"
+                  } - 30px)`
+                : column.calculatedWidth +
                   cellStyleProps.cellLeftPadding +
                   cellStyleProps.cellRightPadding +
-                  (column.isPadded ? cellStyleProps.cellExtraRightPadding : 0) +
-                  "px"
-                } - 25px)`
-              : column.calculatedWidth +
-                cellStyleProps.cellLeftPadding +
-                cellStyleProps.cellRightPadding +
-                (column.isPadded ? cellStyleProps.cellExtraRightPadding : 0),
+                  (column.isPadded ? cellStyleProps.cellExtraRightPadding : 0),
           },
           "data-automationid": "ColumnsHeaderColumn",
           "data-item-key": column.key,
@@ -272,7 +275,7 @@ var DetailsColumnBase = /** @class */ (function (_super) {
           {
             className: "btn-closeFilter",
             style: {
-              width: "25px",
+              width: "30px",
               height: "100%",
               display: "flex",
               cursor: "pointer",

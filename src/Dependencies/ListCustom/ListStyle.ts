@@ -11,6 +11,8 @@ export interface IListProps {
   onGetSelectionItem?: (selectionItems: any[]) => void;
   onGetFilterObject?: (filterObject: IObjectFilter) => void;
   onRowClick?: () => void;
+  onGetItemsList?: (page: number, itemsCount: number) => void;
+  onRemoveFilter?: () => void;
 }
 
 export interface IListStates {
@@ -27,9 +29,11 @@ export interface IListStates {
   targetColumn?: IColumn;
   filter: { type?: string | number; value?: string };
   total: number;
-  loading: boolean;
   itemCount: number;
   newFilterColumns: any[];
+  page: number;
+  loading: boolean;
+  isFiltered: boolean;
 }
 
 export interface IDocument {
@@ -114,6 +118,9 @@ export const StateListWrapper = styled.div`
     align-items: center;
     padding-top: 0;
     .btn-closeFilter {
+      i {
+        padding-left: 0;
+      }
       &:hover {
         background: ${({ theme }) =>
           theme.darkMode === "dark" ? "#000000" : "#f4f4f4"};
@@ -125,6 +132,27 @@ export const StateListWrapper = styled.div`
     .ms-DetailsHeader-cell {
       cursor: pointer;
       height: 100%;
+      .ms-DetailsHeader-checkTooltip .ms-DetailsHeader-check {
+        .ms-Check {
+          .ms-Icon {
+            color: ${({ theme }) => theme.darkMode === "dark" && "#ffffff"};
+          }
+          &::before {
+            background: ${({ theme }) =>
+              theme.darkMode === "dark" && "#212121"};
+          }
+        }
+        .is-checked {
+          .ms-Icon {
+            color: ${({ theme }) =>
+              theme.darkMode === "dark" && "#212121"} !important;
+          }
+          &::before {
+            background: ${({ theme }) =>
+              theme.darkMode === "dark" && "rgb(105, 175, 229)"} !important;
+          }
+        }
+      }
       .columnIcon-filter {
         font-size: 12px !important;
       }
@@ -148,8 +176,31 @@ export const StateListWrapper = styled.div`
   .ms-DetailsRow {
     cursor: pointer;
     width: 100%;
+    .ms-DetailsRow-cell {
+      .ms-DetailsRow-check {
+        .ms-Check {
+          .ms-Icon {
+            color: ${({ theme }) => theme.darkMode === "dark" && "#ffffff"};
+          }
+          &::before {
+            background: ${({ theme }) =>
+              theme.darkMode === "dark" && "#212121"};
+          }
+        }
+        .is-checked {
+          .ms-Icon {
+            color: ${({ theme }) =>
+              theme.darkMode === "dark" && "#212121"} !important;
+          }
+          &::before {
+            background: ${({ theme }) =>
+              theme.darkMode === "dark" && "rgb(105, 175, 229)"} !important;
+          }
+        }
+      }
+    }
     .column-icon {
-      padding-left: 6px;
+      padding-left: 8px;
     }
     .name-col {
       color: ${({ theme }) =>

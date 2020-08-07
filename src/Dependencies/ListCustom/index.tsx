@@ -189,7 +189,6 @@ export class DetailsListDocumentsExample extends React.Component<
       filterItemsResult: undefined,
       filterColumsResult: undefined,
       total: 0,
-      loading: false,
       targetColumn: undefined,
       filter: {
         type: undefined,
@@ -197,19 +196,11 @@ export class DetailsListDocumentsExample extends React.Component<
       },
       itemCount: 0,
       newFilterColumns: [],
+      page: 0,
+      loading: false,
+      isFiltered: false,
     };
   }
-
-  // componentWillMount() {
-  //   let itemHeight = document.getElementById("listWrapper")?.clientHeight;
-  //   let count = 0;
-  //   if (itemHeight) {
-  //     count = Math.floor(itemHeight / 43 + 1);
-  //     this.setState({ itemCount: count });
-  //     this.onGetItemLazy(count);
-  //     this.onSetDefaultColumns();
-  //   }
-  // }
 
   componentDidMount() {
     let itemHeight = document.getElementById("listWrapper")?.clientHeight;
@@ -217,30 +208,31 @@ export class DetailsListDocumentsExample extends React.Component<
     if (itemHeight) {
       count = Math.floor(itemHeight / 43 + 1);
       this.setState({ itemCount: count });
-      this.onGetItemLazy(count);
+      if (this.state.page < 1) {
+        this.props.onGetItemsList &&
+          this.props.onGetItemsList(this.state.page + 1, count);
+        this.setState({ page: this.state.page + 1, loading: true });
+      }
       this.onSetDefaultColumns();
     }
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps: IListProps) {
+    this.setState({
+      loading: false,
+      items: nextProps.items,
+    });
+  }
+
   // examples get data form server
-  onGetItemLazy = async (itemCount: number) => {
-    let itemData = [...this.props.items];
-    let currentItem = [...this.state.items];
-    this.setState({ loading: true });
-    if (this.state.total < itemData.length && this.state.total <= 100) {
-      let newData = itemData.splice(this.state.total, itemCount);
-      currentItem = [...currentItem, ...newData];
-      await this.setState({
-        items: currentItem,
-        loading: false,
-        total: currentItem.length,
-      });
-      this.onSetDefaultItems();
-    } else {
-      await this.setState({
-        loading: false,
-      });
-    }
+  onGetItemLazy = async (itemCount: number, items?: any[]) => {
+    await this.setState({
+      page: this.state.page + 1,
+      loading: true,
+    });
+    this.props.onGetItemsList &&
+      this.state.page > 0 &&
+      this.props.onGetItemsList(this.state.page, itemCount);
   };
 
   onSetDefaultColumns = async () => {
@@ -270,7 +262,7 @@ export class DetailsListDocumentsExample extends React.Component<
     newColumns.unshift({
       key: "columnIcon",
       name: "File Type",
-      iconName: "Filter",
+      iconName: "Settings", //CheckList
       className: "column-icon",
       iconClassName: "columnIcon-filter",
       isIconOnly: true,
@@ -347,7 +339,7 @@ export class DetailsListDocumentsExample extends React.Component<
         filterItemsResult,
       } = this.state;
       let columnToSort = filterColumsResult ? filterColumsResult : columns;
-      let itemsToSort = filterItemsResult ? filterItemsResult : items;
+      let itemsToSort = items;
       const newColumns: IColumn[] = columnToSort.slice();
       if (currentColumn && currentKey !== "filterBy") {
         const currColumn: IColumn = newColumns.filter(
@@ -371,35 +363,18 @@ export class DetailsListDocumentsExample extends React.Component<
           currColumn.fieldName!,
           currColumn.isSortedDescending
         );
-        if (filterItemsResult && !filterColumsResult) {
+        if (!filterColumsResult) {
           this.setState({
             columns,
             filterColumsResult: newColumns,
-            items,
-            filterItemsResult: newItems,
-            contextualMenu: undefined,
-          });
-        }
-        if (filterColumsResult && !filterItemsResult) {
-          this.setState({
-            filterColumsResult: newColumns,
-            columns,
             items: newItems,
             contextualMenu: undefined,
           });
         }
-        if (filterColumsResult && filterItemsResult) {
+        if (filterColumsResult) {
           this.setState({
             filterColumsResult: newColumns,
             columns,
-            items,
-            filterItemsResult: newItems,
-            contextualMenu: undefined,
-          });
-        }
-        if (!filterColumsResult && !filterItemsResult) {
-          this.setState({
-            columns: newColumns,
             items: newItems,
             contextualMenu: undefined,
           });
@@ -592,7 +567,7 @@ export class DetailsListDocumentsExample extends React.Component<
       Math.ceil(listItem?.scrollTop) ===
         listItem?.scrollHeight - listItem?.offsetHeight
     ) {
-      this.onGetItemLazy(this.state.itemCount);
+      !this.state.isFiltered && this.onGetItemLazy(this.state.itemCount);
       let index = currentColumn.findIndex((item) => item.isSorted);
       if (index !== -1) {
         currentColumn[index].isSorted = false;
@@ -601,34 +576,26 @@ export class DetailsListDocumentsExample extends React.Component<
     }
   };
 
-  onCancelFilter = () => {
+  onCancelFilter = async () => {
     let columnsArr = this.state.columns;
-    if (
-      this.state.filterColumsResult &&
-      this.state.filterColumsResult.length > 0
-    ) {
-      this.setState({
-        filterItemsResult: undefined,
-      });
-    }
-    if (
-      !this.state.filterItemsResult &&
-      this.state.filterColumsResult &&
-      this.state.filterColumsResult.length > 0
-    ) {
-      columnsArr.forEach((item) => {
-        if (item.isFilter) {
-          item.isFilter = false;
-        }
-      });
-      this.setState({
-        filterItemsResult: undefined,
-        filterColumsResult: undefined,
-      });
-    }
+    columnsArr.forEach((item) => {
+      if (item.isFilter) {
+        item.isFilter = false;
+      }
+    });
+    await this.setState({
+      filterItemsResult: undefined,
+      filterColumsResult: undefined,
+      isFiltered: false,
+      page: 0,
+      items: [],
+    });
+    this.props.onRemoveFilter && this.props.onRemoveFilter();
+    this.onGetItemLazy(this.state.itemCount);
   };
 
   onGetFilterObj = (obj: IObjectFilter) => {
+    this.setState({ isFiltered: true });
     this.props.onGetFilterObject && this.props.onGetFilterObject(obj);
   };
 
@@ -653,8 +620,8 @@ export class DetailsListDocumentsExample extends React.Component<
           {columns.length > 0 && (
             <MarqueeSelection selection={this._selection}>
               <ShimmeredDetailsList
-                enableShimmer={this.state.loading}
-                items={filterItemsResult ? filterItemsResult : items}
+                // enableShimmer={this.state.loading}
+                items={items}
                 compact={false}
                 columns={
                   filterColumsResult && filterColumsResult.length > 0
@@ -974,7 +941,10 @@ export class DetailsListDocumentsExample extends React.Component<
     let currentColumn = [...this.state.columns];
     let arrColumnsFilter = [...this.state.newFilterColumns];
     let result = currentColumn.filter((col) => {
-      if (arrColumnsFilter.includes(col.key)) {
+      if (
+        arrColumnsFilter.includes(col.key) ||
+        (arrColumnsFilter.length > 0 && col.key === "columnIcon")
+      ) {
         return true;
       }
       return false;
