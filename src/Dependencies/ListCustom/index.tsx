@@ -36,6 +36,7 @@ import { Panel, PanelType } from "../Panel";
 import { Checkbox } from "../Checkbox/index";
 import { Dropdown, IDropdownOption } from "../Dropdown";
 import FilterElement from "./filterPanel";
+import { values } from "../@uifabric/utilities";
 
 export interface IListState {
   columns: IColumn[];
@@ -146,7 +147,7 @@ const defaultColumns: IColumnCustom[] = [
     maxWidth: 250,
     data: "number",
     onRender: (item: any) => {
-      return <span>{item.fileSize}</span>;
+      return <span>{`${item.fileSizeRaw} KB`}</span>;
     },
   },
   {
@@ -1094,6 +1095,7 @@ function _copyAndSort<T>(
   const key = columnKey as keyof T;
   let item = items.find((node) => node[key]);
   let typeValue = item && typeof item[key];
+
   switch (typeValue) {
     case "number":
       return items

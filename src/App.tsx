@@ -27,6 +27,7 @@ initializeIcons();
 function App() {
   // useState<IUser>({name: 'Jon'});
   const [serverItems, setServerItems] = React.useState<any[]>([]);
+  const [isLast, setIsLast] = React.useState<boolean>(false);
 
   const getTreeView = (value: INodes[]) => {
     console.log(value);
@@ -653,45 +654,41 @@ function App() {
           item.dateModified = new Date(item.dateModified);
           currentItem.push(item);
         });
+        if (serverItems.length === currentItem.length) {
+          setIsLast(true);
+        }
         setServerItems(currentItem);
       })
       .catch((err) => console.log(err));
   };
 
   const onGetDataList = async (page: number, itemCount: number) => {
-    onCallApi(`?page=${page}&limit=${itemCount}`);
+    !isLast && onCallApi(`?page=${page}&limit=${itemCount}`);
   };
 
   const onHandleFilterObject = (obj: IObjectFilter) => {
     let { value, operator, key, columnKey } = obj;
-    switch (operator) {
-      case "contains":
-        axios(
-          `https://5f2cb8bfffc88500167b90aa.mockapi.io/api/files?${key}=${value}`
-        )
-          .then((doc) => {
-            let res = doc.data;
-            let result: any[] = [];
-            res.forEach((item: any) => {
-              item.dateModified = new Date(item.dateModified);
-              result.push(item);
-            });
-            setServerItems(result);
-          })
-          .catch((err) => console.log(err));
-        break;
-
-      default:
-        break;
-    }
+    axios(
+      `https://5f2cb8bfffc88500167b90aa.mockapi.io/api/files?${key}=${value}`
+    )
+      .then((doc) => {
+        let res = doc.data;
+        let result: any[] = [];
+        res.forEach((item: any) => {
+          item.dateModified = new Date(item.dateModified);
+          result.push(item);
+        });
+        setServerItems(result);
+      })
+      .catch((err) => console.log(err));
   };
 
   const onHanldeCancelFilter = () => {
     setServerItems([]);
   };
 
-  console.log(serverItems);
-  // console.log(loading);
+  // console.log(serverItems);
+  // console.log(isLast);
   // console.log("render");
 
   // <ExampleUsingCalendar>

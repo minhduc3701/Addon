@@ -10,7 +10,7 @@ import { Dropdown, IDropdownOption } from "../Dropdown";
 import { Checkbox } from "../Checkbox/index";
 import Button from "../Button";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
-import CalenderInline from "calendar-custom/CalenderInline";
+import CalenderInline from "../calendar-custom/CalenderInline";
 
 class Breadcrumd extends React.Component<IFilterProps, any> {
   constructor(props: IFilterProps) {
@@ -75,10 +75,11 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       });
     }
     if (!Array.isArray(val)) {
+      let valueString = val.toJSON();
       this.setState({
         type: "date",
         operator: "equal",
-        value: new Date(val),
+        value: valueString,
       });
     }
   };

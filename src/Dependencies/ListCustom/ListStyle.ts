@@ -88,7 +88,7 @@ export interface IFilterProps {
 
 export interface IObjectFilter {
   columnKey: string;
-  value: string | boolean | Date | Date[];
+  value: any;
   key: string;
   operator: string;
 }
