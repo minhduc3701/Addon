@@ -1,5 +1,4 @@
 import * as React from "react";
-import { TextField } from "../TextField";
 import { ScrollablePane, ScrollbarVisibility } from "../ScrollablePane";
 import { Sticky, StickyPositionType } from "../Sticky";
 import { Selection, SelectionMode } from "../@uifabric/utilities/selection";
@@ -34,33 +33,10 @@ import {
 import { Icon } from "../@uifabric/icons";
 import { Panel, PanelType } from "../Panel";
 import { Checkbox } from "../Checkbox/index";
-import { Dropdown, IDropdownOption } from "../Dropdown";
 import FilterElement from "./filterPanel";
-import { values } from "../@uifabric/utilities";
+import { ShimmerStylingExample } from "../Shimmer/examples/Shimmer.Styling.Example";
 
-export interface IListState {
-  columns: IColumn[];
-  items: IDocument[];
-  selectionDetails: string;
-  isModalSelection: boolean;
-  isCompactMode: boolean;
-  announcedMessage?: string;
-}
-
-export interface IDocument {
-  key: string;
-  name: string;
-  value: string;
-  iconName: string;
-  fileType: string;
-  modifiedBy: string;
-  dateModified: string;
-  dateModifiedValue: number;
-  fileSize: string;
-  fileSizeRaw: number;
-  sharing: string;
-}
-
+// <ListDefaultColumns>
 const defaultColumns: IColumnCustom[] = [
   {
     key: "column1",
@@ -91,9 +67,9 @@ const defaultColumns: IColumnCustom[] = [
         year: "numeric",
         month: "short",
         day: "2-digit",
-        hour: "numeric",
-        hour12: true,
-        minute: "2-digit",
+        // hour: "numeric",
+        // hour12: true,
+        // minute: "2-digit",
       };
       return (
         <span>
@@ -162,7 +138,7 @@ const defaultColumns: IColumnCustom[] = [
     },
   },
 ];
-
+// </ListDefaultColumns>
 export class DetailsListDocumentsExample extends React.Component<
   IListProps,
   IListStates
@@ -189,17 +165,13 @@ export class DetailsListDocumentsExample extends React.Component<
       filterBy: [],
       filterItemsResult: undefined,
       filterColumsResult: undefined,
-      total: 0,
       targetColumn: undefined,
-      filter: {
-        type: undefined,
-        value: undefined,
-      },
       itemCount: 0,
       newFilterColumns: [],
       page: 0,
-      loading: false,
       isFiltered: false,
+      order: undefined,
+      filterObject: undefined,
     };
   }
 
@@ -212,28 +184,38 @@ export class DetailsListDocumentsExample extends React.Component<
       if (this.state.page < 1) {
         this.props.onGetItemsList &&
           this.props.onGetItemsList(this.state.page + 1, count);
-        this.setState({ page: this.state.page + 1, loading: true });
+        this.setState({ page: this.state.page + 1 });
       }
       this.onSetDefaultColumns();
+    }
+    let processing = localStorage.getItem("processing");
+    if (processing) {
+      let val = JSON.parse(processing);
+      let newCol = this.state.columns.filter((col) => val.includes(col.key));
+      this.setState({
+        newFilterColumns: val,
+        // filterColumsResult: newCol,
+      });
     }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: IListProps) {
-    this.setState({
-      loading: false,
-      items: nextProps.items,
-    });
+    this.onSetDefaultItems(nextProps.items);
   }
 
   // examples get data form server
   onGetItemLazy = async (itemCount: number, items?: any[]) => {
     await this.setState({
       page: this.state.page + 1,
-      loading: true,
     });
     this.props.onGetItemsList &&
       this.state.page > 0 &&
-      this.props.onGetItemsList(this.state.page, itemCount);
+      this.props.onGetItemsList(
+        this.state.page,
+        itemCount,
+        this.state.order,
+        this.state.currentColumn?.fieldName
+      );
   };
 
   onSetDefaultColumns = async () => {
@@ -253,7 +235,6 @@ export class DetailsListDocumentsExample extends React.Component<
           isDisable: col.isDisable || false,
           priority: col.priority || 999,
           isFilter: false,
-          // iconName: "ChevronDown", // icon for header
           onColumnClick: this.onHeaderClick,
         });
       } else {
@@ -263,7 +244,7 @@ export class DetailsListDocumentsExample extends React.Component<
     newColumns.unshift({
       key: "columnIcon",
       name: "File Type",
-      iconName: "Settings", //CheckList
+      iconName: "Settings",
       className: "column-icon",
       iconClassName: "columnIcon-filter",
       isIconOnly: true,
@@ -304,8 +285,7 @@ export class DetailsListDocumentsExample extends React.Component<
     });
   };
 
-  onSetDefaultItems = async () => {
-    let itemsProps = this.state.items;
+  onSetDefaultItems = async (itemsProps: any[]) => {
     let newItems = await itemsProps.map((item) => {
       let itemArr = [];
       if (item.fileName) {
@@ -332,13 +312,7 @@ export class DetailsListDocumentsExample extends React.Component<
   ): void => {
     if (item) {
       let currentKey = item?.key;
-      const {
-        columns,
-        items,
-        currentColumn,
-        filterColumsResult,
-        filterItemsResult,
-      } = this.state;
+      const { columns, items, currentColumn, filterColumsResult } = this.state;
       let columnToSort = filterColumsResult ? filterColumsResult : columns;
       let itemsToSort = items;
       const newColumns: IColumn[] = columnToSort.slice();
@@ -350,35 +324,59 @@ export class DetailsListDocumentsExample extends React.Component<
           aToZ: [true],
           zToA: [false],
         };
-        newColumns.forEach((newCol: IColumn) => {
-          if (newCol === currColumn) {
-            currColumn.isSortedDescending = sortList[currentKey][0];
-            currColumn.isSorted = true;
-          } else {
-            newCol.isSorted = false;
-            newCol.isSortedDescending = false;
+        if (!this.props.loading) {
+          newColumns.forEach((newCol: IColumn) => {
+            if (newCol === currColumn) {
+              currColumn.isSortedDescending = sortList[currentKey][0];
+              currColumn.isSorted = true;
+            } else {
+              newCol.isSorted = false;
+              newCol.isSortedDescending = false;
+            }
+          });
+          const newItems = _copyAndSort(
+            itemsToSort,
+            currColumn.fieldName!,
+            currColumn.isSortedDescending
+          );
+          if (!filterColumsResult) {
+            this.setState({
+              columns,
+              filterColumsResult: newColumns,
+              items: newItems,
+              contextualMenu: undefined,
+            });
           }
-        });
-        const newItems = _copyAndSort(
-          itemsToSort,
-          currColumn.fieldName!,
-          currColumn.isSortedDescending
-        );
-        if (!filterColumsResult) {
-          this.setState({
-            columns,
-            filterColumsResult: newColumns,
-            items: newItems,
-            contextualMenu: undefined,
+          if (filterColumsResult) {
+            this.setState({
+              filterColumsResult: newColumns,
+              columns,
+              items: newItems,
+              contextualMenu: undefined,
+            });
+          }
+        } else {
+          newColumns.forEach((newCol: IColumn) => {
+            if (newCol === currColumn) {
+              currColumn.isSortedDescending = sortList[currentKey][0];
+              currColumn.isSorted = true;
+            } else {
+              newCol.isSorted = false;
+              newCol.isSortedDescending = false;
+            }
           });
-        }
-        if (filterColumsResult) {
           this.setState({
             filterColumsResult: newColumns,
-            columns,
-            items: newItems,
-            contextualMenu: undefined,
           });
+          this.props.onGetQueryObject &&
+            this.props.onGetQueryObject(
+              {
+                count: this.state.itemCount,
+                order: sortList[currentKey][0] ? "asc" : "desc",
+                key: currentColumn.fieldName,
+              },
+              this.state.filterObject
+            );
         }
       }
       if (currentColumn && currentKey === "filterBy") {
@@ -414,123 +412,10 @@ export class DetailsListDocumentsExample extends React.Component<
     });
   };
 
-  onCheckedBox = (ev?: React.FormEvent<HTMLElement>, value?: string) => {
-    let currentFilter = { ...this.state.filter };
-    currentFilter = { type: "boolean", value };
-    this.setState({ filter: currentFilter });
-  };
-
-  onSortByFilter = async () => {
-    let items = [...this.state.items];
-    let filterArr = [...this.state.filterBy];
-    let result = await items.filter((item) => {
-      for (const keys in item) {
-        let index = filterArr.findIndex(
-          (filterItem) => filterItem === item[keys]
-        );
-        if (index !== -1) {
-          return true;
-        }
-      }
-      return false;
-    });
-    this.setState({
-      filterItemsResult: result,
-      isPanelVisible: !this.state.isPanelVisible,
-      filterBy: [],
-    });
-  };
-
-  onSelectDrop = (
-    event: React.FormEvent<HTMLDivElement>,
-    option?: IDropdownOption,
-    index?: number
-  ) => {
-    if (option) {
-      this.setState({
-        filter: { ...this.state.filter, type: option.key },
-      });
-    }
-  };
-
-  onChangeInput = (
-    event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
-    newValue?: string
-  ) => {
-    if (newValue) {
-      this.setState({
-        filter: { ...this.state.filter, value: newValue },
-      });
-    }
-  };
-
-  onRenderCheckBox = (type: string): JSX.Element => {
-    const options: IDropdownOption[] = [
-      { key: "equal", text: "Equal" },
-      { key: "notEqual", text: "Does not equal" },
-      { key: "contains", text: "Contains" },
-      { key: "notContains", text: "Does not contain" },
-    ];
-    switch (type) {
-      case "boolean":
-        return (
-          <>
-            <p>Is done?</p>
-            <ul>
-              <li>
-                <Checkbox
-                  title="Done"
-                  label="Done"
-                  checked={
-                    this.state.filter && this.state.filter.value === "true"
-                      ? true
-                      : false
-                  }
-                  onChange={(e) => this.onCheckedBox(e, "true")}
-                />
-              </li>
-              <li>
-                <Checkbox
-                  title="Processing"
-                  label="Processing"
-                  checked={
-                    this.state.filter && this.state.filter.value === "false"
-                      ? true
-                      : false
-                  }
-                  onChange={(e) => this.onCheckedBox(e, "false")}
-                />
-              </li>
-            </ul>
-          </>
-        );
-
-      case "object":
-        return <h1>a</h1>;
-
-      default:
-        return (
-          <ul>
-            <li>
-              <Dropdown
-                label="Operator"
-                placeHolder="Select filter"
-                options={options}
-                onChange={this.onSelectDrop}
-              />
-            </li>
-            <li>
-              <TextField label="Value" required onChange={this.onChangeInput} />
-            </li>
-          </ul>
-        );
-    }
-  };
-
-  onGetResultArr = (arr: any[], columnsCustom: IColumnCustom[]) => {
+  onGetResultArr = (arr: any[]) => {
     let columnsArr = this.state.columns;
     columnsArr.forEach((item) => {
-      if (item.isFilter && columnsCustom.length === 0) {
+      if (item.isFilter) {
         item.isFilter = false;
       }
     });
@@ -540,15 +425,8 @@ export class DetailsListDocumentsExample extends React.Component<
     if (index !== -1) {
       columnsArr[index].isFilter = true;
     }
-    columnsCustom.forEach((col) => {
-      col.isFilter = true;
-    });
-    if (columnsCustom && columnsCustom.length > 0) {
-      this.setState({
-        filterColumsResult: columnsCustom,
-      });
-    }
-    if (arr.length > 0) {
+
+    if (arr) {
       this.setState({
         filterItemsResult: arr,
       });
@@ -590,14 +468,18 @@ export class DetailsListDocumentsExample extends React.Component<
       isFiltered: false,
       page: 0,
       items: [],
+      order: undefined,
+      filterObject: undefined,
     });
     this.props.onRemoveFilter && this.props.onRemoveFilter();
     this.onGetItemLazy(this.state.itemCount);
   };
 
   onGetFilterObj = (obj: IObjectFilter) => {
-    this.setState({ isFiltered: true });
-    this.props.onGetFilterObject && this.props.onGetFilterObject(obj);
+    this.setState({ isFiltered: true, filterObject: obj });
+    this.props.onGetFilterObject &&
+      this.props.loading &&
+      this.props.onGetFilterObject(obj);
   };
 
   public render() {
@@ -606,8 +488,8 @@ export class DetailsListDocumentsExample extends React.Component<
       items,
       contextualMenu,
       isPanelVisible,
-      filterItemsResult,
       targetColumn,
+      filterItemsResult,
       filterColumsResult,
     } = this.state;
 
@@ -621,14 +503,18 @@ export class DetailsListDocumentsExample extends React.Component<
           {columns.length > 0 && (
             <MarqueeSelection selection={this._selection}>
               <ShimmeredDetailsList
-                // enableShimmer={this.state.loading}
-                items={items}
+                items={
+                  filterItemsResult && !this.props.loading
+                    ? filterItemsResult
+                    : items
+                }
                 compact={false}
                 columns={
                   filterColumsResult && filterColumsResult.length > 0
                     ? filterColumsResult
                     : columns
                 }
+                // enableShimmer={true}
                 selectionMode={SelectionMode.multiple}
                 // getKey={this._getKey}
                 setKey="multiple"
@@ -640,6 +526,19 @@ export class DetailsListDocumentsExample extends React.Component<
                 onRenderRow={this._onRenderRow}
                 onRenderDetailsHeader={this._onRenderDetailsHeader}
                 onCancelFilter={this.onCancelFilter}
+                // styles={{
+                //   root: [
+                //     {
+                //       selectors: {
+                //         ":after": {
+                //           // backgroundColor: this.props.darkMode && "#212121",
+                //           backgroundImage:
+                //             "linear-gradient(transparent 30%, rgba(255, 255, 255, 0.4) 65%, rgb(27, 26, 25) 100%)",
+                //         },
+                //       },
+                //     },
+                //   ],
+                // }}
               />
             </MarqueeSelection>
           )}
@@ -652,6 +551,9 @@ export class DetailsListDocumentsExample extends React.Component<
               root: {
                 background:
                   this.props.darkMode === "dark" ? "#212121" : "#ffffff",
+                border: this.props.darkMode
+                  ? "1px solid #000000"
+                  : "transparent",
               },
               subComponentStyles: {
                 menuItem: () => {
@@ -761,44 +663,6 @@ export class DetailsListDocumentsExample extends React.Component<
     );
   }
 
-  // public componentDidUpdate(previousProps: any, previousState: IListState) {
-  //   if (
-  //     previousState.isModalSelection !== this.state.isModalSelection &&
-  //     !this.state.isModalSelection
-  //   ) {
-  //     this._selection.setAllSelected(false);
-  //   }
-  // }
-
-  private _getKey(item: any, index?: number): string {
-    return item.key;
-  }
-
-  private _onChangeCompactMode = (
-    ev: React.MouseEvent<HTMLElement>,
-    checked: boolean
-  ): void => {
-    // this.setState({ isCompactMode: checked });
-  };
-
-  private _onChangeModalSelection = (
-    ev: React.MouseEvent<HTMLElement>,
-    checked: boolean
-  ): void => {
-    // this.setState({ isModalSelection: checked });
-  };
-
-  // private _onChangeText = (
-  //   ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
-  //   text: string
-  // ): void => {
-  //   this.setState({
-  //     items: text
-  //       ? this._allItems.filter((i) => i.name.toLowerCase().indexOf(text) > -1)
-  //       : this._allItems,
-  //   });
-  // };
-
   private _onRenderDetailsHeader: IDetailsListProps["onRenderDetailsHeader"] = (
     props
   ) => {
@@ -835,15 +699,11 @@ export class DetailsListDocumentsExample extends React.Component<
         key: "aToZ",
         name: "A to Z",
         canCheck: true,
-        // checked: column.isSorted && !column.isSortedDescending,
-        // onClick: () => this._onSortColumn(column.key, false),
       },
       {
         key: "zToA",
         name: "Z to A",
         canCheck: true,
-        // checked: column.isSorted && column.isSortedDescending,
-        // onClick: () => this._onSortColumn(column.key, true),
       },
       {
         key: "divider_1",
@@ -854,19 +714,8 @@ export class DetailsListDocumentsExample extends React.Component<
         name: "Filter By",
         canCheck: true,
         checked: column.isGrouped,
-        // onClick: () => this._onGroupByColumn(column),
       },
     ];
-    // if (isGroupable(column.key)) {
-    //   items.push({
-    //     key: 'groupBy',
-    //     name: 'Group by ' + column.name,
-    //     iconProps: { iconName: 'GroupedDescending' },
-    //     canCheck: true,
-    //     checked: column.isGrouped,
-    //     // onClick: () => this._onGroupByColumn(column),
-    //   });
-    // }
     return {
       items: items,
       target: ev.currentTarget as HTMLElement,
@@ -883,7 +732,12 @@ export class DetailsListDocumentsExample extends React.Component<
     let itemsFilter: any[] = [];
     let currentColumn = [...this.state.columns];
     currentColumn.forEach((col) => {
-      if (col.key !== "columnIcon") {
+      if (
+        col.key !== "columnIcon" &&
+        this.state.newFilterColumns.includes(col.key)
+      ) {
+        itemsFilter.push({ key: col.key, name: col.name, isChecked: true });
+      } else {
         itemsFilter.push({ key: col.key, name: col.name });
       }
     });
@@ -899,6 +753,7 @@ export class DetailsListDocumentsExample extends React.Component<
             return (
               <MenuFilterWrapper theme={this.props.darkMode}>
                 <Checkbox
+                  checked={item.isChecked}
                   onChange={(e) => this.onCheckFilter(e, itemsFilter[i].key)}
                   title={item.name}
                   label={item.name}
@@ -915,7 +770,6 @@ export class DetailsListDocumentsExample extends React.Component<
       target: ev.currentTarget as HTMLElement,
       directionalHint: DirectionalHint.bottomLeftEdge,
       gapSpace: -5,
-      // isBeakVisible: true,
       onDismiss: this.onFilterColumn,
     };
   }
@@ -960,8 +814,12 @@ export class DetailsListDocumentsExample extends React.Component<
     }
     this.setState({
       contextualMenu: undefined,
-      newFilterColumns: [],
+      // newFilterColumns: [],
     });
+    localStorage.setItem(
+      "processing",
+      JSON.stringify(this.state.newFilterColumns)
+    );
   };
 
   private _onContextualMenuDismissed = (): void => {
@@ -969,10 +827,6 @@ export class DetailsListDocumentsExample extends React.Component<
       contextualMenu: undefined,
     });
   };
-
-  private _onItemInvoked(item: any): void {
-    alert(`Item invoked: ${item.name}`);
-  }
 
   private _getSelectionDetails(): void {
     const selectionItem = this._selection.getSelection();
@@ -985,7 +839,6 @@ export class DetailsListDocumentsExample extends React.Component<
     if (props) {
       let { darkMode } = this.props;
       if (props.item.isDisable) {
-        // Every other row renders with a different background color
         customStyles.root = {
           color: darkMode === "dark" ? "#D5D5D5" : "#333333",
           background: darkMode === "dark" ? "#212121" : "#ffffff",
@@ -1013,7 +866,6 @@ export class DetailsListDocumentsExample extends React.Component<
 
   renderRowFields = (props: IDetailsRowFieldsProps) => {
     const onRowFieldsClick = (key: string) => {
-      // let item = document.getElementById(key);
       this.props.onRowClick && this.props.onRowClick();
     };
     return (
@@ -1025,65 +877,6 @@ export class DetailsListDocumentsExample extends React.Component<
         <DetailsRowFields {...props} />
       </span>
     );
-  };
-
-  private _onItemContextMenu = (
-    item: any[],
-    index: number,
-    ev: MouseEvent
-  ): boolean => {
-    const contextualMenu: IContextualMenuProps = {
-      target: ev.target as HTMLElement,
-      items: [
-        {
-          key: "text",
-          name: `${this._selection.getSelectedCount()} selected`,
-        },
-      ],
-      onDismiss: () => {
-        this.setState({
-          contextualMenu: undefined,
-        });
-      },
-    };
-
-    if (index > -1) {
-      this.setState({
-        contextualMenu: contextualMenu,
-      });
-    }
-
-    return false;
-  };
-
-  _onColumnClick = (
-    ev: React.MouseEvent<HTMLElement> | MouseEvent,
-    column?: IColumn
-  ): void => {
-    const { columns, items, currentColumn, isSortedDescending } = this.state;
-    const newColumns: IColumn[] = columns.slice();
-    const currColumn: IColumn = newColumns.filter((currCol) =>
-      column ? column.key : currentColumn?.key === currCol.key
-    )[0];
-    newColumns.forEach((newCol: IColumn) => {
-      if (newCol === currColumn) {
-        currColumn.isSortedDescending = isSortedDescending;
-        currColumn.isSorted = true;
-      } else {
-        newCol.isSorted = false;
-        newCol.isSortedDescending = true;
-      }
-    });
-    const newItems = _copyAndSort(
-      items,
-      currColumn.key,
-      currColumn.isSortedDescending
-    );
-    // this.setState({
-    //   columns: newColumns,
-    //   items: newItems,
-    //   contextualMenu: undefined,
-    // });
   };
 }
 
@@ -1151,112 +944,4 @@ function _copyAndSort<T>(
         }
       });
   }
-}
-
-function _generateDocuments() {
-  const items: IDocument[] = [];
-  for (let i = 0; i < 500; i++) {
-    const randomDate = _randomDate(new Date(2012, 0, 1), new Date());
-    const randomFileSize = _randomFileSize();
-    const randomFileType = _randomFileIcon();
-    let fileName = _lorem(2);
-    fileName =
-      fileName.charAt(0).toUpperCase() +
-      fileName.slice(1).concat(`.${randomFileType.docType}`);
-    let userName = _lorem(2);
-    userName = userName
-      .split(" ")
-      .map((name: string) => name.charAt(0).toUpperCase() + name.slice(1))
-      .join(" ");
-    items.push({
-      key: i.toString(),
-      name: fileName,
-      value: fileName,
-      iconName: randomFileType.url,
-      fileType: randomFileType.docType,
-      modifiedBy: userName,
-      dateModified: randomDate.dateFormatted,
-      dateModifiedValue: randomDate.value,
-      fileSize: randomFileSize.value,
-      fileSizeRaw: randomFileSize.rawSize,
-      sharing: `${fileName}--aaa`,
-    });
-  }
-  return items;
-}
-
-function _randomDate(
-  start: Date,
-  end: Date
-): { value: number; dateFormatted: string } {
-  const date: Date = new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime())
-  );
-  return {
-    value: date.valueOf(),
-    dateFormatted: date.toLocaleDateString(),
-  };
-}
-
-const FILE_ICONS: { name: string }[] = [
-  { name: "accdb" },
-  { name: "audio" },
-  { name: "code" },
-  { name: "csv" },
-  { name: "docx" },
-  { name: "dotx" },
-  { name: "mpp" },
-  { name: "mpt" },
-  { name: "model" },
-  { name: "one" },
-  { name: "onetoc" },
-  { name: "potx" },
-  { name: "ppsx" },
-  { name: "pdf" },
-  { name: "photo" },
-  { name: "pptx" },
-  { name: "presentation" },
-  { name: "potx" },
-  { name: "pub" },
-  { name: "rtf" },
-  { name: "spreadsheet" },
-  { name: "txt" },
-  { name: "vector" },
-  { name: "vsdx" },
-  { name: "vssx" },
-  { name: "vstx" },
-  { name: "xlsx" },
-  { name: "xltx" },
-  { name: "xsn" },
-];
-
-function _randomFileIcon(): { docType: string; url: string } {
-  const docType: string =
-    FILE_ICONS[Math.floor(Math.random() * FILE_ICONS.length)].name;
-  return {
-    docType,
-    url: `https://static2.sharepointonline.com/files/fabric/assets/item-types/16/${docType}.svg`,
-  };
-}
-
-function _randomFileSize(): { value: string; rawSize: number } {
-  const fileSize: number = Math.floor(Math.random() * 100) + 30;
-  return {
-    value: `${fileSize} KB`,
-    rawSize: fileSize,
-  };
-}
-
-const LOREM_IPSUM = (
-  "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut " +
-  "labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut " +
-  "aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore " +
-  "eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt "
-).split(" ");
-let loremIndex = 0;
-function _lorem(wordCount: number): string {
-  const startIndex =
-    loremIndex + wordCount > LOREM_IPSUM.length ? 0 : loremIndex;
-  loremIndex = startIndex + wordCount;
-  return LOREM_IPSUM.slice(startIndex, loremIndex).join(" ");
 }

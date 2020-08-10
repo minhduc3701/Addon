@@ -5,6 +5,7 @@ import {
   CalendarWrapper,
   PanelContentWrapper,
   OptionAndTextWrapper,
+  IFilterState,
 } from "./ListStyle";
 import { Dropdown, IDropdownOption } from "../Dropdown";
 import { Checkbox } from "../Checkbox/index";
@@ -12,7 +13,7 @@ import Button from "../Button";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
 import CalenderInline from "../calendar-custom/CalenderInline";
 
-class Breadcrumd extends React.Component<IFilterProps, any> {
+class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
   constructor(props: IFilterProps) {
     super(props);
     this.state = {
@@ -20,9 +21,6 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       value: undefined,
       result: [],
       resultColumns: [],
-      isFilterColumns: false,
-      optionsFilterCol: [],
-      filterColKey: [],
       operator: undefined,
     };
   }
@@ -66,7 +64,7 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
     }
   };
 
-  onGetDataCalendar = (val: Date | Date[]): void => {
+  onGetDataCalendar = (val: Date | { date: Date }[]): void => {
     if (Array.isArray(val)) {
       this.setState({
         type: "dateContains",
@@ -106,7 +104,6 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
                       ? true
                       : false
                   }
-                  disabled={this.state.isFilterColumns}
                   onChange={(e) => this.onCheckedBox(e, true)}
                 />
               </li>
@@ -119,7 +116,6 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
                       ? true
                       : false
                   }
-                  disabled={this.state.isFilterColumns}
                   onChange={(e) => this.onCheckedBox(e, false)}
                 />
               </li>
@@ -162,7 +158,11 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
                   label="Value"
                   required
                   onChange={this.onChangeInput}
-                  value={this.state.value ? this.state.value : ""}
+                  value={
+                    this.state.value && typeof this.state.value === "string"
+                      ? this.state.value
+                      : ""
+                  }
                   styles={{
                     fieldGroup: {
                       backgroundColor:
@@ -262,7 +262,7 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
             let selectedDate = new Date(item[keyCol]);
             if (
               Object.prototype.toString.call(value) === "[object Date]" &&
-              selectedDate.setHours(0, 0, 0, 0).valueOf() === value.valueOf()
+              selectedDate.setHours(0, 0, 0, 0).valueOf() === value?.valueOf()
             ) {
               return true;
             }
@@ -276,17 +276,18 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
         case "dateContains":
           let resultDateContain = items.filter((item) => {
             let selectedDate = new Date(item[keyCol]);
-            let index = value.findIndex(
-              (val: { date: Date }) =>
-                val.date.valueOf() ===
-                selectedDate.setHours(0, 0, 0, 0).valueOf()
-            );
-            if (index !== -1) {
-              return true;
+            if (Array.isArray(value)) {
+              let index = value?.findIndex(
+                (val: { date: Date }) =>
+                  val.date.valueOf() ===
+                  selectedDate.setHours(0, 0, 0, 0).valueOf()
+              );
+              if (index !== -1) {
+                return true;
+              }
             }
             return false;
           });
-          console.log(resultDateContain);
           await this.setState({
             result: resultDateContain,
           });
@@ -316,11 +317,13 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
       this.props.onGetFilterObject({
         columnKey: this.props.targetColumn.key,
         key: this.props.targetColumn.fieldName,
-        value: this.state.value ? this.state.value : "",
+        value:
+          this.state.value || this.state.value === false
+            ? this.state.value
+            : "",
         operator: this.state.operator,
       });
-    this.props.onGetItem &&
-      this.props.onGetItem(this.state.result, this.state.resultColumns);
+    this.props.onGetItem && this.props.onGetItem(this.state.result);
   };
 
   render() {
@@ -342,31 +345,22 @@ class Breadcrumd extends React.Component<IFilterProps, any> {
               type="Primary"
               text="Apply"
               disabled={
-                (typeof this.state.value !== "object" &&
-                  this.state.value &&
-                  !this.state.isFilterColumns) ||
-                (this.state.type === "boolean" &&
-                  !this.state.isFilterColumns) ||
+                (typeof this.state.value !== "object" && this.state.value) ||
+                this.state.type === "boolean" ||
                 (Array.isArray(this.state.value) &&
-                  this.state.value.length >= 1 &&
-                  !this.state.isFilterColumns) ||
-                (typeof this.state.value === "object" &&
-                  this.state.value &&
-                  !this.state.isFilterColumns)
+                  this.state.value.length >= 1) ||
+                (typeof this.state.value === "object" && this.state.value)
                   ? false
                   : true
               }
               onClick={
-                this.state.type &&
-                this.state.value !== undefined &&
-                !this.state.isFilterColumns
+                this.state.type && this.state.value !== undefined
                   ? this.onApplyFilter
                   : undefined
               }
               darkMode={this.props.darkMode}
             />
             <Button
-              disabled={this.state.isFilterColumns}
               text="Clear all"
               onClick={this.onClearFilter}
               darkMode={this.props.darkMode}

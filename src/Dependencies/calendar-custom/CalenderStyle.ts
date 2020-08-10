@@ -82,7 +82,7 @@ export interface ICalendarInlineExampleProps {
   workWeekDays?: DayOfWeek[];
   firstDayOfWeek?: DayOfWeek;
   darkMode?: string;
-  onSelectChanged?: (val: Date | Date[]) => void;
+  onSelectChanged?: (val: Date | { date: Date }[]) => void;
   multilingual?: ICalendarStrings;
   userEvent?: eventExamples;
   switchMode?: boolean;

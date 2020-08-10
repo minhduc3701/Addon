@@ -1,55 +1,58 @@
 import styled from "styled-components";
-import {
-  IContextualMenuProps,
-  IContextualMenuItem,
-} from "../@uifabric/utilities/ContextualMenu copy";
+import { IContextualMenuProps } from "../@uifabric/utilities/ContextualMenu copy";
 
+// <ListProps>
 export interface IListProps {
   darkMode?: string;
   columns?: IColumn[];
   items: any[];
+  loading: boolean;
   onGetSelectionItem?: (selectionItems: any[]) => void;
   onGetFilterObject?: (filterObject: IObjectFilter) => void;
   onRowClick?: () => void;
-  onGetItemsList?: (page: number, itemsCount: number) => void;
+  onGetItemsList?: (
+    page: number,
+    itemsCount: number,
+    order?: string,
+    fieldName?: string
+  ) => void;
   onRemoveFilter?: () => void;
+  onGetQueryObject?: (
+    sortObject: ISortObject,
+    filterObject?: IObjectFilter
+  ) => void;
 }
+// </ListProps>
+
+// <ListSortObject>
+export interface ISortObject {
+  count: number;
+  order?: string;
+  key?: string;
+}
+// </ListSortObject>
 
 export interface IListStates {
   items: any[];
   columns: IColumn[];
   filterItemsResult?: IColumn[];
   filterColumsResult?: IColumn[];
-  selectionDetails: any;
+  selectionDetails: void;
   contextualMenu?: IContextualMenuProps;
   isSortedDescending: boolean;
   currentColumn: IColumn | null;
   isPanelVisible: boolean;
   filterBy: string[];
   targetColumn?: IColumn;
-  filter: { type?: string | number; value?: string };
-  total: number;
   itemCount: number;
-  newFilterColumns: any[];
+  newFilterColumns: string[];
   page: number;
-  loading: boolean;
   isFiltered: boolean;
+  order?: string;
+  filterObject?: IObjectFilter;
 }
 
-export interface IDocument {
-  key: string;
-  name: string;
-  value: string;
-  iconName: string;
-  fileType: string;
-  modifiedBy: string;
-  dateModified: string;
-  dateModifiedValue: number;
-  fileSize: string;
-  fileSizeRaw: number;
-  sharing: string;
-}
-
+// <ListColumns>
 export interface IColumn {
   key: string;
   name: string;
@@ -62,7 +65,7 @@ export interface IColumn {
   minWidth: number;
   maxWidth?: number;
   onColumnClick?: (ev: React.MouseEvent<HTMLElement>, column: IColumn) => void;
-  onRender?: (item?: any, index?: number, column?: IColumn) => any;
+  onRender?: (item?: any, index?: number, column?: IColumn) => JSX.Element;
   isRowHeader?: boolean;
   isResizable?: boolean;
   isSorted?: boolean;
@@ -76,21 +79,32 @@ export interface IColumn {
   priority?: number;
   isFilter?: boolean;
 }
+// </ListColumns>
 
 export interface IFilterProps {
   targetColumn: IColumn;
   items: any[];
-  onGetItem?: (arr: any[], columns: IColumn[]) => void;
+  onGetItem?: (arr: any[]) => void;
   columns: IColumn[];
   darkMode?: string;
-  onGetFilterObject?: any;
+  onGetFilterObject: (obj: IObjectFilter) => void;
 }
 
+// <ListFilterObject>
 export interface IObjectFilter {
   columnKey: string;
-  value: any;
-  key: string;
-  operator: string;
+  value: string | boolean | Date | { date: Date }[];
+  key?: string;
+  operator?: string | number;
+}
+// </ListFilterObject>
+
+export interface IFilterState {
+  type?: string | number;
+  value?: string | boolean | { date: Date }[] | Date;
+  result: any[];
+  resultColumns: [];
+  operator?: string | number;
 }
 
 export const StateListWrapper = styled.div`
@@ -232,12 +246,20 @@ export const StateListWrapper = styled.div`
 `;
 
 // .ms-ScrollablePane--contentContainer::-webkit-scrollbar {
-//   width: 10px;
+//   background-color: transparent;
+//   cursor: pointer;
+//   border-right: 1px solid #000000;
 // }
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button {
-//   color: red;
-//   background-color: red;
-//   border-color: red;
+// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-thumb {
+//   background: ${({ theme }) =>
+//     theme.darkMode === "dark" ? "#c8c8c8" : "#F4F4F4"};
+//   border-radius: 10px;
+//   background-clip: content-box;
+//   border: solid 6px transparent;
+// }
+// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button,
+// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-corner {
+//   background: transparent;
 // }
 // .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:horizontal:increment {
 //   background-image: url(https://dl.dropboxusercontent.com/u/55165267/icon2.png);
@@ -246,11 +268,7 @@ export const StateListWrapper = styled.div`
 //   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQwNC4zMDggNDA0LjMwOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDA0LjMwOCA0MDQuMzA5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTAsMTAxLjA4aDQwNC4zMDhMMjAyLjE1MSwzMDMuMjI5TDAsMTAxLjA4eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
 // }
 // .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:start:decrement {
-//   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDI1NSAyNTUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iYXJyb3ctZHJvcC11cCI+CgkJPHBvbHlnb24gcG9pbnRzPSIwLDE5MS4yNSAxMjcuNSw2My43NSAyNTUsMTkxLjI1ICAgIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==)
-// }
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-thumb {
-//   background: ${({ theme }) =>
-//     theme.darkMode === "dark" ? "#000000" : "#F4F4F4"};
+//   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDI1NSAyNTUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iYXJyb3ctZHJvcC11cCI+CgkJPHBvbHlnb24gcG9pbnRzPSIwLDE5MS4yNSAxMjcuNSw2My43NSAyNTUsMTkxLjI1ICAgIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
 // }
 
 export const PanelWrapper = styled.div`

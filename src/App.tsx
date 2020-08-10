@@ -19,7 +19,10 @@ import Breadcrumb from "./Dependencies/Breadcrumb";
 import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcrumbStyle";
 import { DetailsListDocumentsExample } from "./Dependencies/ListCustom";
 import { Icon } from "./Dependencies/@uifabric/icons/Icon";
-import { IObjectFilter } from "./Dependencies/ListCustom/ListStyle";
+import {
+  IObjectFilter,
+  ISortObject,
+} from "./Dependencies/ListCustom/ListStyle";
 import axios from "axios";
 
 initializeIcons();
@@ -27,7 +30,7 @@ initializeIcons();
 function App() {
   // useState<IUser>({name: 'Jon'});
   const [serverItems, setServerItems] = React.useState<any[]>([]);
-  const [isLast, setIsLast] = React.useState<boolean>(false);
+  const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   const getTreeView = (value: INodes[]) => {
     console.log(value);
@@ -199,7 +202,6 @@ function App() {
       onRender: (item: any) => {
         return (
           <div className="name-col">
-            <img src={item.iconName} />
             <span>{item.name}</span>
           </div>
         );
@@ -275,369 +277,6 @@ function App() {
     },
   ];
 
-  const items = [
-    {
-      name: "Manchester United",
-      status: true,
-      key: "MUN",
-      iconName: "",
-      modifiedBy: "Ole",
-      dateModified: new Date("Jan 17 2008, 7:12 PM"),
-      dateModifiedValue: 5302985205285,
-      fileSize: "75 KB",
-      fileSizeRaw: 75,
-      fileType: "docx",
-      sharingBy: "Đức",
-      isDisable: true,
-      fileName: "mun.docx",
-    },
-    {
-      name: "Chelsea FC",
-      status: false,
-      key: "CHE",
-      iconName: "",
-      modifiedBy: "Lampart",
-      dateModified: new Date("Jan 17 2008, 7:00 AM"),
-      dateModifiedValue: 2118911711214,
-      fileSize: "115 KB",
-      fileSizeRaw: 115,
-      fileType: "audio",
-      sharingBy: "Trung",
-      isDisable: false,
-      fileName: "chel.audio",
-    },
-    {
-      name: "Liverpool FC",
-      status: true,
-      key: "LIV",
-      iconName: "",
-      modifiedBy: "Kloop",
-      dateModified: new Date("Jan 18 2008, 4:57 AM"),
-      dateModifiedValue: 798788171881,
-      fileSize: "80 KB",
-      fileSizeRaw: 80,
-      fileType: "csv",
-      sharingBy: "Sâm",
-      isDisable: false,
-      fileName: "live.csv",
-    },
-    {
-      name: "Spurs",
-      status: false,
-      key: "TOT",
-      iconName: "",
-      modifiedBy: "Mourinho",
-      dateModified: new Date("May 22 2020, 2:27 PM"),
-      dateModifiedValue: 888278171718,
-      fileSize: "24 KB",
-      fileSizeRaw: 24,
-      fileType: "photo",
-      sharingBy: "Hoàng",
-      isDisable: true,
-      fileName: "tot.photo",
-    },
-    {
-      name: "Manchester United",
-      status: true,
-      key: "MUN2",
-      iconName: "",
-      modifiedBy: "Ole",
-      dateModified: new Date("Jan 17 2008, 7:12 PM"),
-      dateModifiedValue: 5302985205285,
-      fileSize: "75 KB",
-      fileSizeRaw: 75,
-      fileType: "docx",
-      sharingBy: "Đức",
-      isDisable: true,
-      fileName: "mun.docx",
-    },
-    {
-      name: "Chelsea FC",
-      status: false,
-      key: "CHE2",
-      iconName: "",
-      modifiedBy: "Lampart",
-      dateModified: new Date("Aug 11 2020, 3:12 AM"),
-      dateModifiedValue: 2118911711214,
-      fileSize: "115 KB",
-      fileSizeRaw: 115,
-      fileType: "audio",
-      sharingBy: "Trung",
-      isDisable: false,
-      fileName: "chel.audio",
-    },
-    {
-      name: "Liverpool FC",
-      status: true,
-      key: "LIV2",
-      iconName: "",
-      modifiedBy: "Kloop",
-      dateModified: new Date("Dec 29 2018, 4:57 PM"),
-      dateModifiedValue: 798788171881,
-      fileSize: "80 KB",
-      fileSizeRaw: 80,
-      fileType: "csv",
-      sharingBy: "Sâm",
-      isDisable: false,
-      fileName: "live.csv",
-    },
-    {
-      name: "Spurs",
-      status: false,
-      key: "TOT2",
-      iconName: "",
-      modifiedBy: "Mourinho",
-      dateModified: new Date("May 22 2020, 2:27 PM"),
-      dateModifiedValue: 888278171718,
-      fileSize: "24 KB",
-      fileSizeRaw: 24,
-      fileType: "photo",
-      sharingBy: "Hoàng",
-      isDisable: true,
-      fileName: "tot.photo",
-    },
-    {
-      name: "Manchester United",
-      status: true,
-      key: "MUN3",
-      iconName: "",
-      modifiedBy: "Ole",
-      dateModified: new Date("Jan 17 2008, 7:12 PM"),
-      dateModifiedValue: 5302985205285,
-      fileSize: "75 KB",
-      fileSizeRaw: 75,
-      fileType: "docx",
-      sharingBy: "Đức",
-      isDisable: true,
-      fileName: "mun.docx",
-    },
-    {
-      name: "Chelsea FC",
-      status: false,
-      key: "CHE3",
-      iconName: "",
-      modifiedBy: "Lampart",
-      dateModified: new Date("Aug 11 2020, 3:12 AM"),
-      dateModifiedValue: 2118911711214,
-      fileSize: "115 KB",
-      fileSizeRaw: 115,
-      fileType: "audio",
-      sharingBy: "Trung",
-      isDisable: false,
-      fileName: "chel.audio",
-    },
-    {
-      name: "Liverpool FC",
-      status: true,
-      key: "LIV3",
-      iconName: "",
-      modifiedBy: "Kloop",
-      dateModified: new Date("Dec 29 2018, 4:57 PM"),
-      dateModifiedValue: 798788171881,
-      fileSize: "80 KB",
-      fileSizeRaw: 80,
-      fileType: "csv",
-      sharingBy: "Sâm",
-      isDisable: false,
-      fileName: "live.csv",
-    },
-    {
-      name: "Spurs",
-      status: false,
-      key: "TOT3",
-      iconName: "",
-      modifiedBy: "Mourinho",
-      dateModified: new Date("May 22 2020, 2:27 PM"),
-      dateModifiedValue: 888278171718,
-      fileSize: "24 KB",
-      fileSizeRaw: 24,
-      fileType: "photo",
-      sharingBy: "Hoàng",
-      isDisable: true,
-      fileName: "tot.photo",
-    },
-    {
-      name: "Manchester United",
-      status: true,
-      key: "MUN4",
-      iconName: "",
-      modifiedBy: "Ole",
-      dateModified: new Date("Jan 17 2008, 7:12 PM"),
-      dateModifiedValue: 5302985205285,
-      fileSize: "75 KB",
-      fileSizeRaw: 75,
-      fileType: "docx",
-      sharingBy: "Đức",
-      isDisable: true,
-      fileName: "mun.docx",
-    },
-    {
-      name: "Chelsea FC",
-      status: false,
-      key: "CHE4",
-      iconName: "",
-      modifiedBy: "Lampart",
-      dateModified: new Date("Aug 11 2020, 3:12 AM"),
-      dateModifiedValue: 2118911711214,
-      fileSize: "115 KB",
-      fileSizeRaw: 115,
-      fileType: "audio",
-      sharingBy: "Trung",
-      isDisable: false,
-      fileName: "chel.audio",
-    },
-    {
-      name: "Liverpool FC",
-      status: true,
-      key: "LIV4",
-      iconName: "",
-      modifiedBy: "Kloop",
-      dateModified: new Date("Dec 29 2018, 4:57 PM"),
-      dateModifiedValue: 798788171881,
-      fileSize: "80 KB",
-      fileSizeRaw: 80,
-      fileType: "csv",
-      sharingBy: "Sâm",
-      isDisable: false,
-      fileName: "live.csv",
-    },
-    {
-      name: "Spurs",
-      status: false,
-      key: "TOT4",
-      iconName: "",
-      modifiedBy: "Mourinho",
-      dateModified: new Date("May 22 2020, 2:27 PM"),
-      dateModifiedValue: 888278171718,
-      fileSize: "24 KB",
-      fileSizeRaw: 24,
-      fileType: "photo",
-      sharingBy: "Hoàng",
-      isDisable: true,
-      fileName: "tot.photo",
-    },
-    {
-      name: "Manchester United",
-      status: true,
-      key: "MUN5",
-      iconName: "",
-      modifiedBy: "Ole",
-      dateModified: new Date("Jan 17 2008, 4:55 PM"),
-      dateModifiedValue: 5302985205285,
-      fileSize: "75 KB",
-      fileSizeRaw: 75,
-      fileType: "docx",
-      sharingBy: "Đức",
-      isDisable: true,
-      fileName: "mun.docx",
-    },
-    {
-      name: "Chelsea FC",
-      status: false,
-      key: "CHE5",
-      iconName: "",
-      modifiedBy: "Lampart",
-      dateModified: new Date("Aug 11 2020, 3:12 AM"),
-      dateModifiedValue: 2118911711214,
-      fileSize: "115 KB",
-      fileSizeRaw: 115,
-      fileType: "audio",
-      sharingBy: "Trung",
-      isDisable: false,
-      fileName: "chel.audio",
-    },
-    {
-      name: "Liverpool FC",
-      status: true,
-      key: "LIV5",
-      iconName: "",
-      modifiedBy: "Kloop",
-      dateModified: new Date("Dec 29 2018, 4:57 PM"),
-      dateModifiedValue: 798788171881,
-      fileSize: "80 KB",
-      fileSizeRaw: 80,
-      fileType: "csv",
-      sharingBy: "Sâm",
-      isDisable: false,
-      fileName: "live.csv",
-    },
-    {
-      name: "Spurs",
-      status: false,
-      key: "TOT5",
-      iconName: "",
-      modifiedBy: "Mourinho",
-      dateModified: new Date("May 22 2020, 2:27 PM"),
-      dateModifiedValue: 888278171718,
-      fileSize: "24 KB",
-      fileSizeRaw: 24,
-      fileType: "photo",
-      sharingBy: "Hoàng",
-      isDisable: true,
-      fileName: "tot.photo",
-    },
-    {
-      name: "Manchester United",
-      status: true,
-      key: "MUN6",
-      iconName: "",
-      modifiedBy: "Ole",
-      dateModified: new Date("Jan 17 2008, 8:30 AM"),
-      dateModifiedValue: 5302985205285,
-      fileSize: "75 KB",
-      fileSizeRaw: 75,
-      fileType: "docx",
-      sharingBy: "Đức",
-      isDisable: true,
-      fileName: "mun.docx",
-    },
-    {
-      name: "Chelsea FC",
-      status: false,
-      key: "CHE6",
-      iconName: "",
-      modifiedBy: "Lampart",
-      dateModified: new Date("Aug 11 2020, 3:12 AM"),
-      dateModifiedValue: 2118911711214,
-      fileSize: "115 KB",
-      fileSizeRaw: 115,
-      fileType: "audio",
-      sharingBy: "Trung",
-      isDisable: false,
-      fileName: "chel.audio",
-    },
-    {
-      name: "Liverpool FC",
-      status: true,
-      key: "LIV6",
-      iconName: "",
-      modifiedBy: "Kloop",
-      dateModified: new Date("Dec 29 2018, 4:57 PM"),
-      dateModifiedValue: 798788171881,
-      fileSize: "80 KB",
-      fileSizeRaw: 80,
-      fileType: "csv",
-      sharingBy: "Sâm",
-      isDisable: false,
-      fileName: "live.csv",
-    },
-    {
-      name: "Spurs",
-      status: false,
-      key: "TOT6",
-      iconName: "",
-      modifiedBy: "Mourinho",
-      dateModified: new Date("May 22 2020, 2:27 PM"),
-      dateModifiedValue: 888278171718,
-      fileSize: "24 KB",
-      fileSizeRaw: 24,
-      fileType: "photo",
-      sharingBy: "Hoàng",
-      isDisable: true,
-      fileName: "tot.photo",
-    },
-  ];
-
   const onHandleSelection = (a: any[]) => {
     console.log(a);
   };
@@ -645,8 +284,21 @@ function App() {
     console.log("clicked");
   };
 
+  const onHandleSort = (endpoint: string) => {
+    axios(`https://5f2fcc046b05e900163bd050.mockapi.io/api/files${endpoint}`)
+      .then((doc) => {
+        let res = doc.data;
+        setIsLoading(true);
+        res.forEach((item: any) => {
+          item.dateModified = new Date(item.dateModified);
+        });
+        setServerItems(res);
+      })
+      .catch((err) => console.log(err));
+  };
+
   const onCallApi = (endpoint: string) => {
-    axios(`https://5f2cb8bfffc88500167b90aa.mockapi.io/api/files${endpoint}`)
+    axios(`https://5f2fcc046b05e900163bd050.mockapi.io/api/files${endpoint}`)
       .then((doc) => {
         let res = doc.data;
         let currentItem = [...serverItems];
@@ -655,25 +307,38 @@ function App() {
           currentItem.push(item);
         });
         if (serverItems.length === currentItem.length) {
-          setIsLast(true);
+          setIsLoading(false);
         }
         setServerItems(currentItem);
       })
       .catch((err) => console.log(err));
   };
 
-  const onGetDataList = async (page: number, itemCount: number) => {
-    !isLast && onCallApi(`?page=${page}&limit=${itemCount}`);
+  const onGetDataList = (
+    page: number,
+    itemCount: number,
+    order?: string,
+    fieldName?: string
+  ) => {
+    if ((isLoading && (!order || !fieldName)) || (page === 1 && !isLoading)) {
+      setIsLoading(true);
+      onCallApi(`?page=${page}&limit=${itemCount}`);
+    }
+    if (isLoading && order && fieldName) {
+      onCallApi(
+        `?sortBy=${fieldName}&order=${order}&page=${page}&limit=${itemCount}`
+      );
+    }
   };
 
   const onHandleFilterObject = (obj: IObjectFilter) => {
-    let { value, operator, key, columnKey } = obj;
     axios(
-      `https://5f2cb8bfffc88500167b90aa.mockapi.io/api/files?${key}=${value}`
+      `https://5f2fcc046b05e900163bd050.mockapi.io/api/files?${obj.key}=${obj.value}`
     )
       .then((doc) => {
         let res = doc.data;
         let result: any[] = [];
+        setIsLoading(true);
         res.forEach((item: any) => {
           item.dateModified = new Date(item.dateModified);
           result.push(item);
@@ -683,29 +348,46 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  const onHanldeCancelFilter = () => {
+  const onHandleCancelFilter = () => {
     setServerItems([]);
   };
 
-  // console.log(serverItems);
-  // console.log(isLast);
-  // console.log("render");
+  const onHandleQueryObject = (
+    sortObject: ISortObject,
+    filterObj?: IObjectFilter
+  ) => {
+    if (!filterObj) {
+      onHandleSort(
+        `?sortBy=${sortObject.key}&order=${sortObject.order}&p=1&l=${sortObject.count}`
+      );
+    } else {
+      onHandleSort(
+        `?sortBy=${sortObject.key}&order=${sortObject.order}&${filterObj.key}=${filterObj.value}`
+      );
+    }
+  };
 
   // <ExampleUsingCalendar>
+
   return (
     <div className="App">
       <div style={{ height: "250px", width: "900px", position: "relative" }}>
         <DetailsListDocumentsExample
           // columns={columns}
+          loading={isLoading}
           darkMode="dark"
           items={serverItems}
           onGetSelectionItem={onHandleSelection}
           onGetFilterObject={onHandleFilterObject}
           onRowClick={onHandleRowClick}
-          onGetItemsList={(page: number, itemCount: number) =>
-            onGetDataList(page, itemCount)
-          }
-          onRemoveFilter={onHanldeCancelFilter}
+          onGetItemsList={(
+            page: number,
+            itemCount: number,
+            order?: string,
+            fieldName?: string
+          ) => onGetDataList(page, itemCount, order, fieldName)}
+          onRemoveFilter={onHandleCancelFilter}
+          onGetQueryObject={onHandleQueryObject}
         />
       </div>
     </div>
