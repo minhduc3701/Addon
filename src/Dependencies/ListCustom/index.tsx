@@ -196,6 +196,7 @@ export class DetailsListDocumentsExample extends React.Component<
         newFilterColumns: val,
         // filterColumsResult: newCol,
       });
+      this.onSetDefaultColumns(newCol);
     }
   }
 
@@ -218,8 +219,12 @@ export class DetailsListDocumentsExample extends React.Component<
       );
   };
 
-  onSetDefaultColumns = async () => {
-    let dataColumn = this.props.columns ? this.props.columns : defaultColumns;
+  onSetDefaultColumns = async (columnsSaved?: IColumnCustom[]) => {
+    let dataColumn = columnsSaved
+      ? columnsSaved
+      : this.props.columns
+      ? this.props.columns
+      : defaultColumns;
     let newColumns = await dataColumn.map((col) => {
       if (col.key !== "columnIcon") {
         return (col = {
@@ -234,7 +239,7 @@ export class DetailsListDocumentsExample extends React.Component<
           maxWidth: col.maxWidth || 450,
           isDisable: col.isDisable || false,
           priority: col.priority || 999,
-          isFilter: false,
+          isFilter: columnsSaved ? true : false,
           onColumnClick: this.onHeaderClick,
         });
       } else {
@@ -262,7 +267,13 @@ export class DetailsListDocumentsExample extends React.Component<
         );
       },
     });
-    await this.setState({ columns: newColumns });
+    if (!columnsSaved) {
+      await this.setState({ columns: newColumns });
+    }
+
+    if (columnsSaved) {
+      await this.setState({ filterColumsResult: newColumns });
+    }
   };
 
   onRenderColumnFilter = (
@@ -473,6 +484,7 @@ export class DetailsListDocumentsExample extends React.Component<
     });
     this.props.onRemoveFilter && this.props.onRemoveFilter();
     this.onGetItemLazy(this.state.itemCount);
+    localStorage.removeItem("processing");
   };
 
   onGetFilterObj = (obj: IObjectFilter) => {
@@ -737,7 +749,12 @@ export class DetailsListDocumentsExample extends React.Component<
         this.state.newFilterColumns.includes(col.key)
       ) {
         itemsFilter.push({ key: col.key, name: col.name, isChecked: true });
-      } else {
+      }
+
+      if (
+        col.key !== "columnIcon" &&
+        !this.state.newFilterColumns.includes(col.key)
+      ) {
         itemsFilter.push({ key: col.key, name: col.name });
       }
     });

@@ -228,7 +228,7 @@ export const StateListWrapper = styled.div`
   }
   .is-selected {
     background: ${({ theme }) =>
-      theme.darkMode === "dark" ? "#445B6C" : "#F4F4F4"};
+      theme.darkMode === "dark" ? "#212121" : "#F4F4F4"};
     span,
     i {
       color: ${({ theme }) =>
