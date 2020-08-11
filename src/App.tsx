@@ -323,7 +323,7 @@ function App() {
     order?: string,
     fieldName?: string
   ) => {
-    if ((isLoading && (!order || !fieldName)) || (page === 1 && !isLoading)) {
+    if ((isLoading && (!order || !fieldName)) || (page === 0 && !isLoading)) {
       setIsLoading(true);
       onCallApi(`?page=${page}&limit=${itemCount}`);
       // onCallApi(buildQuery({ top: itemCount, skip: itemCount * page }));
