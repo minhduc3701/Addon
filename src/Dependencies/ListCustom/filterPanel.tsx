@@ -21,7 +21,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
       value: undefined,
       result: [],
       resultColumns: [],
-      operator: undefined,
+      operator: "",
     };
   }
 
@@ -34,7 +34,10 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
       this.setState({
         type: option.key,
         value: this.state.value ? this.state.value : "",
-        operator: option.key,
+        operator:
+          typeof option.key !== "string"
+            ? JSON.stringify(option.key)
+            : option.key,
       });
     }
   };
@@ -60,7 +63,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
       this.setState({ type: undefined, value: undefined });
     }
     if (currentValue !== value) {
-      this.setState({ type: "boolean", value, operator: "equal" });
+      this.setState({ type: "boolean", value, operator: "eq" });
     }
   };
 
@@ -73,27 +76,25 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
       });
     }
     if (!Array.isArray(val)) {
-      let valueString = val.toJSON();
       this.setState({
         type: "date",
-        operator: "equal",
-        value: valueString,
+        operator: "eq",
+        value: val,
       });
     }
   };
 
   onRenderCheckBox = (type: string): JSX.Element => {
-    const options: IDropdownOption[] = [
-      { key: "equal", text: "Equal" },
-      { key: "notEqual", text: "Does not equal" },
+    const options: { key: string; text: string }[] = [
+      { key: "eq", text: "Equal" },
+      { key: "ne", text: "Does not equal" },
       { key: "contains", text: "Contains" },
-      { key: "notContains", text: "Does not contain" },
+      { key: "not", text: "Does not contain" },
     ];
     switch (type) {
       case "boolean":
         return (
           <>
-            <h4>Is done?</h4>
             <ul>
               <li>
                 <Checkbox
@@ -195,7 +196,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
     if (type && targetColumn?.fieldName) {
       let keyCol = targetColumn.fieldName;
       switch (type) {
-        case "equal":
+        case "eq":
           let resultEqual = items.filter((item) => {
             let itemVal =
               typeof item[keyCol] === "string"
@@ -211,7 +212,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
           });
           break;
 
-        case "notEqual":
+        case "ne":
           let resultNotEqual = items.filter((item) => {
             let itemVal =
               typeof item[keyCol] === "string"
@@ -241,7 +242,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
             result: resultContain,
           });
           break;
-        case "notContains":
+        case "not":
           let resultNotContain = items.filter((item) => {
             let string =
               typeof item[keyCol] === "string"
@@ -316,7 +317,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
     this.props.onGetFilterObject &&
       this.props.onGetFilterObject({
         columnKey: this.props.targetColumn.key,
-        key: this.props.targetColumn.fieldName,
+        key: this.props.targetColumn.fieldName!,
         value:
           this.state.value || this.state.value === false
             ? this.state.value

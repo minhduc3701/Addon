@@ -24,6 +24,8 @@ import {
   ISortObject,
 } from "./Dependencies/ListCustom/ListStyle";
 import axios from "axios";
+import buildQuery from "odata-query";
+import { stringify } from "querystring";
 
 initializeIcons();
 
@@ -280,8 +282,9 @@ function App() {
   const onHandleSelection = (a: any[]) => {
     console.log(a);
   };
-  const onHandleRowClick = () => {
+  const onHandleRowClick = (item: any) => {
     console.log("clicked");
+    console.log(item);
   };
 
   const onHandleSort = (endpoint: string) => {
@@ -323,17 +326,58 @@ function App() {
     if ((isLoading && (!order || !fieldName)) || (page === 1 && !isLoading)) {
       setIsLoading(true);
       onCallApi(`?page=${page}&limit=${itemCount}`);
+      // onCallApi(buildQuery({ top: itemCount, skip: itemCount * page }));
+      // onCallApi(`?$top=${itemCount}&$skip=${itemCount * page}`);
     }
     if (isLoading && order && fieldName) {
+      // let expand = {
+      //   [fieldName]: {
+      //     top: itemCount,
+      //     skip: itemCount * page,
+      //     orderBy: `${fieldName} ${order}`,
+      //   },
+      // };
+      // onCallApi(buildQuery({ expand });
       onCallApi(
         `?sortBy=${fieldName}&order=${order}&page=${page}&limit=${itemCount}`
+        // `?$top=${itemCount}&$skip${itemCount * page}&$orderby=${fieldName}`
       );
     }
   };
 
-  const onHandleFilterObject = (obj: IObjectFilter) => {
+  const onHandleFilterObject = async (obj: IObjectFilter) => {
+    let { key, columnKey, value, operator } = obj;
+    let endpoint: string = "";
+    switch (operator) {
+      case "contains":
+        if (Array.isArray(value)) {
+          let filterDateArr = {
+            [key]: { ge: value[0].date, le: value[value.length - 1].date },
+          };
+          endpoint = await buildQuery({ filter: filterDateArr });
+        } else {
+          let filterContains = { [key]: { contains: value } };
+          endpoint = await buildQuery({ filter: filterContains });
+        }
+        break;
+
+      case "not":
+        let filterNot = { not: { [key]: { contains: value } } };
+        endpoint = await buildQuery({ filter: filterNot });
+        break;
+
+      default:
+        let filterDefault = { [key]: { [operator]: value } };
+        endpoint = await buildQuery({ filter: filterDefault });
+        break;
+    }
+    onFilterDataFromServer(endpoint);
+  };
+
+  const onFilterDataFromServer = (endpoint: string) => {
     axios(
-      `https://5f2fcc046b05e900163bd050.mockapi.io/api/files?${obj.key}=${obj.value}`
+      `https://5f2fcc046b05e900163bd050.mockapi.io/api/files${endpoint}`
+      // `https://5f2fcc046b05e900163bd050.mockapi.io/api/files?${obj.key}=${obj.value}`
     )
       .then((doc) => {
         let res = doc.data;
@@ -356,22 +400,52 @@ function App() {
     sortObject: ISortObject,
     filterObj?: IObjectFilter
   ) => {
+    console.log(sortObject);
+    console.log(filterObj);
     if (!filterObj) {
       onHandleSort(
-        `?sortBy=${sortObject.key}&order=${sortObject.order}&p=1&l=${sortObject.count}`
+        buildQuery({
+          orderBy: [`${sortObject.key} ${sortObject.order}`],
+        })
       );
+      // onHandleSort(
+      //   // `?sortBy=${sortObject.key}&order=${sortObject.order}&p=1&l=${sortObject.count}`
+      // );
     } else {
-      onHandleSort(
-        `?sortBy=${sortObject.key}&order=${sortObject.order}&${filterObj.key}=${filterObj.value}`
-      );
+      let expand = {};
+      if (filterObj.operator === "not") {
+        expand = {
+          [sortObject.key]: {
+            filter: {
+              not: {
+                [filterObj.key]: { contains: filterObj.value },
+              },
+            },
+            orderBy: `${sortObject.key} ${sortObject.order}`,
+          },
+        };
+      } else {
+        expand = {
+          [sortObject.key]: {
+            filter: {
+              [filterObj.key]: { [filterObj.operator]: filterObj.value },
+            },
+            orderBy: `${sortObject.key} ${sortObject.order}`,
+          },
+        };
+      }
+
+      onHandleSort(buildQuery({ expand }));
+      // onHandleSort(
+      //   // `?sortBy=${sortObject.key}&order=${sortObject.order}&${filterObj.key}=${filterObj.value}`
+      // );
     }
   };
 
   // <ExampleUsingCalendar>
-
   return (
     <div className="App">
-      <div style={{ height: "250px", width: "900px", position: "relative" }}>
+      <div style={{ height: "350px", width: "900px", position: "relative" }}>
         <DetailsListDocumentsExample
           // columns={columns}
           loading={isLoading}

@@ -18,8 +18,9 @@ function App() {
   };
   //   </ListSelected>
   //   <ListRowClick>
-  const onHandleRowClick = () => {
+  const onHandleRowClick = (item: any) => {
     console.log("clicked");
+    console.log(item);
   };
   //   </ListRowClick>
 

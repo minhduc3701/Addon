@@ -239,7 +239,7 @@ export class DetailsListDocumentsExample extends React.Component<
           maxWidth: col.maxWidth || 450,
           isDisable: col.isDisable || false,
           priority: col.priority || 999,
-          isFilter: columnsSaved ? true : false,
+          isFilter: false,
           onColumnClick: this.onHeaderClick,
         });
       } else {
@@ -384,7 +384,7 @@ export class DetailsListDocumentsExample extends React.Component<
               {
                 count: this.state.itemCount,
                 order: sortList[currentKey][0] ? "asc" : "desc",
-                key: currentColumn.fieldName,
+                key: currentColumn.fieldName!,
               },
               this.state.filterObject
             );
@@ -741,20 +741,17 @@ export class DetailsListDocumentsExample extends React.Component<
     ev: React.MouseEvent<HTMLElement>,
     column: IColumn
   ): IContextualMenuProps {
-    let itemsFilter: any[] = [];
+    let itemsFilter: {
+      key: string;
+      name: string;
+      onRender?: (
+        item: any,
+        dismissMenu: (ev?: any, dismissAll?: boolean) => void
+      ) => JSX.Element;
+    }[] = [];
     let currentColumn = [...this.state.columns];
     currentColumn.forEach((col) => {
-      if (
-        col.key !== "columnIcon" &&
-        this.state.newFilterColumns.includes(col.key)
-      ) {
-        itemsFilter.push({ key: col.key, name: col.name, isChecked: true });
-      }
-
-      if (
-        col.key !== "columnIcon" &&
-        !this.state.newFilterColumns.includes(col.key)
-      ) {
+      if (col.key !== "columnIcon") {
         itemsFilter.push({ key: col.key, name: col.name });
       }
     });
@@ -770,7 +767,7 @@ export class DetailsListDocumentsExample extends React.Component<
             return (
               <MenuFilterWrapper theme={this.props.darkMode}>
                 <Checkbox
-                  checked={item.isChecked}
+                  checked={this.state.newFilterColumns.includes(item.key)}
                   onChange={(e) => this.onCheckFilter(e, itemsFilter[i].key)}
                   title={item.name}
                   label={item.name}
@@ -821,22 +818,21 @@ export class DetailsListDocumentsExample extends React.Component<
       }
       return false;
     });
-    if (result.length > 0) {
-      for (let i = 0; i < result.length; i++) {
-        result[i].isFilter = true;
-      }
-      this.setState({
-        filterColumsResult: result,
-      });
-    }
     this.setState({
       contextualMenu: undefined,
-      // newFilterColumns: [],
+      filterColumsResult: result,
     });
-    localStorage.setItem(
-      "processing",
-      JSON.stringify(this.state.newFilterColumns)
-    );
+    if (this.state.newFilterColumns.length > 0) {
+      localStorage.setItem(
+        "processing",
+        JSON.stringify(this.state.newFilterColumns)
+      );
+    } else {
+      localStorage.removeItem("processing");
+      this.setState({
+        filterColumsResult: undefined,
+      });
+    }
   };
 
   private _onContextualMenuDismissed = (): void => {
@@ -882,14 +878,14 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   renderRowFields = (props: IDetailsRowFieldsProps) => {
-    const onRowFieldsClick = (key: string) => {
-      this.props.onRowClick && this.props.onRowClick();
+    const onRowFieldsClick = (item: any) => {
+      this.props.onRowClick && this.props.onRowClick(item);
     };
     return (
       <span
         id={props.item.key}
         data-selection-disabled={true}
-        onClick={() => onRowFieldsClick(props.item.key)}
+        onClick={() => onRowFieldsClick(props.item)}
       >
         <DetailsRowFields {...props} />
       </span>
