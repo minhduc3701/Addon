@@ -424,7 +424,20 @@ function App() {
             orderBy: `${sortObject.key} ${sortObject.order}`,
           },
         };
-      } else {
+      }
+
+      if (filterObj.operator === "contains") {
+        expand = {
+          [sortObject.key]: {
+            filter: {
+              [filterObj.key]: { contains: filterObj.value },
+            },
+            orderBy: `${sortObject.key} ${sortObject.order}`,
+          },
+        };
+      }
+
+      if (filterObj.operator !== "not" && filterObj.operator !== "contains") {
         expand = {
           [sortObject.key]: {
             filter: {
