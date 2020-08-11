@@ -25,7 +25,6 @@ import {
 } from "./Dependencies/ListCustom/ListStyle";
 import axios from "axios";
 import buildQuery from "odata-query";
-import { stringify } from "querystring";
 
 initializeIcons();
 

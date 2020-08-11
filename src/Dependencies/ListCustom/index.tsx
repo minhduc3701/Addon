@@ -183,8 +183,8 @@ export class DetailsListDocumentsExample extends React.Component<
       this.setState({ itemCount: count });
       if (this.state.page < 1) {
         this.props.onGetItemsList &&
-          this.props.onGetItemsList(this.state.page +1, count);
-      this.setState({ page: this.state.page + 1 });
+          this.props.onGetItemsList(this.state.page + 1, count);
+        this.setState({ page: this.state.page + 1 });
       }
       this.onSetDefaultColumns();
     }
@@ -478,7 +478,6 @@ export class DetailsListDocumentsExample extends React.Component<
     });
     await this.setState({
       filterItemsResult: undefined,
-      filterColumsResult: undefined,
       isFiltered: false,
       page: 0,
       items: [],
