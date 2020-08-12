@@ -10,7 +10,7 @@ import {
 import { Dropdown, IDropdownOption } from "../Dropdown";
 import { Checkbox } from "../Checkbox/index";
 import Button from "../Button";
-import { TextField } from "office-ui-fabric-react/lib/TextField";
+import { TextField } from "../TextField";
 import CalenderInline from "../calendar-custom/CalenderInline";
 
 class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
@@ -68,7 +68,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
   };
 
   onGetDataCalendar = (val: Date | { date: Date }[]): void => {
-    if (Array.isArray(val)) {
+    if (Array.isArray(val) && val.length >= 2) {
       this.setState({
         type: "dateContains",
         operator: "contains",
@@ -81,6 +81,28 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
         operator: "eq",
         value: val,
       });
+    }
+  };
+
+  onApplyFilter = async () => {
+    !this.props.loading && (await this.onSortByFilter());
+    this.props.onGetFilterObject &&
+      this.props.onGetFilterObject({
+        columnKey: this.props.targetColumn.key,
+        key: this.props.targetColumn.fieldName!,
+        value:
+          this.state.value || this.state.value === false
+            ? this.state.value
+            : "",
+        operator: this.state.operator,
+      });
+    this.props.onGetItem && this.props.onGetItem(this.state.result);
+  };
+
+  onSubmitText = (e: React.KeyboardEvent) => {
+    let { keyCode } = e;
+    if (keyCode === 13 && this.state.type && this.state.value !== undefined) {
+      this.onApplyFilter();
     }
   };
 
@@ -148,7 +170,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
               <li>
                 <Dropdown
                   label="Operator"
-                  placeHolder="Select filter"
+                  placeholder="Select filter"
                   options={options}
                   onChange={this.onSelectDrop}
                 />
@@ -174,6 +196,7 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
                         this.props.darkMode === "dark" ? "#ffffff" : "#212121",
                     },
                   }}
+                  onKeyDown={this.onSubmitText}
                 />
               </li>
             </ul>
@@ -312,23 +335,9 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
     }
   };
 
-  onApplyFilter = async () => {
-    await this.onSortByFilter();
-    this.props.onGetFilterObject &&
-      this.props.onGetFilterObject({
-        columnKey: this.props.targetColumn.key,
-        key: this.props.targetColumn.fieldName!,
-        value:
-          this.state.value || this.state.value === false
-            ? this.state.value
-            : "",
-        operator: this.state.operator,
-      });
-    this.props.onGetItem && this.props.onGetItem(this.state.result);
-  };
-
   render() {
     let { targetColumn } = this.props;
+    // error when switch calendar and submit button
     return (
       <PanelContentWrapper>
         <PanelWrapper theme={this.props.darkMode}>

@@ -103,7 +103,7 @@ export interface IDetailsColumnProps
    * @defaultvalue true
    */
   useFastIcons?: boolean;
-  onCancelFilter?: () => void;
+  onCancelFilter?: (key: string) => void;
 }
 /**
  * {@docCategory DetailsList}

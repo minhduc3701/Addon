@@ -132,8 +132,8 @@ var DetailsColumnBase = /** @class */ (function (_super) {
     var classNames = this._classNames;
     var IconComponent = useFastIcons ? FontIcon : Icon;
 
-    const onClickClose = () => {
-      this.props.onCancelFilter && this.props.onCancelFilter();
+    const onClickClose = (key) => {
+      this.props.onCancelFilter && this.props.onCancelFilter(key);
     };
     return React.createElement(
       React.Fragment,
@@ -282,7 +282,7 @@ var DetailsColumnBase = /** @class */ (function (_super) {
               alignItems: "center",
               justifyContent: "center",
             },
-            onClick: onClickClose,
+            onClick: () => onClickClose(column.key),
           },
           React.createElement(IconComponent, {
             className: classNames.sortIcon,

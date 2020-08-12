@@ -317,7 +317,7 @@ export interface IDetailsListProps
    * @defaultvalue true
    */
   useFastIcons?: boolean;
-  onCancelFilter?: () => void;
+  onCancelFilter?: (key: string) => void;
 }
 /**
  * {@docCategory DetailsList}

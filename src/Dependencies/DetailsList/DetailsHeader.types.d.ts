@@ -94,7 +94,7 @@ export interface IDetailsHeaderBaseProps
    * @defaultvalue true
    */
   useFastIcons?: boolean;
-  onCancelFilter?: () => void;
+  onCancelFilter?: (key: string) => void;
 }
 /**
  * {@docCategory DetailsList}

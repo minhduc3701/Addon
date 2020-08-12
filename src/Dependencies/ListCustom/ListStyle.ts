@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { IContextualMenuProps } from "../@uifabric/utilities/ContextualMenu copy";
 
 // <ListProps>
-export interface IListProps {
+export interface IHOC {
   darkMode?: string;
   columns?: IColumn[];
   items: any[];
   loading: boolean;
   onGetSelectionItem?: (selectionItems: any[]) => void;
-  onGetFilterObject?: (filterObject: IObjectFilter) => void;
+  onGetFilterObject?: (filterData: IObjectFilter[]) => void;
   onRowClick?: (item: any) => void;
   onGetItemsList?: (
     page: number,
@@ -19,10 +19,15 @@ export interface IListProps {
   onRemoveFilter?: () => void;
   onGetQueryObject?: (
     sortObject: ISortObject,
-    filterObject?: IObjectFilter
+    filterData: IObjectFilter[]
   ) => void;
+  itemInterface?: any;
 }
 // </ListProps>
+
+export interface IListProps extends IHOC {
+  itemCount: number;
+}
 
 // <ListSortObject>
 export interface ISortObject {
@@ -49,7 +54,8 @@ export interface IListStates {
   page: number;
   isFiltered: boolean;
   order?: string;
-  filterObject?: IObjectFilter;
+  filterData: IObjectFilter[];
+  itemInterface?: any;
 }
 
 // <ListColumns>
@@ -88,6 +94,7 @@ export interface IFilterProps {
   columns: IColumn[];
   darkMode?: string;
   onGetFilterObject: (obj: IObjectFilter) => void;
+  loading: boolean;
 }
 
 // <ListFilterObject>
@@ -105,6 +112,18 @@ export interface IFilterState {
   result: any[];
   resultColumns: [];
   operator: string;
+}
+
+export interface IItemsDefaultCol {
+  key?: string; //unique value
+  dateModified?: Date;
+  name?: string;
+  status?: boolean;
+  modifiedBy?: Date | string; //Date or Date string
+  fileSizeRaw?: number;
+  sharingBy?: string;
+  isDisable?: boolean;
+  fileName?: string; //filename
 }
 
 export const StateListWrapper = styled.div`
@@ -243,33 +262,44 @@ export const StateListWrapper = styled.div`
       overflow-x: hidden;
     }
   }
-`;
 
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar {
-//   background-color: transparent;
-//   cursor: pointer;
-//   border-right: 1px solid #000000;
-// }
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-thumb {
-//   background: ${({ theme }) =>
-//     theme.darkMode === "dark" ? "#c8c8c8" : "#F4F4F4"};
-//   border-radius: 10px;
-//   background-clip: content-box;
-//   border: solid 6px transparent;
-// }
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button,
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-corner {
-//   background: transparent;
-// }
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:horizontal:increment {
-//   background-image: url(https://dl.dropboxusercontent.com/u/55165267/icon2.png);
-// }
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:end:increment {
-//   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQwNC4zMDggNDA0LjMwOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDA0LjMwOCA0MDQuMzA5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTAsMTAxLjA4aDQwNC4zMDhMMjAyLjE1MSwzMDMuMjI5TDAsMTAxLjA4eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
-// }
-// .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:start:decrement {
-//   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDI1NSAyNTUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iYXJyb3ctZHJvcC11cCI+CgkJPHBvbHlnb24gcG9pbnRzPSIwLDE5MS4yNSAxMjcuNSw2My43NSAyNTUsMTkxLjI1ICAgIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
-// }
+  .ms-ScrollablePane--contentContainer::-webkit-scrollbar {
+    background-color: ${({ theme }) =>
+      theme.darkMode === "dark" ? "#212121" : "#ffffff"};
+    cursor: pointer;
+    border-right: ${({ theme }) =>
+      theme.darkMode === "dark" ? "1px solid #000000" : "1px solid #edebe9"};
+  }
+  .ms-ScrollablePane--contentContainer::-webkit-scrollbar-thumb {
+    background: ${({ theme }) =>
+      theme.darkMode === "dark" ? "#c8c8c8" : "#c8c6c4"};
+    border-radius: 10px;
+    background-clip: content-box;
+    border: solid 6px transparent;
+    &:hover {
+      background: #98a3a6;
+      background-clip: content-box;
+      border: solid 6px transparent;
+    }
+  }
+  .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button,
+  .ms-ScrollablePane--contentContainer::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:horizontal:increment {
+    background-image: url(https://dl.dropboxusercontent.com/u/55165267/icon2.png);
+  }
+  .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:end:increment {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAAi0lEQVQokWNgGAUkAUYY48SJE9n////nIaiBkfGzhYXFNAYGBgYWJHFHRkbGYCIsXMPAwDCNgYGBgQkmwsLCEvn////1BDRufffuXQyGsxkYGBjOnDnD+vv375WMjIyBODQGe3l5/cSqGY8BGBqxasZiAFaNODXDDPjz508MCwvLEhMTk9+41A1BAADmHz3RwatzCgAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .ms-ScrollablePane--contentContainer::-webkit-scrollbar-button:start:decrement {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAAZ0lEQVQoke2MsQnDMBQF77k03kcgApkgK3g0F4HM4M7gRmgity+VGiMh9cmV/787+D3UeqSUnpLettcY4zks55wfwA4swCXpFUI4uvJNLFQDGhCbAQ2K1cBUrrY/HRFgtr11Nn9afAFsJydbydDm5gAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+`;
 
 export const PanelWrapper = styled.div`
   p {
@@ -301,6 +331,14 @@ export const PanelWrapper = styled.div`
             border-color: ${({ theme }) => theme === "dark" && "#69afe5"};
             i {
               color: ${({ theme }) => theme === "dark" && "#333333"};
+            }
+          }
+        }
+        &:hover {
+          .ms-Checkbox-label {
+            .ms-Checkbox-checkbox {
+              background-color: ${({ theme }) => theme === "dark" && "#b3d6fc"};
+              border-color: ${({ theme }) => theme === "dark" && "#b3d6fc"};
             }
           }
         }
@@ -367,6 +405,14 @@ export const MenuFilterWrapper = styled.div`
         border-color: ${({ theme }) => theme === "dark" && "#69afe5"};
         i {
           color: ${({ theme }) => theme === "dark" && "#333333"};
+        }
+      }
+    }
+    &:hover {
+      .ms-Checkbox-label {
+        .ms-Checkbox-checkbox {
+          background-color: ${({ theme }) => theme === "dark" && "#b3d6fc"};
+          border-color: ${({ theme }) => theme === "dark" && "#b3d6fc"};
         }
       }
     }

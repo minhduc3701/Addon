@@ -17,7 +17,7 @@ import { INodes } from "./Dependencies/TreeView/FinalTreeInterface";
 import Breadcrumb from "./Dependencies/Breadcrumb";
 // </BreadcrumbImport>
 import { IBreadNodesProps } from "./Dependencies/Breadcrumb/BreadcrumbStyle";
-import { DetailsListDocumentsExample } from "./Dependencies/ListCustom";
+import { ListCustom } from "./Dependencies/ListCustom";
 import { Icon } from "./Dependencies/@uifabric/icons/Icon";
 import {
   IObjectFilter,
@@ -344,33 +344,33 @@ function App() {
     }
   };
 
-  const onHandleFilterObject = async (obj: IObjectFilter) => {
-    let { key, columnKey, value, operator } = obj;
-    let endpoint: string = "";
-    switch (operator) {
-      case "contains":
-        if (Array.isArray(value)) {
-          let filterDateArr = {
-            [key]: { ge: value[0].date, le: value[value.length - 1].date },
-          };
-          endpoint = await buildQuery({ filter: filterDateArr });
-        } else {
-          let filterContains = { [key]: { contains: value } };
-          endpoint = await buildQuery({ filter: filterContains });
-        }
-        break;
-
-      case "not":
-        let filterNot = { not: { [key]: { contains: value } } };
-        endpoint = await buildQuery({ filter: filterNot });
-        break;
-
-      default:
-        let filterDefault = { [key]: { [operator]: value } };
-        endpoint = await buildQuery({ filter: filterDefault });
-        break;
-    }
-    onFilterDataFromServer(endpoint);
+  const onHandleFilterObject = async (obj: IObjectFilter[]) => {
+    let endpoint: any[] = [];
+    obj.forEach((filter) => {
+      let { key, columnKey, value, operator } = filter;
+      switch (operator) {
+        case "contains":
+          if (Array.isArray(value)) {
+            let filterDateArr = {
+              [key]: { ge: value[0].date, le: value[value.length - 1].date },
+            };
+            endpoint.push(filterDateArr);
+          } else {
+            let filterContains = { [key]: { contains: value } };
+            endpoint.push(filterContains);
+          }
+          break;
+        case "not":
+          let filterNot = { not: { [key]: { contains: value } } };
+          endpoint.push(filterNot);
+          break;
+        default:
+          let filterDefault = { [key]: { [operator]: value } };
+          endpoint.push(filterDefault);
+          break;
+      }
+    });
+    onFilterDataFromServer(buildQuery({ filter: endpoint }));
   };
 
   const onFilterDataFromServer = (endpoint: string) => {
@@ -393,15 +393,16 @@ function App() {
 
   const onHandleCancelFilter = () => {
     setServerItems([]);
+    setIsLoading(true);
   };
 
-  const onHandleQueryObject = (
+  const onHandleQueryObject = async (
     sortObject: ISortObject,
-    filterObj?: IObjectFilter
+    filterObj: IObjectFilter[]
   ) => {
     console.log(sortObject);
     console.log(filterObj);
-    if (!filterObj) {
+    if (filterObj.length === 0) {
       onHandleSort(
         buildQuery({
           orderBy: [`${sortObject.key} ${sortObject.order}`],
@@ -411,54 +412,68 @@ function App() {
       //   // `?sortBy=${sortObject.key}&order=${sortObject.order}&p=1&l=${sortObject.count}`
       // );
     } else {
+      let filterQuery: any[] = [];
       let expand = {};
-      if (filterObj.operator === "not") {
-        expand = {
-          [sortObject.key]: {
-            filter: {
-              not: {
-                [filterObj.key]: { contains: filterObj.value },
-              },
-            },
-            orderBy: `${sortObject.key} ${sortObject.order}`,
-          },
-        };
-      }
-
-      if (filterObj.operator === "contains") {
-        expand = {
-          [sortObject.key]: {
-            filter: {
-              [filterObj.key]: { contains: filterObj.value },
-            },
-            orderBy: `${sortObject.key} ${sortObject.order}`,
-          },
-        };
-      }
-
-      if (filterObj.operator !== "not" && filterObj.operator !== "contains") {
-        expand = {
-          [sortObject.key]: {
-            filter: {
-              [filterObj.key]: { [filterObj.operator]: filterObj.value },
-            },
-            orderBy: `${sortObject.key} ${sortObject.order}`,
-          },
-        };
-      }
-
+      await filterObj.forEach((filter) => {
+        let { key, columnKey, value, operator } = filter;
+        switch (operator) {
+          case "contains":
+            if (Array.isArray(value)) {
+              let filterDateArr = {
+                [key]: { ge: value[0].date, le: value[value.length - 1].date },
+              };
+              filterQuery.push(filterDateArr);
+            } else {
+              let filterContains = { [key]: { contains: value } };
+              filterQuery.push(filterContains);
+            }
+            break;
+          case "not":
+            let filterNot = { not: { [key]: { contains: value } } };
+            filterQuery.push(filterNot);
+            break;
+          default:
+            let filterDefault = { [key]: { [operator]: value } };
+            filterQuery.push(filterDefault);
+            break;
+        }
+      });
+      expand = {
+        [sortObject.key]: {
+          filter: filterQuery,
+          orderBy: `${sortObject.key} ${sortObject.order}`,
+        },
+      };
       onHandleSort(buildQuery({ expand }));
-      // onHandleSort(
-      //   // `?sortBy=${sortObject.key}&order=${sortObject.order}&${filterObj.key}=${filterObj.value}`
-      // );
+      //   // onHandleSort(
+      //   //   // `?sortBy=${sortObject.key}&order=${sortObject.order}&${filterObj.key}=${filterObj.value}`
+      //   // );
     }
   };
+
+  const itemsInterface = {
+    key: "string", //unique value
+    dateModified: "Date",
+    name: "string",
+    status: "boolean",
+    modifiedBy: "Date | string", //Date or Date string
+    fileSizeRaw: "number",
+    sharingBy: "string",
+    isDisable: "boolean",
+    fileName: "string", //filename
+  };
+
+  const itemsInterface2 = [
+    { key: "key", type: "string" },
+    { key: "dateModified", type: "Date" },
+    { key: "name", type: "string" },
+  ];
 
   // <ExampleUsingCalendar>
   return (
     <div className="App">
       <div style={{ height: "350px", width: "900px", position: "relative" }}>
-        <DetailsListDocumentsExample
+        <ListCustom
           // columns={columns}
           loading={isLoading}
           darkMode="dark"
@@ -474,6 +489,7 @@ function App() {
           ) => onGetDataList(page, itemCount, order, fieldName)}
           onRemoveFilter={onHandleCancelFilter}
           onGetQueryObject={onHandleQueryObject}
+          itemInterface={itemsInterface2}
         />
       </div>
     </div>
