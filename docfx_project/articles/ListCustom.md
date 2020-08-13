@@ -46,6 +46,3 @@
 ## Note
 
 - Loading property decide when you using sort & filter by typescript or api
-
-- Default Columns:
-  [!code-javascript[ListDefaultColumns](../../src/Dependencies/ListCustom/index.tsx?name=ListDefaultColumns)]

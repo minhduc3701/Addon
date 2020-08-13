@@ -4,7 +4,7 @@ import { IContextualMenuProps } from "../@uifabric/utilities/ContextualMenu copy
 // <ListProps>
 export interface IHOC {
   darkMode?: string;
-  columns?: IColumn[];
+  columns: IColumn[];
   items: any[];
   loading: boolean;
   onGetSelectionItem?: (selectionItems: any[]) => void;
@@ -21,7 +21,6 @@ export interface IHOC {
     sortObject: ISortObject,
     filterData: IObjectFilter[]
   ) => void;
-  itemInterface?: any;
 }
 // </ListProps>
 
@@ -32,7 +31,7 @@ export interface IListProps extends IHOC {
 // <ListSortObject>
 export interface ISortObject {
   count: number;
-  order?: string;
+  order: string;
   key: string;
 }
 // </ListSortObject>
@@ -55,7 +54,6 @@ export interface IListStates {
   isFiltered: boolean;
   order?: string;
   filterData: IObjectFilter[];
-  itemInterface?: any;
 }
 
 // <ListColumns>

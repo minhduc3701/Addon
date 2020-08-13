@@ -193,13 +193,15 @@ function App() {
     },
   ];
 
-  const columns = [
+  const defaultColumns = [
     {
       key: "column1",
       name: "Name",
       fieldName: "name",
       minWidth: 70,
-      data: "number",
+      maxWidth: 400,
+      priority: 1,
+      data: "string",
       onRender: (item: any) => {
         return (
           <div className="name-col">
@@ -214,15 +216,13 @@ function App() {
       fieldName: "dateModified",
       minWidth: 70,
       maxWidth: 250,
+      priority: 3,
       data: "date",
       onRender: (item: any) => {
         let option = {
           year: "numeric",
           month: "short",
           day: "2-digit",
-          hour: "numeric",
-          hour12: true,
-          minute: "2-digit",
         };
         return (
           <span>
@@ -240,6 +240,7 @@ function App() {
       fieldName: "modifiedBy",
       minWidth: 70,
       maxWidth: 250,
+      priority: 4,
       data: "string",
       onRender: (item: any) => {
         return <span>{item.modifiedBy}</span>;
@@ -252,6 +253,7 @@ function App() {
       minWidth: 70,
       maxWidth: 250,
       data: "string",
+      priority: 2,
       onRender: (item: any) => {
         return (
           <div>
@@ -271,13 +273,24 @@ function App() {
       name: "File Size",
       fieldName: "fileSizeRaw",
       minWidth: 70,
-      data: "object",
+      maxWidth: 250,
+      data: "number",
       onRender: (item: any) => {
-        return <span>{item.fileSize}</span>;
+        return <span>{`${item.fileSizeRaw} KB`}</span>;
+      },
+    },
+    {
+      key: "column6",
+      name: "Status",
+      fieldName: "status",
+      minWidth: 70,
+      maxWidth: 250,
+      data: "boolean",
+      onRender: (item: any) => {
+        return <span>{item.status ? "Done" : "Processing"}</span>;
       },
     },
   ];
-
   const onHandleSelection = (a: any[]) => {
     console.log(a);
   };
@@ -451,30 +464,12 @@ function App() {
     }
   };
 
-  const itemsInterface = {
-    key: "string", //unique value
-    dateModified: "Date",
-    name: "string",
-    status: "boolean",
-    modifiedBy: "Date | string", //Date or Date string
-    fileSizeRaw: "number",
-    sharingBy: "string",
-    isDisable: "boolean",
-    fileName: "string", //filename
-  };
-
-  const itemsInterface2 = [
-    { key: "key", type: "string" },
-    { key: "dateModified", type: "Date" },
-    { key: "name", type: "string" },
-  ];
-
   // <ExampleUsingCalendar>
   return (
     <div className="App">
       <div style={{ height: "350px", width: "900px", position: "relative" }}>
         <ListCustom
-          // columns={columns}
+          columns={defaultColumns}
           loading={isLoading}
           darkMode="dark"
           items={serverItems}
@@ -489,7 +484,6 @@ function App() {
           ) => onGetDataList(page, itemCount, order, fieldName)}
           onRemoveFilter={onHandleCancelFilter}
           onGetQueryObject={onHandleQueryObject}
-          itemInterface={itemsInterface2}
         />
       </div>
     </div>

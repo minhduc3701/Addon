@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IListProps, IListStates, IHOC } from "./ListStyle";
+import { IHOC } from "./ListStyle";
 import { DetailsListDocumentsExample } from "./ListCustom";
 
 export class ListCustom extends React.Component<IHOC, { itemHeight: number }> {

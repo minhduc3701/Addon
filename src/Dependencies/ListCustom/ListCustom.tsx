@@ -30,111 +30,10 @@ import {
   ContextualMenuItemType,
   IContextualMenuItem,
 } from "../@uifabric/utilities/ContextualMenu copy";
-import { Icon } from "../@uifabric/icons";
 import { Panel, PanelType } from "../Panel";
 import { Checkbox } from "../Checkbox/index";
 import FilterElement from "./filterPanel";
 
-// <ListDefaultColumns>
-const defaultColumns: IColumnCustom[] = [
-  {
-    key: "column1",
-    name: "Name",
-    fieldName: "name",
-    minWidth: 70,
-    maxWidth: 400,
-    priority: 1,
-    data: "string",
-    onRender: (item: any) => {
-      return (
-        <div className="name-col">
-          <span>{item.name}</span>
-        </div>
-      );
-    },
-  },
-  {
-    key: "column2",
-    name: "Date Modified",
-    fieldName: "dateModified",
-    minWidth: 70,
-    maxWidth: 250,
-    priority: 3,
-    data: "date",
-    onRender: (item: any) => {
-      let option = {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-      };
-      return (
-        <span>
-          {item.dateModified
-            .toLocaleDateString("en-US", option)
-            .replace(",", "")}
-        </span>
-      );
-    },
-    isPadded: true,
-  },
-  {
-    key: "column3",
-    name: "Modified By",
-    fieldName: "modifiedBy",
-    minWidth: 70,
-    maxWidth: 250,
-    priority: 4,
-    data: "string",
-    onRender: (item: any) => {
-      return <span>{item.modifiedBy}</span>;
-    },
-  },
-  {
-    key: "column4",
-    name: "Sharing",
-    fieldName: "sharingBy",
-    minWidth: 70,
-    maxWidth: 250,
-    data: "string",
-    priority: 2,
-    onRender: (item: any) => {
-      return (
-        <div>
-          {item.sharingBy && (
-            <Icon
-              iconName="People"
-              style={{ width: "12px", height: "12px", paddingRight: "8px" }}
-            />
-          )}
-          <span>{item.sharingBy}</span>
-        </div>
-      );
-    },
-  },
-  {
-    key: "column5",
-    name: "File Size",
-    fieldName: "fileSizeRaw",
-    minWidth: 70,
-    maxWidth: 250,
-    data: "number",
-    onRender: (item: any) => {
-      return <span>{`${item.fileSizeRaw} KB`}</span>;
-    },
-  },
-  {
-    key: "column6",
-    name: "Status",
-    fieldName: "status",
-    minWidth: 70,
-    maxWidth: 250,
-    data: "boolean",
-    onRender: (item: any) => {
-      return <span>{item.status ? "Done" : "Processing"}</span>;
-    },
-  },
-];
-// </ListDefaultColumns>
 const FILE_ICONS: { name: string }[] = [
   { name: "accdb" },
   { name: "audio" },
@@ -184,7 +83,7 @@ export class DetailsListDocumentsExample extends React.Component<
 
     this.state = {
       items: [],
-      columns: defaultColumns,
+      columns: this.props.columns,
       selectionDetails: this._getSelectionDetails(),
       contextualMenu: undefined,
       isSortedDescending: false,
@@ -200,18 +99,7 @@ export class DetailsListDocumentsExample extends React.Component<
       isFiltered: false,
       order: undefined,
       filterData: [],
-      itemInterface: null,
     };
-  }
-
-  componentWillMount() {
-    console.log(this.props.itemInterface);
-    let propsItemsInt = this.props.itemInterface;
-    let itemsInterface: any = {};
-    for (let i = 0; i < propsItemsInt.length; i++) {
-      itemsInterface[i] = { [propsItemsInt[i].key]: propsItemsInt[i].type };
-    }
-    // interface itemsInterface  :itemsInterface
   }
 
   componentDidMount() {
@@ -252,11 +140,7 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   onSetDefaultColumns = async (columnsSaved?: IColumnCustom[]) => {
-    let dataColumn = columnsSaved
-      ? columnsSaved
-      : this.props.columns
-      ? this.props.columns
-      : defaultColumns;
+    let dataColumn = columnsSaved ? columnsSaved : this.props.columns;
     let newColumns = await dataColumn.map((col) => {
       if (col.key !== "columnIcon") {
         return (col = {
@@ -359,6 +243,8 @@ export class DetailsListDocumentsExample extends React.Component<
         return item;
       }
     });
+    let a = newItems[0];
+    type MyInterfaceItems = typeof a;
     if (this.state.page < 2) {
       await this.setState({ page: this.state.page + 1, items: newItems });
     } else {
@@ -574,7 +460,6 @@ export class DetailsListDocumentsExample extends React.Component<
       filterItemsResult,
       filterColumsResult,
     } = this.state;
-
     return (
       <StateListWrapper
         id="listWrapper"

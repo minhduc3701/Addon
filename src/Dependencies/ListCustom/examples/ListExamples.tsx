@@ -1,12 +1,111 @@
 import React from "react";
 import { initializeIcons } from "../../@uifabric/icons";
 // <ListImport>
-import { ListCustom } from "..";
+import { ListCustom } from "../index";
 // </ListImport>
 import { IObjectFilter, ISortObject } from "../ListStyle";
-import axios from "axios";
+import { Icon } from "../../@uifabric/icons";
 
 initializeIcons();
+
+const defaultColumns = [
+  {
+    key: "column1",
+    name: "Name",
+    fieldName: "name",
+    minWidth: 70,
+    maxWidth: 400,
+    priority: 1,
+    data: "string",
+    onRender: (item: any) => {
+      return (
+        <div className="name-col">
+          <span>{item.name}</span>
+        </div>
+      );
+    },
+  },
+  {
+    key: "column2",
+    name: "Date Modified",
+    fieldName: "dateModified",
+    minWidth: 70,
+    maxWidth: 250,
+    priority: 3,
+    data: "date",
+    onRender: (item: any) => {
+      let option = {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+      };
+      return (
+        <span>
+          {item.dateModified
+            .toLocaleDateString("en-US", option)
+            .replace(",", "")}
+        </span>
+      );
+    },
+    isPadded: true,
+  },
+  {
+    key: "column3",
+    name: "Modified By",
+    fieldName: "modifiedBy",
+    minWidth: 70,
+    maxWidth: 250,
+    priority: 4,
+    data: "string",
+    onRender: (item: any) => {
+      return <span>{item.modifiedBy}</span>;
+    },
+  },
+  {
+    key: "column4",
+    name: "Sharing",
+    fieldName: "sharingBy",
+    minWidth: 70,
+    maxWidth: 250,
+    data: "string",
+    priority: 2,
+    onRender: (item: any) => {
+      return (
+        <div>
+          {item.sharingBy && (
+            <Icon
+              iconName="People"
+              style={{ width: "12px", height: "12px", paddingRight: "8px" }}
+            />
+          )}
+          <span>{item.sharingBy}</span>
+        </div>
+      );
+    },
+  },
+  {
+    key: "column5",
+    name: "File Size",
+    fieldName: "fileSizeRaw",
+    minWidth: 70,
+    maxWidth: 250,
+    data: "number",
+    onRender: (item: any) => {
+      return <span>{`${item.fileSizeRaw} KB`}</span>;
+    },
+  },
+  {
+    key: "column6",
+    name: "Status",
+    fieldName: "status",
+    minWidth: 70,
+    maxWidth: 250,
+    data: "boolean",
+    onRender: (item: any) => {
+      return <span>{item.status ? "Done" : "Processing"}</span>;
+    },
+  },
+];
 
 function App() {
   const [serverItems, setServerItems] = React.useState<any[]>([]);
@@ -63,7 +162,7 @@ function App() {
     <div className="App">
       <div style={{ height: "250px", width: "900px", position: "relative" }}>
         <ListCustom
-          //   columns={columns}
+          columns={defaultColumns}
           loading={isLoading}
           // <ListDarkMode>
           darkMode="dark"
