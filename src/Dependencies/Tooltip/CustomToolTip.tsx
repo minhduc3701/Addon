@@ -1,36 +1,33 @@
 import * as React from "react";
 import { TooltipHost } from "./TooltipHost";
-import { ToolTipWrapper } from "./CustomToolTipStyle";
+import { ITooltipHostProps } from "./TooltipHost.types";
 
-class CustomCheckBox extends React.Component<any, {}> {
-  constructor(props: any) {
-    super(props);
-    this.state = {};
-  }
+interface ICustomProps extends ITooltipHostProps {
+  darkMode?: string;
+}
 
+class CustomTooltip extends React.Component<ICustomProps> {
   render() {
     return (
-      <ToolTipWrapper theme={this.props.darkMode}>
-        <TooltipHost
-          calloutProps={{
-            backgroundColor:
-              this.props.darkMode === "dark" ? "#212121" : "#ffffff",
-            styles: {
-              beakCurtain: {
-                backgroundColor:
-                  this.props.darkMode === "dark" ? "#212121" : "#ffffff",
-              },
-              root: {
-                backgroundColor:
-                  this.props.darkMode === "dark" ? "#212121" : "#ffffff",
-              },
+      <TooltipHost
+        calloutProps={{
+          backgroundColor:
+            this.props.darkMode === "dark" ? "#212121" : "#ffffff",
+          styles: {
+            beakCurtain: {
+              backgroundColor:
+                this.props.darkMode === "dark" ? "#212121" : "#ffffff",
             },
-          }}
-          {...this.props}
-        />
-      </ToolTipWrapper>
+            root: {
+              backgroundColor:
+                this.props.darkMode === "dark" ? "#212121" : "#ffffff",
+            },
+          },
+        }}
+        {...this.props}
+      />
     );
   }
 }
 
-export default CustomCheckBox;
+export default CustomTooltip;

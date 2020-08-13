@@ -4,4 +4,5 @@ export * from "./Tooltip.types";
 export * from "./TooltipHost";
 export * from "./TooltipHost.base";
 export * from "./TooltipHost.types";
+export * from "./CustomToolTip";
 // export * from '../../common/DirectionalHint';

@@ -40,6 +40,7 @@ var TooltipBase = /** @class */ (function (_super) {
       beakWidth: calloutProps && calloutProps.beakWidth,
       gapSpace: calloutProps && calloutProps.gapSpace,
       maxWidth: maxWidth,
+      darkMode: this.props.darkMode,
     });
     return React.createElement(
       Callout,
@@ -70,6 +71,7 @@ var TooltipBase = /** @class */ (function (_super) {
   TooltipBase.defaultProps = {
     directionalHint: DirectionalHint.topCenter,
     maxWidth: "364px",
+    // darkMode: this.props.darkMode,
     calloutProps: {
       isBeakVisible: true,
       beakWidth: 16,

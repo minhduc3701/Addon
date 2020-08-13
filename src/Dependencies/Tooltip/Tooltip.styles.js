@@ -1,6 +1,6 @@
 import { AnimationClassNames } from "../@uifabric/styling";
 export var getStyles = function (props) {
-  console.log(props)
+  var darkMode = props.darkMode;
   var className = props.className,
     _a = props.beakWidth,
     beakWidth = _a === void 0 ? 16 : _a,
@@ -44,7 +44,7 @@ export var getStyles = function (props) {
       {
         position: "relative",
         zIndex: 1,
-        color: semanticColors.menuItemText,
+        color: darkMode === "dark" ? "#ffffff" : semanticColors.menuItemText,
         wordWrap: "break-word",
         overflowWrap: "break-word",
         overflow: "hidden",
