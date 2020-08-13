@@ -35,6 +35,7 @@ var CheckboxBase = /** @class */ (function (_super) {
         _b = _a.onRenderLabel,
         onRenderLabel = _b === void 0 ? _this._onRenderLabel : _b,
         checkmarkIconProps = _a.checkmarkIconProps,
+        iconLabel = _a.icon,
         ariaPositionInSet = _a.ariaPositionInSet,
         ariaSetSize = _a.ariaSetSize,
         title = _a.title,
@@ -132,19 +133,44 @@ var CheckboxBase = /** @class */ (function (_super) {
     };
     _this._onRenderLabel = function (props) {
       var label = props.label,
-        title = props.title;
+        title = props.title,
+        iconLabel = props.icon;
       return label
-        ? React.createElement(
-            "span",
-            {
-              "aria-hidden": "true",
-              className: _this._classNames.text,
-              title: title,
-            },
-            label
-          )
+        ? React.createElement("div", null, [
+            iconLabel &&
+              React.createElement(
+                Icon,
+                __assign({ iconName: "icon-label" }, iconLabel, {
+                  className: "ms-icon-label",
+                })
+              ),
+            React.createElement(
+              "span",
+              {
+                "aria-hidden": "true",
+                className: _this._classNames.text,
+                title: title,
+              },
+              label
+            ),
+          ])
         : null;
     };
+    // _this._onRenderLabel = function (props) {
+    //   var label = props.label,
+    //     title = props.title;
+    //   return label
+    //     ? React.createElement(
+    //         "span",
+    //         {
+    //           "aria-hidden": "true",
+    //           className: _this._classNames.text,
+    //           title: title,
+    //         },
+    //         label
+    //       )
+    //     : null;
+    // };
     initializeComponentRef(_this);
     if (process.env.NODE_ENV !== "production") {
       warnMutuallyExclusive("Checkbox", props, {

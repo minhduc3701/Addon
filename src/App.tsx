@@ -25,6 +25,8 @@ import {
 } from "./Dependencies/ListCustom/ListStyle";
 import axios from "axios";
 import buildQuery from "odata-query";
+import CustomCheckBox from "./Dependencies/Checkbox/CustomCheckBox";
+import CustomToolTip from "./Dependencies/Tooltip/CustomToolTip";
 
 initializeIcons();
 
@@ -486,6 +488,15 @@ function App() {
           onGetQueryObject={onHandleQueryObject}
         />
       </div>
+      <CustomToolTip darkMode="dark" content="Tooltip nè...">
+        <CustomCheckBox
+          label="Check box"
+          // darkMode="dark"
+          // indeterminate={true}
+          // disabled
+          // icon={{ iconName: "Delete" }}
+        />
+      </CustomToolTip>
     </div>
   );
 }

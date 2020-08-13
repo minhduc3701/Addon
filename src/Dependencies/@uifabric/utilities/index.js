@@ -80,3 +80,4 @@ export * from "./dragdrop";
 export * from "./groupedList/GroupedListUtility";
 export * from "./Check";
 export * from "./ISize";
+export * from "./overflow";

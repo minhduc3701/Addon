@@ -1,7 +1,7 @@
-import { styled } from '../../Utilities';
-import { TooltipBase } from './Tooltip.base';
-import { getStyles } from './Tooltip.styles';
+import { styled } from "../@uifabric/utilities";
+import { TooltipBase } from "./Tooltip.base";
+import { getStyles } from "./Tooltip.styles";
 export var Tooltip = styled(TooltipBase, getStyles, undefined, {
-    scope: 'Tooltip',
+  scope: "Tooltip",
 });
 //# sourceMappingURL=Tooltip.js.map
