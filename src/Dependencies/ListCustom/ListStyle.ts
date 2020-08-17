@@ -57,7 +57,7 @@ export interface IListStates {
   isFiltered: boolean;
   order?: string;
   filterData: IObjectFilter[];
-  groupItems?: IGroup[];
+  groupItems? : IGroup[];
 }
 
 // <ListColumns>
