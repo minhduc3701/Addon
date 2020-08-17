@@ -12,6 +12,7 @@ import {
   IDetailsHeaderStyles,
   DetailsRowFields,
   IDetailsRowFieldsProps,
+  IDetailsGroupDividerProps,
 } from "../DetailsList";
 import { ShimmeredDetailsList } from "../DetailsList/ShimmeredDetailsList";
 import { MarqueeSelection } from "../MarqueeSelection";
@@ -33,6 +34,7 @@ import {
 import { Panel, PanelType } from "../Panel";
 import { Checkbox } from "../Checkbox/index";
 import FilterElement from "./filterPanel";
+import { IRenderFunction } from "../@uifabric/utilities";
 
 const FILE_ICONS: { name: string }[] = [
   { name: "accdb" },
@@ -98,6 +100,7 @@ export class DetailsListDocumentsExample extends React.Component<
       page: 1,
       isFiltered: false,
       order: undefined,
+      groupItems: [],
       filterData: [],
     };
   }
@@ -146,7 +149,7 @@ export class DetailsListDocumentsExample extends React.Component<
         return (col = {
           ...col,
           isResizable: col.isResizable || true,
-          isCollapsible: col.isCollapsible || true, // scroll-x  = true if this true
+          isCollapsible: col.isCollapsible || false, // scroll-x  = true if this true
           isSorted: col.isSorted || false,
           isSortedDescending: col.isSortedDescending || false,
           sortAscendingAriaLabel: "Sorted A to Z",
@@ -218,10 +221,25 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   onSetDefaultItems = async (itemsProps: any[]) => {
+    let groupName = [...this.state.groupItems];
     let newItems = await itemsProps.map((item) => {
       let itemArr: string[] = [];
       if (item.fileName) {
         itemArr = item.fileName.split(".");
+      }
+      if (item.group) {
+       let index =  groupName.findIndex(gr => gr.key === item.group.key)
+        if (index === -1) {
+          groupName.push({
+            key:item.group.key,
+            name:item.group.name,
+            count:1,
+            startIndex:1
+          })
+        }
+        if(index !== -1){
+          groupName[index].count = groupName[index].count + 1
+        }
       }
       if (itemArr.length > 0) {
         let iconFile =
@@ -238,6 +256,11 @@ export class DetailsListDocumentsExample extends React.Component<
           ...item,
           iconName: item.iconName || iconFile,
           fileType: itemArr[itemArr.length - 1],
+          group: item.group ? {
+            key:item.groupKey,
+            name:item.groupName,
+            level:item.groupLevel
+          } : undefined
         });
       } else {
         return item;
@@ -246,9 +269,9 @@ export class DetailsListDocumentsExample extends React.Component<
     let a = newItems[0];
     type MyInterfaceItems = typeof a;
     if (this.state.page < 2) {
-      await this.setState({ page: this.state.page + 1, items: newItems });
+      await this.setState({ page: this.state.page + 1, items: newItems,groupItems:groupName });
     } else {
-      await this.setState({ items: newItems });
+      await this.setState({ items: newItems,groupItems:groupName });
     }
   };
 
@@ -460,9 +483,11 @@ export class DetailsListDocumentsExample extends React.Component<
       filterItemsResult,
       filterColumsResult,
     } = this.state;
+
+    console.log(this.state);
+
     return (
       <StateListWrapper
-        id="listWrapper"
         onScroll={this.onScrollList}
         theme={{ ...this.state, darkMode: this.props.darkMode }}
       >
@@ -481,6 +506,7 @@ export class DetailsListDocumentsExample extends React.Component<
                     ? filterColumsResult
                     : columns
                 }
+                groups={this.props.groups}
                 // enableShimmer={true}
                 selectionMode={SelectionMode.multiple}
                 // getKey={this._getKey}
@@ -824,6 +850,8 @@ export class DetailsListDocumentsExample extends React.Component<
           background: darkMode === "dark" ? "#212121" : "#ffffff",
           borderBottom:
             darkMode === "dark" ? "1px solid transparent" : "1px solid #ffffff",
+          // borderBottom:
+          // darkMode === "dark" ? "1px solid #000000" : "1px solid #F4F4F4",
         };
       }
       return (

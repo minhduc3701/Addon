@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(27, 26, 25);
+  background-color: #333333;
 }
 .App {
   margin-top: 10vh;
@@ -33,9 +33,9 @@ body {
   color: #61dafb;
 }
 
-.ms-Callout.ms-Dropdown-callout {
+/* .ms-Callout.ms-Dropdown-callout {
   width: auto;
-}
+} */
 
 @keyframes App-logo-spin {
   from {

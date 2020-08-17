@@ -258,6 +258,17 @@ var GroupedListSection = /** @class */ (function (_super) {
         role: "presentation",
       }),
       onRenderGroupHeader(groupHeaderProps, this._onRenderGroupHeader),
+      group && group.key ==='lastGroup' && 
+      React.createElement(List, {
+            role: "presentation",
+            ref: this._list,
+            items: group ? group.children : [],
+            onRenderCell: this._renderSubGroup,
+            getItemCountForPage: this._returnOne,
+            onShouldVirtualize: onShouldVirtualize,
+            version: version,
+            id: this._id,
+          }),
       group && group.isCollapsed
         ? null
         : hasNestedGroups
@@ -350,7 +361,7 @@ var GroupedListSection = /** @class */ (function (_super) {
           onShouldVirtualize: onShouldVirtualize,
           id: this._id,
         },
-        listProps
+        listProps,
       )
     );
   };

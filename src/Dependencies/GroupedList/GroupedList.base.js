@@ -167,6 +167,7 @@ var GroupedListBase = /** @class */ (function (_super) {
     };
     return _this;
   }
+
   GroupedListBase.prototype.scrollToIndex = function (
     index,
     measureItem,
@@ -211,6 +212,7 @@ var GroupedListBase = /** @class */ (function (_super) {
       this._setGroupsCollapsedState(groups, groupProps.isAllGroupsCollapsed);
     }
   };
+  
   GroupedListBase.prototype.render = function () {
     var _a = this.props,
       className = _a.className,
@@ -238,7 +240,7 @@ var GroupedListBase = /** @class */ (function (_super) {
       },
       React.createElement(FocusRects, null),
       !groups
-        ? this._renderGroup(undefined, 0)
+        ?  this._renderGroup(undefined, 0)
         : React.createElement(List, {
             ref: this._list,
             role: "presentation",

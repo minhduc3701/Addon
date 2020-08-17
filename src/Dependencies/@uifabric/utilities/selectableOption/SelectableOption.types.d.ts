@@ -1,3 +1,4 @@
+// <IDropdownOption>
 export interface ISelectableOption {
     /**
      * Arbitrary string associated with this option.
@@ -44,6 +45,7 @@ export interface ISelectableOption {
      */
     data?: any;
 }
+// </IDropdownOption>
 export declare enum SelectableOptionMenuItemType {
     Normal = 0,
     Divider = 1,

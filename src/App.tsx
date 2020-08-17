@@ -27,6 +27,8 @@ import axios from "axios";
 import buildQuery from "odata-query";
 import CustomCheckBox from "./Dependencies/Checkbox/CustomCheckBox";
 import CustomToolTip from "./Dependencies/Tooltip/CustomToolTip";
+import CustomDropdown from "./Dependencies/Dropdown/CustomDropdown";
+import CustomTextField from "./Dependencies/TextField/CustomTextField";
 
 initializeIcons();
 
@@ -217,7 +219,7 @@ function App() {
       name: "Date Modified",
       fieldName: "dateModified",
       minWidth: 70,
-      maxWidth: 250,
+      maxWidth: 300,
       priority: 3,
       data: "date",
       onRender: (item: any) => {
@@ -241,7 +243,7 @@ function App() {
       name: "Modified By",
       fieldName: "modifiedBy",
       minWidth: 70,
-      maxWidth: 250,
+      maxWidth: 300,
       priority: 4,
       data: "string",
       onRender: (item: any) => {
@@ -253,7 +255,7 @@ function App() {
       name: "Sharing",
       fieldName: "sharingBy",
       minWidth: 70,
-      maxWidth: 250,
+      maxWidth: 300,
       data: "string",
       priority: 2,
       onRender: (item: any) => {
@@ -275,7 +277,7 @@ function App() {
       name: "File Size",
       fieldName: "fileSizeRaw",
       minWidth: 70,
-      maxWidth: 250,
+      maxWidth: 300,
       data: "number",
       onRender: (item: any) => {
         return <span>{`${item.fileSizeRaw} KB`}</span>;
@@ -286,7 +288,7 @@ function App() {
       name: "Status",
       fieldName: "status",
       minWidth: 70,
-      maxWidth: 250,
+      maxWidth: 300,
       data: "boolean",
       onRender: (item: any) => {
         return <span>{item.status ? "Done" : "Processing"}</span>;
@@ -466,15 +468,341 @@ function App() {
     }
   };
 
+  const options = [
+    {
+      key: "option1",
+      text:
+        "option1option1option1option1option1option1option1option1option1option1option1option1",
+    },
+    { key: "option2", text: "option2", disabled: true },
+    { key: "option3", text: "option3" },
+  ];
+
+  const groups = [
+    {
+      key: "group0",
+      isCollapsed: true,
+      name: "Group Items 1",
+      startIndex: 0,
+      count: 2,
+      level: 0,
+    },
+    {
+      key: "group1",
+      name: "Group Items 2",
+      startIndex: 2,
+      count: 2,
+      level: 1,
+      isCollapsed: true,
+    },
+    {
+      key: "group2",
+      name: "Group Items 3",
+      startIndex: 4,
+      count: 1,
+      level: 0,
+      isCollapsed: true,
+    },
+    {
+      key: "lastGroup",
+      name: "",
+      startIndex: 5,
+      count: 10,
+      level: 0,
+      hasMoreData: true,
+      isShowingAll: true,
+      isCollapsed: false,
+    },
+  ];
+
+  const items = [
+  {
+    key: "1",
+    dateModified: new Date("2019-11-26T03:06:54.908Z"),
+    name: "Odell Stanton",
+    status: false,
+    modifiedBy: "Ashley",
+    fileSizeRaw: 17861,
+    sharingBy: "Chester",
+    isDisable: true,
+    fileName: "payment.hbci",
+    group:{
+      key:"group3",
+      name:"Nhóm 3",
+      level:0
+    }
+  },
+  {
+    key: "2",
+    dateModified: new Date("2020-03-28T11:46:56.411Z"),
+    name: "Austen Klein",
+    status: true,
+    modifiedBy: "Federico",
+    fileSizeRaw: 93335,
+    sharingBy: "Electa",
+    isDisable: false,
+    fileName: "collaboration_infrastructure.texinfo",
+    group:{
+      key:"group3",
+      name:"Nhóm 3",
+      level:0
+    }
+  },
+  {
+    key: "3",
+    dateModified: new Date("2020-02-19T03:44:35.701Z"),
+    name: "Addie Hilpert",
+    status: true,
+    modifiedBy: "Justine",
+    fileSizeRaw: 34746,
+    sharingBy: "Yasmeen",
+    isDisable: true,
+    fileName: "payment_rubber.pot"
+  },
+  {
+    key: "4",
+    dateModified: new Date("2019-09-05T19:19:28.160Z"),
+    name: "Fernando Wuckert",
+    status: false,
+    modifiedBy: "Rodger",
+    fileSizeRaw: 74242,
+    sharingBy: "Adalberto",
+    isDisable: true,
+    fileName: "ssl.taglet"
+  },
+  {
+    key: "5",
+    dateModified: new Date("2020-06-07T21:35:30.984Z"),
+    name: "Leila Hermiston",
+    status: false,
+    modifiedBy: "Joy",
+    fileSizeRaw: 36842,
+    sharingBy: "Deron",
+    isDisable: true,
+    fileName: "fork_reintermediate_concrete.adp"
+  },
+  {
+    key: "6",
+    dateModified: new Date("2020-02-02T10:05:13.900Z"),
+    name: "Forest Mitchell",
+    status: false,
+    modifiedBy: "Laisha",
+    fileSizeRaw: 79909,
+    sharingBy: "Chase",
+    isDisable: true,
+    fileName: "quantifying_won_generic_frozen_computer.uvv",
+    group:{
+      key:"group1",
+      name:"Nhóm 1",
+      level:0
+    }
+  },
+  {
+    key: "7",
+    dateModified: new Date("2020-08-03T08:15:08.692Z"),
+    name: "Billie Fisher",
+    status: true,
+    modifiedBy: "Xzavier",
+    fileSizeRaw: 84006,
+    sharingBy: "Christelle",
+    isDisable: false,
+    fileName: "reciprocal_industrial_center.dmg",
+    group:{
+      key:"group1",
+      name:"Nhóm 1",
+      level:0
+    }
+  },
+  {
+    key: "8",
+    dateModified: new Date("2020-04-22T15:08:52.540Z"),
+    name: "Estevan Quigley I",
+    status: false,
+    modifiedBy: "Daisha",
+    fileSizeRaw: 52346,
+    sharingBy: "Mazie",
+    isDisable: true,
+    fileName: "sleek.cml",
+    group:{
+      key:"group3",
+      name:"Nhóm 3",
+      level:0
+    }
+  },
+  {
+    key: "9",
+    dateModified: new Date("2020-07-01T11:47:17.625Z"),
+    name: "Aimee Reynolds",
+    status: true,
+    modifiedBy: "Celestino",
+    fileSizeRaw: 59509,
+    sharingBy: "Alisha",
+    isDisable: false,
+    fileName: "reintermediate.fcs",
+    group:{
+      key:"group1",
+      name:"Nhóm 1",
+      level:0
+    }
+  },
+  {
+    key: "10",
+    dateModified: new Date("2020-01-13T23:36:05.892Z"),
+    name: "Jonatan Ortiz",
+    status: false,
+    modifiedBy: "Chelsie",
+    fileSizeRaw: 39774,
+    sharingBy: "Desmond",
+    isDisable: true,
+    fileName: "product.nnw"
+  },
+  {
+    key: "11",
+    dateModified: new Date("2019-10-24T02:54:48.134Z"),
+    name: "Arlene Senger",
+    status: false,
+    modifiedBy: "Henry",
+    fileSizeRaw: 93526,
+    sharingBy: "Scottie",
+    isDisable: true,
+    fileName: "forward.f"
+  },
+  {
+    key: "12",
+    dateModified: new Date("2019-09-10T12:08:41.746Z"),
+    name: "Aditya Carter",
+    status: true,
+    modifiedBy: "Wilfred",
+    fileSizeRaw: 91190,
+    sharingBy: "Greta",
+    isDisable: false,
+    fileName: "brand.sdw",
+    group:{
+      key:"group1",
+      name:"Nhóm 1",
+      level:0
+    }
+  },
+  {
+    key: "13",
+    dateModified: new Date("2019-12-02T21:52:10.210Z"),
+    name: "Mrs. Mitchel Mertz",
+    status: true,
+    modifiedBy: "Jeffrey",
+    fileSizeRaw: 56000,
+    sharingBy: "Darryl",
+    isDisable: false,
+    fileName: "port_somali_shilling.pm",
+    group:{
+      key:"group2",
+      name:"Nhóm 2",
+      level:0
+    }
+  },
+  {
+    key: "14",
+    dateModified: new Date("2020-02-13T19:54:04.678Z"),
+    name: "Dr. Griffin Price",
+    status: false,
+    modifiedBy: "Jadyn",
+    fileSizeRaw: 34825,
+    sharingBy: "Dejon",
+    isDisable: true,
+    fileName: "online_egypt_visionary.ktr",
+    group:{
+      key:"group2",
+      name:"Nhóm 2",
+      level:0
+    }
+  },
+  {
+    key: "15",
+    dateModified: new Date("2019-12-14T11:42:56.519Z"),
+    name: "Wallace Considine",
+    status: false,
+    modifiedBy: "Darrin",
+    fileSizeRaw: 22649,
+    sharingBy: "Gaylord",
+    isDisable: true,
+    fileName: "product_syrian_arab_republic.nnd"
+  },
+  {
+    key: "16",
+    dateModified: new Date("2019-11-02T21:46:46.501Z"),
+    name: "Beth Medhurst",
+    status: false,
+    modifiedBy: "Christ",
+    fileSizeRaw: 54079,
+    sharingBy: "Minnie",
+    isDisable: false,
+    fileName: "firewall_auto_loan_account.nns"
+  },
+  {
+    key: "17",
+    dateModified: new Date("2019-08-29T19:09:43.717Z"),
+    name: "Fatima Johnson",
+    status: false,
+    modifiedBy: "Eudora",
+    fileSizeRaw: 48723,
+    sharingBy: "Chesley",
+    isDisable: false,
+    fileName: "director.xaml"
+  },
+  {
+    key: "18",
+    dateModified: new Date("2020-06-04T01:22:34.690Z"),
+    name: "Zane Jacobson",
+    status: true,
+    modifiedBy: "Mireya",
+    fileSizeRaw: 50139,
+    sharingBy: "Kendrick",
+    isDisable: false,
+    fileName: "calculating_refined_granite_salad_brand.onetmp"
+  },
+  {
+    key: "19",
+    dateModified: new Date("2020-08-08T02:46:34.235Z"),
+    name: "Darrell McDermott",
+    status: true,
+    modifiedBy: "Augustus",
+    fileSizeRaw: 18382,
+    sharingBy: "Nicolas",
+    isDisable: true,
+    fileName: "engage_lithuania.uvvx",
+    group:{
+      key:"group2",
+      name:"Nhóm 2",
+      level:0
+    }
+  },
+  {
+    key: "20",
+    dateModified: new Date("2020-01-09T00:39:51.996Z"),
+    name: "Dr. Jeremie Balistreri",
+    status: false,
+    modifiedBy: "Della",
+    fileSizeRaw: 98438,
+    sharingBy: "Alford",
+    isDisable: false,
+    fileName: "national.cab",
+    group:{
+      key:"group1",
+      name:"Nhóm 1",
+      level:0
+    }
+  }
+]
+
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <div style={{ height: "350px", width: "900px", position: "relative" }}>
+      <div style={{ height: "500px", width: "900px", position: "relative" }}>
         <ListCustom
           columns={defaultColumns}
           loading={isLoading}
+          groups={groups}
           darkMode="dark"
-          items={serverItems}
+          items={items}
           onGetSelectionItem={onHandleSelection}
           onGetFilterObject={onHandleFilterObject}
           onRowClick={onHandleRowClick}
@@ -488,15 +816,6 @@ function App() {
           onGetQueryObject={onHandleQueryObject}
         />
       </div>
-      <CustomToolTip darkMode="dark" content="Tooltip nè...">
-        <CustomCheckBox
-          label="Check box"
-          // darkMode="dark"
-          // indeterminate={true}
-          // disabled
-          // icon={{ iconName: "Delete" }}
-        />
-      </CustomToolTip>
     </div>
   );
 }
@@ -544,4 +863,38 @@ export default App;
 // child={BreadcrumbData}
 // darkMode="light"
 // onClick={onClickActionBreadcrumb}
+// />
+
+//====================================================
+// <CustomToolTip darkMode="dark" content="Tooltip nè...">
+// <CustomCheckBox
+//   label="Check box"
+//   darkMode="dark"
+//   // indeterminate={true}
+//   // disabled
+//   // icon={{ iconName: "Delete" }}
+// />
+// </CustomToolTip>
+// <br />
+// <div style={{ width: "300px" }}>
+// <CustomDropdown
+//   placeholder="Select an option"
+//   label="Custom dropdown example"
+//   options={options}
+//   darkMode="dark"
+//   multiSelect={true}
+//   // disabled
+// />
+// </div>
+// <br />
+// <CustomTextField
+// label="Standard"
+// // multiline
+// // rows={3}
+// // disabled
+// // prefix="https://"
+// darkMode="dark"
+// placeholder="Custom textfield"
+// // errorMessage="Error message"
+// iconProps={{ iconName: "Calendar" }}
 // />

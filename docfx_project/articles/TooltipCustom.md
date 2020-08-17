@@ -14,10 +14,7 @@
 [!code-javascript[TooltipExample](../../src/Dependencies/Tooltip/examples/CustomTooltipExample.tsx?name=TooltipExample)]
 
 **Example Props**
-[!code-javascript[TooltipProps](../../src/Dependencies/Tooltip/CustomTooltipStyle.ts?name=TooltipProps)]
+[!code-javascript[TooltipProps](../../src/Dependencies/Tooltip/CustomToolTip.tsx?name=TooltipProps)]
 
-**ITooltipProps**
-[!code-javascript[ITooltipProps](../../src/Dependencies/Tooltip/Tooltip.types.d.ts?name=ITooltipProps)]
-
-**IIconProps**
-[!code-javascript[IIconProps](../../src/Dependencies/@uifabric/icons/Icon.types.d.ts?name=IIconProps)]
+**ITooltipHostProps**
+[!code-javascript[ITooltipHostProps](../../src/Dependencies/Tooltip/Tooltip.types.d.ts?name=ITooltipHostProps)]

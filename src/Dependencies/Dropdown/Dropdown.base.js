@@ -20,7 +20,7 @@ import {
   warnMutuallyExclusive,
 } from "../@uifabric/utilities";
 import { Callout } from "../@uifabric/utilities";
-import { Checkbox } from "../Checkbox";
+import CustomCheckBox from "../Checkbox/CustomCheckBox";
 import { CommandButton } from "../Button/CommandButton/CommandButton";
 import { DirectionalHint } from "../common";
 import { DropdownMenuItemType } from "./Dropdown.types";
@@ -230,6 +230,7 @@ var DropdownBase = /** @class */ (function (_super) {
       }
     };
     _this._renderOption = function (item) {
+      var darkMode = _this.props.darkMode;
       var _a = _this.props.onRenderOption,
         onRenderOption = _a === void 0 ? _this._onRenderOption : _a;
       var _b = _this.state.selectedIndices,
@@ -276,7 +277,7 @@ var DropdownBase = /** @class */ (function (_super) {
             },
             onRenderOption(item, _this._onRenderOption)
           )
-        : React.createElement(Checkbox, {
+        : React.createElement(CustomCheckBox, {
             id: _this._listId + item.index,
             key: item.key,
             "data-index": item.index,
@@ -298,13 +299,16 @@ var DropdownBase = /** @class */ (function (_super) {
             styles: multiSelectItemStyles,
             ariaPositionInSet: _this._sizePosCache.positionInSet(item.index),
             ariaSetSize: _this._sizePosCache.optionSetSize,
+            darkMode,
           });
     };
     /** Render content of item (i.e. text/icon inside of button) */
     _this._onRenderOption = function (item) {
       return React.createElement(
         "span",
-        { className: _this._classNames.dropdownOptionText },
+        {
+          className: _this._classNames.dropdownOptionText,
+        },
         item.text
       );
     };

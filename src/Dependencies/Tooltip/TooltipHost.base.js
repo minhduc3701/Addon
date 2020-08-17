@@ -44,6 +44,8 @@ var TooltipHostBase = /** @class */ (function (_super) {
             return _this._tooltipHost.current.parentElement;
           case TooltipOverflowMode.Self:
             return _this._tooltipHost.current;
+          default:
+            return
         }
       }
       return _this._tooltipHost.current;

@@ -12,6 +12,7 @@ export interface ITooltip {}
 /**
  * {@docCategory Tooltip}
  */
+// <ITooltipHostProps>
 export interface ITooltipProps
   extends React.HTMLAttributes<HTMLDivElement | TooltipBase> {
   /**
@@ -66,6 +67,8 @@ export interface ITooltipProps
   styles?: IStyleFunctionOrObject<ITooltipStyleProps, ITooltipStyles>;
   darkMode?: string;
 }
+// </ITooltipHostProps>
+
 /**
  * {@docCategory Tooltip}
  */

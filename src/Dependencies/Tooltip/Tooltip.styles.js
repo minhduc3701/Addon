@@ -9,8 +9,8 @@ export var getStyles = function (props) {
     maxWidth = props.maxWidth,
     theme = props.theme;
   var semanticColors = theme.semanticColors,
-    fonts = theme.fonts,
-    effects = theme.effects;
+    fonts = theme.fonts;
+  // effects = theme.effects;
   // The math here is done to account for the 45 degree rotation of the beak
   var tooltipGapSpace = -(Math.sqrt((beakWidth * beakWidth) / 2) + gapSpace);
   return {

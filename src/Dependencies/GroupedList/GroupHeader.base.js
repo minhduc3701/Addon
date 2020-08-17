@@ -96,11 +96,13 @@ var GroupHeaderBase = /** @class */ (function (_super) {
       });
     }
   };
+
   GroupHeaderBase.prototype.render = function () {
     var _a = this.props,
       group = _a.group,
       groupLevel = _a.groupLevel,
       viewport = _a.viewport,
+      onToggleCollapse = _a.onToggleCollapse,
       selectionMode = _a.selectionMode,
       loadingText = _a.loadingText,
       // tslint:disable-next-line:deprecation
@@ -126,6 +128,7 @@ var GroupHeaderBase = /** @class */ (function (_super) {
       ariaPosInSet = _a.ariaPosInSet,
       ariaSetSize = _a.ariaSetSize,
       useFastIcons = _a.useFastIcons;
+    var isGroupLoading = _a.isGroupLoading;
     var defaultCheckboxRender = useFastIcons
       ? this._fastDefaultCheckboxRender
       : this._defaultCheckboxRender;
@@ -151,6 +154,7 @@ var GroupHeaderBase = /** @class */ (function (_super) {
       isCollapsed: isCollapsed,
       compact: compact,
     });
+
     if (!group) {
       return null;
     }
@@ -159,7 +163,8 @@ var GroupHeaderBase = /** @class */ (function (_super) {
       {
         className: this._classNames.root,
         style: viewport ? { minWidth: viewport.width } : {},
-        onClick: this._onHeaderClick,
+        // onClick: this._onHeaderClick,
+        onClick: (ev) => this._onToggleCollapse(ev),
         "aria-expanded": !group.isCollapsed,
         "aria-label": group.ariaLabel || group.name,
         "aria-level": groupLevel !== undefined ? groupLevel + 1 : undefined,
@@ -167,7 +172,7 @@ var GroupHeaderBase = /** @class */ (function (_super) {
         "aria-posinset": ariaPosInSet,
         "data-is-focusable": true,
       },
-      React.createElement(
+      group.key !== "lastGroup" && React.createElement(
         FocusZone,
         {
           className: this._classNames.groupHeaderContainer,
@@ -201,31 +206,31 @@ var GroupHeaderBase = /** @class */ (function (_super) {
           indentWidth: indentWidth,
           count: groupLevel,
         }),
-        React.createElement(
-          "div",
-          { className: this._classNames.dropIcon },
-          React.createElement(Icon, { iconName: "Tag" })
-        ),
-        React.createElement(
-          "button",
-          __assign(
-            {
-              type: "button",
-              className: this._classNames.expand,
-              onClick: this._onToggleCollapse,
-              "aria-expanded": !group.isCollapsed,
-              "aria-controls":
-                group && !group.isCollapsed ? groupedListId : undefined,
-            },
-            expandButtonProps
-          ),
-          React.createElement(Icon, {
-            className: this._classNames.expandIsCollapsed,
-            iconName:
-              expandButtonIcon ||
-              (isRTL ? "ChevronLeftMed" : "ChevronRightMed"),
-          })
-        ),
+        // React.createElement(
+        //   "div",
+        //   { className: this._classNames.dropIcon },
+        //   React.createElement(Icon, { iconName: "Tag" })
+        // ),
+        // React.createElement(
+        //   "button",
+        //   __assign(
+        //     {
+        //       type: "button",
+        //       className: this._classNames.expand,
+        //       onClick: this._onToggleCollapse,
+        //       "aria-expanded": !group.isCollapsed,
+        //       "aria-controls":
+        //         group && !group.isCollapsed ? groupedListId : undefined,
+        //     },
+        //     expandButtonProps
+        //   ),
+        //   React.createElement(Icon, {
+        //     className: this._classNames.expandIsCollapsed,
+        //     iconName:
+        //       expandButtonIcon ||
+        //       (isRTL ? "ChevronLeftMed" : "ChevronRightMed"),
+        //   })
+        // ),
         onRenderTitle(this.props, this._onRenderTitle),
         isLoadingVisible && React.createElement(Spinner, { label: loadingText })
       )

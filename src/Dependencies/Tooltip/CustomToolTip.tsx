@@ -2,10 +2,11 @@ import * as React from "react";
 import { TooltipHost } from "./TooltipHost";
 import { ITooltipHostProps } from "./TooltipHost.types";
 
+// <TooltipProps>
 interface ICustomProps extends ITooltipHostProps {
   darkMode?: string;
 }
-
+// </TooltipProps>
 class CustomTooltip extends React.Component<ICustomProps> {
   render() {
     return (

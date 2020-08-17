@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IContextualMenuProps } from "../@uifabric/utilities/ContextualMenu copy";
+import { IGroup } from "../GroupedList/GroupedList.types";
 
 // <ListProps>
 export interface IHOC {
@@ -21,12 +22,14 @@ export interface IHOC {
     sortObject: ISortObject,
     filterData: IObjectFilter[]
   ) => void;
+  groups?: IGroup[];
 }
 // </ListProps>
 
 export interface IListProps extends IHOC {
   itemCount: number;
 }
+
 
 // <ListSortObject>
 export interface ISortObject {
@@ -54,6 +57,7 @@ export interface IListStates {
   isFiltered: boolean;
   order?: string;
   filterData: IObjectFilter[];
+  groupItems?: IGroup[];
 }
 
 // <ListColumns>
@@ -163,6 +167,10 @@ export const StateListWrapper = styled.div`
     .ms-DetailsHeader-cell {
       cursor: pointer;
       height: 100%;
+      .ms-DetailsHeader-collapseButton {
+        color: ${({ theme }) =>
+          theme.darkMode === "dark" ? "#ffffff" : "#f4f4f4"};
+      }
       .ms-DetailsHeader-checkTooltip .ms-DetailsHeader-check {
         .ms-Check {
           .ms-Icon {
@@ -258,6 +266,56 @@ export const StateListWrapper = styled.div`
   .ms-ScrollablePane--contentContainer {
     .ms-DetailsList {
       overflow-x: hidden;
+      .ms-DetailsList-contentWrapper {
+        .ms-FocusZone {
+          color: ${({ theme }) =>
+            theme.darkMode === "dark" ? "#ffffff" : "#323130"};
+          .ms-GroupHeader {
+            background-color: ${({ theme }) =>
+              theme.darkMode === "dark" ? "#292929" : "#eaeaea"};
+            border-bottom: 1px solid #514f4f7d;
+            cursor: pointer;
+            &:hover {
+              background-color: ${({ theme }) =>
+                theme.darkMode === "dark" ? "#000000" : "#f4f4f4"};
+            }
+            .ms-GroupHeader-expand {
+              cursor: pointer;
+              &:hover {
+                background-color: ${({ theme }) =>
+                  theme.darkMode === "dark" ? "#000000" : "#F4F4F4"};
+              }
+              i {
+                color: ${({ theme }) =>
+                  theme.darkMode === "dark" ? "#ffffff" : "#323130"};
+              }
+            }
+            .ms-GroupHeader-check {
+              .ms-Check {
+                .ms-Icon {
+                  color: ${({ theme }) =>
+                    theme.darkMode === "dark" && "#ffffff"};
+                }
+                &::before {
+                  background: ${({ theme }) =>
+                    theme.darkMode === "dark" && "#212121"};
+                }
+              }
+              .is-checked {
+                .ms-Icon {
+                  color: ${({ theme }) =>
+                    theme.darkMode === "dark" && "#212121"} !important;
+                }
+                &::before {
+                  background: ${({ theme }) =>
+                    theme.darkMode === "dark" &&
+                    "rgb(105, 175, 229)"} !important;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 

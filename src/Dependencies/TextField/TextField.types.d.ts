@@ -38,6 +38,7 @@ export interface ITextField {
  * TextField component props.
  * {@docCategory TextField}
  */
+// <ITextFieldProps>
 export interface ITextFieldProps
   extends React.AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   /**
@@ -252,6 +253,7 @@ export interface ITextFieldProps
     [key: string]: RegExp;
   };
 }
+// </ITextFieldProps>
 /**
  * {@docCategory TextField}
  */

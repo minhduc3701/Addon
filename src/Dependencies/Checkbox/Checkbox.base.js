@@ -35,7 +35,6 @@ var CheckboxBase = /** @class */ (function (_super) {
         _b = _a.onRenderLabel,
         onRenderLabel = _b === void 0 ? _this._onRenderLabel : _b,
         checkmarkIconProps = _a.checkmarkIconProps,
-        iconLabel = _a.icon,
         ariaPositionInSet = _a.ariaPositionInSet,
         ariaSetSize = _a.ariaSetSize,
         title = _a.title,

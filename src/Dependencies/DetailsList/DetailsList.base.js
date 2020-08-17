@@ -613,7 +613,7 @@ var DetailsListBase = /** @class */ (function (_super) {
         constrainMode === ConstrainMode.horizontalConstrained,
       className: className,
     });
-    var list = groups
+    var list = groups && items.length > 0
       ? React.createElement(GroupedList, {
           componentRef: this._groupedList,
           groups: groups,

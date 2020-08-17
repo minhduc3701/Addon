@@ -29,6 +29,7 @@ export interface IDropdown {
 /**
  * {@docCategory Dropdown}
  */
+// <IDropdownProps>
 export interface IDropdownProps
   extends ISelectableDroppableTextProps<IDropdown, HTMLDivElement> {
   /**
@@ -124,7 +125,9 @@ export interface IDropdownProps
    * Call to provide customized styling that will layer on top of the variant rules.
    */
   styles?: IStyleFunctionOrObject<IDropdownStyleProps, IDropdownStyles>;
+  darkMode?: string;
 }
+// </IDropdownProps>
 /**
  * {@docCategory Dropdown}
  */
