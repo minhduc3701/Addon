@@ -152,7 +152,7 @@ export var getStyles = function (props) {
         // cause other items to be deselected.
         paddingTop: 1,
         marginTop: -1,
-        opacity: 0,
+        opacity: selected ? 1 : 0,
         width: CHECK_CELL_WIDTH,
         height: finalRowHeight,
         selectors:

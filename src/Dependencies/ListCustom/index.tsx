@@ -14,7 +14,9 @@ export class ListCustom extends React.Component<IHOC, { itemHeight: number }> {
     let itemHeight = document.getElementById("HOC-wrapper")?.clientHeight;
     let count = 0;
     if (itemHeight) {
-      count = Math.floor(itemHeight / 43 + 1);
+      count = this.props.groups
+        ? Math.floor((itemHeight + 49 * this.props.groups.length) / 43 + 2)
+        : Math.floor(itemHeight / 43 + 1);
       this.setState({
         itemHeight: count,
       });

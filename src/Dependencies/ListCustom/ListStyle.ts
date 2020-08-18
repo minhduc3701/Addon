@@ -30,7 +30,6 @@ export interface IListProps extends IHOC {
   itemCount: number;
 }
 
-
 // <ListSortObject>
 export interface ISortObject {
   count: number;
@@ -57,7 +56,8 @@ export interface IListStates {
   isFiltered: boolean;
   order?: string;
   filterData: IObjectFilter[];
-  groupItems? : IGroup[];
+  groups?: IGroup[];
+  filterGroupResult?:IGroup[];
 }
 
 // <ListColumns>

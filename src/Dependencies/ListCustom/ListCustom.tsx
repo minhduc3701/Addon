@@ -12,7 +12,6 @@ import {
   IDetailsHeaderStyles,
   DetailsRowFields,
   IDetailsRowFieldsProps,
-  IDetailsGroupDividerProps,
 } from "../DetailsList";
 import { ShimmeredDetailsList } from "../DetailsList/ShimmeredDetailsList";
 import { MarqueeSelection } from "../MarqueeSelection";
@@ -34,7 +33,7 @@ import {
 import { Panel, PanelType } from "../Panel";
 import { Checkbox } from "../Checkbox/index";
 import FilterElement from "./filterPanel";
-import { IRenderFunction } from "../@uifabric/utilities";
+import { IGroup } from "../GroupedList/GroupedList.types";
 
 const FILE_ICONS: { name: string }[] = [
   { name: "accdb" },
@@ -100,8 +99,9 @@ export class DetailsListDocumentsExample extends React.Component<
       page: 1,
       isFiltered: false,
       order: undefined,
-      groupItems: [],
       filterData: [],
+      groups: [],
+      filterGroupResult: [],
     };
   }
 
@@ -128,12 +128,12 @@ export class DetailsListDocumentsExample extends React.Component<
   }
 
   // examples get data form server
-  onGetItemLazy = async (itemCount: number) => {
+  onGetItemLazy = async (itemCount: number, type?: string) => {
     await this.setState({
       page: this.state.page + 1,
     });
     this.props.onGetItemsList &&
-      this.state.page > 1 &&
+      this.state.page >= 1 &&
       this.props.onGetItemsList(
         this.state.page,
         itemCount,
@@ -186,16 +186,34 @@ export class DetailsListDocumentsExample extends React.Component<
         );
       },
     });
+    let currentGroups = [...this.props.groups];
+    if (this.props.groups && this.props.groups.length > 0) {
+      let groupsProps = this.props.groups;
+      await currentGroups.push({
+        key: "lastGroup",
+        name: "",
+        startIndex:
+          groupsProps[groupsProps.length - 1].startIndex +
+          groupsProps[groupsProps.length - 1].count,
+        count: 10,
+        level: 0,
+        hasMoreData: true,
+        isShowingAll: true,
+        isCollapsed: false,
+      });
+    }
     if (!columnsSaved) {
       await this.setState({
         columns: newColumns,
         itemCount: this.props.itemCount,
+        groups: this.props.groups && currentGroups,
       });
     }
     if (columnsSaved) {
       await this.setState({
         filterColumsResult: newColumns,
         itemCount: this.props.itemCount,
+        groups: this.props.groups && currentGroups,
       });
     }
   };
@@ -221,25 +239,10 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   onSetDefaultItems = async (itemsProps: any[]) => {
-    let groupName = [...this.state.groupItems];
     let newItems = await itemsProps.map((item) => {
       let itemArr: string[] = [];
       if (item.fileName) {
         itemArr = item.fileName.split(".");
-      }
-      if (item.group) {
-       let index =  groupName.findIndex(gr => gr.key === item.group.key)
-        if (index === -1) {
-          groupName.push({
-            key:item.group.key,
-            name:item.group.name,
-            count:1,
-            startIndex:1
-          })
-        }
-        if(index !== -1){
-          groupName[index].count = groupName[index].count + 1
-        }
       }
       if (itemArr.length > 0) {
         let iconFile =
@@ -256,23 +259,12 @@ export class DetailsListDocumentsExample extends React.Component<
           ...item,
           iconName: item.iconName || iconFile,
           fileType: itemArr[itemArr.length - 1],
-          group: item.group ? {
-            key:item.groupKey,
-            name:item.groupName,
-            level:item.groupLevel
-          } : undefined
         });
       } else {
         return item;
       }
     });
-    let a = newItems[0];
-    type MyInterfaceItems = typeof a;
-    if (this.state.page < 2) {
-      await this.setState({ page: this.state.page + 1, items: newItems,groupItems:groupName });
-    } else {
-      await this.setState({ items: newItems,groupItems:groupName });
-    }
+    await this.setState({ items: newItems });
   };
 
   onChoiceItemSort = (
@@ -303,25 +295,61 @@ export class DetailsListDocumentsExample extends React.Component<
               newCol.isSortedDescending = false;
             }
           });
-          const newItems = _copyAndSort(
-            itemsToSort,
-            currColumn.fieldName!,
-            currColumn.isSortedDescending
-          );
+          let newItems = [];
+          let result: any = [];
+          let newGroups: IGroup[] = [];
+          if (this.props.groups) {
+            let { groups } = this.state;
+            if (groups && groups.length > 0) {
+              console.log("group");
+              groups.forEach((gr) => {
+                let curretnItems = [...items];
+                let childArr =
+                  gr.key !== "lastGroup"
+                    ? curretnItems.splice(gr.startIndex, gr.count)
+                    : curretnItems.splice(gr.startIndex);
+                let groupItems = _copyAndSort(
+                  childArr,
+                  currColumn.fieldName!,
+                  currColumn.isSortedDescending
+                );
+                result = [...result, ...groupItems];
+              });
+              if (currColumn.fieldName === "name") {
+                newGroups = _copyAndSort(
+                  groups,
+                  "name",
+                  currColumn.isSortedDescending
+                );
+              }
+            }
+          } else {
+            newItems = _copyAndSort(
+              itemsToSort,
+              currColumn.fieldName!,
+              currColumn.isSortedDescending
+            );
+          }
           if (!filterColumsResult) {
             this.setState({
               columns,
               filterColumsResult: newColumns,
-              items: newItems,
+              items: newItems.length > 0 ? newItems : result,
               contextualMenu: undefined,
+              filterGroupResult: this.props.groups
+                ? newGroups
+                : this.state.groups,
             });
           }
           if (filterColumsResult) {
             this.setState({
               filterColumsResult: newColumns,
               columns,
-              items: newItems,
+              items: newItems.length > 0 ? newItems : result,
               contextualMenu: undefined,
+              filterGroupResult: this.props.groups
+                ? newGroups
+                : this.state.groups,
             });
           }
         } else {
@@ -381,8 +409,10 @@ export class DetailsListDocumentsExample extends React.Component<
     });
   };
 
-  onGetResultArr = (itemsArr: any[]) => {
+  onGetResultArr = async (itemsArr: any[]) => {
     let columnsArr = this.state.columns;
+    let currentItem = this.state.items;
+    let groupsProps = [...this.state.groups];
     let index = columnsArr.findIndex(
       (col) => col.key === this.state.targetColumn?.key
     );
@@ -390,7 +420,58 @@ export class DetailsListDocumentsExample extends React.Component<
       columnsArr[index].isFilter = true;
     }
 
-    if (itemsArr) {
+    if (itemsArr && groupsProps) {
+      let currentGroup = await groupsProps.map((gr) => {
+        return (gr = { ...gr, count: 0, startIndex: 0, isCollapsed: false });
+      });
+      itemsArr.forEach((item) => {
+        let index = currentItem.findIndex(
+          (curItem) => curItem.key === item.key
+        );
+        if (index !== -1) {
+          groupsProps.forEach((gr) => {
+            if (index >= gr.startIndex && index < gr.startIndex + gr.count) {
+              let indexCurGroup = currentGroup.findIndex(
+                (doc) => doc.key === gr.key
+              );
+              if (indexCurGroup !== -1) {
+                currentGroup[indexCurGroup].count =
+                  currentGroup[indexCurGroup].count + 1;
+              }
+            }
+          });
+        }
+      });
+      let i = currentGroup.length;
+      while (i--) {
+        if (currentGroup[i].count === 0) {
+          currentGroup.splice(i, 1);
+        } else {
+          if (i > 0) {
+            currentGroup[i].startIndex =
+              currentGroup[i - 1].startIndex + currentGroup[i - 1].count;
+          }
+          if (i === 0) {
+            currentGroup[i].startIndex = 0;
+          }
+        }
+      }
+      // for (let i = 0; i < currentGroup.length; i++) {
+      //   if (i === 0) {
+      //     currentGroup[i].startIndex = 0;
+      //   }
+      //   if (i > 0) {
+      //     currentGroup[i].startIndex =
+      //       currentGroup[i - 1].startIndex + currentGroup[i - 1].count;
+      //   }
+      // }
+      this.setState({
+        filterItemsResult: itemsArr,
+        filterGroupResult:
+          currentGroup.length > 0 ? currentGroup : this.state.groups,
+      });
+    }
+    if (itemsArr && !groupsProps) {
       this.setState({
         filterItemsResult: itemsArr,
       });
@@ -401,6 +482,7 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   onScrollList = (event: React.MouseEvent<HTMLDivElement, UIEvent>): void => {
+    console.log("do");
     let listItem: HTMLElement = document.getElementsByClassName(
       "ms-ScrollablePane--contentContainer"
     )[0] as HTMLElement;
@@ -437,6 +519,7 @@ export class DetailsListDocumentsExample extends React.Component<
       items: [],
       order: undefined,
       filterData: currentFilter,
+      filterGroupResult: [],
     });
     this.props.onRemoveFilter && this.props.onRemoveFilter();
     if (this.state.filterData.length > 0) {
@@ -482,6 +565,8 @@ export class DetailsListDocumentsExample extends React.Component<
       targetColumn,
       filterItemsResult,
       filterColumsResult,
+      groups,
+      filterGroupResult,
     } = this.state;
 
     console.log(this.state);
@@ -506,7 +591,11 @@ export class DetailsListDocumentsExample extends React.Component<
                     ? filterColumsResult
                     : columns
                 }
-                groups={this.props.groups}
+                groups={
+                  filterGroupResult && filterGroupResult.length > 0
+                    ? filterGroupResult
+                    : groups
+                }
                 // enableShimmer={true}
                 selectionMode={SelectionMode.multiple}
                 // getKey={this._getKey}

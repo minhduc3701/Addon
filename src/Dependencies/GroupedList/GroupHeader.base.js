@@ -172,68 +172,70 @@ var GroupHeaderBase = /** @class */ (function (_super) {
         "aria-posinset": ariaPosInSet,
         "data-is-focusable": true,
       },
-      group.key !== "lastGroup" && React.createElement(
-        FocusZone,
-        {
-          className: this._classNames.groupHeaderContainer,
-          direction: FocusZoneDirection.horizontal,
-        },
-        isSelectionCheckVisible
-          ? React.createElement(
-              "button",
-              __assign(
-                {
-                  type: "button",
-                  className: this._classNames.check,
-                  role: "checkbox",
-                  "aria-checked": currentlySelected,
-                  "data-selection-toggle": true,
-                  onClick: this._onToggleSelectGroupClick,
-                },
-                selectAllButtonProps
-              ),
-              onRenderCheckbox(
-                { checked: currentlySelected, theme: theme },
-                onRenderCheckbox
+      group.key !== "lastGroup" &&
+        React.createElement(
+          FocusZone,
+          {
+            className: this._classNames.groupHeaderContainer,
+            direction: FocusZoneDirection.horizontal,
+          },
+          isSelectionCheckVisible
+            ? React.createElement(
+                "button",
+                __assign(
+                  {
+                    type: "button",
+                    className: this._classNames.check,
+                    role: "checkbox",
+                    "aria-checked": currentlySelected,
+                    "data-selection-toggle": true,
+                    onClick: this._onToggleSelectGroupClick,
+                  },
+                  selectAllButtonProps
+                ),
+                onRenderCheckbox(
+                  { checked: currentlySelected, theme: theme },
+                  onRenderCheckbox
+                )
               )
-            )
-          : selectionMode !== SelectionMode.none &&
-              React.createElement(GroupSpacer, {
-                indentWidth: indentWidth,
-                count: 1,
-              }),
-        React.createElement(GroupSpacer, {
-          indentWidth: indentWidth,
-          count: groupLevel,
-        }),
-        // React.createElement(
-        //   "div",
-        //   { className: this._classNames.dropIcon },
-        //   React.createElement(Icon, { iconName: "Tag" })
-        // ),
-        // React.createElement(
-        //   "button",
-        //   __assign(
-        //     {
-        //       type: "button",
-        //       className: this._classNames.expand,
-        //       onClick: this._onToggleCollapse,
-        //       "aria-expanded": !group.isCollapsed,
-        //       "aria-controls":
-        //         group && !group.isCollapsed ? groupedListId : undefined,
-        //     },
-        //     expandButtonProps
-        //   ),
-        //   React.createElement(Icon, {
-        //     className: this._classNames.expandIsCollapsed,
-        //     iconName:
-        //       expandButtonIcon ||
-        //       (isRTL ? "ChevronLeftMed" : "ChevronRightMed"),
-        //   })
-        // ),
-        onRenderTitle(this.props, this._onRenderTitle),
-        isLoadingVisible && React.createElement(Spinner, { label: loadingText })
-      )
+            : selectionMode !== SelectionMode.none &&
+                React.createElement(GroupSpacer, {
+                  indentWidth: indentWidth,
+                  count: 1,
+                }),
+          React.createElement(GroupSpacer, {
+            indentWidth: indentWidth,
+            count: groupLevel,
+          }),
+          // React.createElement(
+          //   "div",
+          //   { className: this._classNames.dropIcon },
+          //   React.createElement(Icon, { iconName: "Tag" })
+          // ),
+          // React.createElement(
+          //   "button",
+          //   __assign(
+          //     {
+          //       type: "button",
+          //       className: this._classNames.expand,
+          //       onClick: this._onToggleCollapse,
+          //       "aria-expanded": !group.isCollapsed,
+          //       "aria-controls":
+          //         group && !group.isCollapsed ? groupedListId : undefined,
+          //     },
+          //     expandButtonProps
+          //   ),
+          //   React.createElement(Icon, {
+          //     className: this._classNames.expandIsCollapsed,
+          //     iconName:
+          //       expandButtonIcon ||
+          //       (isRTL ? "ChevronLeftMed" : "ChevronRightMed"),
+          //   })
+          // ),
+          onRenderTitle(this.props, this._onRenderTitle),
+          isLoadingVisible &&
+            React.createElement(Spinner, { label: loadingText })
+        )
     );
   };
   GroupHeaderBase.prototype._defaultCheckboxRender = function (checkboxProps) {
