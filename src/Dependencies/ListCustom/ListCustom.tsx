@@ -283,7 +283,13 @@ export class DetailsListDocumentsExample extends React.Component<
   ): void => {
     if (item) {
       let currentKey = item?.key;
-      const { columns, items, currentColumn, filterColumsResult } = this.state;
+      const {
+        columns,
+        items,
+        currentColumn,
+        filterColumsResult,
+        filterItemsResult,
+      } = this.state;
       let columnToSort = filterColumsResult ? filterColumsResult : columns;
       let itemsToSort = items;
       const newColumns: IColumn[] = columnToSort.slice();
@@ -308,15 +314,21 @@ export class DetailsListDocumentsExample extends React.Component<
           let newItems = [];
           let result: any = [];
           let newGroups: IGroup[] = [];
+          let filterGroup =
+            this.state.filterGroupResult &&
+            this.state.filterGroupResult.length > 0
+              ? this.state.filterGroupResult
+              : this.state.groups;
           if (this.props.groups) {
-            let { groups } = this.state;
-            if (groups && groups.length > 0) {
-              groups.forEach((gr) => {
-                let curretnItems = [...items];
+            if (filterGroup && filterGroup.length > 0) {
+              filterGroup.forEach((gr) => {
+                let currentItems = filterItemsResult
+                  ? [...filterItemsResult]
+                  : [...items];
                 let childArr =
                   gr.key !== "lastGroup"
-                    ? curretnItems.splice(gr.startIndex, gr.count)
-                    : curretnItems.splice(gr.startIndex);
+                    ? currentItems.splice(gr.startIndex, gr.count)
+                    : currentItems.splice(gr.startIndex);
                 let groupItems = _copyAndSort(
                   childArr,
                   currColumn.fieldName!,
@@ -326,7 +338,7 @@ export class DetailsListDocumentsExample extends React.Component<
               });
               if (currColumn.fieldName === "name") {
                 newGroups = _copyAndSort(
-                  groups,
+                  filterGroup,
                   "name",
                   currColumn.isSortedDescending
                 );
@@ -339,15 +351,15 @@ export class DetailsListDocumentsExample extends React.Component<
               currColumn.isSortedDescending
             );
           }
+          console.log(result);
+          console.log(filterGroup);
           if (!filterColumsResult) {
             this.setState({
               columns,
               filterColumsResult: newColumns,
               items: newItems.length > 0 ? newItems : result,
               contextualMenu: undefined,
-              filterGroupResult: this.props.groups
-                ? newGroups
-                : this.state.groups,
+              filterGroupResult: newGroups.length > 0 ? newGroups : filterGroup,
             });
           }
           if (filterColumsResult) {
@@ -356,9 +368,7 @@ export class DetailsListDocumentsExample extends React.Component<
               columns,
               items: newItems.length > 0 ? newItems : result,
               contextualMenu: undefined,
-              filterGroupResult: this.props.groups
-                ? newGroups
-                : this.state.groups,
+              filterGroupResult: newGroups.length > 0 ? newGroups : filterGroup,
             });
           }
         } else {
