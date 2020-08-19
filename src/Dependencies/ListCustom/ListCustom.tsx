@@ -129,9 +129,11 @@ export class DetailsListDocumentsExample extends React.Component<
 
   // examples get data form server
   onGetItemLazy = async (itemCount: number, type?: string) => {
-    await this.setState({
-      page: this.state.page + 1,
-    });
+    if (!type) {
+      await this.setState({
+        page: this.state.page + 1,
+      });
+    }
     this.props.onGetItemsList &&
       this.state.page >= 1 &&
       this.props.onGetItemsList(
@@ -186,17 +188,23 @@ export class DetailsListDocumentsExample extends React.Component<
         );
       },
     });
+
     let currentGroups = [...this.props.groups];
     if (this.props.groups && this.props.groups.length > 0) {
       let groupsProps = this.props.groups;
-      await currentGroups.push({
+      // for (let i = 0; i < currentGroups.length; i++) {
+      //   currentGroups[i].level = currentGroups[i].level
+      //     ? currentGroups[i].level! + 1
+      //     : 1;
+      // }
+      currentGroups.push({
         key: "lastGroup",
         name: "",
         startIndex:
           groupsProps[groupsProps.length - 1].startIndex +
           groupsProps[groupsProps.length - 1].count,
         count: 10,
-        level: 0,
+        level: 1,
         hasMoreData: true,
         isShowingAll: true,
         isCollapsed: false,
@@ -264,7 +272,9 @@ export class DetailsListDocumentsExample extends React.Component<
         return item;
       }
     });
-    await this.setState({ items: newItems });
+    if (!this.state.isFiltered) {
+      await this.setState({ items: newItems });
+    }
   };
 
   onChoiceItemSort = (
@@ -301,7 +311,6 @@ export class DetailsListDocumentsExample extends React.Component<
           if (this.props.groups) {
             let { groups } = this.state;
             if (groups && groups.length > 0) {
-              console.log("group");
               groups.forEach((gr) => {
                 let curretnItems = [...items];
                 let childArr =
@@ -409,17 +418,18 @@ export class DetailsListDocumentsExample extends React.Component<
     });
   };
 
-  onGetResultArr = async (itemsArr: any[]) => {
+  onGetResultArr = async (itemsArr: any[], type?: string) => {
     let columnsArr = this.state.columns;
     let currentItem = this.state.items;
     let groupsProps = [...this.state.groups];
-    let index = columnsArr.findIndex(
-      (col) => col.key === this.state.targetColumn?.key
-    );
-    if (index !== -1) {
-      columnsArr[index].isFilter = true;
+    if (!type) {
+      let index = columnsArr.findIndex(
+        (col) => col.key === this.state.targetColumn?.key
+      );
+      if (index !== -1) {
+        columnsArr[index].isFilter = true;
+      }
     }
-
     if (itemsArr && groupsProps) {
       let currentGroup = await groupsProps.map((gr) => {
         return (gr = { ...gr, count: 0, startIndex: 0, isCollapsed: false });
@@ -446,29 +456,20 @@ export class DetailsListDocumentsExample extends React.Component<
       while (i--) {
         if (currentGroup[i].count === 0) {
           currentGroup.splice(i, 1);
-        } else {
-          if (i > 0) {
-            currentGroup[i].startIndex =
-              currentGroup[i - 1].startIndex + currentGroup[i - 1].count;
-          }
-          if (i === 0) {
-            currentGroup[i].startIndex = 0;
-          }
         }
       }
-      // for (let i = 0; i < currentGroup.length; i++) {
-      //   if (i === 0) {
-      //     currentGroup[i].startIndex = 0;
-      //   }
-      //   if (i > 0) {
-      //     currentGroup[i].startIndex =
-      //       currentGroup[i - 1].startIndex + currentGroup[i - 1].count;
-      //   }
-      // }
+      for (let i = 0; i < currentGroup.length; i++) {
+        if (i > 0) {
+          currentGroup[i].startIndex =
+            currentGroup[i - 1].startIndex + currentGroup[i - 1].count;
+        }
+        if (i === 0) {
+          currentGroup[i].startIndex = 0;
+        }
+      }
       this.setState({
         filterItemsResult: itemsArr,
-        filterGroupResult:
-          currentGroup.length > 0 ? currentGroup : this.state.groups,
+        filterGroupResult: currentGroup ? currentGroup : this.state.groups,
       });
     }
     if (itemsArr && !groupsProps) {
@@ -482,7 +483,6 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   onScrollList = (event: React.MouseEvent<HTMLDivElement, UIEvent>): void => {
-    console.log("do");
     let listItem: HTMLElement = document.getElementsByClassName(
       "ms-ScrollablePane--contentContainer"
     )[0] as HTMLElement;
@@ -502,34 +502,168 @@ export class DetailsListDocumentsExample extends React.Component<
   };
 
   onCancelFilter = async (key: string) => {
-    let columnsArr = this.state.columns;
+    let columnsArr = [...this.state.columns];
     let currentFilter = [...this.state.filterData];
     let index = currentFilter.findIndex((filter) => filter.columnKey === key);
-    columnsArr.forEach((col) => {
-      if (col.isFilter && col.key === key) {
-        col.isFilter = false;
+    // columnsArr.forEach((col) => {
+    //   if (col.isFilter && col.key === key) {
+    //      col={...col,isFilter:false};
+    //   }
+    // });
+    for (const i in columnsArr) {
+      if (columnsArr[i].isFilter && columnsArr[i].key === key) {
+        columnsArr[i] = { ...columnsArr[i], isFilter: false };
+        break;
       }
-    });
+    }
     if (index !== -1) {
       currentFilter.splice(index, 1);
     }
-    await this.setState({
-      isFiltered: false,
-      page: 1,
-      items: [],
-      order: undefined,
-      filterData: currentFilter,
-      filterGroupResult: [],
-    });
-    this.props.onRemoveFilter && this.props.onRemoveFilter();
-    if (this.state.filterData.length > 0) {
+    if (currentFilter.length >= 1 && this.state.isFiltered) {
+      let result = await this.onChangeFilterData(currentFilter);
+      if (result.length > 0) {
+        this.onGetResultArr(result, "remove");
+        this.setState({
+          filterItemsResult: result,
+          filterData: currentFilter,
+          columns: columnsArr,
+        });
+      }
+    }
+    if (currentFilter.length < 1) {
+      await this.setState({
+        isFiltered: false,
+        page: 1,
+        items: [],
+        order: undefined,
+        filterData: currentFilter,
+        filterGroupResult: [],
+        columns: columnsArr,
+      });
+    }
+    this.props.onRemoveFilter &&
+      this.props.onRemoveFilter(currentFilter.length);
+    if (this.state.filterData.length > 0 && !this.state.isFiltered) {
       this.props.onGetFilterObject &&
         this.props.onGetFilterObject(this.state.filterData);
-    } else {
+    }
+    if (this.state.filterData.length < 1 && !this.state.isFiltered) {
       this.setState({ filterItemsResult: undefined });
-      this.onGetItemLazy(this.state.itemCount);
+      this.onGetItemLazy(this.state.itemCount, "remove");
     }
     localStorage.removeItem("processing");
+  };
+
+  onChangeFilterData = async (filterData: IObjectFilter[], data?: any[]) => {
+    let items = [...this.state.items];
+    filterData.forEach((doc) => {
+      let filterData: any[] = [];
+      switch (doc.operator) {
+        case "eq":
+          if (typeof doc.value === "boolean") {
+            let resultBoolean = items.filter((item) => {
+              if (item[doc.key] === doc.value) {
+                return true;
+              }
+              return false;
+            });
+            filterData = [...filterData, ...resultBoolean];
+          } else if (
+            Object.prototype.toString.call(doc.value) === "[object Date]"
+          ) {
+            let resultDate = items.filter((item) => {
+              let selectedDate = new Date(item[doc.key]);
+              if (
+                Object.prototype.toString.call(doc.value) === "[object Date]" &&
+                selectedDate.setHours(0, 0, 0, 0).valueOf() ===
+                  doc.value?.valueOf()
+              ) {
+                return true;
+              }
+              return false;
+            });
+            filterData = [...filterData, ...resultDate];
+          } else {
+            let resultEqual = items.filter((item) => {
+              let itemVal =
+                typeof item[doc.key] === "string"
+                  ? item[doc.key].toLocaleLowerCase()
+                  : item[doc.key].toString();
+              if (itemVal === doc.value) {
+                return true;
+              }
+              return false;
+            });
+            filterData = [...filterData, ...resultEqual];
+          }
+          break;
+
+        case "ne":
+          let resultNotEqual = items.filter((item) => {
+            let itemVal =
+              typeof item[doc.key] === "string"
+                ? item[doc.key].toLocaleLowerCase()
+                : item[doc.key].toString();
+            if (itemVal !== doc.value) {
+              return true;
+            }
+            return false;
+          });
+          filterData = [...filterData, ...resultNotEqual];
+          break;
+
+        case "contains":
+          if (Object.prototype.toString.call(doc.value) === "[object Date]") {
+            let resultDateContain = items.filter((item) => {
+              let selectedDate = new Date(item[doc.key]);
+              if (Array.isArray(doc.value)) {
+                let index = doc.value?.findIndex(
+                  (val: { date: Date }) =>
+                    val.date.valueOf() ===
+                    selectedDate.setHours(0, 0, 0, 0).valueOf()
+                );
+                if (index !== -1) {
+                  return true;
+                }
+              }
+              return false;
+            });
+            filterData = [...filterData, ...resultDateContain];
+          } else {
+            let resultContain = items.filter((item) => {
+              let string =
+                typeof item[doc.key] === "string"
+                  ? item[doc.key].toLocaleLowerCase()
+                  : item[doc.key].toString();
+              if (string.indexOf(doc.value) !== -1) {
+                return true;
+              }
+              return false;
+            });
+            filterData = [...filterData, ...resultContain];
+          }
+          break;
+
+        case "not":
+          let resultNotContain = items.filter((item) => {
+            let string =
+              typeof item[doc.key] === "string"
+                ? item[doc.key].toLocaleLowerCase()
+                : item[doc.key].toString();
+            if (string.indexOf(doc.value) === -1) {
+              return true;
+            }
+            return false;
+          });
+          filterData = [...filterData, ...resultNotContain];
+          break;
+
+        default:
+          break;
+      }
+      items = filterData;
+    });
+    return items;
   };
 
   onGetFilterObj = async (obj: IObjectFilter) => {
@@ -569,8 +703,6 @@ export class DetailsListDocumentsExample extends React.Component<
       filterGroupResult,
     } = this.state;
 
-    console.log(this.state);
-
     return (
       <StateListWrapper
         onScroll={this.onScrollList}
@@ -581,9 +713,8 @@ export class DetailsListDocumentsExample extends React.Component<
             <MarqueeSelection selection={this._selection}>
               <ShimmeredDetailsList
                 items={
-                  filterItemsResult && !this.props.loading
-                    ? filterItemsResult
-                    : items
+                  // filterItemsResult && !this.props.loading
+                  filterItemsResult ? filterItemsResult : items
                 }
                 compact={false}
                 columns={
@@ -737,7 +868,7 @@ export class DetailsListDocumentsExample extends React.Component<
           {targetColumn && (
             <FilterElement
               targetColumn={targetColumn}
-              items={items}
+              items={filterItemsResult ? filterItemsResult : items}
               onGetItem={this.onGetResultArr}
               columns={columns}
               darkMode={this.props.darkMode}
@@ -929,14 +1060,14 @@ export class DetailsListDocumentsExample extends React.Component<
       if (props.item.isDisable) {
         customStyles.root = {
           color: darkMode === "dark" ? "#D5D5D5" : "#333333",
-          background: darkMode === "dark" ? "#212121" : "#ffffff",
+          background: darkMode === "dark" ? "#3c3c3c" : "#ffffff",
           borderBottom:
             darkMode === "dark" ? "1px solid transparent" : "1px solid #ffffff",
         };
       } else {
         customStyles.root = {
           color: darkMode === "dark" ? "#ffffff" : "#333333",
-          background: darkMode === "dark" ? "#212121" : "#ffffff",
+          background: darkMode === "dark" ? "#3c3c3c" : "#ffffff",
           borderBottom:
             darkMode === "dark" ? "1px solid transparent" : "1px solid #ffffff",
           // borderBottom:

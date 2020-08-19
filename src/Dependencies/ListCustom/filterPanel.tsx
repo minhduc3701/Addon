@@ -214,7 +214,8 @@ class Breadcrumd extends React.Component<IFilterProps, IFilterState> {
   };
 
   onSortByFilter = async () => {
-    let { items, targetColumn } = this.props;
+    let { targetColumn } = this.props;
+    let items = [...this.props.items];
     let { type, value } = this.state;
     if (type && targetColumn?.fieldName) {
       let keyCol = targetColumn.fieldName;

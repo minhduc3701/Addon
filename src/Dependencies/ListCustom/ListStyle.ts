@@ -17,7 +17,7 @@ export interface IHOC {
     order?: string,
     fieldName?: string
   ) => void;
-  onRemoveFilter?: () => void;
+  onRemoveFilter?: (filterObjectLength: number) => void;
   onGetQueryObject?: (
     sortObject: ISortObject,
     filterData: IObjectFilter[]
@@ -57,7 +57,7 @@ export interface IListStates {
   order?: string;
   filterData: IObjectFilter[];
   groups?: IGroup[];
-  filterGroupResult?:IGroup[];
+  filterGroupResult?: IGroup[];
 }
 
 // <ListColumns>
@@ -134,6 +134,8 @@ export const StateListWrapper = styled.div`
   overflow: auto;
   font-family: Segoe UI;
   position: relative;
+  border: ${({ theme }) =>
+    theme.darkMode === "dark" ? "1px solid #000000" : "1px solid #edebe9"};
   img {
     width: 18px;
     height: 18px;
@@ -169,7 +171,7 @@ export const StateListWrapper = styled.div`
       height: 100%;
       .ms-DetailsHeader-collapseButton {
         color: ${({ theme }) =>
-          theme.darkMode === "dark" ? "#ffffff" : "#f4f4f4"};
+          theme.darkMode === "dark" ? "#ffffff" : "#333333"};
       }
       .ms-DetailsHeader-checkTooltip .ms-DetailsHeader-check {
         .ms-Check {
@@ -270,10 +272,21 @@ export const StateListWrapper = styled.div`
         .ms-FocusZone {
           color: ${({ theme }) =>
             theme.darkMode === "dark" ? "#ffffff" : "#323130"};
+          .ms-List-surface {
+            .ms-List-page:nth-last-child(2) {
+                .ms-GroupHeader{
+                  border-bottom: 0;
+                }
+              }
+            }
+          }
           .ms-GroupHeader {
             background-color: ${({ theme }) =>
-              theme.darkMode === "dark" ? "#292929" : "#eaeaea"};
-            border-bottom: 1px solid #514f4f7d;
+              theme.darkMode === "dark" ? "#333333" : "#faf9f8"};
+            border-bottom: ${({ theme }) =>
+              theme.darkMode === "dark"
+                ? "1px solid #000000"
+                : "1px solid #edebe9"};
             cursor: pointer;
             &:hover {
               background-color: ${({ theme }) =>
@@ -281,7 +294,7 @@ export const StateListWrapper = styled.div`
             }
             .ms-GroupHeader-expand {
               cursor: pointer;
-              &:hover {
+            &:hover {
                 background-color: ${({ theme }) =>
                   theme.darkMode === "dark" ? "#000000" : "#F4F4F4"};
               }
@@ -321,10 +334,8 @@ export const StateListWrapper = styled.div`
 
   .ms-ScrollablePane--contentContainer::-webkit-scrollbar {
     background-color: ${({ theme }) =>
-      theme.darkMode === "dark" ? "#212121" : "#ffffff"};
+      theme.darkMode === "dark" ? "#3c3c3c" : "#ffffff"};
     cursor: pointer;
-    border-right: ${({ theme }) =>
-      theme.darkMode === "dark" ? "1px solid #000000" : "1px solid #edebe9"};
   }
   .ms-ScrollablePane--contentContainer::-webkit-scrollbar-thumb {
     background: ${({ theme }) =>

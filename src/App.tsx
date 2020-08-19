@@ -408,9 +408,9 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  const onHandleCancelFilter = () => {
+  const onHandleCancelFilter = (filterObjectLength: number) => {
     setServerItems([]);
-    setIsLoading(true);
+    filterObjectLength < 1 && setIsLoading(true);
   };
 
   const onHandleQueryObject = async (
@@ -483,14 +483,12 @@ function App() {
       name: "Group Items 1",
       startIndex: 0,
       count: 4,
-      level: 0,
     },
     {
       key: "group1",
       name: "Group Items 2",
       startIndex: 4,
       count: 4,
-      level: 1,
       isCollapsed: true,
     },
     {
@@ -498,7 +496,6 @@ function App() {
       name: "Group Items 3",
       startIndex: 8,
       count: 1,
-      level: 0,
       isCollapsed: true,
     },
     {
@@ -506,7 +503,6 @@ function App() {
       name: "Group Items 4",
       startIndex: 9,
       count: 1,
-      level: 0,
       isCollapsed: true,
     },
     {
@@ -514,7 +510,6 @@ function App() {
       name: "Group Items 5",
       startIndex: 10,
       count: 3,
-      level: 0,
       isCollapsed: true,
     },
   ];
@@ -538,7 +533,9 @@ function App() {
             order?: string,
             fieldName?: string
           ) => onGetDataList(page, itemCount, order, fieldName)}
-          onRemoveFilter={onHandleCancelFilter}
+          onRemoveFilter={(filterObjectLength: number) =>
+            onHandleCancelFilter(filterObjectLength)
+          }
           onGetQueryObject={onHandleQueryObject}
         />
       </div>

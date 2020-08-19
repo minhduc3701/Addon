@@ -251,7 +251,7 @@ export var getStyles = function (props) {
             },
           ]
         : {
-            transform: getRTL(theme) ? "rotate(-90deg)" : "rotate(90deg)",
+            transform: getRTL(theme) ? "rotate(90deg)" : "rotate(-90deg)",
           },
     ],
     checkTooltip: classNames.checkTooltip,

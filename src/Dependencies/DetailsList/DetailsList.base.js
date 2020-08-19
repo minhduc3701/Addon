@@ -613,42 +613,45 @@ var DetailsListBase = /** @class */ (function (_super) {
         constrainMode === ConstrainMode.horizontalConstrained,
       className: className,
     });
-    var list = groups && items.length > 0
-      ? React.createElement(GroupedList, {
-          componentRef: this._groupedList,
-          groups: groups,
-          groupProps: groupProps ? this._getGroupProps(groupProps) : undefined,
-          items: items,
-          onRenderCell: this._onRenderCell,
-          selection: selection,
-          selectionMode:
-            checkboxVisibility !== CheckboxVisibility.hidden
-              ? selectionMode
-              : SelectionMode.none,
-          dragDropEvents: dragDropEvents,
-          dragDropHelper: dragDropHelper,
-          eventsToRegister: rowElementEventMap,
-          listProps: additionalListProps,
-          onGroupExpandStateChanged: this._onGroupExpandStateChanged,
-          usePageCache: usePageCache,
-          onShouldVirtualize: onShouldVirtualize,
-          getGroupHeight: getGroupHeight,
-          compact: compact,
-        })
-      : React.createElement(
-          List,
-          __assign(
-            {
-              ref: this._list,
-              role: "presentation",
-              items: items,
-              onRenderCell: this._onRenderListCell(0),
-              usePageCache: usePageCache,
-              onShouldVirtualize: onShouldVirtualize,
-            },
-            additionalListProps
-          )
-        );
+    var list =
+      groups && items.length > 0
+        ? React.createElement(GroupedList, {
+            componentRef: this._groupedList,
+            groups: groups,
+            groupProps: groupProps
+              ? this._getGroupProps(groupProps)
+              : undefined,
+            items: items,
+            onRenderCell: this._onRenderCell,
+            selection: selection,
+            selectionMode:
+              checkboxVisibility !== CheckboxVisibility.hidden
+                ? selectionMode
+                : SelectionMode.none,
+            dragDropEvents: dragDropEvents,
+            dragDropHelper: dragDropHelper,
+            eventsToRegister: rowElementEventMap,
+            listProps: additionalListProps,
+            onGroupExpandStateChanged: this._onGroupExpandStateChanged,
+            usePageCache: usePageCache,
+            onShouldVirtualize: onShouldVirtualize,
+            getGroupHeight: getGroupHeight,
+            compact: compact,
+          })
+        : React.createElement(
+            List,
+            __assign(
+              {
+                ref: this._list,
+                role: "presentation",
+                items: items,
+                onRenderCell: this._onRenderListCell(0),
+                usePageCache: usePageCache,
+                onShouldVirtualize: onShouldVirtualize,
+              },
+              additionalListProps
+            )
+          );
     return (
       // If shouldApplyApplicationRole is true, role application will be applied to make arrow keys work
       // with JAWS.

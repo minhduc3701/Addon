@@ -27,6 +27,9 @@
 - Get sort object and filter object
   [!code-javascript[ListQueryObject](../../src/Dependencies/ListCustom/examples/ListExamples.tsx?name=ListQueryObject)]
 
+- Group items
+  [!code-javascript[ListGroup](../../src/Dependencies/ListCustom/examples/ListExamples.tsx?name=ListGroup)]
+
 ## Example:
 
 [!code-javascript[ListExample](../../src/Dependencies/ListCustom/examples/ListExamples.tsx?name=ListExample)]
@@ -42,6 +45,9 @@
 
 **Example list props columns**
 [!code-javascript[ListColumns](../../src/Dependencies/ListCustom/ListStyle.ts?name=ListColumns)]
+
+**Example groups props columns**
+[!code-javascript[IGroupsProps](../../src/Dependencies/GroupedList/GroupedList.types.d.ts?name=IGroupsProps)]
 
 ## Note
 

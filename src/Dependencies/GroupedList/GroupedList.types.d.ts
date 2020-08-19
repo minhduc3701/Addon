@@ -110,6 +110,7 @@ export interface IGroupedListProps
 /**
  * {@docCategory GroupedList}
  */
+//<IGroupsProps>
 export interface IGroup {
   /**
    * Unique identifier for the group.
@@ -167,6 +168,8 @@ export interface IGroup {
    */
   hasMoreData?: boolean;
 }
+//</IGroupsProps>
+
 /**
  * {@docCategory GroupedList}
  */

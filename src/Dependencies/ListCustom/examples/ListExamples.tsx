@@ -107,6 +107,44 @@ const defaultColumns = [
   },
 ];
 
+const groups = [
+  {
+    key: "group0",
+    isCollapsed: true,
+    name: "Group Items 1",
+    startIndex: 0,
+    count: 4,
+  },
+  {
+    key: "group1",
+    name: "Group Items 2",
+    startIndex: 4,
+    count: 4,
+    isCollapsed: true,
+  },
+  {
+    key: "group2",
+    name: "Group Items 3",
+    startIndex: 8,
+    count: 1,
+    isCollapsed: true,
+  },
+  {
+    key: "group3",
+    name: "Group Items 4",
+    startIndex: 9,
+    count: 1,
+    isCollapsed: true,
+  },
+  {
+    key: "group4",
+    name: "Group Items 5",
+    startIndex: 10,
+    count: 3,
+    isCollapsed: true,
+  },
+];
+
 function App() {
   const [serverItems, setServerItems] = React.useState<any[]>([]);
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
@@ -164,6 +202,9 @@ function App() {
         <ListCustom
           columns={defaultColumns}
           loading={isLoading}
+          // <ListGroup>
+          groups={groups}
+          // </ListGroup>
           // <ListDarkMode>
           darkMode="dark"
           //   </ListDarkMode>

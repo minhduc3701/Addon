@@ -154,7 +154,6 @@ var GroupHeaderBase = /** @class */ (function (_super) {
       isCollapsed: isCollapsed,
       compact: compact,
     });
-
     if (!group) {
       return null;
     }
@@ -206,6 +205,14 @@ var GroupHeaderBase = /** @class */ (function (_super) {
           React.createElement(GroupSpacer, {
             indentWidth: indentWidth,
             count: groupLevel,
+          }),
+          React.createElement(Icon, {
+            className: "folder-icon",
+            iconName: "FabricFolder",
+            style: {
+              fontSize: "16px",
+              paddingLeft: "10px",
+            },
           }),
           // React.createElement(
           //   "div",

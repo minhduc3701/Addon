@@ -762,7 +762,8 @@ var DetailsHeaderBase = /** @class */ (function (_super) {
             },
             React.createElement(IconComponent, {
               className: classNames.collapseButton,
-              iconName: isRTL ? "ChevronLeftMed" : "ChevronRightMed",
+              iconName: !isRTL && "ChevronDownMed",
+              // iconName: isRTL ? "ChevronDownMed" : "ChevronRightMed",
             })
           )
         : null,
