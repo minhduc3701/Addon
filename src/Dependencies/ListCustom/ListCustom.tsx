@@ -192,11 +192,6 @@ export class DetailsListDocumentsExample extends React.Component<
     let currentGroups = [...this.props.groups];
     if (this.props.groups && this.props.groups.length > 0) {
       let groupsProps = this.props.groups;
-      // for (let i = 0; i < currentGroups.length; i++) {
-      //   currentGroups[i].level = currentGroups[i].level
-      //     ? currentGroups[i].level! + 1
-      //     : 1;
-      // }
       currentGroups.push({
         key: "lastGroup",
         name: "",
@@ -351,13 +346,11 @@ export class DetailsListDocumentsExample extends React.Component<
               currColumn.isSortedDescending
             );
           }
-          console.log(result);
-          console.log(filterGroup);
           if (!filterColumsResult) {
             this.setState({
               columns,
               filterColumsResult: newColumns,
-              items: newItems.length > 0 ? newItems : result,
+              filterItemsResult: newItems.length > 0 ? newItems : result,
               contextualMenu: undefined,
               filterGroupResult: newGroups.length > 0 ? newGroups : filterGroup,
             });
@@ -366,7 +359,7 @@ export class DetailsListDocumentsExample extends React.Component<
             this.setState({
               filterColumsResult: newColumns,
               columns,
-              items: newItems.length > 0 ? newItems : result,
+              filterItemsResult: newItems.length > 0 ? newItems : result,
               contextualMenu: undefined,
               filterGroupResult: newGroups.length > 0 ? newGroups : filterGroup,
             });
@@ -513,17 +506,24 @@ export class DetailsListDocumentsExample extends React.Component<
 
   onCancelFilter = async (key: string) => {
     let columnsArr = [...this.state.columns];
+    let columnsFilteredArr = this.state.filterColumsResult;
     let currentFilter = [...this.state.filterData];
     let index = currentFilter.findIndex((filter) => filter.columnKey === key);
-    // columnsArr.forEach((col) => {
-    //   if (col.isFilter && col.key === key) {
-    //      col={...col,isFilter:false};
-    //   }
-    // });
     for (const i in columnsArr) {
       if (columnsArr[i].isFilter && columnsArr[i].key === key) {
         columnsArr[i] = { ...columnsArr[i], isFilter: false };
         break;
+      }
+    }
+    if (columnsFilteredArr && columnsFilteredArr.length > 0) {
+      for (const i in columnsFilteredArr) {
+        if (
+          columnsFilteredArr[i].isFilter &&
+          columnsFilteredArr[i].key === key
+        ) {
+          columnsFilteredArr[i] = { ...columnsFilteredArr[i], isFilter: false };
+          break;
+        }
       }
     }
     if (index !== -1) {
@@ -549,6 +549,7 @@ export class DetailsListDocumentsExample extends React.Component<
         filterData: currentFilter,
         filterGroupResult: [],
         columns: columnsArr,
+        filterColumsResult: undefined,
       });
     }
     this.props.onRemoveFilter &&
@@ -749,19 +750,6 @@ export class DetailsListDocumentsExample extends React.Component<
                 onRenderRow={this._onRenderRow}
                 onRenderDetailsHeader={this._onRenderDetailsHeader}
                 onCancelFilter={(key: string) => this.onCancelFilter(key)}
-                // styles={{
-                //   root: [
-                //     {
-                //       selectors: {
-                //         ":after": {
-                //           // backgroundColor: this.props.darkMode && "#212121",
-                //           backgroundImage:
-                //             "linear-gradient(transparent 30%, rgba(255, 255, 255, 0.4) 65%, rgb(27, 26, 25) 100%)",
-                //         },
-                //       },
-                //     },
-                //   ],
-                // }}
               />
             </MarqueeSelection>
           )}
