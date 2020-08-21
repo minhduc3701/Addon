@@ -29,6 +29,8 @@ import CustomCheckBox from "./Dependencies/Checkbox/CustomCheckBox";
 import CustomToolTip from "./Dependencies/Tooltip/CustomToolTip";
 import CustomDropdown from "./Dependencies/Dropdown/CustomDropdown";
 import CustomTextField from "./Dependencies/TextField/CustomTextField";
+import CustomSpinButton from "./Dependencies/SpinButton/CustomSpinButton";
+import { Position } from "office-ui-fabric-react/lib/utilities/positioning";
 
 initializeIcons();
 
@@ -517,7 +519,14 @@ function App() {
   // <ExampleUsingCalendar>
   return (
     <div className="App">
-      <div style={{ height: "500px", width: "900px", position: "relative" }}>
+      <div
+        style={{
+          height: "500px",
+          width: "900px",
+          position: "relative",
+          marginRight: "10px",
+        }}
+      >
         <ListCustom
           columns={defaultColumns}
           loading={isLoading}
@@ -539,6 +548,18 @@ function App() {
           onGetQueryObject={onHandleQueryObject}
         />
       </div>
+      <CustomSpinButton
+        defaultValue="0"
+        label={"Basic SpinButton:"}
+        min={0}
+        max={100}
+        step={1}
+        darkMode="dark"
+        iconProps={{ iconName: "IncreaseIndentLegacy" }}
+        incrementButtonAriaLabel={"Increase value by 1"}
+        decrementButtonAriaLabel={"Decrease value by 1"}
+        // disabled
+      />
     </div>
   );
 }
